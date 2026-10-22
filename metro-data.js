@@ -1,15 +1,7 @@
 // KathiraveluLab Research Ecosystem Metro Map Data
-// 33 Key Projects & Research Stations across 5 Research Tracks + Runtime Shuttle
+// 39 Key Projects & Research Stations across 5 Research Tracks + Runtime Shuttle
 
 const METRO_DATA = {
-  "lab": {
-    "name": "KathiraveluLab",
-    "institution": "University of Alaska Anchorage & Global Collaborators",
-    "lead": "Pradeeban Kathiravelu, Ph.D.",
-    "githubUrl": "https://github.com/KathiraveluLab",
-    "websiteUrl": "https://kathiravelulab.github.io/",
-    "description": "Distributed Systems, Network Optimization, Healthcare Informatics, Autonomous AI Guardrails, and Community Science."
-  },
   "lines": [
     {
       "id": "line-soa",
@@ -18,7 +10,7 @@ const METRO_DATA = {
       "color": "#0284c7",
       "accentColor": "#38bdf8",
       "bgClass": "bg-cyan",
-      "description": "Foundational service composition, closed-loop neuromodulation control, and distributed interoperability middleware."
+      "description": "Foundational service composition, closed-loop neuromodulation control, context-aware smart buildings, and distributed interoperability middleware."
     },
     {
       "id": "line-net",
@@ -27,7 +19,7 @@ const METRO_DATA = {
       "color": "#d97706",
       "accentColor": "#fbbf24",
       "bgClass": "bg-amber",
-      "description": "Software-defined networking, bandwidth orchestration, low-latency transport, and edge simulation."
+      "description": "Software-defined networking, community network controller farms, middlebox QoS, bandwidth orchestration, low-latency transport, and edge simulation."
     },
     {
       "id": "line-health",
@@ -49,12 +41,12 @@ const METRO_DATA = {
     },
     {
       "id": "line-community",
-      "name": "Line 5: Community Informatics & Indigenous Computing",
-      "shortName": "Community & Indigenous",
+      "name": "Line 5: Community Informatics & Circumpolar Computing",
+      "shortName": "Community & Circumpolar",
       "color": "#e11d48",
       "accentColor": "#fb7185",
       "bgClass": "bg-rose",
-      "description": "Alaska Native epidemic history mapping, Indigenous heritage preservation, and mining for societal well-being."
+      "description": "Alaska Native epidemic history mapping, Indigenous heritage preservation, Arctic sea ice forecasting, and mining for societal well-being."
     },
     {
       "id": "line-shuttle",
@@ -73,11 +65,11 @@ const METRO_DATA = {
       "mapBadge": "IEEE Access'22",
       "number": 1,
       "name": "CONTROL-CORE",
-      "subtitle": "Peripheral Neuromodulation",
+      "subtitle": "Neuromodulation",
       "lines": [
         "line-soa"
       ],
-      "x": 160,
+      "x": 120,
       "y": 160,
       "isMajorHub": true,
       "repos": [
@@ -107,15 +99,46 @@ const METRO_DATA = {
       "description": "Framework for closed-loop peripheral neuromodulation control systems. Integrates simulated neuro-stimulators with real-time feedback loops and modular editors."
     },
     {
-      "id": "evora",
-      "mapBadge": "ETT'18",
+      "id": "cassowary",
+      "mapBadge": "ACM M4IOT'15",
       "number": 2,
-      "name": "Évora",
-      "subtitle": "Edge Service Chains",
+      "name": "Cassowary",
+      "subtitle": "Smart Buildings",
       "lines": [
         "line-soa"
       ],
-      "x": 300,
+      "x": 220,
+      "y": 160,
+      "isMajorHub": false,
+      "repos": [
+        "Cassowary"
+      ],
+      "primaryRepo": "Cassowary",
+      "tech": [
+        "Java",
+        "OpenDaylight",
+        "Infinispan",
+        "ActiveMQ"
+      ],
+      "venues": [
+        {
+          "name": "ACM M4IOT 2015",
+          "tier": "ACM",
+          "note": "Middleware Platform for Context-Aware Smart Buildings with Software-Defined Sensor Networks"
+        }
+      ],
+      "description": "Context-aware smart buildings middleware with software-defined sensor networks (SDSN), integrating Infinispan in-memory data grids, ActiveMQ, and OpenDaylight control loops."
+    },
+    {
+      "id": "evora",
+      "mapBadge": "ETT'18",
+      "number": 3,
+      "name": "Évora",
+      "subtitle": "Edge Chains",
+      "lines": [
+        "line-soa"
+      ],
+      "x": 320,
       "y": 160,
       "isMajorHub": false,
       "repos": [
@@ -141,15 +164,47 @@ const METRO_DATA = {
       "description": "Composing resilient, adaptive network service chains at the edge using software-defined networking concepts."
     },
     {
+      "id": "sdds",
+      "mapBadge": "IEEE SDS'18",
+      "number": 4,
+      "name": "SDDS",
+      "subtitle": "Data Services",
+      "lines": [
+        "line-soa"
+      ],
+      "x": 420,
+      "y": 160,
+      "isMajorHub": false,
+      "repos": [
+        "SDDS",
+        "messaging4transport"
+      ],
+      "primaryRepo": "SDDS",
+      "tech": [
+        "Java",
+        "AMQP 1.0",
+        "MD-SAL",
+        "Mayan-DS"
+      ],
+      "venues": [
+        {
+          "name": "IEEE SDS 2018",
+          "tier": "IEEE",
+          "note": "Software-Defined Data Services: Interoperable Big Data Executions"
+        }
+      ],
+      "description": "Software-Defined Data Services (Mayan-DS) middleware decoupling management logic from data service planes for interoperable, network-aware big data workflows."
+    },
+    {
       "id": "sd-cps",
       "mapBadge": "Cluster'19",
-      "number": 3,
+      "number": 5,
       "name": "SD-CPS",
       "subtitle": "Software-Defined CPS",
       "lines": [
         "line-soa"
       ],
-      "x": 430,
+      "x": 520,
       "y": 160,
       "isMajorHub": false,
       "repos": [
@@ -176,13 +231,13 @@ const METRO_DATA = {
     },
     {
       "id": "sofia",
-      "number": 4,
+      "number": 6,
       "name": "SOFIA",
       "subtitle": "Federated Interop",
       "lines": [
         "line-soa"
       ],
-      "x": 560,
+      "x": 620,
       "y": 160,
       "isMajorHub": false,
       "repos": [
@@ -198,14 +253,14 @@ const METRO_DATA = {
     },
     {
       "id": "guarda",
-      "number": 5,
+      "number": 7,
       "name": "GUARDA",
-      "subtitle": "Uniform Data Gateway",
+      "subtitle": "Data Gateway",
       "lines": [
         "line-soa",
         "line-shuttle"
       ],
-      "x": 690,
+      "x": 720,
       "y": 160,
       "isMajorHub": true,
       "repos": [
@@ -222,7 +277,7 @@ const METRO_DATA = {
     {
       "id": "viseu",
       "mapBadge": "COMNET'22",
-      "number": 6,
+      "number": 8,
       "name": "Viseu",
       "subtitle": "Edge Services Hub",
       "lines": [
@@ -253,13 +308,13 @@ const METRO_DATA = {
     {
       "id": "sendim",
       "mapBadge": "IEEE IC2E'16",
-      "number": 7,
+      "number": 9,
       "name": "SENDIM",
-      "subtitle": "Cloud Simulation & Emulation",
+      "subtitle": "Cloud Simulation",
       "lines": [
         "line-net"
       ],
-      "x": 160,
+      "x": 130,
       "y": 380,
       "isMajorHub": false,
       "repos": [
@@ -285,15 +340,45 @@ const METRO_DATA = {
       "description": "Simulation, Emulation, and Deployment Integration Middleware for scalable cloud networks and multi-datacenter topologies."
     },
     {
-      "id": "netuber",
-      "mapBadge": "IFIP Networking'18",
-      "number": 8,
-      "name": "NetUber",
-      "subtitle": "Software-Defined Internet",
+      "id": "xsdn",
+      "mapBadge": "IEEE IC2E'15",
+      "number": 10,
+      "name": "xSDN",
+      "subtitle": "Flow Simulator",
       "lines": [
         "line-net"
       ],
-      "x": 350,
+      "x": 240,
+      "y": 380,
+      "isMajorHub": false,
+      "repos": [
+        "xSDN"
+      ],
+      "primaryRepo": "xSDN",
+      "tech": [
+        "Java",
+        "Flow Simulation",
+        "SDN"
+      ],
+      "venues": [
+        {
+          "name": "IEEE IC2E 2015",
+          "tier": "IEEE",
+          "note": "An Expressive Simulator for Dynamic Network Flows"
+        }
+      ],
+      "description": "An Expressive Simulator for Dynamic Network Flows, enabling realistic evaluation of topology changes and flow routing algorithms."
+    },
+    {
+      "id": "netuber",
+      "mapBadge": "IFIP Networking'18",
+      "number": 11,
+      "name": "NetUber",
+      "subtitle": "SD-Internet",
+      "lines": [
+        "line-net"
+      ],
+      "x": 360,
       "y": 380,
       "isMajorHub": false,
       "repos": [
@@ -319,15 +404,84 @@ const METRO_DATA = {
       "description": "Dynamic software-defined routing infrastructure optimizing end-to-end transport across autonomous system boundaries."
     },
     {
+      "id": "chief",
+      "mapBadge": "IEEE IC2EW'16",
+      "number": 12,
+      "name": "CHIEF",
+      "subtitle": "Controller Farm",
+      "lines": [
+        "line-net"
+      ],
+      "x": 490,
+      "y": 380,
+      "isMajorHub": false,
+      "repos": [
+        "CHIEF",
+        "messaging4transport"
+      ],
+      "primaryRepo": "CHIEF",
+      "tech": [
+        "Java",
+        "OpenDaylight",
+        "AMQP",
+        "Hadoop"
+      ],
+      "venues": [
+        {
+          "name": "IEEE IC2EW 2016",
+          "tier": "IEEE",
+          "note": "Controller Farm for Clouds of Software-Defined Community Networks"
+        }
+      ],
+      "description": "Controller Farm for Clouds of Software-Defined Community Networks. Integrates OpenDaylight with AMQP message-oriented middleware and Hadoop metering."
+    },
+    {
+      "id": "smart",
+      "mapBadge": "IEEE IM'17",
+      "number": 13,
+      "name": "SMART",
+      "subtitle": "Middlebox QoS",
+      "lines": [
+        "line-net"
+      ],
+      "x": 630,
+      "y": 380,
+      "isMajorHub": false,
+      "repos": [
+        "SMART",
+        "messaging4transport"
+      ],
+      "primaryRepo": "SMART",
+      "tech": [
+        "Java",
+        "SDN",
+        "YANG / MD-SAL",
+        "AMQP"
+      ],
+      "venues": [
+        {
+          "name": "IEEE IM 2017",
+          "tier": "IEEE",
+          "note": "SDN Middlebox Architecture for Resilient Transfers"
+        },
+        {
+          "name": "Springer OTM 2016",
+          "tier": "Springer",
+          "note": "Selective Redundancy in Network-as-a-Service: Differentiated QoS"
+        }
+      ],
+      "description": "SDN Middlebox Architecture for Resilient Transfers. Employs selective redundancy (CLONE, DIVERT, REPLICATE) and breakpoint detection for differentiated QoS in multi-tenant clouds."
+    },
+    {
       "id": "l4sboa",
       "mapBadge": "IEEE CCECE'25",
-      "number": 9,
+      "number": 14,
       "name": "L4SBOA",
       "subtitle": "Bandwidth Orchestration",
       "lines": [
         "line-net"
       ],
-      "x": 970,
+      "x": 960,
       "y": 380,
       "isMajorHub": false,
       "repos": [
@@ -350,14 +504,14 @@ const METRO_DATA = {
     },
     {
       "id": "can",
-      "number": 10,
+      "number": 15,
       "name": "CAN",
-      "subtitle": "Content-Aware Networking",
+      "subtitle": "Content-Aware Net",
       "lines": [
         "line-net",
         "line-shuttle"
       ],
-      "x": 1120,
+      "x": 1100,
       "y": 380,
       "isMajorHub": false,
       "repos": [
@@ -373,13 +527,13 @@ const METRO_DATA = {
     },
     {
       "id": "faultsim",
-      "number": 11,
+      "number": 16,
       "name": "faultsim",
-      "subtitle": "Cluster Failure Detector",
+      "subtitle": "Failure Detector",
       "lines": [
         "line-net"
       ],
-      "x": 1260,
+      "x": 1240,
       "y": 380,
       "isMajorHub": false,
       "repos": [
@@ -395,7 +549,7 @@ const METRO_DATA = {
     },
     {
       "id": "sintra",
-      "number": 12,
+      "number": 17,
       "name": "Sintra",
       "subtitle": "Self-Adaptive Transport",
       "lines": [
@@ -421,7 +575,7 @@ const METRO_DATA = {
     {
       "id": "obidos",
       "mapBadge": "DAPD'19",
-      "number": 13,
+      "number": 18,
       "name": "Óbidos",
       "subtitle": "Big Data Integration",
       "lines": [
@@ -462,7 +616,7 @@ const METRO_DATA = {
     {
       "id": "niffler",
       "mapBadge": "JDI'21",
-      "number": 14,
+      "number": 19,
       "name": "Niffler",
       "subtitle": "DICOM ML Pipelines",
       "lines": [
@@ -505,7 +659,7 @@ const METRO_DATA = {
     {
       "id": "beehive",
       "mapBadge": "IEEE SysCon'26",
-      "number": 15,
+      "number": 20,
       "name": "Beehive",
       "subtitle": "Behavioral Health Federation",
       "lines": [
@@ -536,7 +690,7 @@ const METRO_DATA = {
     },
     {
       "id": "bhv",
-      "number": 16,
+      "number": 21,
       "name": "BHV",
       "subtitle": "Behavioral Health Vault",
       "lines": [
@@ -558,7 +712,7 @@ const METRO_DATA = {
     },
     {
       "id": "tenet",
-      "number": 17,
+      "number": 22,
       "name": "TENeT",
       "subtitle": "Telehealth Effectiveness",
       "lines": [
@@ -581,7 +735,7 @@ const METRO_DATA = {
     {
       "id": "awanta",
       "mapBadge": "Cluster'25",
-      "number": 18,
+      "number": 23,
       "name": "AWANTA",
       "subtitle": "SD-WAN Telehealth Hub",
       "lines": [
@@ -618,7 +772,7 @@ const METRO_DATA = {
     {
       "id": "porto",
       "mapBadge": "IEEE ISSE'26",
-      "number": 19,
+      "number": 24,
       "name": "PORTO",
       "subtitle": "Off-Chain Resource Tracking",
       "lines": [
@@ -647,7 +801,7 @@ const METRO_DATA = {
     },
     {
       "id": "epicue",
-      "number": 20,
+      "number": 25,
       "name": "Epicue",
       "subtitle": "Cairo ZK Verification",
       "lines": [
@@ -670,7 +824,7 @@ const METRO_DATA = {
     },
     {
       "id": "lagos",
-      "number": 21,
+      "number": 26,
       "name": "LAGOS",
       "subtitle": "Latency-Aware Governance",
       "lines": [
@@ -693,7 +847,7 @@ const METRO_DATA = {
     {
       "id": "iguana",
       "mapBadge": "IEEE ISSE'26",
-      "number": 22,
+      "number": 27,
       "name": "IGUANA",
       "subtitle": "Neural Guardrails",
       "lines": [
@@ -718,11 +872,11 @@ const METRO_DATA = {
           "note": "Integrated Guardrails for Unbiased and Adaptive Neural Network Architectures"
         }
       ],
-      "description": "Integrated Guardrails for Unbiased and Adaptive Neural Network Architectures. Employs actor-based concurrent monitors in Erlang to enforce formal safety invariants on LLMs and neural policies."
+      "description": "Integrated Guardrails for Unbiased and Adaptive Neural Network Architectures. Employs actor-based concurrent monitors in Erlang to enforce formal safety invariants on neural policies."
     },
     {
       "id": "impact",
-      "number": 23,
+      "number": 28,
       "name": "IMPACT",
       "subtitle": "Multi-Agent Platform",
       "lines": [
@@ -744,7 +898,7 @@ const METRO_DATA = {
     },
     {
       "id": "trace",
-      "number": 24,
+      "number": 29,
       "name": "TRACE",
       "subtitle": "Repo Context Alignment",
       "lines": [
@@ -766,13 +920,13 @@ const METRO_DATA = {
     },
     {
       "id": "denaina-place-names",
-      "number": 25,
+      "number": 30,
       "name": "Dena'ina Place Names",
       "subtitle": "Indigenous Toponymy",
       "lines": [
         "line-community"
       ],
-      "x": 160,
+      "x": 130,
       "y": 820,
       "isMajorHub": false,
       "repos": [
@@ -789,13 +943,13 @@ const METRO_DATA = {
     {
       "id": "dnigi",
       "mapBadge": "IEEE Computer'25",
-      "number": 26,
+      "number": 31,
       "name": "Dnigi",
       "subtitle": "Indigenous Heritage Game",
       "lines": [
         "line-community"
       ],
-      "x": 320,
+      "x": 260,
       "y": 820,
       "isMajorHub": true,
       "repos": [
@@ -818,13 +972,13 @@ const METRO_DATA = {
     {
       "id": "ak-history-webmap",
       "mapBadge": "IEEE Computer'25",
-      "number": 27,
+      "number": 32,
       "name": "AK History Webmap",
       "subtitle": "Epidemic Diseases Web Map",
       "lines": [
         "line-community"
       ],
-      "x": 480,
+      "x": 390,
       "y": 820,
       "isMajorHub": true,
       "repos": [
@@ -845,14 +999,44 @@ const METRO_DATA = {
       "description": "Interactive Native history web map visualizing historical epidemic disease outbreaks, transmission paths, and demographic impacts on Alaska Native populations."
     },
     {
+      "id": "dip-predicting-sie",
+      "mapBadge": "Elsevier RSA'25",
+      "number": 33,
+      "name": "Arctic Sea Ice",
+      "subtitle": "Arctic Sea Ice AI",
+      "lines": [
+        "line-community"
+      ],
+      "x": 520,
+      "y": 820,
+      "isMajorHub": true,
+      "repos": [
+        "DIP_Predicting_SIE"
+      ],
+      "primaryRepo": "DIP_Predicting_SIE",
+      "tech": [
+        "Python",
+        "Transformer-GRU",
+        "Remote Sensing"
+      ],
+      "venues": [
+        {
+          "name": "Remote Sensing Applications: Society and Environment (Elsevier) 2025",
+          "tier": "Elsevier",
+          "note": "Satellite image processing in the circumpolar north: Understanding climate crisis by predicting sea ice extent in the arctic"
+        }
+      ],
+      "description": "Multimodal deep learning and satellite image processing framework predicting Arctic sea ice extent and retreat dynamics in the circumpolar north using Transformer-GRU architectures."
+    },
+    {
       "id": "dreams",
-      "number": 28,
+      "number": 34,
       "name": "DREAMS",
       "subtitle": "Recovery & Arts Mining",
       "lines": [
         "line-community"
       ],
-      "x": 640,
+      "x": 660,
       "y": 820,
       "isMajorHub": false,
       "repos": [
@@ -868,7 +1052,7 @@ const METRO_DATA = {
     },
     {
       "id": "dhgworkflow",
-      "number": 29,
+      "number": 35,
       "name": "DHGWorkflow",
       "subtitle": "Task Graph Composer",
       "lines": [
@@ -890,13 +1074,13 @@ const METRO_DATA = {
     },
     {
       "id": "ararat",
-      "number": 30,
+      "number": 36,
       "name": "Ararat",
-      "subtitle": "Mojo Workflow Executor",
+      "subtitle": "Workflow Engine",
       "lines": [
         "line-shuttle"
       ],
-      "x": 850,
+      "x": 840,
       "y": 260,
       "isMajorHub": false,
       "repos": [
@@ -912,13 +1096,13 @@ const METRO_DATA = {
     },
     {
       "id": "mojito",
-      "number": 31,
+      "number": 37,
       "name": "Mojito",
-      "subtitle": "Task Orchestrator",
+      "subtitle": "Async Scheduler",
       "lines": [
         "line-shuttle"
       ],
-      "x": 960,
+      "x": 940,
       "y": 260,
       "isMajorHub": false,
       "repos": [
@@ -935,13 +1119,13 @@ const METRO_DATA = {
     {
       "id": "firm",
       "mapBadge": "IEEE MIPRO'16",
-      "number": 32,
+      "number": 38,
       "name": "FIRM",
-      "subtitle": "FaaS Orchestration",
+      "subtitle": "Serverless FaaS",
       "lines": [
         "line-shuttle"
       ],
-      "x": 1070,
+      "x": 1040,
       "y": 260,
       "isMajorHub": false,
       "repos": [
@@ -964,13 +1148,13 @@ const METRO_DATA = {
     {
       "id": "faro",
       "mapBadge": "Springer OTM'15",
-      "number": 33,
+      "number": 39,
       "name": "Faro",
-      "subtitle": "Near-Duplicate Detection",
+      "subtitle": "MinHash LSH",
       "lines": [
         "line-shuttle"
       ],
-      "x": 1180,
+      "x": 1140,
       "y": 260,
       "isMajorHub": false,
       "repos": [
@@ -997,17 +1181,17 @@ const METRO_DATA = {
     {
       "id": "track-soa-main",
       "lineId": "line-soa",
-      "path": "M 120,160 L 690,160 Q 750,160 780,220 L 795,320 Q 800,350 800,380"
+      "path": "M 100,160 L 720,160 Q 760,160 780,220 L 795,320 Q 800,350 800,380"
     },
     {
       "id": "track-net-main",
       "lineId": "line-net",
-      "path": "M 120,380 L 1260,380 Q 1360,380 1410,430 L 1460,500"
+      "path": "M 100,380 L 1240,380 Q 1360,380 1410,430 L 1460,500"
     },
     {
       "id": "track-health-main",
       "lineId": "line-health",
-      "path": "M 120,620 L 1240,620 Q 1340,620 1410,560 L 1460,500"
+      "path": "M 120,620 L 1220,620 Q 1340,620 1410,560 L 1460,500"
     },
     {
       "id": "track-trust-main",
@@ -1017,12 +1201,12 @@ const METRO_DATA = {
     {
       "id": "track-community-main",
       "lineId": "line-community",
-      "path": "M 120,820 L 640,820 Q 660,820 660,780 L 660,620"
+      "path": "M 100,820 L 660,820 L 660,620"
     },
     {
       "id": "track-shuttle",
       "lineId": "line-shuttle",
-      "path": "M 690,160 Q 715,210 740,260 L 1180,260 Q 1200,260 1200,300 L 1200,340 Q 1200,380 1120,380"
+      "path": "M 720,160 Q 730,210 740,260 L 1180,260 Q 1210,260 1210,300 L 1210,340 Q 1210,380 1100,380"
     }
   ]
 };

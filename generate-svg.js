@@ -48,15 +48,18 @@ function getStationLayout(station) {
       numY = station.y - 16;
       textAnchor = "end";
     } else {
-      labelY = station.y + 24;
-      subY = station.y + 38;
-      venueY = station.y + 51;
-      numY = station.y - 16;
+      labelY = station.y - 44;
+      subY = station.y - 31;
+      venueY = station.y - 18;
+      numY = station.y + 19;
     }
   } else if (
     station.id === "viseu" || 
     station.id === "sendim" || 
+    station.id === "xsdn" || 
     station.id === "netuber" || 
+    station.id === "chief" || 
+    station.id === "smart" || 
     station.id === "l4sboa" || 
     station.id === "can" || 
     station.id === "faultsim" ||
