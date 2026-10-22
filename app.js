@@ -340,25 +340,31 @@
     const containerH = viewport.clientHeight;
     if (!containerW || !containerH) return;
 
-    const mapW = 1680;
-    const mapH = 980;
+    // Actual visual content bounding box in SVG coordinate space:
+    // X spans from ~45 (Zone 1/2/3 left) to ~1635 (Zone 4 right / TRACE badge) -> width 1590, center 840
+    // Y spans from ~50 (Zone 1/4 top) to ~890 (Zone 5 bottom / line 5 nodes) -> height 840, center 470
+    const contentW = 1600;
+    const contentH = 850;
+    const contentCenterX = 840;
+    const contentCenterY = 470;
 
-    const padX = containerW < 600 ? 8 : containerW < 1000 ? 16 : 28;
-    const padY = containerH < 500 ? 8 : containerH < 800 ? 16 : 24;
+    const padX = containerW < 600 ? 8 : containerW < 1000 ? 14 : 20;
+    const padY = containerH < 500 ? 8 : containerH < 800 ? 12 : 18;
 
     const availW = Math.max(100, containerW - padX * 2);
     const availH = Math.max(100, containerH - padY * 2);
 
-    const scaleX = availW / mapW;
-    const scaleY = availH / mapH;
+    const scaleX = availW / contentW;
+    const scaleY = availH / contentH;
     const fitScale = Math.min(scaleX, scaleY);
 
     state.zoom = fitScale;
-    state.minZoom = Math.min(0.15, fitScale * 0.6);
+    state.minZoom = Math.min(0.2, fitScale * 0.5);
     state.maxZoom = 2.5;
 
-    state.panX = Math.round((containerW - (mapW * fitScale)) / 2);
-    state.panY = Math.round((containerH - (mapH * fitScale)) / 2);
+    // Center content precisely in viewport
+    state.panX = Math.round((containerW / 2) - (contentCenterX * fitScale));
+    state.panY = Math.round((containerH / 2) - (contentCenterY * fitScale));
 
     updateTransform(smooth);
   }
