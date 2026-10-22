@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KathiraveluLab Research Metro Map | Distributed Systems &amp; Informatics Ecosystem</title>
+  <meta name="description" content="Interactive evolutionary metro map tracking public repositories, publications, and architectural connections across KathiraveluLab at University of Alaska Anchorage.">
+  
+  <!-- Modern Typography from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top App Bar Navigation -->
+  <header class="app-header" role="banner">
+    <a href="https://github.com/KathiraveluLab" target="_blank" rel="noopener noreferrer" class="brand" title="KathiraveluLab on GitHub">
+      <div class="brand-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 3v18"/>
+          <path d="M3 12h18"/>
+          <circle cx="12" cy="12" r="3" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="brand-info">
+        <h1>KathiraveluLab Metro</h1>
+        <p>Research &amp; Public Projects Transit Map</p>
+      </div>
+    </a>
+
+    <!-- Line Filter Chips -->
+    <nav class="line-filters" id="line-filters" aria-label="Transit line filters">
+      <button class="filter-btn active" data-line="all" id="filter-all">
+        <span class="dot" style="background: #38bdf8;"></span>
+        All Lines
+      </button>
+      <button class="filter-btn" data-line="line-soa" id="filter-soa">
+        <span class="dot" style="background: #0284c7;"></span>
+        Line 1: SOA &amp; Middleware
+      </button>
+      <button class="filter-btn" data-line="line-net" id="filter-net">
+        <span class="dot" style="background: #d97706;"></span>
+        Line 2: Network &amp; Edge
+      </button>
+      <button class="filter-btn" data-line="line-health" id="filter-health">
+        <span class="dot" style="background: #059669;"></span>
+        Line 3: Healthcare
+      </button>
+      <button class="filter-btn" data-line="line-trust" id="filter-trust">
+        <span class="dot" style="background: #7c3aed;"></span>
+        Line 4: Autonomous Trust &amp; AI
+      </button>
+      <button class="filter-btn" data-line="line-community" id="filter-community">
+        <span class="dot" style="background: #e11d48;"></span>
+        Line 5: Community &amp; Indigenous
+      </button>
+      <button class="filter-btn" data-line="line-shuttle" id="filter-shuttle">
+        <span class="dot" style="background: #64748b;"></span>
+        Runtime Shuttle
+      </button>
+    </nav>
+
+    <!-- Header Actions & Search -->
+    <div class="header-actions">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search-input" class="search-input" placeholder="Search stations, papers, tech..." aria-label="Search map">
+      </div>
+
+      <button id="btn-export-svg" class="btn-primary" title="Export Standalone SVG">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        SVG Export
+      </button>
+
+      <button id="btn-theme-toggle" class="btn-icon" title="Toggle Theme" aria-label="Toggle dark/light theme">
+        🌙
+      </button>
+
+      <a href="https://github.com/KathiraveluLab" target="_blank" rel="noopener noreferrer" class="btn-icon" title="Visit GitHub Organization" aria-label="KathiraveluLab GitHub">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main 2D Panning Canvas Viewport -->
+  <main class="canvas-viewport" id="canvas-viewport" tabindex="0" role="region" aria-label="Interactive KathiraveluLab Metro Map Canvas">
+    <div class="canvas-surface" id="canvas-surface">
+      <!-- Embedded Interactive SVG Container -->
+      <svg id="metro-svg" viewBox="0 0 1680 980" preserveAspectRatio="xMidYMid meet"></svg>
+    </div>
+  </main>
+
+  <!-- Floating Canvas Controls -->
+  <div class="canvas-controls" aria-label="Zoom controls">
+    <button id="btn-zoom-in" class="btn-icon" title="Zoom In" aria-label="Zoom in">+</button>
+    <button id="btn-zoom-out" class="btn-icon" title="Zoom Out" aria-label="Zoom out">−</button>
+    <button id="btn-reset-view" class="btn-icon" title="Reset View" aria-label="Reset zoom and center map">⟲</button>
+  </div>
+
+  <!-- Status Bar -->
+  <aside class="status-bar" aria-label="Map metadata">
+    <div class="status-item">
+      <span class="status-dot"></span>
+      <span>33 Stations</span>
+    </div>
+    <div class="status-item">•</div>
+    <div class="status-item">
+      <span>6 Transit Lines</span>
+    </div>
+    <div class="status-item">•</div>
+    <div class="status-item">
+      <span>71 Repositories</span>
+    </div>
+    <div class="status-item">•</div>
+    <div class="status-item">
+      <span>2015 – 2026 Trajectory</span>
+    </div>
+  </aside>
+
+  <!-- Station Inspector Slide-Over Drawer -->
+  <aside class="station-drawer" id="station-drawer" aria-label="Station Details Inspector" aria-hidden="true">
+    <div class="drawer-header">
+      <div>
+        <div class="drawer-station-badge">
+          <span class="station-id-pill" id="drawer-station-id">#1</span>
+          <span class="station-line-pill" id="drawer-station-line">Line 1: SOA</span>
+        </div>
+        <h2 class="drawer-title" id="drawer-title">Station Name</h2>
+        <p class="drawer-subtitle" id="drawer-subtitle">Station Subtitle</p>
+      </div>
+      <button class="btn-close-drawer" id="btn-close-drawer" title="Close Inspector" aria-label="Close inspector">✕</button>
+    </div>
+
+    <div class="drawer-body">
+      <!-- Description -->
+      <section class="drawer-section">
+        <h3>Research Focus &amp; Architecture</h3>
+        <p class="drawer-desc" id="drawer-desc">Description of the project architecture and research significance.</p>
+      </section>
+
+      <!-- Key Publications -->
+      <section class="drawer-section">
+        <h3>Key Publications &amp; Venues</h3>
+        <div class="venue-list" id="drawer-venues">
+          <!-- Dynamically populated -->
+        </div>
+      </section>
+
+      <!-- Tech Stack -->
+      <section class="drawer-section">
+        <h3>Technologies &amp; Runtimes</h3>
+        <div class="tech-tags" id="drawer-tech">
+          <!-- Dynamically populated -->
+        </div>
+      </section>
+
+      <!-- GitHub Repositories -->
+      <section class="drawer-section">
+        <h3>Public Repositories</h3>
+        <div class="repo-links" id="drawer-repos">
+          <!-- Dynamically populated -->
+        </div>
+      </section>
+
+      <!-- Connected Stations -->
+      <section class="drawer-section">
+        <h3>Connected Stations</h3>
+        <div class="connected-stations" id="drawer-connected">
+          <!-- Dynamically populated -->
+        </div>
+      </section>
+    </div>
+  </aside>
+
+  <!-- Load Metro Data and App Logic -->
+  <script src="metro-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

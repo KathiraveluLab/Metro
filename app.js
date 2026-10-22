@@ -1,0 +1,574 @@
+/**
+ * KathiraveluLab Research Metro Map
+ * Interactive Application Controller
+ */
+
+(function () {
+  'use strict';
+
+  // State Management
+  const state = {
+    activeLine: 'all',
+    selectedStation: null,
+    searchQuery: '',
+    zoom: 1.0,
+    panX: 0,
+    panY: 0,
+    isDragging: false,
+    dragStart: { x: 0, y: 0 },
+    theme: 'dark'
+  };
+
+  // DOM Elements
+  const viewport = document.getElementById('canvas-viewport');
+  const surface = document.getElementById('canvas-surface');
+  const svg = document.getElementById('metro-svg');
+  const drawer = document.getElementById('station-drawer');
+  const searchInput = document.getElementById('search-input');
+  const themeToggle = document.getElementById('btn-theme-toggle');
+  const exportBtn = document.getElementById('btn-export-svg');
+  const closeDrawerBtn = document.getElementById('btn-close-drawer');
+  const zoomInBtn = document.getElementById('btn-zoom-in');
+  const zoomOutBtn = document.getElementById('btn-zoom-out');
+  const resetViewBtn = document.getElementById('btn-reset-view');
+  const filterContainer = document.getElementById('line-filters');
+
+  // Initialize Application
+  function init() {
+    renderSvgMap();
+    setupPanAndZoom();
+    setupFilterButtons();
+    setupSearch();
+    setupDrawer();
+    setupThemeToggle();
+    setupExport();
+    handleHashChange();
+
+    window.addEventListener('hashchange', handleHashChange);
+    window.addEventListener('resize', centerMap);
+    
+    // Initial centering
+    setTimeout(centerMap, 100);
+  }
+
+  // Render SVG Map Elements
+  function renderSvgMap() {
+    const width = 1680;
+    const height = 980;
+
+    let markup = `
+      <defs>
+        <filter id="glow-soa" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#0284c7" flood-opacity="0.6"/>
+        </filter>
+        <filter id="glow-net" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#d97706" flood-opacity="0.6"/>
+        </filter>
+        <filter id="glow-health" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#059669" flood-opacity="0.6"/>
+        </filter>
+        <filter id="glow-trust" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#7c3aed" flood-opacity="0.6"/>
+        </filter>
+        <filter id="glow-community" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#e11d48" flood-opacity="0.6"/>
+        </filter>
+        <filter id="hub-shadow" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.5"/>
+        </filter>
+      </defs>
+
+      <!-- Background Base -->
+      <rect width="${width}" height="${height}" class="bg" fill="currentColor"/>
+
+      <!-- Coordinate Grid -->
+      <g class="grid-layer" opacity="0.25">
+    `;
+
+    for (let x = 60; x < width; x += 60) {
+      markup += `<line x1="${x}" y1="0" x2="${x}" y2="${height}" stroke="var(--border-color)" stroke-width="0.5" stroke-dasharray="4,4"/>`;
+    }
+    for (let y = 60; y < height; y += 60) {
+      markup += `<line x1="0" y1="${y}" x2="${width}" y2="${y}" stroke="var(--border-color)" stroke-width="0.5" stroke-dasharray="4,4"/>`;
+    }
+
+    markup += `
+      </g>
+
+      <!-- Research Domain Background Zones -->
+      <g class="zones-layer">
+        <!-- Zone 1: SOA & Middleware -->
+        <rect x="50" y="60" width="710" height="205" rx="16" fill="#0284c7" fill-opacity="0.05" stroke="#0284c7" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
+        <text x="70" y="88" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#38bdf8" letter-spacing="1.5">SERVICE-ORIENTED ARCHITECTURE &amp; DISTRIBUTED CONTROL</text>
+
+        <!-- Zone 4: Autonomous Systems & Trust -->
+        <rect x="880" y="60" width="750" height="225" rx="16" fill="#7c3aed" fill-opacity="0.05" stroke="#7c3aed" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
+        <text x="900" y="88" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#a78bfa" letter-spacing="1.5">AUTONOMOUS SYSTEMS &amp; DECENTRALIZED TRUST</text>
+
+        <!-- Zone 2: Network Optimizations -->
+        <rect x="50" y="290" width="1580" height="185" rx="16" fill="#d97706" fill-opacity="0.05" stroke="#d97706" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
+        <text x="70" y="318" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#fbbf24" letter-spacing="1.5">NETWORK OPTIMIZATIONS, EDGE INFRASTRUCTURE &amp; TRANSPORT</text>
+
+        <!-- Zone 3: Healthcare -->
+        <rect x="50" y="505" width="1580" height="195" rx="16" fill="#059669" fill-opacity="0.05" stroke="#059669" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
+        <text x="70" y="533" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#34d399" letter-spacing="1.5">HEALTHCARE, BIOMEDICAL IMAGING &amp; TELEHEALTH INTEGRATION</text>
+
+        <!-- Zone 5: Community & Indigenous -->
+        <rect x="50" y="730" width="710" height="150" rx="16" fill="#e11d48" fill-opacity="0.05" stroke="#e11d48" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
+        <text x="70" y="756" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#fb7185" letter-spacing="1.5">COMMUNITY INFORMATICS &amp; INDIGENOUS COMPUTING</text>
+      </g>
+
+      <!-- Metro Line Tracks (Layer 1: Glow / Under-tracks) -->
+      <g id="tracks-glow">
+    `;
+
+    METRO_DATA.tracks.forEach(track => {
+      const line = METRO_DATA.lines.find(l => l.id === track.lineId);
+      const strokeWidth = line.dashed ? 6 : 10;
+      const dashArray = line.dashed ? 'stroke-dasharray="10,8"' : '';
+      markup += `<path data-line="${track.lineId}" d="${track.path}" stroke="${line.color}" stroke-width="${strokeWidth + 8}" class="track-underglow" ${dashArray} fill="none" opacity="0.3" filter="blur(4px)"/>`;
+    });
+
+    markup += `
+      </g>
+
+      <!-- Metro Line Tracks (Layer 2: Core Solid Tracks) -->
+      <g id="tracks-core">
+    `;
+
+    METRO_DATA.tracks.forEach(track => {
+      const line = METRO_DATA.lines.find(l => l.id === track.lineId);
+      const strokeWidth = line.dashed ? 5 : 8;
+      const dashArray = line.dashed ? 'stroke-dasharray="10,6"' : '';
+      markup += `<path id="${track.id}" data-line="${track.lineId}" d="${track.path}" stroke="${line.color}" stroke-width="${strokeWidth}" class="track-main" ${dashArray} fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
+    });
+
+    markup += `
+      </g>
+
+      <!-- Transfer Connectors -->
+      <g id="interchange-connectors">
+        <line x1="800" y1="365" x2="800" y2="395" stroke="var(--text-primary)" stroke-width="6" stroke-linecap="round"/>
+        <line x1="660" y1="605" x2="660" y2="635" stroke="var(--text-primary)" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="1460" cy="500" r="24" fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+      </g>
+
+      <!-- Stations Layer -->
+      <g id="stations-layer">
+    `;
+
+    METRO_DATA.stations.forEach(station => {
+      const primaryLine = METRO_DATA.lines.find(l => l.id === station.lines[0]);
+      const color = primaryLine ? primaryLine.color : '#0284c7';
+      const accent = primaryLine ? primaryLine.accentColor : '#38bdf8';
+      const lineIds = station.lines.join(' ');
+
+      let labelY = station.y - 24;
+      let subY = station.y - 10;
+      let venueY = station.y + 24;
+      let textAnchor = "middle";
+      let labelX = station.x;
+
+      if (station.id === "control-core" || station.id === "viseu" || station.id === "beehive" || station.id === "awanta" || station.id === "niffler") {
+        labelY = station.y + 28;
+        subY = station.y + 42;
+        venueY = station.y + 56;
+      } else if (station.id === "sintra") {
+        labelY = station.y - 32;
+        subY = station.y - 18;
+        venueY = station.y + 36;
+      } else if (station.lines.includes("line-community")) {
+        labelY = station.y - 18;
+        subY = station.y - 32;
+        venueY = station.y + 24;
+      } else if (station.id === "iguana" || station.id === "impact") {
+        labelX = station.x + 28;
+        labelY = station.y - 8;
+        subY = station.y + 6;
+        venueY = station.y + 20;
+        textAnchor = "start";
+      } else if (station.id === "trace") {
+        labelX = station.x + 24;
+        labelY = station.y + 4;
+        subY = station.y + 18;
+        venueY = station.y + 32;
+        textAnchor = "start";
+      }
+
+      const firstVenue = station.venues && station.venues.length > 0 ? station.venues[0].name : "";
+      const tierBadge = station.venues && station.venues.length > 0 && station.venues[0].tier ? ` [${station.venues[0].tier}]` : "";
+
+      markup += `
+        <g id="station-${station.id}" data-id="${station.id}" data-lines="${lineIds}" class="station-node" tabindex="0" role="button" aria-label="Station ${station.name}">
+      `;
+
+      if (station.isMajorHub) {
+        markup += `
+          <circle cx="${station.x}" cy="${station.y}" r="22" class="hub-outer-pulse" fill="${color}" fill-opacity="0.25"/>
+          <circle cx="${station.x}" cy="${station.y}" r="16" fill="var(--bg-primary)" stroke="${color}" stroke-width="4" filter="url(#hub-shadow)"/>
+          <circle cx="${station.x}" cy="${station.y}" r="10" fill="${color}"/>
+          <circle cx="${station.x}" cy="${station.y}" r="5" fill="#ffffff"/>
+          <text x="${station.x}" y="${station.y - 25}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="${accent}">${station.number}</text>
+        `;
+      } else {
+        markup += `
+          <circle cx="${station.x}" cy="${station.y}" r="11" fill="var(--bg-primary)" stroke="${color}" stroke-width="4.5"/>
+          <circle cx="${station.x}" cy="${station.y}" r="5" fill="#ffffff"/>
+          <text x="${station.x}" y="${station.y - 18}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="var(--text-muted)">${station.number}</text>
+        `;
+      }
+
+      markup += `
+          <text x="${labelX}" y="${labelY}" text-anchor="${textAnchor}" class="station-label">${station.name}</text>
+          <text x="${labelX}" y="${subY}" text-anchor="${textAnchor}" class="station-sub">${station.subtitle}</text>
+      `;
+
+      if (firstVenue) {
+        markup += `
+          <text x="${labelX}" y="${venueY}" text-anchor="${textAnchor}" class="station-venue" fill="${accent}">${firstVenue}${tierBadge}</text>
+        `;
+      }
+
+      markup += `</g>`;
+    });
+
+    markup += `</g>`;
+
+    svg.innerHTML = markup;
+
+    // Attach Click and Keyboard Listeners to Stations
+    document.querySelectorAll('.station-node').forEach(node => {
+      const stationId = node.dataset.id;
+      node.addEventListener('click', () => selectStation(stationId));
+      node.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          selectStation(stationId);
+        }
+      });
+    });
+  }
+
+  // Setup 2D Pan and Zoom Navigation
+  function setupPanAndZoom() {
+    // Zoom via buttons
+    zoomInBtn.addEventListener('click', () => setZoom(state.zoom + 0.15));
+    zoomOutBtn.addEventListener('click', () => setZoom(state.zoom - 0.15));
+    resetViewBtn.addEventListener('click', centerMap);
+
+    // Mouse Dragging on Viewport
+    viewport.addEventListener('mousedown', (e) => {
+      if (e.target.closest('.station-node') || e.target.closest('button')) return;
+      state.isDragging = true;
+      state.dragStart = { x: e.clientX, y: e.clientY };
+      viewport.style.cursor = 'grabbing';
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!state.isDragging) return;
+      const dx = e.clientX - state.dragStart.x;
+      const dy = e.clientY - state.dragStart.y;
+      viewport.scrollLeft -= dx;
+      viewport.scrollTop -= dy;
+      state.dragStart = { x: e.clientX, y: e.clientY };
+    });
+
+    window.addEventListener('mouseup', () => {
+      state.isDragging = false;
+      viewport.style.cursor = 'grab';
+    });
+
+    // Mouse Wheel Zoom
+    viewport.addEventListener('wheel', (e) => {
+      if (e.ctrlKey || e.metaKey) {
+        e.preventDefault();
+        const delta = e.deltaY < 0 ? 0.08 : -0.08;
+        setZoom(state.zoom + delta);
+      }
+    }, { passive: false });
+
+    // Keyboard Arrow Panning
+    viewport.addEventListener('keydown', (e) => {
+      const step = 40;
+      switch (e.key) {
+        case 'ArrowLeft': viewport.scrollLeft -= step; break;
+        case 'ArrowRight': viewport.scrollLeft += step; break;
+        case 'ArrowUp': viewport.scrollTop -= step; break;
+        case 'ArrowDown': viewport.scrollTop += step; break;
+        case '+': case '=': setZoom(state.zoom + 0.15); break;
+        case '-': case '_': setZoom(state.zoom - 0.15); break;
+        case '0': centerMap(); break;
+        case 'Escape': closeDrawer(); break;
+      }
+    });
+  }
+
+  function setZoom(newZoom) {
+    state.zoom = Math.max(0.65, Math.min(2.2, newZoom));
+    surface.style.transform = `scale(${state.zoom})`;
+  }
+
+  function centerMap() {
+    setZoom(1.0);
+    const centerX = (surface.offsetWidth - viewport.clientWidth) / 2;
+    const centerY = (surface.offsetHeight - viewport.clientHeight) / 2;
+    viewport.scrollTo({
+      left: Math.max(0, centerX),
+      top: Math.max(0, centerY),
+      behavior: 'smooth'
+    });
+  }
+
+  function panToStation(station) {
+    if (!station) return;
+    const targetX = (station.x * state.zoom) - (viewport.clientWidth / 2) + 20;
+    const targetY = (station.y * state.zoom) - (viewport.clientHeight / 2) + 20;
+    viewport.scrollTo({
+      left: Math.max(0, targetX),
+      top: Math.max(0, targetY),
+      behavior: 'smooth'
+    });
+  }
+
+  // Line Filtering
+  function setupFilterButtons() {
+    filterContainer.addEventListener('click', (e) => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      const lineId = btn.dataset.line;
+      filterLine(lineId);
+    });
+  }
+
+  function filterLine(lineId) {
+    state.activeLine = lineId;
+
+    // Update buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.line === lineId);
+    });
+
+    const tracks = document.querySelectorAll('.track-main, .track-underglow');
+    const stations = document.querySelectorAll('.station-node');
+
+    if (lineId === 'all') {
+      tracks.forEach(t => t.classList.remove('dimmed'));
+      stations.forEach(s => s.classList.remove('dimmed'));
+      return;
+    }
+
+    tracks.forEach(track => {
+      track.classList.toggle('dimmed', track.dataset.line !== lineId);
+    });
+
+    stations.forEach(station => {
+      const lines = station.dataset.lines.split(' ');
+      station.classList.toggle('dimmed', !lines.includes(lineId));
+    });
+  }
+
+  // Real-Time Search
+  function setupSearch() {
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.trim().toLowerCase();
+      state.searchQuery = query;
+
+      if (!query) {
+        document.querySelectorAll('.station-node').forEach(s => s.classList.remove('dimmed', 'highlighted'));
+        filterLine(state.activeLine);
+        return;
+      }
+
+      const matches = METRO_DATA.stations.filter(st => {
+        return st.name.toLowerCase().includes(query) ||
+               st.subtitle.toLowerCase().includes(query) ||
+               st.description.toLowerCase().includes(query) ||
+               st.tech.some(t => t.toLowerCase().includes(query)) ||
+               st.repos.some(r => r.toLowerCase().includes(query)) ||
+               st.venues.some(v => v.name.toLowerCase().includes(query) || (v.note && v.note.toLowerCase().includes(query)));
+      });
+
+      const matchedIds = new Set(matches.map(m => m.id));
+
+      document.querySelectorAll('.station-node').forEach(node => {
+        const isMatch = matchedIds.has(node.dataset.id);
+        node.classList.toggle('dimmed', !isMatch);
+        node.classList.toggle('highlighted', isMatch);
+      });
+    });
+
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const query = searchInput.value.trim().toLowerCase();
+        const firstMatch = METRO_DATA.stations.find(st => st.name.toLowerCase().includes(query));
+        if (firstMatch) {
+          selectStation(firstMatch.id);
+        }
+      }
+    });
+  }
+
+  // Station Inspector Drawer
+  function setupDrawer() {
+    closeDrawerBtn.addEventListener('click', closeDrawer);
+  }
+
+  function selectStation(stationId) {
+    const station = METRO_DATA.stations.find(s => s.id === stationId);
+    if (!station) return;
+
+    state.selectedStation = station;
+    window.location.hash = `station=${station.id}`;
+
+    // Highlight node
+    document.querySelectorAll('.station-node').forEach(node => {
+      node.classList.toggle('active-station', node.dataset.id === stationId);
+    });
+
+    // Populate Drawer
+    const primaryLine = METRO_DATA.lines.find(l => l.id === station.lines[0]);
+    document.getElementById('drawer-station-id').textContent = `#${station.number}`;
+    document.getElementById('drawer-station-id').style.background = primaryLine ? primaryLine.color : '#0284c7';
+    
+    document.getElementById('drawer-station-line').textContent = primaryLine ? primaryLine.shortName : '';
+    document.getElementById('drawer-title').textContent = station.name;
+    document.getElementById('drawer-subtitle').textContent = station.subtitle;
+    document.getElementById('drawer-desc').textContent = station.description;
+
+    // Publications
+    const venueList = document.getElementById('drawer-venues');
+    venueList.innerHTML = '';
+    if (station.venues && station.venues.length > 0) {
+      station.venues.forEach(v => {
+        const card = document.createElement('div');
+        card.className = 'venue-card';
+        card.innerHTML = `
+          <div class="venue-header">
+            <span class="venue-name">${v.name}</span>
+            ${v.tier ? `<span class="venue-tier">${v.tier}</span>` : ''}
+          </div>
+          ${v.note ? `<div class="venue-note">${v.note}</div>` : ''}
+        `;
+        venueList.appendChild(card);
+      });
+    } else {
+      venueList.innerHTML = '<p class="drawer-desc" style="color: var(--text-muted);">Ongoing research track &amp; active repository.</p>';
+    }
+
+    // Tech Stack Badges
+    const techList = document.getElementById('drawer-tech');
+    techList.innerHTML = '';
+    station.tech.forEach(t => {
+      const tag = document.createElement('span');
+      tag.className = 'tech-tag';
+      tag.textContent = t;
+      techList.appendChild(tag);
+    });
+
+    // Repositories
+    const repoList = document.getElementById('drawer-repos');
+    repoList.innerHTML = '';
+    station.repos.forEach(repo => {
+      const link = document.createElement('a');
+      link.className = 'repo-link';
+      link.href = `https://github.com/KathiraveluLab/${repo}`;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.innerHTML = `
+        <span>KathiraveluLab/${repo}</span>
+        <span>↗</span>
+      `;
+      repoList.appendChild(link);
+    });
+
+    // Connected Stations
+    const connectedContainer = document.getElementById('drawer-connected');
+    connectedContainer.innerHTML = '';
+    const connectedStations = METRO_DATA.stations.filter(s => {
+      if (s.id === station.id) return false;
+      return s.lines.some(l => station.lines.includes(l));
+    }).slice(0, 5);
+
+    connectedStations.forEach(cs => {
+      const btn = document.createElement('button');
+      btn.className = 'connected-btn';
+      btn.textContent = `${cs.name} (#${cs.number})`;
+      btn.addEventListener('click', () => {
+        selectStation(cs.id);
+        panToStation(cs);
+      });
+      connectedContainer.appendChild(btn);
+    });
+
+    // Open Drawer & Center Map
+    drawer.classList.add('open');
+    drawer.setAttribute('aria-hidden', 'false');
+    panToStation(station);
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
+    document.querySelectorAll('.station-node').forEach(node => {
+      node.classList.remove('active-station');
+    });
+    if (window.location.hash.startsWith('#station=')) {
+      history.replaceState(null, '', ' ');
+    }
+  }
+
+  // Theme Toggle
+  function setupThemeToggle() {
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      themeToggle.textContent = newTheme === 'dark' ? '🌙' : '☀️';
+      state.theme = newTheme;
+    });
+  }
+
+  // Standalone SVG Export
+  function setupExport() {
+    exportBtn.addEventListener('click', () => {
+      const serializer = new XMLSerializer();
+      let source = serializer.serializeToString(svg);
+      
+      // Add XML Declaration and namespace
+      if (!source.match(/^<svg[^>]+xmlns="http\:\/\/www\.w3\.org\/2000\/svg"/)) {
+        source = source.replace(/^<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
+      }
+      source = '<?xml version="1.0" standalone="no"?>\r\n' + source;
+
+      const blob = new Blob([source], { type: 'image/svg+xml;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const downloadLink = document.createElement('a');
+      downloadLink.href = url;
+      downloadLink.download = 'kathiravelulab-metro-map.svg';
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+      URL.revokeObjectURL(url);
+    });
+  }
+
+  // Handle URL Hash Navigation
+  function handleHashChange() {
+    const hash = window.location.hash;
+    if (hash.startsWith('#station=')) {
+      const stationId = hash.replace('#station=', '');
+      selectStation(stationId);
+    } else if (hash.startsWith('#line=')) {
+      const lineId = hash.replace('#line=', '');
+      filterLine(lineId);
+    }
+  }
+
+  // Bootstrapping
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+})();
