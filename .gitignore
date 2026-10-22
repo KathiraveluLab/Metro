@@ -147,3 +147,15 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Design artifacts
+_paper
+_bmad
+
+# AI Agent files
+.claude
+.codex
+.cursor
+.vscode
+.agent
+.gemini
