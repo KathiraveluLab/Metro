@@ -69,6 +69,32 @@
   --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
 }
 
+[data-theme="light"] .bg {
+  fill: #ffffff;
+}
+
+[data-theme="light"] .station-label {
+  fill: #0f172a;
+  filter: none;
+}
+
+[data-theme="light"] .station-sub {
+  fill: #475569;
+  filter: none;
+}
+
+[data-theme="light"] .station-core {
+  fill: #ffffff !important;
+}
+
+[data-theme="light"] .grid-layer {
+  opacity: 0.5;
+}
+
+[data-theme="light"] .grid-layer line {
+  stroke: #e2e8f0;
+}
+
 /* Base Reset & Box Sizing */
 *, *::before, *::after {
   box-sizing: border-box;

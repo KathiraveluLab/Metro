@@ -95,6 +95,110 @@ This web application is fully static and configured for immediate deployment to 
 
 ---
 
+## Embedding in External Pages (e.g. pradeeban.github.io)
+
+You can embed this map into personal academic pages (such as `pradeeban.github.io` or `kathiravelulab.github.io`) using any of the following methods:
+
+### Method 1: Interactive Responsive iframe (Recommended for Academic Portfolios)
+Embed the complete interactive web application (with pan, zoom, station inspector drawer, search, and theme toggle) directly into your website.
+
+#### Standard HTML:
+```html
+<div style="position: relative; width: 100%; height: 720px; max-width: 1400px; margin: 2rem auto; border: 1px solid #cbd5e1; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); background: #ffffff;">
+  <iframe 
+    src="https://kathiravelulab.github.io/Metro/" 
+    width="100%" 
+    height="100%" 
+    style="border: none; display: block;"
+    title="KathiraveluLab Research Metro Map"
+    loading="lazy"
+    allow="fullscreen">
+  </iframe>
+</div>
+```
+
+#### In Jekyll / GitHub Pages / AcademicPages Markdown (`index.md` or `projects.md`):
+Raw HTML is fully supported in kramdown/Jekyll:
+```html
+<iframe 
+  src="https://kathiravelulab.github.io/Metro/" 
+  width="100%" 
+  height="680" 
+  style="border: 1px solid #cbd5e1; border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); background: #ffffff;"
+  title="KathiraveluLab Research Metro Map"
+  loading="lazy">
+</iframe>
+```
+
+#### Reusable Jekyll Include (`_includes/metro-map.html`):
+Create `_includes/metro-map.html` in your personal Jekyll repository:
+```html
+<div class="metro-map-container" style="width: 100%; height: {{ include.height | default: '700px' }}; margin: 1.5rem 0; border: 1px solid #cbd5e1; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); background: #ffffff;">
+  <iframe 
+    src="https://kathiravelulab.github.io/Metro/{% if include.station %}#station={{ include.station }}{% elsif include.line %}#line={{ include.line }}{% endif %}" 
+    width="100%" 
+    height="100%" 
+    style="border: none;"
+    title="KathiraveluLab Research Metro Map"
+    loading="lazy">
+  </iframe>
+</div>
+```
+Then call it from any page on `pradeeban.github.io`:
+```liquid
+{% include metro-map.html height="720px" %}
+```
+Or pre-focus on a specific project:
+```liquid
+{% include metro-map.html station="niffler" %}
+```
+
+---
+
+### Method 2: Publication-Ready Vector SVG & High-Resolution PNG (Solid White Background)
+The vector SVG diagram (`assets/kathiravelulab-metro-map.svg`) and high-resolution screenshot (`assets/kathiravelulab-metro-map.png`) are generated on a solid white background with crisp typography and subtle region tints, making them suitable for academic pages, slides, and papers.
+
+#### In Markdown (Jekyll / AcademicPages / GitHub):
+```markdown
+[![KathiraveluLab Research Metro Map](https://kathiravelulab.github.io/Metro/assets/kathiravelulab-metro-map.svg)](https://kathiravelulab.github.io/Metro/)
+```
+
+#### In HTML with Clickable Interactive Link:
+```html
+<a href="https://kathiravelulab.github.io/Metro/" target="_blank" rel="noopener noreferrer">
+  <img 
+    src="https://kathiravelulab.github.io/Metro/assets/kathiravelulab-metro-map.svg" 
+    alt="KathiraveluLab Research Metro Map" 
+    width="100%" 
+    style="max-width: 1200px; height: auto; border: 1px solid #e2e8f0; border-radius: 8px; background: #ffffff;" />
+</a>
+```
+
+#### High-Resolution PNG Alternative:
+If a raster image is preferred (for example, for PDF generation or older browsers):
+```markdown
+[![KathiraveluLab Research Metro Map](https://kathiravelulab.github.io/Metro/assets/kathiravelulab-metro-map.png)](https://kathiravelulab.github.io/Metro/)
+```
+
+---
+
+### Method 3: Deep-Linking to Specific Stations & Lines
+External project pages or publication lists on `pradeeban.github.io` can deep-link directly to any station or line. The application automatically pans to and spotlights the requested node on load:
+
+- Link to **CONTROL-CORE** (Neuromodulation): `https://kathiravelulab.github.io/Metro/#station=control-core`
+- Link to **Niffler** (DICOM ML Pipelines): `https://kathiravelulab.github.io/Metro/#station=niffler`
+- Link to **AWANTA** (SD-WAN Telehealth): `https://kathiravelulab.github.io/Metro/#station=awanta`
+- Link to **Sintra** (Transport Optimization): `https://kathiravelulab.github.io/Metro/#station=sintra`
+- Link to **Dnigi** (Indigenous Heritage Game): `https://kathiravelulab.github.io/Metro/#station=dnigi`
+- Spotlight **Line 1** (SOA & Middleware): `https://kathiravelulab.github.io/Metro/#line=line-soa`
+- Spotlight **Line 2** (Network Transport): `https://kathiravelulab.github.io/Metro/#line=line-net`
+- Spotlight **Line 3** (Healthcare Informatics): `https://kathiravelulab.github.io/Metro/#line=line-health`
+- Spotlight **Line 4** (Autonomous Trust & AI): `https://kathiravelulab.github.io/Metro/#line=line-trust`
+- Spotlight **Line 5** (Community & Indigenous): `https://kathiravelulab.github.io/Metro/#line=line-community`
+- Spotlight **Runtime Shuttle** (Workflow Engines): `https://kathiravelulab.github.io/Metro/#line=line-shuttle`
+
+---
+
 ## Running the Interactive Web App Locally
 
 You can launch and explore the interactive web app locally using Python or Node.js:

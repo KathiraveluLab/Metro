@@ -16,7 +16,7 @@
     panY: 0,
     isDragging: false,
     dragStart: { x: 0, y: 0 },
-    theme: 'dark'
+    theme: 'light'
   };
 
   // DOM Elements
@@ -60,6 +60,73 @@
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&apos;');
+  }
+
+  // Consistent station label and badge coordinates preventing overlaps
+  function getStationLayout(station) {
+    let labelX = station.x;
+    let textAnchor = "middle";
+    let labelY, subY, venueY, numY;
+
+    if (station.id === "iguana" || station.id === "impact") {
+      labelX = station.x + 28;
+      labelY = station.y - 8;
+      subY = station.y + 6;
+      venueY = station.y + 20;
+      numY = station.y - 18;
+      textAnchor = "start";
+    } else if (station.id === "trace") {
+      labelX = station.x + 24;
+      labelY = station.y + 4;
+      subY = station.y + 18;
+      venueY = station.y + 32;
+      numY = station.y - 18;
+      textAnchor = "start";
+    } else if (station.id === "sintra") {
+      labelX = station.x;
+      labelY = station.y - 44;
+      subY = station.y - 31;
+      venueY = station.y + 42;
+      numY = station.y - 28;
+    } else if (station.lines.includes("line-shuttle") && station.id !== "guarda" && station.id !== "can") {
+      // Shuttle stations (DHGWorkflow, Ararat, Mojito, FIRM, Faro)
+      if (station.id === "dhgworkflow") {
+        labelX = station.x - 14;
+        labelY = station.y + 22;
+        subY = station.y + 36;
+        venueY = station.y + 49;
+        numY = station.y - 16;
+        textAnchor = "end";
+      } else {
+        labelY = station.y + 24;
+        subY = station.y + 38;
+        venueY = station.y + 51;
+        numY = station.y - 16;
+      }
+    } else if (
+      station.id === "viseu" || 
+      station.id === "sendim" || 
+      station.id === "netuber" || 
+      station.id === "l4sboa" || 
+      station.id === "can" || 
+      station.id === "faultsim" ||
+      station.id === "niffler" ||
+      station.id === "awanta"
+    ) {
+      // Labels Below Node
+      labelY = station.y + 25;
+      subY = station.y + 39;
+      venueY = station.y + 52;
+      numY = station.isMajorHub ? station.y - 23 : station.y - 17;
+    } else {
+      // Labels Above Node (Line 1 SOA, Line 4 Trust, Line 5 Community, Line 3 Obidos/Beehive/BHV/TENeT)
+      labelY = station.isMajorHub ? station.y - 48 : station.y - 44;
+      subY = station.isMajorHub ? station.y - 34 : station.y - 31;
+      venueY = station.isMajorHub ? station.y - 21 : station.y - 18;
+      numY = station.isMajorHub ? station.y + 24 : station.y + 19;
+    }
+
+    return { labelX, labelY, subY, venueY, numY, textAnchor };
   }
 
   // Render SVG Map Elements
@@ -174,40 +241,9 @@
       const accent = primaryLine ? primaryLine.accentColor : '#38bdf8';
       const lineIds = station.lines.join(' ');
 
-      let labelY = station.y - 24;
-      let subY = station.y - 10;
-      let venueY = station.y + 24;
-      let textAnchor = "middle";
-      let labelX = station.x;
+      const { labelX, labelY, subY, venueY, numY, textAnchor } = getStationLayout(station);
 
-      if (station.id === "control-core" || station.id === "viseu" || station.id === "beehive" || station.id === "awanta" || station.id === "niffler") {
-        labelY = station.y + 28;
-        subY = station.y + 42;
-        venueY = station.y + 56;
-      } else if (station.id === "sintra") {
-        labelY = station.y - 32;
-        subY = station.y - 18;
-        venueY = station.y + 36;
-      } else if (station.lines.includes("line-community")) {
-        labelY = station.y - 18;
-        subY = station.y - 32;
-        venueY = station.y + 24;
-      } else if (station.id === "iguana" || station.id === "impact") {
-        labelX = station.x + 28;
-        labelY = station.y - 8;
-        subY = station.y + 6;
-        venueY = station.y + 20;
-        textAnchor = "start";
-      } else if (station.id === "trace") {
-        labelX = station.x + 24;
-        labelY = station.y + 4;
-        subY = station.y + 18;
-        venueY = station.y + 32;
-        textAnchor = "start";
-      }
-
-      const firstVenue = station.venues && station.venues.length > 0 ? station.venues[0].name : "";
-      const tierBadge = station.venues && station.venues.length > 0 && station.venues[0].tier ? ` [${station.venues[0].tier}]` : "";
+      const badgeText = station.mapBadge || (station.venues && station.venues.length > 0 ? station.venues[0].name : "");
 
       markup += `
         <g id="station-${station.id}" data-id="${station.id}" data-lines="${lineIds}" class="station-node" tabindex="0" role="button" aria-label="Station ${station.name}">
@@ -221,13 +257,13 @@
           <circle cx="${station.x}" cy="${station.y}" r="16" class="station-core hub-outer" fill="var(--bg-primary)" stroke="${color}" stroke-width="4" filter="url(#hub-shadow)"/>
           <circle cx="${station.x}" cy="${station.y}" r="10" fill="${color}" pointer-events="none"/>
           <circle cx="${station.x}" cy="${station.y}" r="5" fill="#ffffff" pointer-events="none"/>
-          <text x="${station.x}" y="${station.y - 25}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="${accent}" pointer-events="none">${station.number}</text>
+          <text x="${station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="${accent}" pointer-events="none">${station.number}</text>
         `;
       } else {
         markup += `
           <circle cx="${station.x}" cy="${station.y}" r="11" class="station-core" fill="var(--bg-primary)" stroke="${color}" stroke-width="4.5"/>
           <circle cx="${station.x}" cy="${station.y}" r="5" fill="#ffffff" pointer-events="none"/>
-          <text x="${station.x}" y="${station.y - 18}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="var(--text-muted)" pointer-events="none">${station.number}</text>
+          <text x="${station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="var(--text-muted)" pointer-events="none">${station.number}</text>
         `;
       }
 
@@ -236,9 +272,9 @@
           <text x="${labelX}" y="${subY}" text-anchor="${textAnchor}" class="station-sub">${escapeXml(station.subtitle)}</text>
       `;
 
-      if (firstVenue) {
+      if (badgeText) {
         markup += `
-          <text x="${labelX}" y="${venueY}" text-anchor="${textAnchor}" class="station-venue" fill="${accent}">${escapeXml(firstVenue)}${escapeXml(tierBadge)}</text>
+          <text x="${labelX}" y="${venueY}" text-anchor="${textAnchor}" class="station-venue" fill="${accent}">${escapeXml(badgeText)}</text>
         `;
       }
 

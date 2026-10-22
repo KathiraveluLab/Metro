@@ -71,6 +71,7 @@ const METRO_DATA = {
     // --- Line 1: SOA & Middleware (Blue) ---
     {
       id: "control-core",
+      mapBadge: "IEEE Access'21 [Q1]",
       number: 1,
       name: "CONTROL-CORE",
       subtitle: "Peripheral Neuromodulation",
@@ -90,6 +91,7 @@ const METRO_DATA = {
     },
     {
       id: "evora",
+      mapBadge: "ETT'18 [Q2]",
       number: 2,
       name: "Évora",
       subtitle: "Edge Service Chains",
@@ -107,6 +109,7 @@ const METRO_DATA = {
     },
     {
       id: "sd-cps",
+      mapBadge: "CLUSTER'18 [Q2]",
       number: 3,
       name: "SD-CPS",
       subtitle: "Software-Defined CPS",
@@ -124,6 +127,7 @@ const METRO_DATA = {
     },
     {
       id: "sofia",
+      mapBadge: "Lab Flagship'26",
       number: 4,
       name: "SOFIA",
       subtitle: "Federated Interop",
@@ -141,6 +145,7 @@ const METRO_DATA = {
     },
     {
       id: "guarda",
+      mapBadge: "Edge API'26",
       number: 5,
       name: "GUARDA",
       subtitle: "Uniform Data Gateway",
@@ -158,6 +163,7 @@ const METRO_DATA = {
     },
     {
       id: "viseu",
+      mapBadge: "COMNET'22 [Q1]",
       number: 6,
       name: "Viseu",
       subtitle: "Edge Services Hub",
@@ -178,6 +184,7 @@ const METRO_DATA = {
     // --- Line 2: Network Transport & Edge Infrastructure (Amber) ---
     {
       id: "sendim",
+      mapBadge: "CoopIS'16 [A]",
       number: 7,
       name: "SENDIM",
       subtitle: "Cloud Simulation & Emulation",
@@ -195,6 +202,7 @@ const METRO_DATA = {
     },
     {
       id: "netuber",
+      mapBadge: "Networking'18 [A]",
       number: 8,
       name: "NetUber",
       subtitle: "Software-Defined Internet",
@@ -213,6 +221,7 @@ const METRO_DATA = {
     },
     {
       id: "l4sboa",
+      mapBadge: "IEEE CCECE'25",
       number: 9,
       name: "L4SBOA",
       subtitle: "Bandwidth Orchestration",
@@ -231,6 +240,7 @@ const METRO_DATA = {
     },
     {
       id: "can",
+      mapBadge: "High-Perf'26",
       number: 10,
       name: "CAN",
       subtitle: "Content-Aware Networking",
@@ -248,6 +258,7 @@ const METRO_DATA = {
     },
     {
       id: "faultsim",
+      mapBadge: "Lab Flagship'26",
       number: 11,
       name: "faultsim",
       subtitle: "Cluster Failure Detector",
@@ -265,6 +276,7 @@ const METRO_DATA = {
     },
     {
       id: "sintra",
+      mapBadge: "Cluster'25 [Q1]",
       number: 12,
       name: "Sintra",
       subtitle: "Self-Adaptive Transport",
@@ -287,6 +299,7 @@ const METRO_DATA = {
     // --- Line 3: Healthcare & Biomedical Informatics (Emerald) ---
     {
       id: "obidos",
+      mapBadge: "CoopIS'15 [A]",
       number: 13,
       name: "Óbidos",
       subtitle: "Big Data Integration",
@@ -305,6 +318,7 @@ const METRO_DATA = {
     },
     {
       id: "niffler",
+      mapBadge: "JDI'21 [Q1]",
       number: 14,
       name: "Niffler",
       subtitle: "DICOM ML Pipelines",
@@ -324,6 +338,7 @@ const METRO_DATA = {
     },
     {
       id: "beehive",
+      mapBadge: "SysCon'25",
       number: 15,
       name: "Beehive",
       subtitle: "Behavioral Health Federation",
@@ -343,6 +358,7 @@ const METRO_DATA = {
     },
     {
       id: "bhv",
+      mapBadge: "Health Privacy'25",
       number: 16,
       name: "BHV",
       subtitle: "Behavioral Health Vault",
@@ -360,6 +376,7 @@ const METRO_DATA = {
     },
     {
       id: "tenet",
+      mapBadge: "Telehealth'25",
       number: 17,
       name: "TENeT",
       subtitle: "Telehealth Effectiveness",
@@ -377,6 +394,7 @@ const METRO_DATA = {
     },
     {
       id: "awanta",
+      mapBadge: "IEEE Computer'23 [Q1]",
       number: 18,
       name: "AWANTA",
       subtitle: "SD-WAN Telehealth Hub",
@@ -399,6 +417,7 @@ const METRO_DATA = {
     // --- Line 4: Autonomous Systems & Decentralized Trust (Purple) ---
     {
       id: "porto",
+      mapBadge: "Off-Chain'26",
       number: 19,
       name: "PORTO",
       subtitle: "Off-Chain Resource Tracking",
@@ -416,6 +435,7 @@ const METRO_DATA = {
     },
     {
       id: "epicue",
+      mapBadge: "Zero-Knowledge'26",
       number: 20,
       name: "Epicue",
       subtitle: "Cairo ZK Verification",
@@ -433,6 +453,7 @@ const METRO_DATA = {
     },
     {
       id: "lagos",
+      mapBadge: "Type-Safe'26",
       number: 21,
       name: "LAGOS",
       subtitle: "Latency-Aware Governance",
@@ -450,6 +471,7 @@ const METRO_DATA = {
     },
     {
       id: "iguana",
+      mapBadge: "AI Safety'26",
       number: 22,
       name: "IGUANA",
       subtitle: "Neural Guardrails",
@@ -467,6 +489,7 @@ const METRO_DATA = {
     },
     {
       id: "impact",
+      mapBadge: "Multi-Agent'26",
       number: 23,
       name: "IMPACT",
       subtitle: "Multi-Agent Platform",
@@ -484,6 +507,7 @@ const METRO_DATA = {
     },
     {
       id: "trace",
+      mapBadge: "Repo Evolution'26",
       number: 24,
       name: "TRACE",
       subtitle: "Repo Context Alignment",
@@ -504,6 +528,7 @@ const METRO_DATA = {
     // Repositioned to Y=820 with zone title at Y=750 for clear spacing
     {
       id: "denaina-place-names",
+      mapBadge: "Heritage Atlas",
       number: 25,
       name: "Dena'ina Place Names",
       subtitle: "Indigenous Toponymy",
@@ -521,6 +546,7 @@ const METRO_DATA = {
     },
     {
       id: "dnigi",
+      mapBadge: "IEEE Computer'25 [Q1]",
       number: 26,
       name: "Dnigi",
       subtitle: "Indigenous Heritage Game",
@@ -538,6 +564,7 @@ const METRO_DATA = {
     },
     {
       id: "ak-history-webmap",
+      mapBadge: "IEEE Computer'25 [Q1]",
       number: 27,
       name: "AK History Webmap",
       subtitle: "Epidemic Diseases Web Map",
@@ -555,6 +582,7 @@ const METRO_DATA = {
     },
     {
       id: "dreams",
+      mapBadge: "GSoC'25",
       number: 28,
       name: "DREAMS",
       subtitle: "Recovery & Arts Mining",
@@ -575,6 +603,7 @@ const METRO_DATA = {
     // --- Shuttle Line: High-Performance Workflow & Runtimes (Slate Dashed) ---
     {
       id: "dhgworkflow",
+      mapBadge: "Workflow'24",
       number: 29,
       name: "DHGWorkflow",
       subtitle: "Task Graph Composer",
@@ -592,6 +621,7 @@ const METRO_DATA = {
     },
     {
       id: "ararat",
+      mapBadge: "Mojo SIMD'26",
       number: 30,
       name: "Ararat",
       subtitle: "Mojo Workflow Executor",
@@ -609,6 +639,7 @@ const METRO_DATA = {
     },
     {
       id: "mojito",
+      mapBadge: "Mojo Async'26",
       number: 31,
       name: "Mojito",
       subtitle: "Task Orchestrator",
@@ -626,9 +657,10 @@ const METRO_DATA = {
     },
     {
       id: "firm",
+      mapBadge: "Mojo FaaS'26",
       number: 32,
       name: "FIRM",
-      subtitle: "Find, Invoke, Return, Manage",
+      subtitle: "FaaS Orchestration",
       lines: ["line-shuttle"],
       x: 1070,
       y: 260,
@@ -643,6 +675,7 @@ const METRO_DATA = {
     },
     {
       id: "faro",
+      mapBadge: "LSH Go'26",
       number: 33,
       name: "Faro",
       subtitle: "Near-Duplicate Detection",
