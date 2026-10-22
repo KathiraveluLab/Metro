@@ -51,6 +51,17 @@
     setTimeout(centerMap, 100);
   }
 
+  // Utility: Escape XML entities for safe SVG serialization
+  function escapeXml(unsafe) {
+    if (unsafe === undefined || unsafe === null) return '';
+    return String(unsafe)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&apos;');
+  }
+
   // Render SVG Map Elements
   function renderSvgMap() {
     const width = 1680;
@@ -219,13 +230,13 @@
       }
 
       markup += `
-          <text x="${labelX}" y="${labelY}" text-anchor="${textAnchor}" class="station-label">${station.name}</text>
-          <text x="${labelX}" y="${subY}" text-anchor="${textAnchor}" class="station-sub">${station.subtitle}</text>
+          <text x="${labelX}" y="${labelY}" text-anchor="${textAnchor}" class="station-label">${escapeXml(station.name)}</text>
+          <text x="${labelX}" y="${subY}" text-anchor="${textAnchor}" class="station-sub">${escapeXml(station.subtitle)}</text>
       `;
 
       if (firstVenue) {
         markup += `
-          <text x="${labelX}" y="${venueY}" text-anchor="${textAnchor}" class="station-venue" fill="${accent}">${firstVenue}${tierBadge}</text>
+          <text x="${labelX}" y="${venueY}" text-anchor="${textAnchor}" class="station-venue" fill="${accent}">${escapeXml(firstVenue)}${escapeXml(tierBadge)}</text>
         `;
       }
 

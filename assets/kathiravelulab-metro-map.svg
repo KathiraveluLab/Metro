@@ -93,23 +93,23 @@
   </g>
 
   <!-- Research Domain Background Zones -->
-  <!-- Zone 1: SOA & Middleware -->
+  <!-- Zone 1: SOA and Middleware -->
   <rect x="50" y="60" width="710" height="205" rx="16" class="zone-bg-1 zone-border"/>
   <text x="70" y="88" class="zone-title" fill="#38bdf8">Service-Oriented Architecture &amp; Distributed Control</text>
 
-  <!-- Zone 4: Autonomous Systems & Trust -->
+  <!-- Zone 4: Autonomous Systems and Trust -->
   <rect x="880" y="60" width="750" height="225" rx="16" class="zone-bg-4 zone-border"/>
   <text x="900" y="88" class="zone-title" fill="#c084fc">Autonomous Systems &amp; Decentralized Trust</text>
 
-  <!-- Zone 2: Network Optimizations & Edge -->
+  <!-- Zone 2: Network Optimizations and Edge -->
   <rect x="50" y="290" width="1580" height="185" rx="16" class="zone-bg-2 zone-border"/>
   <text x="70" y="318" class="zone-title" fill="#fbbf24">Network Optimizations, Edge Infrastructure &amp; Transport</text>
 
-  <!-- Zone 3: Healthcare & Biomedical -->
+  <!-- Zone 3: Healthcare and Biomedical -->
   <rect x="50" y="505" width="1580" height="195" rx="16" class="zone-bg-3 zone-border"/>
   <text x="70" y="533" class="zone-title" fill="#34d399">Healthcare, Biomedical Imaging &amp; Telehealth Integration</text>
 
-  <!-- Zone 5: Community & Indigenous -->
+  <!-- Zone 5: Community and Indigenous -->
   <rect x="50" y="730" width="710" height="150" rx="16" class="zone-bg-5 zone-border"/>
   <text x="70" y="756" class="zone-title" fill="#fb7185">Community Informatics &amp; Indigenous Computing</text>
 
@@ -226,7 +226,7 @@
       <circle cx="160" cy="380" r="5" fill="#ffffff"/>
       <text x="160" y="362" class="station-num" fill="#94a3b8">7</text>
       <text x="160" y="356" text-anchor="middle" class="station-label">SENDIM</text>
-      <text x="160" y="370" text-anchor="middle" class="station-sub">Cloud Simulation & Emulation</text>
+      <text x="160" y="370" text-anchor="middle" class="station-sub">Cloud Simulation &amp; Emulation</text>
       <text x="160" y="404" text-anchor="middle" class="station-venue" fill="#fbbf24">CoopIS 2016 [A]</text>
     </g>
 
@@ -406,12 +406,12 @@
       <text x="1554" y="432" text-anchor="start" class="station-venue" fill="#a78bfa">Software Evolution Track 2026 [Tooling]</text>
     </g>
 
-    <!-- Station: Dena'ina Place Names (25) -->
+    <!-- Station: Dena&apos;ina Place Names (25) -->
     <g id="station-denaina-place-names" class="station-node" transform="translate(0, 0)">
       <circle cx="160" cy="820" r="10" fill="#070d18" stroke="#e11d48" stroke-width="4.5"/>
       <circle cx="160" cy="820" r="5" fill="#ffffff"/>
       <text x="160" y="802" class="station-num" fill="#94a3b8">25</text>
-      <text x="160" y="802" text-anchor="middle" class="station-label">Dena'ina Place Names</text>
+      <text x="160" y="802" text-anchor="middle" class="station-label">Dena&apos;ina Place Names</text>
       <text x="160" y="788" text-anchor="middle" class="station-sub">Indigenous Toponymy</text>
       <text x="160" y="844" text-anchor="middle" class="station-venue" fill="#fb7185">Alaska Native Knowledge Initiative [Heritage Impact]</text>
     </g>
@@ -444,7 +444,7 @@
       <circle cx="640" cy="820" r="5" fill="#ffffff"/>
       <text x="640" y="802" class="station-num" fill="#94a3b8">28</text>
       <text x="640" y="802" text-anchor="middle" class="station-label">DREAMS</text>
-      <text x="640" y="788" text-anchor="middle" class="station-sub">Recovery & Arts Mining</text>
+      <text x="640" y="788" text-anchor="middle" class="station-sub">Recovery &amp; Arts Mining</text>
       <text x="640" y="844" text-anchor="middle" class="station-venue" fill="#fb7185">Google Summer of Code 2025 [GSoC]</text>
     </g>
 

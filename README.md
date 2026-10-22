@@ -78,6 +78,21 @@ The metropolitan map organizes **33 flagship research stations** across **5 inte
 32. **FIRM** (`FIRM`): Find, Invoke, Return, and Manage low-overhead serverless functions in Mojo.
 33. **Faro** (`Faro`): Near-duplicate detection in Go with MinHash/LSH (evolved from `dudu`).
 
+## Online Deployment (GitHub Pages)
+
+This web application is fully static and configured for immediate deployment to GitHub Pages at:
+**https://kathiravelulab.github.io/Metro/**
+
+### Steps to Enable:
+
+1. In the GitHub repository, navigate to **Settings** -> **Pages**:
+   `https://github.com/KathiraveluLab/Metro/settings/pages`
+2. Under **Build and deployment** -> **Source**:
+   - Select **GitHub Actions** (the automated workflow in `.github/workflows/deploy.yml` will handle verification and deployment on every push), or
+   - Select **Deploy from a branch** -> Branch: `main` -> Folder: `/ (root)`.
+3. The live interactive application will be published at:
+   `https://kathiravelulab.github.io/Metro/`
+
 ---
 
 ## Running the Interactive Web App Locally

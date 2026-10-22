@@ -3,6 +3,16 @@ const fs = require('fs');
 const path = require('path');
 const METRO_DATA = require('./metro-data.js');
 
+function escapeXml(unsafe) {
+  if (unsafe === undefined || unsafe === null) return '';
+  return String(unsafe)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
 function generateSvg() {
   const width = 1680;
   const height = 980;
@@ -68,23 +78,23 @@ function generateSvg() {
   svg += `  </g>
 
   <!-- Research Domain Background Zones -->
-  <!-- Zone 1: SOA & Middleware -->
+  <!-- Zone 1: SOA and Middleware -->
   <rect x="50" y="60" width="710" height="205" rx="16" class="zone-bg-1 zone-border"/>
   <text x="70" y="88" class="zone-title" fill="#38bdf8">Service-Oriented Architecture &amp; Distributed Control</text>
 
-  <!-- Zone 4: Autonomous Systems & Trust -->
+  <!-- Zone 4: Autonomous Systems and Trust -->
   <rect x="880" y="60" width="750" height="225" rx="16" class="zone-bg-4 zone-border"/>
   <text x="900" y="88" class="zone-title" fill="#c084fc">Autonomous Systems &amp; Decentralized Trust</text>
 
-  <!-- Zone 2: Network Optimizations & Edge -->
+  <!-- Zone 2: Network Optimizations and Edge -->
   <rect x="50" y="290" width="1580" height="185" rx="16" class="zone-bg-2 zone-border"/>
   <text x="70" y="318" class="zone-title" fill="#fbbf24">Network Optimizations, Edge Infrastructure &amp; Transport</text>
 
-  <!-- Zone 3: Healthcare & Biomedical -->
+  <!-- Zone 3: Healthcare and Biomedical -->
   <rect x="50" y="505" width="1580" height="195" rx="16" class="zone-bg-3 zone-border"/>
   <text x="70" y="533" class="zone-title" fill="#34d399">Healthcare, Biomedical Imaging &amp; Telehealth Integration</text>
 
-  <!-- Zone 5: Community & Indigenous -->
+  <!-- Zone 5: Community and Indigenous -->
   <rect x="50" y="730" width="710" height="150" rx="16" class="zone-bg-5 zone-border"/>
   <text x="70" y="756" class="zone-title" fill="#fb7185">Community Informatics &amp; Indigenous Computing</text>
 
@@ -162,7 +172,6 @@ function generateSvg() {
       subY = station.y - 18;
       venueY = station.y + 36;
     } else if (station.lines.includes("line-community")) {
-      // Line 5 stations at Y=820: Name above at 802, Subtitle above at 788, Venue below at 842
       labelY = station.y - 18;
       subY = station.y - 32;
       venueY = station.y + 24;
@@ -183,8 +192,8 @@ function generateSvg() {
     const firstVenue = station.venues && station.venues.length > 0 ? station.venues[0].name : "";
     const tierBadge = station.venues && station.venues.length > 0 && station.venues[0].tier ? ` [${station.venues[0].tier}]` : "";
 
-    svg += `    <!-- Station: ${station.name} (${station.number}) -->\n`;
-    svg += `    <g id="station-${station.id}" class="station-node" transform="translate(0, 0)">\n`;
+    svg += `    <!-- Station: ${escapeXml(station.name)} (${station.number}) -->\n`;
+    svg += `    <g id="station-${escapeXml(station.id)}" class="station-node" transform="translate(0, 0)">\n`;
 
     if (station.isMajorHub) {
       // Major Interchange / Hub Node: double concentric rings
@@ -199,11 +208,11 @@ function generateSvg() {
       svg += `      <text x="${station.x}" y="${station.y - 18}" class="station-num" fill="#94a3b8">${station.number}</text>\n`;
     }
 
-    // Text labels
-    svg += `      <text x="${labelX}" y="${labelY}" text-anchor="${textAnchor}" class="station-label">${station.name}</text>\n`;
-    svg += `      <text x="${labelX}" y="${subY}" text-anchor="${textAnchor}" class="station-sub">${station.subtitle}</text>\n`;
+    // Text labels with XML escaping
+    svg += `      <text x="${labelX}" y="${labelY}" text-anchor="${textAnchor}" class="station-label">${escapeXml(station.name)}</text>\n`;
+    svg += `      <text x="${labelX}" y="${subY}" text-anchor="${textAnchor}" class="station-sub">${escapeXml(station.subtitle)}</text>\n`;
     if (firstVenue) {
-      svg += `      <text x="${labelX}" y="${venueY}" text-anchor="${textAnchor}" class="station-venue" fill="${accent}">${firstVenue}${tierBadge}</text>\n`;
+      svg += `      <text x="${labelX}" y="${venueY}" text-anchor="${textAnchor}" class="station-venue" fill="${accent}">${escapeXml(firstVenue)}${escapeXml(tierBadge)}</text>\n`;
     }
 
     svg += `    </g>\n\n`;
