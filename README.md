@@ -25,7 +25,7 @@ The metropolitan map organizes **39 flagship research stations** across **5 inte
 
 - **`Viseu` (#8)**: Major triple-interchange bridging **Line 1 (SOA Middleware)**, **Line 2 (Network Optimization)**, and **Line 4 (Autonomous Decentralized Trust)**, connecting edge orchestration directly with Ethereum trust and private off-chain state channels to **`PORTO`**.
 - **`Beehive` (#23)**: Interdisciplinary junction connecting **Line 3 (Clinical Healthcare)** with **Line 5 (Community Informatics)**.
-- **`AWANTA` (#25) & `Sintra` (#18)**: Terminus junction uniting network transport measurements, edge computing, and remote telehealth across satellite/polar links.
+- **`Sintra` (#18)**: Terminus junction uniting **Line 2 (Network Transport)** with **Line 3 (Clinical Healthcare)** across satellite and edge links.
 - **`GUARDA` (#7) & `CAN` (#16)**: Fast connection to the **Runtime Shuttle** for high-throughput pipeline dispatching.
 
 ---

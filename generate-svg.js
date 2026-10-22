@@ -241,6 +241,14 @@ function generateSvg() {
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="8" fill="#7c3aed"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="3.5" class="hub-inner"/>\n`;
         svg += `      <text x="${station.x}" y="${numY}" class="station-num" fill="#7c3aed">${station.number}</text>\n`;
+      } else if (station.id === "beehive" || station.id === "sintra") {
+        // Dual Interchange Hub (Beehive connects Line 3 & Line 5, Sintra connects Line 2 & Line 3)
+        const secondaryLine = METRO_DATA.lines.find(l => l.id === station.lines[1]);
+        const innerColor = secondaryLine ? secondaryLine.color : color;
+        svg += `      <circle cx="${station.x}" cy="${station.y}" r="17" class="hub-outer" stroke="${color}" filter="url(#hub-shadow)"/>\n`;
+        svg += `      <circle cx="${station.x}" cy="${station.y}" r="11" fill="${innerColor}"/>\n`;
+        svg += `      <circle cx="${station.x}" cy="${station.y}" r="6" class="hub-inner"/>\n`;
+        svg += `      <text x="${station.x}" y="${numY}" class="station-num" fill="${color}">${station.number}</text>\n`;
       } else {
         // Major Interchange / Hub Node: double concentric rings with white fill
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="17" class="hub-outer" stroke="${color}" filter="url(#hub-shadow)"/>\n`;

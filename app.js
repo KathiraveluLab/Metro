@@ -282,6 +282,16 @@
             <circle cx="${station.x}" cy="${station.y}" r="3.5" fill="#ffffff" pointer-events="none"/>
             <text x="${station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="#7c3aed" pointer-events="none">${station.number}</text>
           `;
+        } else if (station.id === "beehive" || station.id === "sintra") {
+          const secondaryLine = METRO_DATA.lines.find(l => l.id === station.lines[1]);
+          const innerColor = secondaryLine ? secondaryLine.color : color;
+          markup += `
+            <circle cx="${station.x}" cy="${station.y}" r="22" class="hub-outer-pulse" fill="${color}" fill-opacity="0.25" pointer-events="none"/>
+            <circle cx="${station.x}" cy="${station.y}" r="16" class="station-core hub-outer" fill="var(--bg-primary)" stroke="${color}" stroke-width="4" filter="url(#hub-shadow)"/>
+            <circle cx="${station.x}" cy="${station.y}" r="10" fill="${innerColor}" pointer-events="none"/>
+            <circle cx="${station.x}" cy="${station.y}" r="5" fill="#ffffff" pointer-events="none"/>
+            <text x="${station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="${accent}" pointer-events="none">${station.number}</text>
+          `;
         } else {
           markup += `
             <circle cx="${station.x}" cy="${station.y}" r="22" class="hub-outer-pulse" fill="${color}" fill-opacity="0.25" pointer-events="none"/>
@@ -622,7 +632,11 @@
     document.getElementById('drawer-station-id').textContent = `#${station.number}`;
     document.getElementById('drawer-station-id').style.background = primaryLine ? primaryLine.color : '#0284c7';
     
-    document.getElementById('drawer-station-line').textContent = primaryLine ? primaryLine.shortName : '';
+    const lineNames = station.lines.map(lineId => {
+      const line = METRO_DATA.lines.find(l => l.id === lineId);
+      return line ? line.shortName : lineId;
+    }).join(' • ');
+    document.getElementById('drawer-station-line').textContent = lineNames;
     document.getElementById('drawer-title').textContent = station.name;
     document.getElementById('drawer-subtitle').textContent = station.subtitle;
     document.getElementById('drawer-desc').textContent = station.description;

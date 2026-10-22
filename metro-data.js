@@ -819,13 +819,12 @@ const METRO_DATA = {
       "name": "AWANTA",
       "subtitle": "SD-WAN Telehealth Hub",
       "lines": [
-        "line-health",
-        "line-net"
+        "line-health"
       ],
       "x": 1200,
       "y": 620,
       "isMajorHub": true,
-      "isInterchange": true,
+      "isInterchange": false,
       "repos": [
         "AWANTA"
       ],
