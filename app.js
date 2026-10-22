@@ -157,8 +157,8 @@
     markup += `
       </g>
 
-      <!-- Transfer Connectors -->
-      <g id="interchange-connectors">
+      <!-- Transfer Connectors (purely decorative, no pointer interference) -->
+      <g id="interchange-connectors" pointer-events="none">
         <line x1="800" y1="365" x2="800" y2="395" stroke="var(--text-primary)" stroke-width="6" stroke-linecap="round"/>
         <line x1="660" y1="605" x2="660" y2="635" stroke="var(--text-primary)" stroke-width="6" stroke-linecap="round"/>
         <circle cx="1460" cy="500" r="24" fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
@@ -211,21 +211,23 @@
 
       markup += `
         <g id="station-${station.id}" data-id="${station.id}" data-lines="${lineIds}" class="station-node" tabindex="0" role="button" aria-label="Station ${station.name}">
+          <!-- Invisible stationary hitbox ensuring rock-solid clickability -->
+          <circle cx="${station.x}" cy="${station.y}" r="28" fill="transparent" class="station-hitbox"/>
       `;
 
       if (station.isMajorHub) {
         markup += `
-          <circle cx="${station.x}" cy="${station.y}" r="22" class="hub-outer-pulse" fill="${color}" fill-opacity="0.25"/>
-          <circle cx="${station.x}" cy="${station.y}" r="16" fill="var(--bg-primary)" stroke="${color}" stroke-width="4" filter="url(#hub-shadow)"/>
-          <circle cx="${station.x}" cy="${station.y}" r="10" fill="${color}"/>
-          <circle cx="${station.x}" cy="${station.y}" r="5" fill="#ffffff"/>
-          <text x="${station.x}" y="${station.y - 25}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="${accent}">${station.number}</text>
+          <circle cx="${station.x}" cy="${station.y}" r="22" class="hub-outer-pulse" fill="${color}" fill-opacity="0.25" pointer-events="none"/>
+          <circle cx="${station.x}" cy="${station.y}" r="16" class="station-core hub-outer" fill="var(--bg-primary)" stroke="${color}" stroke-width="4" filter="url(#hub-shadow)"/>
+          <circle cx="${station.x}" cy="${station.y}" r="10" fill="${color}" pointer-events="none"/>
+          <circle cx="${station.x}" cy="${station.y}" r="5" fill="#ffffff" pointer-events="none"/>
+          <text x="${station.x}" y="${station.y - 25}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="${accent}" pointer-events="none">${station.number}</text>
         `;
       } else {
         markup += `
-          <circle cx="${station.x}" cy="${station.y}" r="11" fill="var(--bg-primary)" stroke="${color}" stroke-width="4.5"/>
-          <circle cx="${station.x}" cy="${station.y}" r="5" fill="#ffffff"/>
-          <text x="${station.x}" y="${station.y - 18}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="var(--text-muted)">${station.number}</text>
+          <circle cx="${station.x}" cy="${station.y}" r="11" class="station-core" fill="var(--bg-primary)" stroke="${color}" stroke-width="4.5"/>
+          <circle cx="${station.x}" cy="${station.y}" r="5" fill="#ffffff" pointer-events="none"/>
+          <text x="${station.x}" y="${station.y - 18}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="var(--text-muted)" pointer-events="none">${station.number}</text>
         `;
       }
 
