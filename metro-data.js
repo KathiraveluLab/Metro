@@ -1,9 +1,10 @@
 /**
  * KathiraveluLab Research Metro Map Data Specification
- * 38 Flagship Research Stations across 5 Transit Lines and 1 High-Performance Shuttle Loop.
+ * 40 Flagship Research Stations across 5 Transit Lines and 1 High-Performance Shuttle Loop.
  * 
- * Strict publication fidelity: only verified peer-reviewed publications from official repository READMEs.
- * All archived projects (IMPACT, BHV, TRACE) omitted.
+ * Strict publication fidelity: verified peer-reviewed publications from official repository READMEs.
+ * All archived unpapered projects (IMPACT, BHV, TRACE) omitted.
+ * Standalone stations added for DWiM (3D DICOM in MATLAB) and dudu (Distributed Near-Duplicate in Java, Springer OTM 2015).
  * Viseu connects Line 1, Line 2, and Line 4 (PORTO) as a Major Triple Interchange Hub.
  */
 
@@ -13,8 +14,8 @@ const METRO_DATA = {
     "labName": "KathiraveluLab",
     "institution": "University of Alaska Anchorage",
     "website": "https://github.com/KathiraveluLab",
-    "version": "2026.4",
-    "totalStations": 38,
+    "version": "2026.5",
+    "totalStations": 40,
     "lastUpdated": "2026"
   },
   "lines": [
@@ -43,7 +44,7 @@ const METRO_DATA = {
       "color": "#059669",
       "accentColor": "#34d399",
       "bgClass": "bg-emerald",
-      "description": "High-throughput DICOM ML pipelines, dynamic telemedicine routing, behavioral health data federation, and rural SD-WAN telehealth."
+      "description": "High-throughput DICOM ML pipelines, 3D volume reconstruction, dynamic telemedicine routing, behavioral health data federation, and rural SD-WAN telehealth."
     },
     {
       "id": "line-trust",
@@ -71,7 +72,7 @@ const METRO_DATA = {
       "accentColor": "#94a3b8",
       "bgClass": "bg-slate",
       "dashed": true,
-      "description": "Hardware-accelerated workflow execution, lock-free async schedulers, FaaS service composition, and distributed near-duplicate detection in Mojo and Go."
+      "description": "Hardware-accelerated workflow execution, lock-free async schedulers, FaaS service composition, and distributed near-duplicate detection in Java, Mojo, and Go."
     }
   ],
   "stations": [
@@ -634,7 +635,7 @@ const METRO_DATA = {
       "lines": [
         "line-health"
       ],
-      "x": 140,
+      "x": 120,
       "y": 620,
       "isMajorHub": false,
       "repos": [
@@ -675,12 +676,11 @@ const METRO_DATA = {
       "lines": [
         "line-health"
       ],
-      "x": 310,
+      "x": 250,
       "y": 620,
       "isMajorHub": false,
       "repos": [
         "Niffler",
-        "DWiM",
         "MRIQC"
       ],
       "primaryRepo": "Niffler",
@@ -709,15 +709,39 @@ const METRO_DATA = {
       "description": "Comprehensive medical imaging pipeline engine. Ingests PACS/DICOM streams at line speed, extracts clinical metadata, and feeds neural network inference pipelines."
     },
     {
+      "id": "dwim",
+      "number": 21,
+      "name": "DWiM",
+      "subtitle": "DICOM MATLAB 3D",
+      "lines": [
+        "line-health"
+      ],
+      "x": 380,
+      "y": 620,
+      "isMajorHub": false,
+      "repos": [
+        "DWiM"
+      ],
+      "primaryRepo": "DWiM",
+      "tech": [
+        "MATLAB",
+        "DICOM",
+        "3D Reconstruction",
+        "Volume Resampling"
+      ],
+      "venues": [],
+      "description": "DICOM Workflows in MATLAB providing automated series discovery, ImagePositionPatient slice sorting, 3D volume assembly, orientation correction (RAS/LPS), and isotropic voxel resampling."
+    },
+    {
       "id": "diomede",
       "mapBadge": "GSoC'26",
-      "number": 21,
+      "number": 22,
       "name": "Diomede",
       "subtitle": "Dynamic DICOM Mesh",
       "lines": [
         "line-health"
       ],
-      "x": 480,
+      "x": 520,
       "y": 620,
       "isMajorHub": false,
       "repos": [
@@ -737,7 +761,7 @@ const METRO_DATA = {
     {
       "id": "beehive",
       "mapBadge": "IEEE SysCon'26",
-      "number": 22,
+      "number": 23,
       "name": "Beehive",
       "subtitle": "Behavioral Health Federation",
       "lines": [
@@ -768,7 +792,7 @@ const METRO_DATA = {
     },
     {
       "id": "tenet",
-      "number": 23,
+      "number": 24,
       "name": "TENeT",
       "subtitle": "Telehealth Effectiveness",
       "lines": [
@@ -791,7 +815,7 @@ const METRO_DATA = {
     {
       "id": "awanta",
       "mapBadge": "Cluster'25",
-      "number": 24,
+      "number": 25,
       "name": "AWANTA",
       "subtitle": "SD-WAN Telehealth Hub",
       "lines": [
@@ -828,7 +852,7 @@ const METRO_DATA = {
     {
       "id": "porto",
       "mapBadge": "IEEE ISSE'26",
-      "number": 25,
+      "number": 26,
       "name": "PORTO",
       "subtitle": "Off-Chain Resource Tracking",
       "lines": [
@@ -857,7 +881,7 @@ const METRO_DATA = {
     },
     {
       "id": "epicue",
-      "number": 26,
+      "number": 27,
       "name": "Epicue",
       "subtitle": "Cairo ZK Verification",
       "lines": [
@@ -880,7 +904,7 @@ const METRO_DATA = {
     },
     {
       "id": "lagos",
-      "number": 27,
+      "number": 28,
       "name": "LAGOS",
       "subtitle": "Latency-Aware Governance",
       "lines": [
@@ -903,7 +927,7 @@ const METRO_DATA = {
     {
       "id": "iguana",
       "mapBadge": "IEEE ISSE'26",
-      "number": 28,
+      "number": 29,
       "name": "IGUANA",
       "subtitle": "Neural Guardrails",
       "lines": [
@@ -932,7 +956,7 @@ const METRO_DATA = {
     },
     {
       "id": "denaina-place-names",
-      "number": 29,
+      "number": 30,
       "name": "Dena'ina Place Names",
       "subtitle": "Indigenous Toponymy",
       "lines": [
@@ -955,7 +979,7 @@ const METRO_DATA = {
     {
       "id": "dnigi",
       "mapBadge": "IEEE Computer'25",
-      "number": 30,
+      "number": 31,
       "name": "Dnigi",
       "subtitle": "Indigenous Heritage Game",
       "lines": [
@@ -984,7 +1008,7 @@ const METRO_DATA = {
     {
       "id": "ak-history-webmap",
       "mapBadge": "IEEE Computer'25",
-      "number": 31,
+      "number": 32,
       "name": "AK History Webmap",
       "subtitle": "Epidemic Diseases Web Map",
       "lines": [
@@ -1013,7 +1037,7 @@ const METRO_DATA = {
     {
       "id": "dip-predicting-sie",
       "mapBadge": "Elsevier RSA'25",
-      "number": 32,
+      "number": 33,
       "name": "Arctic Sea Ice",
       "subtitle": "Arctic Sea Ice AI",
       "lines": [
@@ -1042,7 +1066,7 @@ const METRO_DATA = {
     },
     {
       "id": "dreams",
-      "number": 33,
+      "number": 34,
       "name": "DREAMS",
       "subtitle": "Recovery & Arts Mining",
       "lines": [
@@ -1064,7 +1088,7 @@ const METRO_DATA = {
     },
     {
       "id": "dhgworkflow",
-      "number": 34,
+      "number": 35,
       "name": "DHGWorkflow",
       "subtitle": "Task Graph Composer",
       "lines": [
@@ -1086,13 +1110,13 @@ const METRO_DATA = {
     },
     {
       "id": "ararat",
-      "number": 35,
+      "number": 36,
       "name": "Ararat",
       "subtitle": "Workflow Engine",
       "lines": [
         "line-shuttle"
       ],
-      "x": 900,
+      "x": 840,
       "y": 260,
       "isMajorHub": false,
       "repos": [
@@ -1108,13 +1132,13 @@ const METRO_DATA = {
     },
     {
       "id": "mojito",
-      "number": 36,
+      "number": 37,
       "name": "Mojito",
       "subtitle": "Async Scheduler",
       "lines": [
         "line-shuttle"
       ],
-      "x": 1000,
+      "x": 940,
       "y": 260,
       "isMajorHub": false,
       "repos": [
@@ -1131,13 +1155,13 @@ const METRO_DATA = {
     {
       "id": "firm",
       "mapBadge": "IEEE MIPRO'16",
-      "number": 37,
+      "number": 38,
       "name": "FIRM",
       "subtitle": "Serverless FaaS",
       "lines": [
         "line-shuttle"
       ],
-      "x": 1100,
+      "x": 1040,
       "y": 260,
       "isMajorHub": false,
       "repos": [
@@ -1158,20 +1182,48 @@ const METRO_DATA = {
       "description": "Find, Invoke, Return, and Manage: a low-latency serverless function invocation framework written in Mojo for edge intelligence."
     },
     {
-      "id": "faro",
+      "id": "dudu",
       "mapBadge": "Springer OTM'15",
-      "number": 38,
-      "name": "Faro",
-      "subtitle": "MinHash LSH",
+      "number": 39,
+      "name": "∂u∂u",
+      "subtitle": "Java Near-Duplicate",
       "lines": [
         "line-shuttle"
       ],
-      "x": 1200,
+      "x": 1140,
       "y": 260,
       "isMajorHub": false,
       "repos": [
-        "Faro",
         "dudu"
+      ],
+      "primaryRepo": "dudu",
+      "tech": [
+        "Java",
+        "Multi-Tenancy",
+        "Big Data Dedup"
+      ],
+      "venues": [
+        {
+          "name": "Springer OTM 2015",
+          "tier": "Springer",
+          "note": "∂u∂u Multi-Tenanted Framework: Distributed Near Duplicate Detection for Big Data"
+        }
+      ],
+      "description": "Foundational multi-tenanted framework for distributed near-duplicate detection in big data written in Java, introducing tenant-aware hashing partitions."
+    },
+    {
+      "id": "faro",
+      "number": 40,
+      "name": "Faro",
+      "subtitle": "Go MinHash LSH",
+      "lines": [
+        "line-shuttle"
+      ],
+      "x": 1240,
+      "y": 260,
+      "isMajorHub": false,
+      "repos": [
+        "Faro"
       ],
       "primaryRepo": "Faro",
       "tech": [
@@ -1179,14 +1231,8 @@ const METRO_DATA = {
         "MinHash",
         "LSH"
       ],
-      "venues": [
-        {
-          "name": "Springer OTM 2015",
-          "tier": "Springer",
-          "note": "Multi-Tenanted Framework: Distributed Near Duplicate Detection for Big Data"
-        }
-      ],
-      "description": "High-throughput near-duplicate detection in Go using MinHash and Locality-Sensitive Hashing (LSH), modernizing the lab's earlier Java dudu engine."
+      "venues": [],
+      "description": "High-throughput near-duplicate detection in Go using MinHash and Locality-Sensitive Hashing (LSH), modernizing the lab's earlier Java ∂u∂u engine."
     }
   ],
   "tracks": [
@@ -1218,7 +1264,7 @@ const METRO_DATA = {
     {
       "id": "track-shuttle",
       "lineId": "line-shuttle",
-      "path": "M 650,160 Q 675,160 685,200 L 700,260 L 1220,260 Q 1250,260 1250,300 L 1250,340 Q 1250,380 1070,380"
+      "path": "M 650,160 Q 675,160 685,200 L 700,260 L 1260,260 Q 1290,260 1290,300 L 1290,340 Q 1290,380 1070,380"
     }
   ]
 };
