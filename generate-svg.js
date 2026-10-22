@@ -235,9 +235,9 @@ function generateSvg() {
 
     if (station.isMajorHub) {
       if (station.id === "viseu") {
-        // Triple Interchange Hub: Line 1 (Blue) outer ring, Line 2 (Amber) middle ring, Line 4 (Purple) core
-        svg += `      <circle cx="${station.x}" cy="${station.y}" r="21" class="hub-outer" stroke="#0284c7" stroke-width="4.5" filter="url(#hub-shadow)"/>\n`;
-        svg += `      <circle cx="${station.x}" cy="${station.y}" r="14" fill="#ffffff" stroke="#d97706" stroke-width="3.5"/>\n`;
+        // Triple Interchange Hub: Line 2 (Amber) outer ring on mainline, Line 1 (Blue) middle ring, Line 4 (Purple) core
+        svg += `      <circle cx="${station.x}" cy="${station.y}" r="21" class="hub-outer" stroke="#d97706" stroke-width="4.5" filter="url(#hub-shadow)"/>\n`;
+        svg += `      <circle cx="${station.x}" cy="${station.y}" r="14" fill="#ffffff" stroke="#0284c7" stroke-width="3.5"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="8" fill="#7c3aed"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="3.5" class="hub-inner"/>\n`;
         svg += `      <text x="${station.x}" y="${numY}" class="station-num" fill="#7c3aed">${station.number}</text>\n`;

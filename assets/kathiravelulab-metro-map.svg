@@ -234,8 +234,8 @@
 
     <!-- Station: Viseu (8) -->
     <g id="station-viseu" class="station-node" transform="translate(0, 0)">
-      <circle cx="780" cy="380" r="21" class="hub-outer" stroke="#0284c7" stroke-width="4.5" filter="url(#hub-shadow)"/>
-      <circle cx="780" cy="380" r="14" fill="#ffffff" stroke="#d97706" stroke-width="3.5"/>
+      <circle cx="780" cy="380" r="21" class="hub-outer" stroke="#d97706" stroke-width="4.5" filter="url(#hub-shadow)"/>
+      <circle cx="780" cy="380" r="14" fill="#ffffff" stroke="#0284c7" stroke-width="3.5"/>
       <circle cx="780" cy="380" r="8" fill="#7c3aed"/>
       <circle cx="780" cy="380" r="3.5" class="hub-inner"/>
       <text x="780" y="357" class="station-num" fill="#7c3aed">8</text>

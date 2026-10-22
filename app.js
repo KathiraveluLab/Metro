@@ -275,9 +275,9 @@
       if (station.isMajorHub) {
         if (station.id === "viseu") {
           markup += `
-            <circle cx="${station.x}" cy="${station.y}" r="26" class="hub-outer-pulse" fill="#7c3aed" fill-opacity="0.25" pointer-events="none"/>
-            <circle cx="${station.x}" cy="${station.y}" r="20" class="station-core hub-outer" fill="var(--bg-primary)" stroke="#0284c7" stroke-width="4.5" filter="url(#hub-shadow)"/>
-            <circle cx="${station.x}" cy="${station.y}" r="14" fill="#ffffff" stroke="#d97706" stroke-width="3.5" pointer-events="none"/>
+            <circle cx="${station.x}" cy="${station.y}" r="26" class="hub-outer-pulse" fill="#d97706" fill-opacity="0.25" pointer-events="none"/>
+            <circle cx="${station.x}" cy="${station.y}" r="20" class="station-core hub-outer" fill="var(--bg-primary)" stroke="#d97706" stroke-width="4.5" filter="url(#hub-shadow)"/>
+            <circle cx="${station.x}" cy="${station.y}" r="14" fill="#ffffff" stroke="#0284c7" stroke-width="3.5" pointer-events="none"/>
             <circle cx="${station.x}" cy="${station.y}" r="8" fill="#7c3aed" pointer-events="none"/>
             <circle cx="${station.x}" cy="${station.y}" r="3.5" fill="#ffffff" pointer-events="none"/>
             <text x="${station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="#7c3aed" pointer-events="none">${station.number}</text>
