@@ -199,7 +199,15 @@ html, body {
   white-space: nowrap;
 }
 
-.filter-label-short {
+.brand-full {
+  display: inline;
+}
+.brand-short {
+  display: none;
+}
+
+.filter-label-short,
+.filter-label-micro {
   display: none;
 }
 .filter-label-full {
@@ -219,6 +227,7 @@ html, body {
     display: inline;
   }
   .filter-label-full,
+  .filter-label-micro,
   .btn-text-full {
     display: none;
   }
@@ -231,13 +240,30 @@ html, body {
 }
 
 @media (max-width: 1100px) {
+  .brand-full {
+    display: none;
+  }
+  .brand-short {
+    display: inline;
+  }
+  .filter-label-full,
+  .filter-label-short {
+    display: none;
+  }
+  .filter-label-micro,
+  .btn-text-short {
+    display: inline;
+  }
   .filter-btn {
-    padding: 4px 7px;
-    font-size: 11px;
-    gap: 4px;
+    padding: 3px 6px;
+    font-size: 10.5px;
+    gap: 3px;
   }
   .search-input {
-    width: 100px;
+    width: 80px;
+  }
+  .search-input:focus {
+    width: 130px;
   }
 }
 
@@ -810,47 +836,57 @@ body.is-embedded .app-header {
 body.is-embedded .brand-info p {
   display: none;
 }
+body.is-embedded .brand-full {
+  display: none;
+}
+body.is-embedded .brand-short {
+  display: inline;
+}
 body.is-embedded .brand-info h1 {
   font-size: 13.5px;
   white-space: nowrap;
 }
 body.is-embedded .brand-icon {
-  width: 28px;
-  height: 28px;
-  font-size: 14px;
+  width: 26px;
+  height: 26px;
+  font-size: 13px;
 }
 body.is-embedded .line-filters {
   flex: 1 1 auto;
   min-width: 0;
-  gap: 5px;
+  gap: 4px;
 }
-body.is-embedded .filter-label-short,
+body.is-embedded .filter-label-full,
+body.is-embedded .filter-label-short {
+  display: none;
+}
+body.is-embedded .filter-label-micro,
 body.is-embedded .btn-text-short {
   display: inline;
 }
-body.is-embedded .filter-label-full,
-body.is-embedded .btn-text-full {
-  display: none;
-}
 body.is-embedded .filter-btn {
-  padding: 4px 7px;
-  font-size: 11px;
-  gap: 4px;
+  padding: 3px 6px;
+  font-size: 10px;
+  gap: 3px;
+}
+body.is-embedded .filter-btn .dot {
+  width: 6.5px;
+  height: 6.5px;
 }
 body.is-embedded .header-actions {
-  gap: 5px;
+  gap: 4px;
 }
 body.is-embedded .search-box {
   flex-shrink: 1;
 }
 body.is-embedded .search-input {
-  width: 95px;
-  height: 32px;
+  width: 72px;
+  height: 30px;
   font-size: 11px;
-  padding: 0 8px 0 26px;
+  padding: 0 6px 0 22px;
 }
 body.is-embedded .search-input:focus {
-  width: 140px;
+  width: 120px;
 }
 body.is-embedded .search-icon {
   left: 7px;
