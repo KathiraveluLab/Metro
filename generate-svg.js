@@ -18,18 +18,11 @@ function getStationLayout(station) {
   let textAnchor = "middle";
   let labelY, subY, venueY, numY;
 
-  if (station.id === "iguana" || station.id === "impact") {
+  if (station.id === "iguana") {
     labelX = station.x + 28;
     labelY = station.y - 8;
     subY = station.y + 6;
     venueY = station.y + 20;
-    numY = station.y - 18;
-    textAnchor = "start";
-  } else if (station.id === "trace") {
-    labelX = station.x + 24;
-    labelY = station.y + 4;
-    subY = station.y + 18;
-    venueY = station.y + 32;
     numY = station.y - 18;
     textAnchor = "start";
   } else if (station.id === "sintra") {
@@ -55,6 +48,7 @@ function getStationLayout(station) {
     }
   } else if (
     station.id === "viseu" || 
+    station.id === "cloud2sim" || 
     station.id === "sendim" || 
     station.id === "xsdn" || 
     station.id === "netuber" || 
@@ -159,7 +153,7 @@ function generateSvg() {
   <text x="70" y="88" class="zone-title" fill="#0284c7">Service-Oriented Architecture &amp; Distributed Control</text>
 
   <!-- Zone 4: Autonomous Systems and Trust -->
-  <rect x="880" y="60" width="750" height="225" rx="16" class="zone-bg-4 zone-border-4"/>
+  <rect x="880" y="60" width="670" height="225" rx="16" class="zone-bg-4 zone-border-4"/>
   <text x="900" y="88" class="zone-title" fill="#7c3aed">Autonomous Systems &amp; Decentralized Trust</text>
 
   <!-- Zone 2: Network Optimizations and Edge -->
@@ -212,8 +206,8 @@ function generateSvg() {
 
   <!-- Transfer Connections / Interchange Markers -->
   <g id="interchange-connectors" pointer-events="none">
-    <!-- Viseu interchange (Line 1 to Line 2) -->
-    <line x1="800" y1="365" x2="800" y2="395" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
+    <!-- Viseu interchange (Line 1 to Line 2 & Line 4) -->
+    <line x1="780" y1="365" x2="780" y2="395" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
     
     <!-- Beehive interchange (Line 3 to Line 5) -->
     <line x1="660" y1="605" x2="660" y2="635" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
@@ -239,11 +233,20 @@ function generateSvg() {
     svg += `    <g id="station-${escapeXml(station.id)}" class="station-node" transform="translate(0, 0)">\n`;
 
     if (station.isMajorHub) {
-      // Major Interchange / Hub Node: double concentric rings with white fill
-      svg += `      <circle cx="${station.x}" cy="${station.y}" r="17" class="hub-outer" stroke="${color}" filter="url(#hub-shadow)"/>\n`;
-      svg += `      <circle cx="${station.x}" cy="${station.y}" r="11" fill="${color}"/>\n`;
-      svg += `      <circle cx="${station.x}" cy="${station.y}" r="6" class="hub-inner"/>\n`;
-      svg += `      <text x="${station.x}" y="${numY}" class="station-num" fill="${color}">${station.number}</text>\n`;
+      if (station.id === "viseu") {
+        // Triple Interchange Hub: Line 1 (Blue) outer ring, Line 2 (Amber) middle ring, Line 4 (Purple) core
+        svg += `      <circle cx="${station.x}" cy="${station.y}" r="21" class="hub-outer" stroke="#0284c7" stroke-width="4.5" filter="url(#hub-shadow)"/>\n`;
+        svg += `      <circle cx="${station.x}" cy="${station.y}" r="14" fill="#ffffff" stroke="#d97706" stroke-width="3.5"/>\n`;
+        svg += `      <circle cx="${station.x}" cy="${station.y}" r="8" fill="#7c3aed"/>\n`;
+        svg += `      <circle cx="${station.x}" cy="${station.y}" r="3.5" class="hub-inner"/>\n`;
+        svg += `      <text x="${station.x}" y="${numY}" class="station-num" fill="#7c3aed">${station.number}</text>\n`;
+      } else {
+        // Major Interchange / Hub Node: double concentric rings with white fill
+        svg += `      <circle cx="${station.x}" cy="${station.y}" r="17" class="hub-outer" stroke="${color}" filter="url(#hub-shadow)"/>\n`;
+        svg += `      <circle cx="${station.x}" cy="${station.y}" r="11" fill="${color}"/>\n`;
+        svg += `      <circle cx="${station.x}" cy="${station.y}" r="6" class="hub-inner"/>\n`;
+        svg += `      <text x="${station.x}" y="${numY}" class="station-num" fill="${color}">${station.number}</text>\n`;
+      }
     } else {
       // Standard Station: white disc with colored stroke
       svg += `      <circle cx="${station.x}" cy="${station.y}" r="10" fill="#ffffff" stroke="${color}" stroke-width="4.5" filter="url(#hub-shadow)"/>\n`;

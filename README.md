@@ -8,14 +8,14 @@ An interactive evolutionary transit map tracking how the public research reposit
 
 ## Transit Lines Overview
 
-The metropolitan map organizes **39 flagship research stations** across **5 interconnected transit lines** and **1 high-performance workflow shuttle loop**, reflecting over a decade of research (2015 - 2026):
+The metropolitan map organizes **38 flagship research stations** across **5 interconnected transit lines** and **1 high-performance workflow shuttle loop**, reflecting over a decade of research (2014 - 2026):
 
 | Line | Name | Color | Core Research Focus |
 | :--- | :--- | :---: | :--- |
 | **Line 1** | **Service-Oriented & Distributed Middleware** | Cyan (`#0284c7`) | Closed-loop neuromodulation, context-aware smart buildings, service chaining, CPS, and federated interoperability. |
-| **Line 2** | **Network Transport & Edge Infrastructure** | Amber (`#d97706`) | Community network controller farms, middlebox QoS, dynamic flow simulation, bandwidth orchestration, and fault models. |
-| **Line 3** | **Healthcare & Biomedical Informatics** | Emerald (`#059669`) | High-throughput DICOM ML pipelines, behavioral health data federation, and rural telehealth. |
-| **Line 4** | **Autonomous Systems & Decentralized Trust** | Purple (`#7c3aed`) | Off-chain state channels, Cairo ZK proofs, latency-bounded governance, and neural guardrails. |
+| **Line 2** | **Network Transport & Edge Infrastructure** | Amber (`#d97706`) | Cloud/MapReduce simulation, dynamic flow modeling, community network controller farms, middlebox QoS, bandwidth orchestration, and fault detectors. |
+| **Line 3** | **Healthcare & Biomedical Informatics** | Emerald (`#059669`) | High-throughput DICOM ML pipelines, dynamic telemedicine routing mesh, behavioral health data federation, and rural telehealth. |
+| **Line 4** | **Autonomous Systems & Decentralized Trust** | Purple (`#7c3aed`) | Blockchain-based edge middleware, verifiable off-chain state channels, Cairo ZK proofs, latency-bounded governance, and neural guardrails. |
 | **Line 5** | **Community Informatics & Circumpolar Computing** | Coral (`#e11d48`) | Alaska Native epidemic history mapping, Indigenous serious games, Arctic sea ice forecasting, and art therapy mining. |
 | **Shuttle** | **High-Performance Workflow & Runtimes** | Slate (`#475569`) | Hypergraph workflow composition, Mojo SIMD execution, lock-free task orchestration, and Go deduplication. |
 
@@ -23,11 +23,10 @@ The metropolitan map organizes **39 flagship research stations** across **5 inte
 
 ## Key Transfer Hubs & Interchanges
 
-- **`Viseu` (#8)**: Major interchange bridging **Line 1 (SOA)** with **Line 2 (Network Optimization)**.
-- **`Beehive` (#20)**: Interdisciplinary junction connecting **Line 3 (Clinical Healthcare)** with **Line 5 (Community Informatics)**.
-- **`AWANTA` (#23) & `Sintra` (#17)**: Terminus junction uniting network transport measurements, edge computing, and remote telehealth across satellite/polar links.
-- **`IGUANA` (#27) & `IMPACT` (#28)**: Cross-over from verifiable decentralized trust (Cairo/Erlang) to autonomous multi-agent architectural evolution.
-- **`GUARDA` (#7) & `CAN` (#15)**: Fast connection to the **Runtime Shuttle** for high-throughput pipeline dispatching.
+- **`Viseu` (#8)**: Major triple-interchange bridging **Line 1 (SOA Middleware)**, **Line 2 (Network Optimization)**, and **Line 4 (Autonomous Decentralized Trust)**, connecting edge orchestration directly with Ethereum trust and private off-chain state channels to **`PORTO`**.
+- **`Beehive` (#22)**: Interdisciplinary junction connecting **Line 3 (Clinical Healthcare)** with **Line 5 (Community Informatics)**.
+- **`AWANTA` (#24) & `Sintra` (#18)**: Terminus junction uniting network transport measurements, edge computing, and remote telehealth across satellite/polar links.
+- **`GUARDA` (#7) & `CAN` (#16)**: Fast connection to the **Runtime Shuttle** for high-throughput pipeline dispatching.
 
 ---
 
@@ -41,48 +40,47 @@ The metropolitan map organizes **39 flagship research stations** across **5 inte
 5. **SD-CPS** (`SD-CPS`): Software-defined cyber-physical systems (*Springer Cluster'19*, *IEEE SDS'17*).
 6. **SOFIA** (`SOFIA`): Service-oriented federated interoperability in Erlang.
 7. **GUARDA** (`GUARDA`): Uniform remote data and analytics gateway in Elixir.
-8. **Viseu** (`Viseu`): Virtual Internet services at the edge (*Computer Networks (COMNET)'22*).
+8. **Viseu** (`Viseu`): Virtual Internet services at the edge and decentralized blockchain framework (*Computer Networks (COMNET)'22*).
 
 ### Line 2: Network Transport & Edge Infrastructure
-9. **SENDIM** (`SENDIM`): Cloud network simulation, emulation, and deployment (*IEEE IC2E'16*, *Springer OTM'16*).
-10. **xSDN** (`xSDN`): Expressive simulator for dynamic network flows (*IEEE IC2E'15*).
-11. **NetUber** (`NetUber`): Software-defined Internet routing (*IFIP Networking'18*, *IEEE SDS'20*).
-12. **CHIEF** (`CHIEF`, `messaging4transport`): Controller farm for clouds of software-defined community networks (*IEEE IC2EW'16*).
-13. **SMART** (`SMART`, `messaging4transport`): SDN middlebox architecture for resilient transfers (*IEEE IM'17*, *Springer OTM'16*).
-14. **L4SBOA** (`L4SBOA`): L4S bandwidth orchestration for ultra-low latency (*IEEE CCECE'25*).
-15. **CAN** (`CAN`): Content-aware networking in Rust.
-16. **faultsim** (`faultsim`): Distributed cluster failure detector under extreme network instability in Rust.
-17. **Sintra** (`Sintra`, `sintra-plot`): Self-adaptive interdomain network latency measurements and monitoring with RIPE Atlas.
+9. **Cloud2Sim** (`Cloud2Sim`): Adaptive distributed simulator for Cloud and MapReduce algorithms (*IEEE/ACM UCC'14*, *IEEE MASCOTS'14*).
+10. **SENDIM** (`SENDIM`): Cloud network simulation, emulation, and deployment (*IEEE IC2E'16*, *Springer OTM'16*).
+11. **xSDN** (`xSDN`): Expressive simulator for dynamic network flows (*IEEE IC2E'15*).
+12. **NetUber** (`NetUber`): Software-defined Internet routing (*IFIP Networking'18*, *IEEE SDS'20*).
+13. **CHIEF** (`CHIEF`, `messaging4transport`): Controller farm for clouds of software-defined community networks (*IEEE IC2EW'16*).
+14. **SMART** (`SMART`, `messaging4transport`): SDN middlebox architecture for resilient transfers (*IEEE IM'17*, *Springer OTM'16*).
+15. **L4SBOA** (`L4SBOA`): L4S bandwidth orchestration for ultra-low latency (*IEEE CCECE'25*).
+16. **CAN** (`CAN`): Content-aware networking in Rust.
+17. **faultsim** (`faultsim`): Distributed cluster failure detector under extreme network instability in Rust.
+18. **Sintra** (`Sintra`, `sintra-plot`): Self-adaptive interdomain network latency measurements and monitoring with RIPE Atlas.
 
 ### Line 3: Healthcare & Biomedical Informatics
-18. **Óbidos** (`Obidos`, `MEDIator`): Hybrid ETL for reproducible biomedical science (*Springer DAPD'19*, *VLDB DMAH'17*, *ACM BigCHat (KDD)'15*).
-19. **Niffler** (`Niffler`, `Diomede`, `DWiM`, `MRIQC`): High-throughput DICOM machine learning pipelines (*Springer JDI'21*, *IEEE Access'21*, *IEEE Computer'22*).
-20. **Beehive** (`Beehive`): Behavioral health data framework with digitized drawings and photographs (*IEEE SysCon'26*).
-21. **BHV** (`BHV`): Behavioral health vault with privacy-preserving patient partitioning.
-22. **TENeT** (`TENeT`): Telehealth necessity and clinical outcome tracker.
-23. **AWANTA** (`AWANTA`): SD-WAN for remote telehealth measurements (*Springer Cluster'25*, *IEEE SDS'23*).
+19. **Óbidos** (`Obidos`, `MEDIator`): Hybrid ETL for reproducible biomedical science (*Springer DAPD'19*, *VLDB DMAH'17*, *ACM BigCHat (KDD)'15*).
+20. **Niffler** (`Niffler`, `DWiM`, `MRIQC`): High-throughput DICOM machine learning pipelines (*Springer JDI'21*, *IEEE Access'21*, *IEEE Computer'22*).
+21. **Diomede** (`Diomede`): Dynamic DICOM endpoint routing mesh and telemedicine toolkit across regional cloud PACS nodes.
+22. **Beehive** (`Beehive`): Behavioral health data framework with digitized drawings and photographs (*IEEE SysCon'26*).
+23. **TENeT** (`TENeT`): Telehealth necessity and clinical outcome tracker.
+24. **AWANTA** (`AWANTA`): SD-WAN for remote telehealth measurements (*Springer Cluster'25*, *IEEE SDS'23*).
 
 ### Line 4: Autonomous Systems & Decentralized Trust
-24. **PORTO** (`PORTO`): Private off-chain resource tracking and orchestration (*IEEE ISSE'26*).
-25. **Epicue** (`Epicue`): Zero-knowledge computational integrity with Cairo STARKs in untrusted cloud environments.
-26. **LAGOS** (`LAGOS`): Latency-aware accountable overlay governance in Gleam.
-27. **IGUANA** (`IGUANA`): Integrated guardrails for unbiased, adaptive neural network architectures (*IEEE ISSE'26*).
-28. **IMPACT** (`IMPACT`): Intent-based multi-agent platform for architectural drift tracking.
-29. **TRACE** (`TRACE`): Continuous repository alignment and contextual evaluation.
+25. **PORTO** (`PORTO`): Private off-chain resource tracking and orchestration (*IEEE ISSE'26*).
+26. **Epicue** (`Epicue`): Zero-knowledge computational integrity with Cairo STARKs in untrusted cloud environments.
+27. **LAGOS** (`LAGOS`): Latency-aware accountable overlay governance in Gleam.
+28. **IGUANA** (`IGUANA`): Integrated guardrails for unbiased, adaptive neural network architectures (*IEEE ISSE'26*).
 
 ### Line 5: Community Informatics & Circumpolar Computing
-30. **Dena'ina Place Names** (`denaina-place-names`): Interactive digital atlas honoring Dena'ina Athabascan toponymy.
-31. **Dnigi** (`Dnigi`): Serious game for Indigenous cultural heritage transmission (*IEEE Computer'25*).
-32. **AK History Webmap** (`ak-history-webmap`): Interactive Alaska Native history web map for epidemic disease outbreaks (*IEEE Computer'25*).
-33. **Arctic Sea Ice** (`DIP_Predicting_SIE`): Circumpolar satellite image processing and sea ice extent prediction (*Elsevier Remote Sensing Applications'25*).
-34. **DREAMS** (`DREAMS`): Digitization for recovery and arts mining for societal well-being.
+29. **Dena'ina Place Names** (`denaina-place-names`): Interactive digital atlas honoring Dena'ina Athabascan toponymy.
+30. **Dnigi** (`Dnigi`): Serious game for Indigenous cultural heritage transmission (*IEEE Computer'25*).
+31. **AK History Webmap** (`ak-history-webmap`): Interactive Alaska Native history web map for epidemic disease outbreaks (*IEEE Computer'25*).
+32. **Arctic Sea Ice** (`DIP_Predicting_SIE`): Circumpolar satellite image processing and sea ice extent prediction (*Elsevier Remote Sensing Applications'25*).
+33. **DREAMS** (`DREAMS`): Digitization for recovery and arts mining for societal well-being.
 
 ### Runtime Shuttle: High-Performance Workflow Engines
-35. **DHGWorkflow** (`DHGWorkflow`): Directed hypergraph workflow composer.
-36. **Ararat** (`Ararat`): Hardware-accelerated hypergraph executor in Mojo.
-37. **Mojito** (`Mojito`): Asynchronous task orchestrator in Mojo.
-38. **FIRM** (`FIRM`): Find, Invoke, Return, and Manage low-overhead service composition (*IEEE MIPRO'16*).
-39. **Faro** (`Faro`, `dudu`): Near-duplicate detection for big data (*Springer OTM'15*).
+34. **DHGWorkflow** (`DHGWorkflow`): Directed hypergraph workflow composer.
+35. **Ararat** (`Ararat`): Hardware-accelerated hypergraph executor in Mojo.
+36. **Mojito** (`Mojito`): Asynchronous task orchestrator in Mojo.
+37. **FIRM** (`FIRM`): Find, Invoke, Return, and Manage low-overhead service composition (*IEEE MIPRO'16*).
+38. **Faro** (`Faro`, `dudu`): Near-duplicate detection for big data (*Springer OTM'15*).
 
 ## Online Deployment (GitHub Pages)
 

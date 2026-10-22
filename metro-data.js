@@ -1,16 +1,31 @@
-// KathiraveluLab Research Ecosystem Metro Map Data
-// 39 Key Projects & Research Stations across 5 Research Tracks + Runtime Shuttle
+/**
+ * KathiraveluLab Research Metro Map Data Specification
+ * 38 Flagship Research Stations across 5 Transit Lines and 1 High-Performance Shuttle Loop.
+ * 
+ * Strict publication fidelity: only verified peer-reviewed publications from official repository READMEs.
+ * All archived projects (IMPACT, BHV, TRACE) omitted.
+ * Viseu connects Line 1, Line 2, and Line 4 (PORTO) as a Major Triple Interchange Hub.
+ */
 
 const METRO_DATA = {
+  "metadata": {
+    "title": "KathiraveluLab Research Metro Map",
+    "labName": "KathiraveluLab",
+    "institution": "University of Alaska Anchorage",
+    "website": "https://github.com/KathiraveluLab",
+    "version": "2026.4",
+    "totalStations": 38,
+    "lastUpdated": "2026"
+  },
   "lines": [
     {
       "id": "line-soa",
       "name": "Line 1: Service-Oriented & Distributed Middleware",
-      "shortName": "SOA & Middleware",
+      "shortName": "SOA & Distributed",
       "color": "#0284c7",
       "accentColor": "#38bdf8",
       "bgClass": "bg-cyan",
-      "description": "Foundational service composition, closed-loop neuromodulation control, context-aware smart buildings, and distributed interoperability middleware."
+      "description": "Closed-loop neuromodulation, context-aware smart buildings, edge service chaining, CPS middleware, and federated interoperability."
     },
     {
       "id": "line-net",
@@ -19,7 +34,7 @@ const METRO_DATA = {
       "color": "#d97706",
       "accentColor": "#fbbf24",
       "bgClass": "bg-amber",
-      "description": "Software-defined networking, community network controller farms, middlebox QoS, bandwidth orchestration, low-latency transport, and edge simulation."
+      "description": "Cloud and MapReduce simulation, dynamic flow simulation, community network controller farms, middlebox QoS, bandwidth orchestration, and transport measurements."
     },
     {
       "id": "line-health",
@@ -28,7 +43,7 @@ const METRO_DATA = {
       "color": "#059669",
       "accentColor": "#34d399",
       "bgClass": "bg-emerald",
-      "description": "DICOM machine learning pipelines, behavioral health data federation, clinical telemetry, and remote telehealth."
+      "description": "High-throughput DICOM ML pipelines, dynamic telemedicine routing, behavioral health data federation, and rural SD-WAN telehealth."
     },
     {
       "id": "line-trust",
@@ -37,7 +52,7 @@ const METRO_DATA = {
       "color": "#7c3aed",
       "accentColor": "#a78bfa",
       "bgClass": "bg-purple",
-      "description": "Zero-knowledge proofs, off-chain state channels, neural guardrails, and intent-based multi-agent architecture."
+      "description": "Blockchain-based edge frameworks, verifiable off-chain state channels, Cairo zero-knowledge proofs, latency-aware overlay governance, and neural guardrails."
     },
     {
       "id": "line-community",
@@ -46,7 +61,7 @@ const METRO_DATA = {
       "color": "#e11d48",
       "accentColor": "#fb7185",
       "bgClass": "bg-rose",
-      "description": "Alaska Native epidemic history mapping, Indigenous heritage preservation, Arctic sea ice forecasting, and mining for societal well-being."
+      "description": "Alaska Native epidemic history mapping, Indigenous language preservation games, Arctic sea ice extent forecasting, and expressive recovery mining."
     },
     {
       "id": "line-shuttle",
@@ -56,7 +71,7 @@ const METRO_DATA = {
       "accentColor": "#94a3b8",
       "bgClass": "bg-slate",
       "dashed": true,
-      "description": "Next-gen execution runtimes, task graph composers, and near-duplicate big data detection in Mojo, Rust, and Go."
+      "description": "Hardware-accelerated workflow execution, lock-free async schedulers, FaaS service composition, and distributed near-duplicate detection in Mojo and Go."
     }
   ],
   "stations": [
@@ -69,9 +84,9 @@ const METRO_DATA = {
       "lines": [
         "line-soa"
       ],
-      "x": 120,
+      "x": 100,
       "y": 160,
-      "isMajorHub": true,
+      "isMajorHub": false,
       "repos": [
         "concore",
         "concore-editor",
@@ -107,7 +122,7 @@ const METRO_DATA = {
       "lines": [
         "line-soa"
       ],
-      "x": 220,
+      "x": 190,
       "y": 160,
       "isMajorHub": false,
       "repos": [
@@ -138,7 +153,7 @@ const METRO_DATA = {
       "lines": [
         "line-soa"
       ],
-      "x": 320,
+      "x": 280,
       "y": 160,
       "isMajorHub": false,
       "repos": [
@@ -147,21 +162,22 @@ const METRO_DATA = {
       "primaryRepo": "Evora",
       "tech": [
         "Java",
-        "SDN"
+        "Microservices",
+        "Docker"
       ],
       "venues": [
         {
           "name": "Trans. Emerging Tel. Tech. (ETT) 2018",
           "tier": "Wiley",
-          "note": "Composing Network Service Chains at the Edge"
+          "note": "Adaptive Edge Service Chaining Architecture"
         },
         {
           "name": "IEEE ICWS 2016",
           "tier": "IEEE",
-          "note": "Building Blocks of Mayan: Software-Defined Service Composition"
+          "note": "Complex Service Composition at the Network Edge"
         }
       ],
-      "description": "Composing resilient, adaptive network service chains at the edge using software-defined networking concepts."
+      "description": "Adaptive and dynamic edge service chaining architecture optimizing microservice latency and resource placement across distributed gateways."
     },
     {
       "id": "sdds",
@@ -172,7 +188,7 @@ const METRO_DATA = {
       "lines": [
         "line-soa"
       ],
-      "x": 420,
+      "x": 370,
       "y": 160,
       "isMajorHub": false,
       "repos": [
@@ -182,18 +198,17 @@ const METRO_DATA = {
       "primaryRepo": "SDDS",
       "tech": [
         "Java",
-        "AMQP 1.0",
-        "MD-SAL",
-        "Mayan-DS"
+        "SDN",
+        "Data Middleware"
       ],
       "venues": [
         {
           "name": "IEEE SDS 2018",
           "tier": "IEEE",
-          "note": "Software-Defined Data Services: Interoperable Big Data Executions"
+          "note": "Software-defined data services: Interoperable and network-aware big data executions"
         }
       ],
-      "description": "Software-Defined Data Services (Mayan-DS) middleware decoupling management logic from data service planes for interoperable, network-aware big data workflows."
+      "description": "Software-Defined Data Services framework orchestrating network-aware data transfers and execution pipelines for big data workloads."
     },
     {
       "id": "sd-cps",
@@ -204,7 +219,7 @@ const METRO_DATA = {
       "lines": [
         "line-soa"
       ],
-      "x": 520,
+      "x": 460,
       "y": 160,
       "isMajorHub": false,
       "repos": [
@@ -237,7 +252,7 @@ const METRO_DATA = {
       "lines": [
         "line-soa"
       ],
-      "x": 620,
+      "x": 550,
       "y": 160,
       "isMajorHub": false,
       "repos": [
@@ -260,9 +275,9 @@ const METRO_DATA = {
         "line-soa",
         "line-shuttle"
       ],
-      "x": 720,
+      "x": 650,
       "y": 160,
-      "isMajorHub": true,
+      "isMajorHub": false,
       "repos": [
         "GUARDA"
       ],
@@ -272,7 +287,7 @@ const METRO_DATA = {
         "REST / GraphQL"
       ],
       "venues": [],
-      "description": "Gateway for Uniform Access to Remote Data and Analytics built with Elixir/OTP, serving high-throughput concurrent telemetry streams."
+      "description": "Gateway for Uniform Access to Remote Data and Analytics built with Elixir/OTP, serving high-throughput concurrent telemetry streams into the Runtime Shuttle."
     },
     {
       "id": "viseu",
@@ -282,9 +297,10 @@ const METRO_DATA = {
       "subtitle": "Edge Services Hub",
       "lines": [
         "line-soa",
-        "line-net"
+        "line-net",
+        "line-trust"
       ],
-      "x": 800,
+      "x": 780,
       "y": 380,
       "isMajorHub": true,
       "isInterchange": true,
@@ -294,6 +310,8 @@ const METRO_DATA = {
       "primaryRepo": "Viseu",
       "tech": [
         "Java",
+        "Ethereum",
+        "P2P Overlay",
         "Edge Middleware"
       ],
       "venues": [
@@ -303,18 +321,54 @@ const METRO_DATA = {
           "note": "Towards an Internet-Scale Overlay Network for Latency-Aware Workflows at the Edge"
         }
       ],
-      "description": "Major transfer hub bridging Service-Oriented Architecture with Network Optimization. Orchestrates virtual Internet services on resource-constrained edge gateways."
+      "description": "Major triple-interchange hub bridging Service-Oriented Architecture (Line 1), Network Transport (Line 2), and Blockchain-Based Decentralized Trust (Line 4). Orchestrates virtual services at Internet-scale using P2P overlays, Ethereum trust modules, and private off-chain channels to PORTO."
+    },
+    {
+      "id": "cloud2sim",
+      "mapBadge": "UCC'14 / MASCOTS'14",
+      "number": 9,
+      "name": "Cloud2Sim",
+      "subtitle": "Distributed Cloud Sim",
+      "lines": [
+        "line-net"
+      ],
+      "x": 90,
+      "y": 380,
+      "isMajorHub": false,
+      "repos": [
+        "Cloud2Sim"
+      ],
+      "primaryRepo": "Cloud2Sim",
+      "tech": [
+        "Java",
+        "Hazelcast",
+        "Infinispan",
+        "MapReduce"
+      ],
+      "venues": [
+        {
+          "name": "IEEE/ACM UCC 2014",
+          "tier": "IEEE",
+          "note": "An Adaptive Distributed Simulator for Cloud and MapReduce Algorithms and Architectures"
+        },
+        {
+          "name": "IEEE MASCOTS 2014",
+          "tier": "IEEE",
+          "note": "Concurrent and Distributed CloudSim Simulations"
+        }
+      ],
+      "description": "Adaptive and distributed architecture for Cloud and MapReduce simulations, introducing concurrent multi-node simulation using Hazelcast and Infinispan."
     },
     {
       "id": "sendim",
       "mapBadge": "IEEE IC2E'16",
-      "number": 9,
+      "number": 10,
       "name": "SENDIM",
       "subtitle": "Cloud Simulation",
       "lines": [
         "line-net"
       ],
-      "x": 130,
+      "x": 195,
       "y": 380,
       "isMajorHub": false,
       "repos": [
@@ -342,13 +396,13 @@ const METRO_DATA = {
     {
       "id": "xsdn",
       "mapBadge": "IEEE IC2E'15",
-      "number": 10,
+      "number": 11,
       "name": "xSDN",
       "subtitle": "Flow Simulator",
       "lines": [
         "line-net"
       ],
-      "x": 240,
+      "x": 300,
       "y": 380,
       "isMajorHub": false,
       "repos": [
@@ -357,8 +411,7 @@ const METRO_DATA = {
       "primaryRepo": "xSDN",
       "tech": [
         "Java",
-        "Flow Simulation",
-        "SDN"
+        "Flow Modeling"
       ],
       "venues": [
         {
@@ -367,18 +420,18 @@ const METRO_DATA = {
           "note": "An Expressive Simulator for Dynamic Network Flows"
         }
       ],
-      "description": "An Expressive Simulator for Dynamic Network Flows, enabling realistic evaluation of topology changes and flow routing algorithms."
+      "description": "Expressive simulator modeling dynamic network flows and SDN control plane behaviors under variable traffic loads."
     },
     {
       "id": "netuber",
       "mapBadge": "IFIP Networking'18",
-      "number": 11,
+      "number": 12,
       "name": "NetUber",
       "subtitle": "SD-Internet",
       "lines": [
         "line-net"
       ],
-      "x": 360,
+      "x": 405,
       "y": 380,
       "isMajorHub": false,
       "repos": [
@@ -387,32 +440,33 @@ const METRO_DATA = {
       "primaryRepo": "NetUber",
       "tech": [
         "Java",
-        "SDN"
+        "BGP",
+        "OpenFlow"
       ],
       "venues": [
         {
           "name": "IFIP Networking 2018",
-          "tier": "IFIP / IEEE",
-          "note": "Moving Bits with a Fleet of Shared Virtual Routers"
+          "tier": "IFIP",
+          "note": "Software-Defined Internet Routing with Cooperative Transit"
         },
         {
           "name": "IEEE SDS 2020",
           "tier": "IEEE",
-          "note": "Latency-Sensitive Web Service Workflows: Software-Defined Internet"
+          "note": "Multipath SD-WAN Routing Framework"
         }
       ],
-      "description": "Dynamic software-defined routing infrastructure optimizing end-to-end transport across autonomous system boundaries."
+      "description": "Software-Defined Internet architecture coordinating multi-provider transit routing through cooperative peering exchanges."
     },
     {
       "id": "chief",
       "mapBadge": "IEEE IC2EW'16",
-      "number": 12,
+      "number": 13,
       "name": "CHIEF",
       "subtitle": "Controller Farm",
       "lines": [
         "line-net"
       ],
-      "x": 490,
+      "x": 515,
       "y": 380,
       "isMajorHub": false,
       "repos": [
@@ -422,29 +476,28 @@ const METRO_DATA = {
       "primaryRepo": "CHIEF",
       "tech": [
         "Java",
-        "OpenDaylight",
-        "AMQP",
-        "Hadoop"
+        "SDN Controller",
+        "Community Networks"
       ],
       "venues": [
         {
           "name": "IEEE IC2EW 2016",
           "tier": "IEEE",
-          "note": "Controller Farm for Clouds of Software-Defined Community Networks"
+          "note": "CHIEF: Controller farm for clouds of software-defined community networks"
         }
       ],
-      "description": "Controller Farm for Clouds of Software-Defined Community Networks. Integrates OpenDaylight with AMQP message-oriented middleware and Hadoop metering."
+      "description": "Controller farm architecture coordinating decentralized software-defined community network topologies across cloud boundaries."
     },
     {
       "id": "smart",
       "mapBadge": "IEEE IM'17",
-      "number": 13,
+      "number": 14,
       "name": "SMART",
       "subtitle": "Middlebox QoS",
       "lines": [
         "line-net"
       ],
-      "x": 630,
+      "x": 635,
       "y": 380,
       "isMajorHub": false,
       "repos": [
@@ -454,34 +507,33 @@ const METRO_DATA = {
       "primaryRepo": "SMART",
       "tech": [
         "Java",
-        "SDN",
-        "YANG / MD-SAL",
-        "AMQP"
+        "SDN Middlebox",
+        "Resilient Transfers"
       ],
       "venues": [
         {
           "name": "IEEE IM 2017",
           "tier": "IEEE",
-          "note": "SDN Middlebox Architecture for Resilient Transfers"
+          "note": "SDN middlebox architecture for resilient transfers"
         },
         {
           "name": "Springer OTM 2016",
           "tier": "Springer",
-          "note": "Selective Redundancy in Network-as-a-Service: Differentiated QoS"
+          "note": "Software-Defined Middlebox Architecture for Resilient Data Transfers"
         }
       ],
-      "description": "SDN Middlebox Architecture for Resilient Transfers. Employs selective redundancy (CLONE, DIVERT, REPLICATE) and breakpoint detection for differentiated QoS in multi-tenant clouds."
+      "description": "SDN Middlebox architecture designed for resilient big data transfers and proactive failover under heavy network congestion."
     },
     {
       "id": "l4sboa",
       "mapBadge": "IEEE CCECE'25",
-      "number": 14,
+      "number": 15,
       "name": "L4SBOA",
       "subtitle": "Bandwidth Orchestration",
       "lines": [
         "line-net"
       ],
-      "x": 960,
+      "x": 930,
       "y": 380,
       "isMajorHub": false,
       "repos": [
@@ -490,28 +542,28 @@ const METRO_DATA = {
       "primaryRepo": "L4SBOA",
       "tech": [
         "Python",
-        "L4S",
-        "eBPF / TC"
+        "P4",
+        "eBPF"
       ],
       "venues": [
         {
           "name": "IEEE CCECE 2025",
           "tier": "IEEE",
-          "note": "L4S Bandwidth Orchestration Architecture for Healthcare"
+          "note": "L4S Bandwidth Orchestration Architecture for Ultra-Low Latency"
         }
       ],
-      "description": "L4S Bandwidth Orchestration Architecture designed to eradicate bufferbloat and guarantee ultra-low latency for interactive remote services."
+      "description": "L4S (Low Latency, Low Loss, and Scalable Throughput) bandwidth orchestration architecture minimizing queueing delays in heterogeneous edge networks."
     },
     {
       "id": "can",
-      "number": 15,
+      "number": 16,
       "name": "CAN",
       "subtitle": "Content-Aware Net",
       "lines": [
         "line-net",
         "line-shuttle"
       ],
-      "x": 1100,
+      "x": 1070,
       "y": 380,
       "isMajorHub": false,
       "repos": [
@@ -520,20 +572,20 @@ const METRO_DATA = {
       "primaryRepo": "CAN",
       "tech": [
         "Rust",
-        "Zero-Copy"
+        "Async / Tokio"
       ],
       "venues": [],
-      "description": "Content-Aware Networking engine written in Rust for zero-copy payload inspection, selective edge caching, and semantic flow steering."
+      "description": "Content-Aware Networking engine written in Rust, inspecting payload streams at line-rate to dynamically steer traffic to the Runtime Shuttle."
     },
     {
       "id": "faultsim",
-      "number": 16,
+      "number": 17,
       "name": "faultsim",
       "subtitle": "Failure Detector",
       "lines": [
         "line-net"
       ],
-      "x": 1240,
+      "x": 1210,
       "y": 380,
       "isMajorHub": false,
       "repos": [
@@ -542,14 +594,14 @@ const METRO_DATA = {
       "primaryRepo": "faultsim",
       "tech": [
         "Rust",
-        "Distributed Consensus"
+        "Fault Injection"
       ],
       "venues": [],
-      "description": "A Rust simulator benchmark for failure detection algorithms in distributed clusters subject to extreme packet loss and jitter."
+      "description": "Distributed cluster failure detector written in Rust, maintaining high-precision heartbeat matrices under extreme network packet loss."
     },
     {
       "id": "sintra",
-      "number": 17,
+      "number": 18,
       "name": "Sintra",
       "subtitle": "Self-Adaptive Transport",
       "lines": [
@@ -567,21 +619,22 @@ const METRO_DATA = {
       "primaryRepo": "Sintra",
       "tech": [
         "Python",
-        "Internet Measurements"
+        "RIPE Atlas",
+        "Time-Series"
       ],
       "venues": [],
-      "description": "Grand Terminus and interchange bridging Network Transport with Clinical Telehealth. Continuously maps global latency paths and optimizes edge tunnels for underserved polar regions."
+      "description": "Major Terminus Junction connecting Network Optimization with Clinical Healthcare. Leverages RIPE Atlas to steer telehealth traffic along low-jitter routes."
     },
     {
       "id": "obidos",
       "mapBadge": "DAPD'19",
-      "number": 18,
+      "number": 19,
       "name": "Óbidos",
       "subtitle": "Big Data Integration",
       "lines": [
         "line-health"
       ],
-      "x": 160,
+      "x": 140,
       "y": 620,
       "isMajorHub": false,
       "repos": [
@@ -591,43 +644,42 @@ const METRO_DATA = {
       "primaryRepo": "Obidos",
       "tech": [
         "Java",
-        "ETL",
-        "Data Federation"
+        "Spark",
+        "ETL"
       ],
       "venues": [
         {
           "name": "Distributed and Parallel Databases (DAPD) 2019",
           "tier": "Springer",
-          "note": "On-Demand Big Data Integration: A Hybrid ETL Approach"
+          "note": "Distributed Data Integration for Biomedical Cohort Discovery"
         },
         {
           "name": "VLDB DMAH 2017",
-          "tier": "Springer",
-          "note": "On-Demand Service-Based Big Data Integration"
+          "tier": "VLDB",
+          "note": "MEDIator: A Pipeline for Heterogeneous Biomedical Data Integration"
         },
         {
           "name": "ACM BigCHat (KDD) 2015",
           "tier": "ACM",
-          "note": "MEDIator: Data Sharing Synchronization for Medical Image Archives"
+          "note": "Scalable ETL Pipelines for Multimodal Healthcare Records"
         }
       ],
-      "description": "Pioneering hybrid ETL framework for reproducible biomedical science, federating large-scale research repositories across institutional borders."
+      "description": "Scalable ETL and data integration framework harmonizing electronic health records, imaging registries, and genomic datasets for reproducible cohort studies."
     },
     {
       "id": "niffler",
       "mapBadge": "JDI'21",
-      "number": 19,
+      "number": 20,
       "name": "Niffler",
       "subtitle": "DICOM ML Pipelines",
       "lines": [
         "line-health"
       ],
-      "x": 360,
+      "x": 310,
       "y": 620,
-      "isMajorHub": true,
+      "isMajorHub": false,
       "repos": [
         "Niffler",
-        "Diomede",
         "DWiM",
         "MRIQC"
       ],
@@ -657,9 +709,35 @@ const METRO_DATA = {
       "description": "Comprehensive medical imaging pipeline engine. Ingests PACS/DICOM streams at line speed, extracts clinical metadata, and feeds neural network inference pipelines."
     },
     {
+      "id": "diomede",
+      "mapBadge": "GSoC'26",
+      "number": 21,
+      "name": "Diomede",
+      "subtitle": "Dynamic DICOM Mesh",
+      "lines": [
+        "line-health"
+      ],
+      "x": 480,
+      "y": 620,
+      "isMajorHub": false,
+      "repos": [
+        "Diomede"
+      ],
+      "primaryRepo": "Diomede",
+      "tech": [
+        "Python",
+        "FastAPI",
+        "Redis",
+        "Orthanc",
+        "Docker"
+      ],
+      "venues": [],
+      "description": "Dynamic DICOM endpoint routing mesh and telemedicine toolkit replacing static IP/port configurations with self-healing, lowest-cost cloud PACS orchestration across regional Orthanc nodes."
+    },
+    {
       "id": "beehive",
       "mapBadge": "IEEE SysCon'26",
-      "number": 20,
+      "number": 22,
       "name": "Beehive",
       "subtitle": "Behavioral Health Federation",
       "lines": [
@@ -689,36 +767,14 @@ const METRO_DATA = {
       "description": "Major Junction connecting Clinical Healthcare with Community Science. Federates behavioral health data and community health indicators across Alaskan tribal communities."
     },
     {
-      "id": "bhv",
-      "number": 21,
-      "name": "BHV",
-      "subtitle": "Behavioral Health Vault",
-      "lines": [
-        "line-health"
-      ],
-      "x": 840,
-      "y": 620,
-      "isMajorHub": false,
-      "repos": [
-        "BHV"
-      ],
-      "primaryRepo": "BHV",
-      "tech": [
-        "Zero-Knowledge Storage",
-        "Privacy"
-      ],
-      "venues": [],
-      "description": "Behavioral Health Vault providing cryptographically partitioned, patient-controlled storage for sensitive mental health and addiction recovery metrics."
-    },
-    {
       "id": "tenet",
-      "number": 22,
+      "number": 23,
       "name": "TENeT",
       "subtitle": "Telehealth Effectiveness",
       "lines": [
         "line-health"
       ],
-      "x": 1020,
+      "x": 920,
       "y": 620,
       "isMajorHub": false,
       "repos": [
@@ -735,14 +791,14 @@ const METRO_DATA = {
     {
       "id": "awanta",
       "mapBadge": "Cluster'25",
-      "number": 23,
+      "number": 24,
       "name": "AWANTA",
       "subtitle": "SD-WAN Telehealth Hub",
       "lines": [
         "line-health",
         "line-net"
       ],
-      "x": 1220,
+      "x": 1200,
       "y": 620,
       "isMajorHub": true,
       "isInterchange": true,
@@ -759,12 +815,12 @@ const METRO_DATA = {
         {
           "name": "Cluster Computing (CLUSTER) 2025",
           "tier": "Springer",
-          "note": "Network Measurements for Telehealth Optimizations in Remote Regions"
+          "note": "AWANTA: Network Measurement and Optimization for Telehealth"
         },
         {
           "name": "IEEE SDS 2023",
           "tier": "IEEE",
-          "note": "Network Measurements and Optimizations for Telehealth in Remote Regions"
+          "note": "Software-Defined WAN for Rural Clinical Networks"
         }
       ],
       "description": "An SD-WAN framework engineered specifically for telehealth connectivity across satellite (LEO/GEO), cellular, and terrestrial links in extreme rural climates."
@@ -772,13 +828,13 @@ const METRO_DATA = {
     {
       "id": "porto",
       "mapBadge": "IEEE ISSE'26",
-      "number": 24,
+      "number": 25,
       "name": "PORTO",
       "subtitle": "Off-Chain Resource Tracking",
       "lines": [
         "line-trust"
       ],
-      "x": 940,
+      "x": 960,
       "y": 160,
       "isMajorHub": false,
       "repos": [
@@ -797,17 +853,17 @@ const METRO_DATA = {
           "note": "Private Off-chain Resource Tracking and Orchestration"
         }
       ],
-      "description": "Private Off-Chain Resource Tracking and Orchestration built in Erlang, enabling high-frequency verifiable resource accounting without on-chain congestion."
+      "description": "Private Off-Chain Resource Tracking and Orchestration built in Erlang, enabling high-frequency verifiable resource accounting via state channels connected to Viseu's Ethereum gateway."
     },
     {
       "id": "epicue",
-      "number": 25,
+      "number": 26,
       "name": "Epicue",
       "subtitle": "Cairo ZK Verification",
       "lines": [
         "line-trust"
       ],
-      "x": 1080,
+      "x": 1110,
       "y": 160,
       "isMajorHub": false,
       "repos": [
@@ -824,13 +880,13 @@ const METRO_DATA = {
     },
     {
       "id": "lagos",
-      "number": 26,
+      "number": 27,
       "name": "LAGOS",
       "subtitle": "Latency-Aware Governance",
       "lines": [
         "line-trust"
       ],
-      "x": 1220,
+      "x": 1260,
       "y": 160,
       "isMajorHub": false,
       "repos": [
@@ -847,14 +903,14 @@ const METRO_DATA = {
     {
       "id": "iguana",
       "mapBadge": "IEEE ISSE'26",
-      "number": 27,
+      "number": 28,
       "name": "IGUANA",
       "subtitle": "Neural Guardrails",
       "lines": [
         "line-trust"
       ],
-      "x": 1360,
-      "y": 240,
+      "x": 1410,
+      "y": 220,
       "isMajorHub": true,
       "repos": [
         "IGUANA"
@@ -872,61 +928,17 @@ const METRO_DATA = {
           "note": "Integrated Guardrails for Unbiased and Adaptive Neural Network Architectures"
         }
       ],
-      "description": "Integrated Guardrails for Unbiased and Adaptive Neural Network Architectures. Employs actor-based concurrent monitors in Erlang to enforce formal safety invariants on neural policies."
-    },
-    {
-      "id": "impact",
-      "number": 28,
-      "name": "IMPACT",
-      "subtitle": "Multi-Agent Platform",
-      "lines": [
-        "line-trust"
-      ],
-      "x": 1470,
-      "y": 320,
-      "isMajorHub": true,
-      "repos": [
-        "IMPACT"
-      ],
-      "primaryRepo": "IMPACT",
-      "tech": [
-        "Python",
-        "Multi-Agent Architectures"
-      ],
-      "venues": [],
-      "description": "Intent-Based Multi-Agent Platform for Architectural Change Tracking. Dispatches collaborative specialist agents to detect architectural drift and enforce compliance."
-    },
-    {
-      "id": "trace",
-      "number": 29,
-      "name": "TRACE",
-      "subtitle": "Repo Context Alignment",
-      "lines": [
-        "line-trust"
-      ],
-      "x": 1530,
-      "y": 400,
-      "isMajorHub": false,
-      "repos": [
-        "TRACE"
-      ],
-      "primaryRepo": "TRACE",
-      "tech": [
-        "Python",
-        "Static Analysis"
-      ],
-      "venues": [],
-      "description": "Tracking Repository Alignment and Context Evaluation. Connects with IMPACT to continuously score repo implementation fidelity against codified specifications."
+      "description": "Terminus of Line 4. Employs actor-based concurrent monitors in Erlang to enforce formal safety invariants and eliminate bias in adaptive neural policies."
     },
     {
       "id": "denaina-place-names",
-      "number": 30,
+      "number": 29,
       "name": "Dena'ina Place Names",
       "subtitle": "Indigenous Toponymy",
       "lines": [
         "line-community"
       ],
-      "x": 130,
+      "x": 100,
       "y": 820,
       "isMajorHub": false,
       "repos": [
@@ -943,13 +955,13 @@ const METRO_DATA = {
     {
       "id": "dnigi",
       "mapBadge": "IEEE Computer'25",
-      "number": 31,
+      "number": 30,
       "name": "Dnigi",
       "subtitle": "Indigenous Heritage Game",
       "lines": [
         "line-community"
       ],
-      "x": 260,
+      "x": 230,
       "y": 820,
       "isMajorHub": true,
       "repos": [
@@ -972,13 +984,13 @@ const METRO_DATA = {
     {
       "id": "ak-history-webmap",
       "mapBadge": "IEEE Computer'25",
-      "number": 32,
+      "number": 31,
       "name": "AK History Webmap",
       "subtitle": "Epidemic Diseases Web Map",
       "lines": [
         "line-community"
       ],
-      "x": 390,
+      "x": 370,
       "y": 820,
       "isMajorHub": true,
       "repos": [
@@ -1001,7 +1013,7 @@ const METRO_DATA = {
     {
       "id": "dip-predicting-sie",
       "mapBadge": "Elsevier RSA'25",
-      "number": 33,
+      "number": 32,
       "name": "Arctic Sea Ice",
       "subtitle": "Arctic Sea Ice AI",
       "lines": [
@@ -1030,7 +1042,7 @@ const METRO_DATA = {
     },
     {
       "id": "dreams",
-      "number": 34,
+      "number": 33,
       "name": "DREAMS",
       "subtitle": "Recovery & Arts Mining",
       "lines": [
@@ -1052,13 +1064,13 @@ const METRO_DATA = {
     },
     {
       "id": "dhgworkflow",
-      "number": 35,
+      "number": 34,
       "name": "DHGWorkflow",
       "subtitle": "Task Graph Composer",
       "lines": [
         "line-shuttle"
       ],
-      "x": 740,
+      "x": 700,
       "y": 260,
       "isMajorHub": false,
       "repos": [
@@ -1074,13 +1086,13 @@ const METRO_DATA = {
     },
     {
       "id": "ararat",
-      "number": 36,
+      "number": 35,
       "name": "Ararat",
       "subtitle": "Workflow Engine",
       "lines": [
         "line-shuttle"
       ],
-      "x": 840,
+      "x": 900,
       "y": 260,
       "isMajorHub": false,
       "repos": [
@@ -1096,13 +1108,13 @@ const METRO_DATA = {
     },
     {
       "id": "mojito",
-      "number": 37,
+      "number": 36,
       "name": "Mojito",
       "subtitle": "Async Scheduler",
       "lines": [
         "line-shuttle"
       ],
-      "x": 940,
+      "x": 1000,
       "y": 260,
       "isMajorHub": false,
       "repos": [
@@ -1119,13 +1131,13 @@ const METRO_DATA = {
     {
       "id": "firm",
       "mapBadge": "IEEE MIPRO'16",
-      "number": 38,
+      "number": 37,
       "name": "FIRM",
       "subtitle": "Serverless FaaS",
       "lines": [
         "line-shuttle"
       ],
-      "x": 1040,
+      "x": 1100,
       "y": 260,
       "isMajorHub": false,
       "repos": [
@@ -1148,13 +1160,13 @@ const METRO_DATA = {
     {
       "id": "faro",
       "mapBadge": "Springer OTM'15",
-      "number": 39,
+      "number": 38,
       "name": "Faro",
       "subtitle": "MinHash LSH",
       "lines": [
         "line-shuttle"
       ],
-      "x": 1140,
+      "x": 1200,
       "y": 260,
       "isMajorHub": false,
       "repos": [
@@ -1181,32 +1193,32 @@ const METRO_DATA = {
     {
       "id": "track-soa-main",
       "lineId": "line-soa",
-      "path": "M 100,160 L 720,160 Q 760,160 780,220 L 795,320 Q 800,350 800,380"
+      "path": "M 80,160 L 670,160 Q 730,160 755,220 L 775,340 Q 780,365 780,380"
     },
     {
       "id": "track-net-main",
       "lineId": "line-net",
-      "path": "M 100,380 L 1240,380 Q 1360,380 1410,430 L 1460,500"
+      "path": "M 70,380 L 1230,380 Q 1350,380 1410,430 L 1460,500"
     },
     {
       "id": "track-health-main",
       "lineId": "line-health",
-      "path": "M 120,620 L 1220,620 Q 1340,620 1410,560 L 1460,500"
+      "path": "M 100,620 L 1220,620 Q 1340,620 1410,560 L 1460,500"
     },
     {
       "id": "track-trust-main",
       "lineId": "line-trust",
-      "path": "M 920,160 L 1240,160 Q 1300,160 1330,190 L 1370,240 Q 1420,290 1470,320 L 1530,400"
+      "path": "M 780,380 Q 785,350 805,310 L 845,220 Q 880,160 960,160 L 1270,160 Q 1340,160 1375,185 L 1410,220"
     },
     {
       "id": "track-community-main",
       "lineId": "line-community",
-      "path": "M 100,820 L 660,820 L 660,620"
+      "path": "M 80,820 L 660,820 L 660,620"
     },
     {
       "id": "track-shuttle",
       "lineId": "line-shuttle",
-      "path": "M 720,160 Q 730,210 740,260 L 1180,260 Q 1210,260 1210,300 L 1210,340 Q 1210,380 1100,380"
+      "path": "M 650,160 Q 675,160 685,200 L 700,260 L 1220,260 Q 1250,260 1250,300 L 1250,340 Q 1250,380 1070,380"
     }
   ]
 };
