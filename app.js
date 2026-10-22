@@ -14,6 +14,8 @@
     zoom: 1.0,
     panX: 0,
     panY: 0,
+    minZoom: 0.15,
+    maxZoom: 2.5,
     isDragging: false,
     dragStart: { x: 0, y: 0 },
     theme: 'light'
@@ -33,8 +35,23 @@
   const resetViewBtn = document.getElementById('btn-reset-view');
   const filterContainer = document.getElementById('line-filters');
 
+  // Detect if running inside iframe or embed parameter
+  function detectEmbedded() {
+    let embedded = false;
+    try {
+      embedded = window.self !== window.top;
+    } catch (e) {
+      embedded = true;
+    }
+    const params = new URLSearchParams(window.location.search);
+    if (embedded || params.get('embed') === 'true') {
+      document.body.classList.add('is-embedded');
+    }
+  }
+
   // Initialize Application
   function init() {
+    detectEmbedded();
     renderSvgMap();
     setupPanAndZoom();
     setupFilterButtons();
@@ -42,13 +59,19 @@
     setupDrawer();
     setupThemeToggle();
     setupExport();
+
+    // Initial responsive fit
+    fitMapToContainer(false);
+    setTimeout(() => fitMapToContainer(false), 80);
+
     handleHashChange();
 
     window.addEventListener('hashchange', handleHashChange);
-    window.addEventListener('resize', centerMap);
-    
-    // Initial centering
-    setTimeout(centerMap, 100);
+    window.addEventListener('resize', () => {
+      if (!state.selectedStation) {
+        fitMapToContainer(false);
+      }
+    });
   }
 
   // Utility: Escape XML entities for safe SVG serialization
@@ -298,16 +321,87 @@
     });
   }
 
+  // Apply Transform with Optional Smooth Transition
+  function updateTransform(smooth = false) {
+    if (smooth) {
+      surface.style.transition = 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)';
+      setTimeout(() => {
+        surface.style.transition = 'none';
+      }, 350);
+    } else {
+      surface.style.transition = 'none';
+    }
+    surface.style.transform = `translate3d(${state.panX}px, ${state.panY}px, 0) scale(${state.zoom})`;
+  }
+
+  // Calculate and Apply Perfect Scale to Fit Entire SVG inside Viewport
+  function fitMapToContainer(smooth = false) {
+    const containerW = viewport.clientWidth;
+    const containerH = viewport.clientHeight;
+    if (!containerW || !containerH) return;
+
+    const mapW = 1680;
+    const mapH = 980;
+
+    const padX = containerW < 600 ? 8 : containerW < 1000 ? 16 : 28;
+    const padY = containerH < 500 ? 8 : containerH < 800 ? 16 : 24;
+
+    const availW = Math.max(100, containerW - padX * 2);
+    const availH = Math.max(100, containerH - padY * 2);
+
+    const scaleX = availW / mapW;
+    const scaleY = availH / mapH;
+    const fitScale = Math.min(scaleX, scaleY);
+
+    state.zoom = fitScale;
+    state.minZoom = Math.min(0.15, fitScale * 0.6);
+    state.maxZoom = 2.5;
+
+    state.panX = Math.round((containerW - (mapW * fitScale)) / 2);
+    state.panY = Math.round((containerH - (mapH * fitScale)) / 2);
+
+    updateTransform(smooth);
+  }
+
+  // Zoom centered at a specific viewport point
+  function zoomAtPoint(pointX, pointY, factor, smooth = false) {
+    const newZoom = Math.max(state.minZoom || 0.15, Math.min(state.maxZoom || 2.5, state.zoom * factor));
+    if (Math.abs(newZoom - state.zoom) < 0.0005) return;
+
+    const scaleRatio = newZoom / state.zoom;
+    state.panX = Math.round(pointX - (pointX - state.panX) * scaleRatio);
+    state.panY = Math.round(pointY - (pointY - state.panY) * scaleRatio);
+    state.zoom = newZoom;
+
+    updateTransform(smooth);
+  }
+
+  // Pan and center smoothly on a specific station
+  function panToStation(station) {
+    if (!station) return;
+    const focusZoom = Math.max(0.85, Math.min(1.5, (state.minZoom || 0.3) * 2.5));
+    state.zoom = focusZoom;
+    state.panX = Math.round((viewport.clientWidth / 2) - (station.x * focusZoom));
+    state.panY = Math.round((viewport.clientHeight / 2) - (station.y * focusZoom));
+    updateTransform(true);
+  }
+
   // Setup 2D Pan and Zoom Navigation
   function setupPanAndZoom() {
     // Zoom via buttons
-    zoomInBtn.addEventListener('click', () => setZoom(state.zoom + 0.15));
-    zoomOutBtn.addEventListener('click', () => setZoom(state.zoom - 0.15));
-    resetViewBtn.addEventListener('click', centerMap);
+    zoomInBtn.addEventListener('click', () => {
+      zoomAtPoint(viewport.clientWidth / 2, viewport.clientHeight / 2, 1.25, true);
+    });
+    zoomOutBtn.addEventListener('click', () => {
+      zoomAtPoint(viewport.clientWidth / 2, viewport.clientHeight / 2, 0.8, true);
+    });
+    resetViewBtn.addEventListener('click', () => {
+      fitMapToContainer(true);
+    });
 
     // Mouse Dragging on Viewport
     viewport.addEventListener('mousedown', (e) => {
-      if (e.target.closest('.station-node') || e.target.closest('button')) return;
+      if (e.target.closest('.station-node') || e.target.closest('button') || e.target.closest('a')) return;
       state.isDragging = true;
       state.dragStart = { x: e.clientX, y: e.clientY };
       viewport.style.cursor = 'grabbing';
@@ -317,65 +411,88 @@
       if (!state.isDragging) return;
       const dx = e.clientX - state.dragStart.x;
       const dy = e.clientY - state.dragStart.y;
-      viewport.scrollLeft -= dx;
-      viewport.scrollTop -= dy;
+      state.panX += dx;
+      state.panY += dy;
       state.dragStart = { x: e.clientX, y: e.clientY };
+      updateTransform(false);
     });
 
     window.addEventListener('mouseup', () => {
-      state.isDragging = false;
-      viewport.style.cursor = 'grab';
+      if (state.isDragging) {
+        state.isDragging = false;
+        viewport.style.cursor = 'grab';
+      }
     });
 
-    // Mouse Wheel Zoom
-    viewport.addEventListener('wheel', (e) => {
-      if (e.ctrlKey || e.metaKey) {
-        e.preventDefault();
-        const delta = e.deltaY < 0 ? 0.08 : -0.08;
-        setZoom(state.zoom + delta);
+    // Touch Dragging & Pinch to Zoom
+    let touchStartDist = 0;
+    let touchStartZoom = 1.0;
+    let touchStartCenter = { x: 0, y: 0 };
+
+    viewport.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 1) {
+        if (e.target.closest('.station-node') || e.target.closest('button') || e.target.closest('a')) return;
+        state.isDragging = true;
+        state.dragStart = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      } else if (e.touches.length === 2) {
+        state.isDragging = false;
+        const t1 = e.touches[0];
+        const t2 = e.touches[1];
+        touchStartDist = Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY);
+        touchStartZoom = state.zoom;
+        touchStartCenter = {
+          x: (t1.clientX + t2.clientX) / 2,
+          y: (t1.clientY + t2.clientY) / 2
+        };
       }
+    }, { passive: true });
+
+    viewport.addEventListener('touchmove', (e) => {
+      if (e.touches.length === 1 && state.isDragging) {
+        const dx = e.touches[0].clientX - state.dragStart.x;
+        const dy = e.touches[0].clientY - state.dragStart.y;
+        state.panX += dx;
+        state.panY += dy;
+        state.dragStart = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        updateTransform(false);
+      } else if (e.touches.length === 2 && touchStartDist > 0) {
+        const t1 = e.touches[0];
+        const t2 = e.touches[1];
+        const dist = Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY);
+        const factor = dist / touchStartDist;
+        zoomAtPoint(touchStartCenter.x, touchStartCenter.y, factor, false);
+        touchStartDist = dist;
+      }
+    }, { passive: true });
+
+    viewport.addEventListener('touchend', () => {
+      state.isDragging = false;
+      touchStartDist = 0;
+    });
+
+    // Mouse Wheel Zoom toward pointer
+    viewport.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      const rect = viewport.getBoundingClientRect();
+      const pointX = e.clientX - rect.left;
+      const pointY = e.clientY - rect.top;
+      const factor = e.deltaY < 0 ? 1.12 : 0.89;
+      zoomAtPoint(pointX, pointY, factor, false);
     }, { passive: false });
 
-    // Keyboard Arrow Panning
+    // Keyboard Arrow Panning & Shortcuts
     viewport.addEventListener('keydown', (e) => {
       const step = 40;
       switch (e.key) {
-        case 'ArrowLeft': viewport.scrollLeft -= step; break;
-        case 'ArrowRight': viewport.scrollLeft += step; break;
-        case 'ArrowUp': viewport.scrollTop -= step; break;
-        case 'ArrowDown': viewport.scrollTop += step; break;
-        case '+': case '=': setZoom(state.zoom + 0.15); break;
-        case '-': case '_': setZoom(state.zoom - 0.15); break;
-        case '0': centerMap(); break;
+        case 'ArrowLeft': state.panX += step; updateTransform(false); break;
+        case 'ArrowRight': state.panX -= step; updateTransform(false); break;
+        case 'ArrowUp': state.panY += step; updateTransform(false); break;
+        case 'ArrowDown': state.panY -= step; updateTransform(false); break;
+        case '+': case '=': zoomAtPoint(viewport.clientWidth / 2, viewport.clientHeight / 2, 1.25, true); break;
+        case '-': case '_': zoomAtPoint(viewport.clientWidth / 2, viewport.clientHeight / 2, 0.8, true); break;
+        case '0': fitMapToContainer(true); break;
         case 'Escape': closeDrawer(); break;
       }
-    });
-  }
-
-  function setZoom(newZoom) {
-    state.zoom = Math.max(0.65, Math.min(2.2, newZoom));
-    surface.style.transform = `scale(${state.zoom})`;
-  }
-
-  function centerMap() {
-    setZoom(1.0);
-    const centerX = (surface.offsetWidth - viewport.clientWidth) / 2;
-    const centerY = (surface.offsetHeight - viewport.clientHeight) / 2;
-    viewport.scrollTo({
-      left: Math.max(0, centerX),
-      top: Math.max(0, centerY),
-      behavior: 'smooth'
-    });
-  }
-
-  function panToStation(station) {
-    if (!station) return;
-    const targetX = (station.x * state.zoom) - (viewport.clientWidth / 2) + 20;
-    const targetY = (station.y * state.zoom) - (viewport.clientHeight / 2) + 20;
-    viewport.scrollTo({
-      left: Math.max(0, targetX),
-      top: Math.max(0, targetY),
-      behavior: 'smooth'
     });
   }
 
@@ -610,6 +727,9 @@
     } else if (hash.startsWith('#line=')) {
       const lineId = hash.replace('#line=', '');
       filterLine(lineId);
+      fitMapToContainer(true);
+    } else {
+      fitMapToContainer(false);
     }
   }
 
