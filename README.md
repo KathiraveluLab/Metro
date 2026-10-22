@@ -8,7 +8,7 @@ An interactive evolutionary transit map tracking how the public research reposit
 
 ## Transit Lines Overview
 
-The metropolitan map organizes **40 flagship research stations** across **5 interconnected transit lines** and **1 high-performance workflow shuttle loop**, reflecting over a decade of research (2014 - 2026):
+The metropolitan map organizes **39 flagship research stations** across **5 interconnected transit lines** and **1 high-performance workflow shuttle loop**, reflecting over a decade of research (2014 - 2026):
 
 | Line | Name | Color | Core Research Focus |
 | :--- | :--- | :---: | :--- |
@@ -44,8 +44,8 @@ The metropolitan map organizes **40 flagship research stations** across **5 inte
 
 ### Line 2: Network Transport & Edge Infrastructure
 9. **Cloud2Sim** (`Cloud2Sim`): Adaptive distributed simulator for Cloud and MapReduce algorithms (*IEEE/ACM UCC'14*, *IEEE MASCOTS'14*).
-10. **SENDIM** (`SENDIM`): Cloud network simulation, emulation, and deployment (*IEEE IC2E'16*, *Springer OTM'16*).
-11. **xSDN** (`xSDN`): Expressive simulator for dynamic network flows (*IEEE IC2E'15*).
+10. **xSDN** (`xSDN`): Expressive simulator for dynamic network flows (*IEEE IC2E'15*).
+11. **SENDIM** (`SENDIM`): Cloud network simulation, emulation, and deployment (*IEEE IC2E'16*, *Springer OTM'16*).
 12. **NetUber** (`NetUber`): Software-defined Internet routing (*IFIP Networking'18*, *IEEE SDS'20*).
 13. **CHIEF** (`CHIEF`, `messaging4transport`): Controller farm for clouds of software-defined community networks (*IEEE IC2EW'16*).
 14. **SMART** (`SMART`, `messaging4transport`): SDN middlebox architecture for resilient transfers (*IEEE IM'17*, *Springer OTM'16*).
@@ -70,19 +70,18 @@ The metropolitan map organizes **40 flagship research stations** across **5 inte
 29. **IGUANA** (`IGUANA`): Integrated guardrails for unbiased, adaptive neural network architectures (*IEEE ISSE'26*).
 
 ### Line 5: Community Informatics & Circumpolar Computing
-30. **Dena'ina Place Names** (`denaina-place-names`): Interactive digital atlas honoring Dena'ina Athabascan toponymy.
+30. **AK History Webmap** (`ak-history-webmap`): Interactive Alaska Native history web map for epidemic disease outbreaks (*IEEE Computer'25*).
 31. **Dnigi** (`Dnigi`): Serious game for Indigenous cultural heritage transmission (*IEEE Computer'25*).
-32. **AK History Webmap** (`ak-history-webmap`): Interactive Alaska Native history web map for epidemic disease outbreaks (*IEEE Computer'25*).
-33. **Arctic Sea Ice** (`DIP_Predicting_SIE`): Circumpolar satellite image processing and sea ice extent prediction (*Elsevier Remote Sensing Applications'25*).
-34. **DREAMS** (`DREAMS`): Digitization for recovery and arts mining for societal well-being.
+32. **Arctic Sea Ice** (`DIP_Predicting_SIE`): Circumpolar satellite image processing and sea ice extent prediction (*Elsevier Remote Sensing Applications'25*).
+33. **DREAMS** (`DREAMS`): Digitization for recovery and arts mining for societal well-being.
 
 ### Runtime Shuttle: High-Performance Workflow Engines
-35. **DHGWorkflow** (`DHGWorkflow`): Directed hypergraph workflow composer.
-36. **Ararat** (`Ararat`): Hardware-accelerated hypergraph executor in Mojo.
-37. **Mojito** (`Mojito`): Asynchronous task orchestrator in Mojo.
-38. **FIRM** (`FIRM`): Find, Invoke, Return, and Manage low-overhead service composition (*IEEE MIPRO'16*).
-39. **∂u∂u** (`dudu`): Multi-tenanted distributed near-duplicate detection framework in Java (*Springer OTM'15*).
-40. **Faro** (`Faro`): High-throughput near-duplicate detection in Go using MinHash and Locality-Sensitive Hashing (LSH).
+34. **DHGWorkflow** (`DHGWorkflow`): Directed hypergraph workflow composer.
+35. **Ararat** (`Ararat`): Hardware-accelerated hypergraph executor in Mojo.
+36. **Mojito** (`Mojito`): Asynchronous task orchestrator in Mojo.
+37. **FIRM** (`FIRM`): Find, Invoke, Return, and Manage low-overhead service composition (*IEEE MIPRO'16*).
+38. **∂u∂u** (`dudu`): Multi-tenanted distributed near-duplicate detection framework in Java (*Springer OTM'15*).
+39. **Faro** (`Faro`): High-throughput near-duplicate detection in Go using MinHash and Locality-Sensitive Hashing (LSH).
 
 ## Online Deployment (GitHub Pages)
 

@@ -214,7 +214,7 @@
 
         <!-- Zone 5: Community & Indigenous -->
         <rect x="50" y="730" width="710" height="150" rx="16" fill="#e11d48" fill-opacity="0.05" stroke="#e11d48" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
-        <text x="70" y="756" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#fb7185" letter-spacing="1.5">COMMUNITY INFORMATICS &amp; INDIGENOUS COMPUTING</text>
+        <text x="70" y="750" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#fb7185" letter-spacing="1.5">COMMUNITY INFORMATICS &amp; INDIGENOUS COMPUTING</text>
       </g>
 
       <!-- Metro Line Tracks (Layer 1: Glow / Under-tracks) -->

@@ -1,9 +1,9 @@
 /**
  * KathiraveluLab Research Metro Map Data Specification
- * 40 Flagship Research Stations across 5 Transit Lines and 1 High-Performance Shuttle Loop.
+ * 39 Flagship Research Stations across 5 Transit Lines and 1 High-Performance Shuttle Loop.
  * 
  * Strict publication fidelity: verified peer-reviewed publications from official repository READMEs.
- * All archived unpapered projects (IMPACT, BHV, TRACE) omitted.
+ * All archived projects (IMPACT, BHV, TRACE, Dena'ina Place Names) omitted.
  * Standalone stations added for DWiM (3D DICOM in MATLAB) and dudu (Distributed Near-Duplicate in Java, Springer OTM 2015).
  * Viseu connects Line 1, Line 2, and Line 4 (PORTO) as a Major Triple Interchange Hub.
  */
@@ -14,8 +14,8 @@ const METRO_DATA = {
     "labName": "KathiraveluLab",
     "institution": "University of Alaska Anchorage",
     "website": "https://github.com/KathiraveluLab",
-    "version": "2026.5",
-    "totalStations": 40,
+    "version": "2026.6",
+    "totalStations": 39,
     "lastUpdated": "2026"
   },
   "lines": [
@@ -361,15 +361,44 @@ const METRO_DATA = {
       "description": "Adaptive and distributed architecture for Cloud and MapReduce simulations, introducing concurrent multi-node simulation using Hazelcast and Infinispan."
     },
     {
+      "id": "xsdn",
+      "mapBadge": "IEEE IC2E'15",
+      "number": 10,
+      "name": "xSDN",
+      "subtitle": "Flow Simulator",
+      "lines": [
+        "line-net"
+      ],
+      "x": 195,
+      "y": 380,
+      "isMajorHub": false,
+      "repos": [
+        "xSDN"
+      ],
+      "primaryRepo": "xSDN",
+      "tech": [
+        "Java",
+        "Flow Modeling"
+      ],
+      "venues": [
+        {
+          "name": "IEEE IC2E 2015",
+          "tier": "IEEE",
+          "note": "An Expressive Simulator for Dynamic Network Flows"
+        }
+      ],
+      "description": "Expressive simulator modeling dynamic network flows and SDN control plane behaviors under variable traffic loads."
+    },
+    {
       "id": "sendim",
       "mapBadge": "IEEE IC2E'16",
-      "number": 10,
+      "number": 11,
       "name": "SENDIM",
       "subtitle": "Cloud Simulation",
       "lines": [
         "line-net"
       ],
-      "x": 195,
+      "x": 300,
       "y": 380,
       "isMajorHub": false,
       "repos": [
@@ -393,35 +422,6 @@ const METRO_DATA = {
         }
       ],
       "description": "Simulation, Emulation, and Deployment Integration Middleware for scalable cloud networks and multi-datacenter topologies."
-    },
-    {
-      "id": "xsdn",
-      "mapBadge": "IEEE IC2E'15",
-      "number": 11,
-      "name": "xSDN",
-      "subtitle": "Flow Simulator",
-      "lines": [
-        "line-net"
-      ],
-      "x": 300,
-      "y": 380,
-      "isMajorHub": false,
-      "repos": [
-        "xSDN"
-      ],
-      "primaryRepo": "xSDN",
-      "tech": [
-        "Java",
-        "Flow Modeling"
-      ],
-      "venues": [
-        {
-          "name": "IEEE IC2E 2015",
-          "tier": "IEEE",
-          "note": "An Expressive Simulator for Dynamic Network Flows"
-        }
-      ],
-      "description": "Expressive simulator modeling dynamic network flows and SDN control plane behaviors under variable traffic loads."
     },
     {
       "id": "netuber",
@@ -955,66 +955,15 @@ const METRO_DATA = {
       "description": "Terminus of Line 4. Employs actor-based concurrent monitors in Erlang to enforce formal safety invariants and eliminate bias in adaptive neural policies."
     },
     {
-      "id": "denaina-place-names",
-      "number": 30,
-      "name": "Dena'ina Place Names",
-      "subtitle": "Indigenous Toponymy",
-      "lines": [
-        "line-community"
-      ],
-      "x": 100,
-      "y": 820,
-      "isMajorHub": false,
-      "repos": [
-        "denaina-place-names"
-      ],
-      "primaryRepo": "denaina-place-names",
-      "tech": [
-        "Web GIS",
-        "Indigenous Audio / Maps"
-      ],
-      "venues": [],
-      "description": "Interactive geospatial digital atlas honoring and preserving Dena'ina Athabascan geographical names, audio pronunciations, and oral histories across Southcentral Alaska."
-    },
-    {
-      "id": "dnigi",
-      "mapBadge": "IEEE Computer'25",
-      "number": 31,
-      "name": "Dnigi",
-      "subtitle": "Indigenous Heritage Game",
-      "lines": [
-        "line-community"
-      ],
-      "x": 230,
-      "y": 820,
-      "isMajorHub": true,
-      "repos": [
-        "Dnigi"
-      ],
-      "primaryRepo": "Dnigi",
-      "tech": [
-        "JavaScript",
-        "Phaser / Canvas"
-      ],
-      "venues": [
-        {
-          "name": "IEEE Computer 2025",
-          "tier": "IEEE",
-          "note": "A Serious Game for Dena’ina Language and Heritage"
-        }
-      ],
-      "description": "A Serious Game approach to knowledge sharing and intergenerational transmission of Indigenous cultural heritage, published as featured research in IEEE Computer."
-    },
-    {
       "id": "ak-history-webmap",
       "mapBadge": "IEEE Computer'25",
-      "number": 32,
+      "number": 30,
       "name": "AK History Webmap",
       "subtitle": "Epidemic Diseases Web Map",
       "lines": [
         "line-community"
       ],
-      "x": 370,
+      "x": 150,
       "y": 820,
       "isMajorHub": true,
       "repos": [
@@ -1035,15 +984,44 @@ const METRO_DATA = {
       "description": "Interactive Native history web map visualizing historical epidemic disease outbreaks, transmission paths, and demographic impacts on Alaska Native populations."
     },
     {
+      "id": "dnigi",
+      "mapBadge": "IEEE Computer'25",
+      "number": 31,
+      "name": "Dnigi",
+      "subtitle": "Indigenous Heritage Game",
+      "lines": [
+        "line-community"
+      ],
+      "x": 320,
+      "y": 820,
+      "isMajorHub": true,
+      "repos": [
+        "Dnigi"
+      ],
+      "primaryRepo": "Dnigi",
+      "tech": [
+        "JavaScript",
+        "Phaser / Canvas"
+      ],
+      "venues": [
+        {
+          "name": "IEEE Computer 2025",
+          "tier": "IEEE",
+          "note": "A Serious Game for Dena’ina Language and Heritage"
+        }
+      ],
+      "description": "A Serious Game approach to knowledge sharing and intergenerational transmission of Indigenous cultural heritage, published as featured research in IEEE Computer."
+    },
+    {
       "id": "dip-predicting-sie",
       "mapBadge": "Elsevier RSA'25",
-      "number": 33,
+      "number": 32,
       "name": "Arctic Sea Ice",
       "subtitle": "Arctic Sea Ice AI",
       "lines": [
         "line-community"
       ],
-      "x": 520,
+      "x": 490,
       "y": 820,
       "isMajorHub": true,
       "repos": [
@@ -1066,7 +1044,7 @@ const METRO_DATA = {
     },
     {
       "id": "dreams",
-      "number": 34,
+      "number": 33,
       "name": "DREAMS",
       "subtitle": "Recovery & Arts Mining",
       "lines": [
@@ -1088,7 +1066,7 @@ const METRO_DATA = {
     },
     {
       "id": "dhgworkflow",
-      "number": 35,
+      "number": 34,
       "name": "DHGWorkflow",
       "subtitle": "Task Graph Composer",
       "lines": [
@@ -1110,7 +1088,7 @@ const METRO_DATA = {
     },
     {
       "id": "ararat",
-      "number": 36,
+      "number": 35,
       "name": "Ararat",
       "subtitle": "Workflow Engine",
       "lines": [
@@ -1132,7 +1110,7 @@ const METRO_DATA = {
     },
     {
       "id": "mojito",
-      "number": 37,
+      "number": 36,
       "name": "Mojito",
       "subtitle": "Async Scheduler",
       "lines": [
@@ -1155,7 +1133,7 @@ const METRO_DATA = {
     {
       "id": "firm",
       "mapBadge": "IEEE MIPRO'16",
-      "number": 38,
+      "number": 37,
       "name": "FIRM",
       "subtitle": "Serverless FaaS",
       "lines": [
@@ -1184,7 +1162,7 @@ const METRO_DATA = {
     {
       "id": "dudu",
       "mapBadge": "Springer OTM'15",
-      "number": 39,
+      "number": 38,
       "name": "∂u∂u",
       "subtitle": "Java Near-Duplicate",
       "lines": [
@@ -1213,7 +1191,7 @@ const METRO_DATA = {
     },
     {
       "id": "faro",
-      "number": 40,
+      "number": 39,
       "name": "Faro",
       "subtitle": "Go MinHash LSH",
       "lines": [
@@ -1259,7 +1237,7 @@ const METRO_DATA = {
     {
       "id": "track-community-main",
       "lineId": "line-community",
-      "path": "M 80,820 L 660,820 L 660,620"
+      "path": "M 100,820 L 660,820 L 660,620"
     },
     {
       "id": "track-shuttle",

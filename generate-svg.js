@@ -167,7 +167,7 @@ function generateSvg() {
 
   <!-- Zone 5: Community and Indigenous -->
   <rect x="50" y="730" width="710" height="150" rx="16" class="zone-bg-5 zone-border-5"/>
-  <text x="70" y="756" class="zone-title" fill="#be123c">Community Informatics &amp; Indigenous Computing</text>
+  <text x="70" y="750" class="zone-title" fill="#be123c">Community Informatics &amp; Indigenous Computing</text>
 
   <!-- Title Card Header -->
   <g transform="translate(60, 40)">
