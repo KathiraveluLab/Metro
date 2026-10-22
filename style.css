@@ -199,6 +199,48 @@ html, body {
   white-space: nowrap;
 }
 
+.filter-label-short {
+  display: none;
+}
+.filter-label-full {
+  display: inline;
+}
+
+.btn-text-short {
+  display: none;
+}
+.btn-text-full {
+  display: inline;
+}
+
+@media (max-width: 1700px) {
+  .filter-label-short,
+  .btn-text-short {
+    display: inline;
+  }
+  .filter-label-full,
+  .btn-text-full {
+    display: none;
+  }
+  .search-input {
+    width: 130px;
+  }
+  .search-input:focus {
+    width: 180px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .filter-btn {
+    padding: 4px 7px;
+    font-size: 11px;
+    gap: 4px;
+  }
+  .search-input {
+    width: 100px;
+  }
+}
+
 .filter-btn .dot {
   width: 8px;
   height: 8px;
@@ -762,33 +804,79 @@ html, body {
 /* Embedded iframe specific styles */
 body.is-embedded .app-header {
   height: 52px;
-  padding: 0 12px;
+  padding: 0 10px;
   gap: 8px;
 }
 body.is-embedded .brand-info p {
   display: none;
 }
 body.is-embedded .brand-info h1 {
-  font-size: 14px;
+  font-size: 13.5px;
+  white-space: nowrap;
 }
 body.is-embedded .brand-icon {
+  width: 28px;
+  height: 28px;
+  font-size: 14px;
+}
+body.is-embedded .line-filters {
+  flex: 1 1 auto;
+  min-width: 0;
+  gap: 5px;
+}
+body.is-embedded .filter-label-short,
+body.is-embedded .btn-text-short {
+  display: inline;
+}
+body.is-embedded .filter-label-full,
+body.is-embedded .btn-text-full {
+  display: none;
+}
+body.is-embedded .filter-btn {
+  padding: 4px 7px;
+  font-size: 11px;
+  gap: 4px;
+}
+body.is-embedded .header-actions {
+  gap: 5px;
+}
+body.is-embedded .search-box {
+  flex-shrink: 1;
+}
+body.is-embedded .search-input {
+  width: 95px;
+  height: 32px;
+  font-size: 11px;
+  padding: 0 8px 0 26px;
+}
+body.is-embedded .search-input:focus {
+  width: 140px;
+}
+body.is-embedded .search-icon {
+  left: 7px;
+  font-size: 12px;
+}
+body.is-embedded .btn-primary {
+  height: 32px;
+  padding: 0 8px;
+  font-size: 11px;
+  gap: 4px;
+}
+body.is-embedded .btn-icon {
   width: 30px;
   height: 30px;
-  font-size: 15px;
+  font-size: 13px;
 }
 body.is-embedded .canvas-viewport {
   top: 52px;
 }
-body.is-embedded .search-input {
-  width: 130px;
-}
 body.is-embedded .status-bar {
-  bottom: 12px;
-  left: 12px;
-  padding: 4px 10px;
-  font-size: 11px;
+  bottom: 10px;
+  left: 10px;
+  padding: 4px 8px;
+  font-size: 10.5px;
 }
 body.is-embedded .canvas-controls {
-  bottom: 12px;
-  right: 12px;
+  bottom: 10px;
+  right: 10px;
 }

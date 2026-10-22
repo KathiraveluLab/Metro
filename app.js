@@ -350,15 +350,15 @@
     if (!containerW || !containerH) return;
 
     // Actual visual content bounding box in SVG coordinate space:
-    // X spans from ~45 (Zone 1/2/3 left) to ~1635 (Zone 4 right / TRACE badge) -> width 1590, center 840
-    // Y spans from ~50 (Zone 1/4 top) to ~890 (Zone 5 bottom / line 5 nodes) -> height 840, center 470
+    // X spans from ~45 (Zone 1/2/3 left) to ~1635 (Zone 4 right) -> width 1600, center 840
+    // Y spans from ~50 (Zone 1/4 top) to ~890 (Zone 5 bottom) -> height 870, center 475
     const contentW = 1600;
-    const contentH = 850;
+    const contentH = 880;
     const contentCenterX = 840;
-    const contentCenterY = 470;
+    const contentCenterY = 475;
 
-    const padX = containerW < 600 ? 8 : containerW < 1000 ? 14 : 20;
-    const padY = containerH < 500 ? 8 : containerH < 800 ? 12 : 18;
+    const padX = containerW < 600 ? 10 : containerW < 1000 ? 16 : 24;
+    const padY = containerH < 500 ? 12 : containerH < 800 ? 20 : 28;
 
     const availW = Math.max(100, containerW - padX * 2);
     const availH = Math.max(100, containerH - padY * 2);
@@ -371,9 +371,12 @@
     state.minZoom = Math.min(0.2, fitScale * 0.5);
     state.maxZoom = 2.5;
 
-    // Center content precisely in viewport
+    // Center content horizontally and guarantee safe vertical clearance below the header
     state.panX = Math.round((containerW / 2) - (contentCenterX * fitScale));
-    state.panY = Math.round((containerH / 2) - (contentCenterY * fitScale));
+    const targetPanY = Math.round((containerH / 2) - (contentCenterY * fitScale));
+    // Content starts at y: 50. Ensure the top never rises above padY in viewport space:
+    const minSafePanY = padY - Math.round(50 * fitScale);
+    state.panY = Math.max(minSafePanY, targetPanY);
 
     updateTransform(smooth);
   }
@@ -519,6 +522,14 @@
       const lineId = btn.dataset.line;
       filterLine(lineId);
     });
+
+    // Horizontal wheel scrolling for filter pills on smaller viewports
+    filterContainer.addEventListener('wheel', (e) => {
+      if (e.deltaY !== 0) {
+        e.preventDefault();
+        filterContainer.scrollLeft += e.deltaY;
+      }
+    }, { passive: false });
   }
 
   function filterLine(lineId) {

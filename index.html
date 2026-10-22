@@ -34,33 +34,40 @@
 
     <!-- Line Filter Chips -->
     <nav class="line-filters" id="line-filters" aria-label="Transit line filters">
-      <button class="filter-btn active" data-line="all" id="filter-all">
+      <button class="filter-btn active" data-line="all" id="filter-all" title="View All Transit Lines">
         <span class="dot" style="background: #38bdf8;"></span>
-        All Lines
+        <span class="filter-label-full">All Lines</span>
+        <span class="filter-label-short">All</span>
       </button>
-      <button class="filter-btn" data-line="line-soa" id="filter-soa">
+      <button class="filter-btn" data-line="line-soa" id="filter-soa" title="Line 1: Service-Oriented Architecture &amp; Distributed Control">
         <span class="dot" style="background: #0284c7;"></span>
-        Line 1: SOA &amp; Middleware
+        <span class="filter-label-full">Line 1: SOA</span>
+        <span class="filter-label-short">L1: SOA</span>
       </button>
-      <button class="filter-btn" data-line="line-net" id="filter-net">
+      <button class="filter-btn" data-line="line-net" id="filter-net" title="Line 2: Network Transport &amp; Edge Infrastructure">
         <span class="dot" style="background: #d97706;"></span>
-        Line 2: Network &amp; Edge
+        <span class="filter-label-full">Line 2: Network</span>
+        <span class="filter-label-short">L2: Net</span>
       </button>
-      <button class="filter-btn" data-line="line-health" id="filter-health">
+      <button class="filter-btn" data-line="line-health" id="filter-health" title="Line 3: Healthcare &amp; Biomedical Informatics">
         <span class="dot" style="background: #059669;"></span>
-        Line 3: Healthcare
+        <span class="filter-label-full">Line 3: Healthcare</span>
+        <span class="filter-label-short">L3: Health</span>
       </button>
-      <button class="filter-btn" data-line="line-trust" id="filter-trust">
+      <button class="filter-btn" data-line="line-trust" id="filter-trust" title="Line 4: Autonomous Systems &amp; Decentralized Trust">
         <span class="dot" style="background: #7c3aed;"></span>
-        Line 4: Autonomous Trust &amp; AI
+        <span class="filter-label-full">Line 4: Trust &amp; AI</span>
+        <span class="filter-label-short">L4: Trust</span>
       </button>
-      <button class="filter-btn" data-line="line-community" id="filter-community">
+      <button class="filter-btn" data-line="line-community" id="filter-community" title="Line 5: Community Informatics &amp; Circumpolar Computing">
         <span class="dot" style="background: #e11d48;"></span>
-        Line 5: Community &amp; Indigenous
+        <span class="filter-label-full">Line 5: Community</span>
+        <span class="filter-label-short">L5: Comm</span>
       </button>
-      <button class="filter-btn" data-line="line-shuttle" id="filter-shuttle">
-        <span class="dot" style="background: #64748b;"></span>
-        Runtime Shuttle
+      <button class="filter-btn" data-line="line-shuttle" id="filter-shuttle" title="Runtime Shuttle: High-Performance Workflow Engines (Black Dashed Line)">
+        <span class="dot" style="background: #334155; border: 1px solid rgba(255,255,255,0.4);"></span>
+        <span class="filter-label-full">Runtime Shuttle</span>
+        <span class="filter-label-short">Shuttle</span>
       </button>
     </nav>
 
@@ -72,12 +79,13 @@
       </div>
 
       <button id="btn-export-svg" class="btn-primary" title="Export Standalone SVG">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
           <polyline points="7 10 12 15 17 10"/>
           <line x1="12" y1="15" x2="12" y2="3"/>
         </svg>
-        SVG Export
+        <span class="btn-text-full">SVG Export</span>
+        <span class="btn-text-short">SVG</span>
       </button>
 
       <button id="btn-theme-toggle" class="btn-icon" title="Toggle Theme" aria-label="Toggle dark/light theme">
