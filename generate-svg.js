@@ -58,6 +58,7 @@ function getStationLayout(station) {
     station.id === "can" || 
     station.id === "faultsim" ||
     station.id === "niffler" ||
+    station.id === "diomede" ||
     station.id === "awanta"
   ) {
     // Labels Below Node
