@@ -172,7 +172,7 @@
       <text x="160" y="184" class="station-num" fill="#0284c7">1</text>
       <text x="160" y="112" text-anchor="middle" class="station-label">CONTROL-CORE</text>
       <text x="160" y="126" text-anchor="middle" class="station-sub">Peripheral Neuromodulation</text>
-      <text x="160" y="139" text-anchor="middle" class="station-venue" fill="#0284c7">IEEE Access&apos;21 [Q1]</text>
+      <text x="160" y="139" text-anchor="middle" class="station-venue" fill="#0284c7">IEEE Access&apos;22</text>
     </g>
 
     <!-- Station: Évora (2) -->
@@ -182,7 +182,7 @@
       <text x="300" y="179" class="station-num" fill="#64748b">2</text>
       <text x="300" y="116" text-anchor="middle" class="station-label">Évora</text>
       <text x="300" y="129" text-anchor="middle" class="station-sub">Edge Service Chains</text>
-      <text x="300" y="142" text-anchor="middle" class="station-venue" fill="#0284c7">ETT&apos;18 [Q2]</text>
+      <text x="300" y="142" text-anchor="middle" class="station-venue" fill="#0284c7">ETT&apos;18</text>
     </g>
 
     <!-- Station: SD-CPS (3) -->
@@ -192,7 +192,7 @@
       <text x="430" y="179" class="station-num" fill="#64748b">3</text>
       <text x="430" y="116" text-anchor="middle" class="station-label">SD-CPS</text>
       <text x="430" y="129" text-anchor="middle" class="station-sub">Software-Defined CPS</text>
-      <text x="430" y="142" text-anchor="middle" class="station-venue" fill="#0284c7">CLUSTER&apos;18 [Q2]</text>
+      <text x="430" y="142" text-anchor="middle" class="station-venue" fill="#0284c7">Cluster&apos;19</text>
     </g>
 
     <!-- Station: SOFIA (4) -->
@@ -202,7 +202,6 @@
       <text x="560" y="179" class="station-num" fill="#64748b">4</text>
       <text x="560" y="116" text-anchor="middle" class="station-label">SOFIA</text>
       <text x="560" y="129" text-anchor="middle" class="station-sub">Federated Interop</text>
-      <text x="560" y="142" text-anchor="middle" class="station-venue" fill="#0284c7">Lab Flagship&apos;26</text>
     </g>
 
     <!-- Station: GUARDA (5) -->
@@ -213,7 +212,6 @@
       <text x="690" y="184" class="station-num" fill="#0284c7">5</text>
       <text x="690" y="112" text-anchor="middle" class="station-label">GUARDA</text>
       <text x="690" y="126" text-anchor="middle" class="station-sub">Uniform Data Gateway</text>
-      <text x="690" y="139" text-anchor="middle" class="station-venue" fill="#0284c7">Edge API&apos;26</text>
     </g>
 
     <!-- Station: Viseu (6) -->
@@ -224,7 +222,7 @@
       <text x="800" y="357" class="station-num" fill="#0284c7">6</text>
       <text x="800" y="405" text-anchor="middle" class="station-label">Viseu</text>
       <text x="800" y="419" text-anchor="middle" class="station-sub">Edge Services Hub</text>
-      <text x="800" y="432" text-anchor="middle" class="station-venue" fill="#0284c7">COMNET&apos;22 [Q1]</text>
+      <text x="800" y="432" text-anchor="middle" class="station-venue" fill="#0284c7">COMNET&apos;22</text>
     </g>
 
     <!-- Station: SENDIM (7) -->
@@ -234,7 +232,7 @@
       <text x="160" y="363" class="station-num" fill="#64748b">7</text>
       <text x="160" y="405" text-anchor="middle" class="station-label">SENDIM</text>
       <text x="160" y="419" text-anchor="middle" class="station-sub">Cloud Simulation &amp; Emulation</text>
-      <text x="160" y="432" text-anchor="middle" class="station-venue" fill="#d97706">CoopIS&apos;16 [A]</text>
+      <text x="160" y="432" text-anchor="middle" class="station-venue" fill="#d97706">IEEE IC2E&apos;16</text>
     </g>
 
     <!-- Station: NetUber (8) -->
@@ -244,7 +242,7 @@
       <text x="350" y="363" class="station-num" fill="#64748b">8</text>
       <text x="350" y="405" text-anchor="middle" class="station-label">NetUber</text>
       <text x="350" y="419" text-anchor="middle" class="station-sub">Software-Defined Internet</text>
-      <text x="350" y="432" text-anchor="middle" class="station-venue" fill="#d97706">Networking&apos;18 [A]</text>
+      <text x="350" y="432" text-anchor="middle" class="station-venue" fill="#d97706">IFIP Networking&apos;18</text>
     </g>
 
     <!-- Station: L4SBOA (9) -->
@@ -264,7 +262,6 @@
       <text x="1120" y="363" class="station-num" fill="#64748b">10</text>
       <text x="1120" y="405" text-anchor="middle" class="station-label">CAN</text>
       <text x="1120" y="419" text-anchor="middle" class="station-sub">Content-Aware Networking</text>
-      <text x="1120" y="432" text-anchor="middle" class="station-venue" fill="#d97706">High-Perf&apos;26</text>
     </g>
 
     <!-- Station: faultsim (11) -->
@@ -274,7 +271,6 @@
       <text x="1260" y="363" class="station-num" fill="#64748b">11</text>
       <text x="1260" y="405" text-anchor="middle" class="station-label">faultsim</text>
       <text x="1260" y="419" text-anchor="middle" class="station-sub">Cluster Failure Detector</text>
-      <text x="1260" y="432" text-anchor="middle" class="station-venue" fill="#d97706">Lab Flagship&apos;26</text>
     </g>
 
     <!-- Station: Sintra (12) -->
@@ -285,7 +281,6 @@
       <text x="1460" y="472" class="station-num" fill="#d97706">12</text>
       <text x="1460" y="456" text-anchor="middle" class="station-label">Sintra</text>
       <text x="1460" y="469" text-anchor="middle" class="station-sub">Self-Adaptive Transport</text>
-      <text x="1460" y="542" text-anchor="middle" class="station-venue" fill="#d97706">Cluster&apos;25 [Q1]</text>
     </g>
 
     <!-- Station: Óbidos (13) -->
@@ -295,7 +290,7 @@
       <text x="160" y="639" class="station-num" fill="#64748b">13</text>
       <text x="160" y="576" text-anchor="middle" class="station-label">Óbidos</text>
       <text x="160" y="589" text-anchor="middle" class="station-sub">Big Data Integration</text>
-      <text x="160" y="602" text-anchor="middle" class="station-venue" fill="#059669">CoopIS&apos;15 [A]</text>
+      <text x="160" y="602" text-anchor="middle" class="station-venue" fill="#059669">DAPD&apos;19</text>
     </g>
 
     <!-- Station: Niffler (14) -->
@@ -306,7 +301,7 @@
       <text x="360" y="597" class="station-num" fill="#059669">14</text>
       <text x="360" y="645" text-anchor="middle" class="station-label">Niffler</text>
       <text x="360" y="659" text-anchor="middle" class="station-sub">DICOM ML Pipelines</text>
-      <text x="360" y="672" text-anchor="middle" class="station-venue" fill="#059669">JDI&apos;21 [Q1]</text>
+      <text x="360" y="672" text-anchor="middle" class="station-venue" fill="#059669">JDI&apos;21</text>
     </g>
 
     <!-- Station: Beehive (15) -->
@@ -317,7 +312,7 @@
       <text x="660" y="644" class="station-num" fill="#059669">15</text>
       <text x="660" y="572" text-anchor="middle" class="station-label">Beehive</text>
       <text x="660" y="586" text-anchor="middle" class="station-sub">Behavioral Health Federation</text>
-      <text x="660" y="599" text-anchor="middle" class="station-venue" fill="#059669">SysCon&apos;25</text>
+      <text x="660" y="599" text-anchor="middle" class="station-venue" fill="#059669">IEEE SysCon&apos;26</text>
     </g>
 
     <!-- Station: BHV (16) -->
@@ -327,7 +322,6 @@
       <text x="840" y="639" class="station-num" fill="#64748b">16</text>
       <text x="840" y="576" text-anchor="middle" class="station-label">BHV</text>
       <text x="840" y="589" text-anchor="middle" class="station-sub">Behavioral Health Vault</text>
-      <text x="840" y="602" text-anchor="middle" class="station-venue" fill="#059669">Health Privacy&apos;25</text>
     </g>
 
     <!-- Station: TENeT (17) -->
@@ -337,7 +331,6 @@
       <text x="1020" y="639" class="station-num" fill="#64748b">17</text>
       <text x="1020" y="576" text-anchor="middle" class="station-label">TENeT</text>
       <text x="1020" y="589" text-anchor="middle" class="station-sub">Telehealth Effectiveness</text>
-      <text x="1020" y="602" text-anchor="middle" class="station-venue" fill="#059669">Telehealth&apos;25</text>
     </g>
 
     <!-- Station: AWANTA (18) -->
@@ -348,7 +341,7 @@
       <text x="1220" y="597" class="station-num" fill="#059669">18</text>
       <text x="1220" y="645" text-anchor="middle" class="station-label">AWANTA</text>
       <text x="1220" y="659" text-anchor="middle" class="station-sub">SD-WAN Telehealth Hub</text>
-      <text x="1220" y="672" text-anchor="middle" class="station-venue" fill="#059669">IEEE Computer&apos;23 [Q1]</text>
+      <text x="1220" y="672" text-anchor="middle" class="station-venue" fill="#059669">Cluster&apos;25</text>
     </g>
 
     <!-- Station: PORTO (19) -->
@@ -358,7 +351,7 @@
       <text x="940" y="179" class="station-num" fill="#64748b">19</text>
       <text x="940" y="116" text-anchor="middle" class="station-label">PORTO</text>
       <text x="940" y="129" text-anchor="middle" class="station-sub">Off-Chain Resource Tracking</text>
-      <text x="940" y="142" text-anchor="middle" class="station-venue" fill="#7c3aed">Off-Chain&apos;26</text>
+      <text x="940" y="142" text-anchor="middle" class="station-venue" fill="#7c3aed">IEEE ISSE&apos;26</text>
     </g>
 
     <!-- Station: Epicue (20) -->
@@ -368,7 +361,6 @@
       <text x="1080" y="179" class="station-num" fill="#64748b">20</text>
       <text x="1080" y="116" text-anchor="middle" class="station-label">Epicue</text>
       <text x="1080" y="129" text-anchor="middle" class="station-sub">Cairo ZK Verification</text>
-      <text x="1080" y="142" text-anchor="middle" class="station-venue" fill="#7c3aed">Zero-Knowledge&apos;26</text>
     </g>
 
     <!-- Station: LAGOS (21) -->
@@ -378,7 +370,6 @@
       <text x="1220" y="179" class="station-num" fill="#64748b">21</text>
       <text x="1220" y="116" text-anchor="middle" class="station-label">LAGOS</text>
       <text x="1220" y="129" text-anchor="middle" class="station-sub">Latency-Aware Governance</text>
-      <text x="1220" y="142" text-anchor="middle" class="station-venue" fill="#7c3aed">Type-Safe&apos;26</text>
     </g>
 
     <!-- Station: IGUANA (22) -->
@@ -389,7 +380,7 @@
       <text x="1360" y="222" class="station-num" fill="#7c3aed">22</text>
       <text x="1388" y="232" text-anchor="start" class="station-label">IGUANA</text>
       <text x="1388" y="246" text-anchor="start" class="station-sub">Neural Guardrails</text>
-      <text x="1388" y="260" text-anchor="start" class="station-venue" fill="#7c3aed">AI Safety&apos;26</text>
+      <text x="1388" y="260" text-anchor="start" class="station-venue" fill="#7c3aed">IEEE ISSE&apos;26</text>
     </g>
 
     <!-- Station: IMPACT (23) -->
@@ -400,7 +391,6 @@
       <text x="1470" y="302" class="station-num" fill="#7c3aed">23</text>
       <text x="1498" y="312" text-anchor="start" class="station-label">IMPACT</text>
       <text x="1498" y="326" text-anchor="start" class="station-sub">Multi-Agent Platform</text>
-      <text x="1498" y="340" text-anchor="start" class="station-venue" fill="#7c3aed">Multi-Agent&apos;26</text>
     </g>
 
     <!-- Station: TRACE (24) -->
@@ -410,7 +400,6 @@
       <text x="1530" y="382" class="station-num" fill="#64748b">24</text>
       <text x="1554" y="404" text-anchor="start" class="station-label">TRACE</text>
       <text x="1554" y="418" text-anchor="start" class="station-sub">Repo Context Alignment</text>
-      <text x="1554" y="432" text-anchor="start" class="station-venue" fill="#7c3aed">Repo Evolution&apos;26</text>
     </g>
 
     <!-- Station: Dena&apos;ina Place Names (25) -->
@@ -420,7 +409,6 @@
       <text x="160" y="839" class="station-num" fill="#64748b">25</text>
       <text x="160" y="776" text-anchor="middle" class="station-label">Dena&apos;ina Place Names</text>
       <text x="160" y="789" text-anchor="middle" class="station-sub">Indigenous Toponymy</text>
-      <text x="160" y="802" text-anchor="middle" class="station-venue" fill="#e11d48">Heritage Atlas</text>
     </g>
 
     <!-- Station: Dnigi (26) -->
@@ -431,7 +419,7 @@
       <text x="320" y="844" class="station-num" fill="#e11d48">26</text>
       <text x="320" y="772" text-anchor="middle" class="station-label">Dnigi</text>
       <text x="320" y="786" text-anchor="middle" class="station-sub">Indigenous Heritage Game</text>
-      <text x="320" y="799" text-anchor="middle" class="station-venue" fill="#e11d48">IEEE Computer&apos;25 [Q1]</text>
+      <text x="320" y="799" text-anchor="middle" class="station-venue" fill="#e11d48">IEEE Computer&apos;25</text>
     </g>
 
     <!-- Station: AK History Webmap (27) -->
@@ -442,7 +430,7 @@
       <text x="480" y="844" class="station-num" fill="#e11d48">27</text>
       <text x="480" y="772" text-anchor="middle" class="station-label">AK History Webmap</text>
       <text x="480" y="786" text-anchor="middle" class="station-sub">Epidemic Diseases Web Map</text>
-      <text x="480" y="799" text-anchor="middle" class="station-venue" fill="#e11d48">IEEE Computer&apos;25 [Q1]</text>
+      <text x="480" y="799" text-anchor="middle" class="station-venue" fill="#e11d48">IEEE Computer&apos;25</text>
     </g>
 
     <!-- Station: DREAMS (28) -->
@@ -452,7 +440,6 @@
       <text x="640" y="839" class="station-num" fill="#64748b">28</text>
       <text x="640" y="776" text-anchor="middle" class="station-label">DREAMS</text>
       <text x="640" y="789" text-anchor="middle" class="station-sub">Recovery &amp; Arts Mining</text>
-      <text x="640" y="802" text-anchor="middle" class="station-venue" fill="#e11d48">GSoC&apos;25</text>
     </g>
 
     <!-- Station: DHGWorkflow (29) -->
@@ -462,7 +449,6 @@
       <text x="740" y="244" class="station-num" fill="#64748b">29</text>
       <text x="726" y="282" text-anchor="end" class="station-label">DHGWorkflow</text>
       <text x="726" y="296" text-anchor="end" class="station-sub">Task Graph Composer</text>
-      <text x="726" y="309" text-anchor="end" class="station-venue" fill="#475569">Workflow&apos;24</text>
     </g>
 
     <!-- Station: Ararat (30) -->
@@ -472,7 +458,6 @@
       <text x="850" y="244" class="station-num" fill="#64748b">30</text>
       <text x="850" y="284" text-anchor="middle" class="station-label">Ararat</text>
       <text x="850" y="298" text-anchor="middle" class="station-sub">Mojo Workflow Executor</text>
-      <text x="850" y="311" text-anchor="middle" class="station-venue" fill="#475569">Mojo SIMD&apos;26</text>
     </g>
 
     <!-- Station: Mojito (31) -->
@@ -482,7 +467,6 @@
       <text x="960" y="244" class="station-num" fill="#64748b">31</text>
       <text x="960" y="284" text-anchor="middle" class="station-label">Mojito</text>
       <text x="960" y="298" text-anchor="middle" class="station-sub">Task Orchestrator</text>
-      <text x="960" y="311" text-anchor="middle" class="station-venue" fill="#475569">Mojo Async&apos;26</text>
     </g>
 
     <!-- Station: FIRM (32) -->
@@ -492,7 +476,7 @@
       <text x="1070" y="244" class="station-num" fill="#64748b">32</text>
       <text x="1070" y="284" text-anchor="middle" class="station-label">FIRM</text>
       <text x="1070" y="298" text-anchor="middle" class="station-sub">FaaS Orchestration</text>
-      <text x="1070" y="311" text-anchor="middle" class="station-venue" fill="#475569">Mojo FaaS&apos;26</text>
+      <text x="1070" y="311" text-anchor="middle" class="station-venue" fill="#475569">IEEE MIPRO&apos;16</text>
     </g>
 
     <!-- Station: Faro (33) -->
@@ -502,7 +486,7 @@
       <text x="1180" y="244" class="station-num" fill="#64748b">33</text>
       <text x="1180" y="284" text-anchor="middle" class="station-label">Faro</text>
       <text x="1180" y="298" text-anchor="middle" class="station-sub">Near-Duplicate Detection</text>
-      <text x="1180" y="311" text-anchor="middle" class="station-venue" fill="#475569">LSH Go&apos;26</text>
+      <text x="1180" y="311" text-anchor="middle" class="station-venue" fill="#475569">Springer OTM&apos;15</text>
     </g>
 
   </g>

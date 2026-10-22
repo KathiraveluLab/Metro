@@ -34,49 +34,49 @@ The metropolitan map organizes **33 flagship research stations** across **5 inte
 ## Flagship Publications & Station Directory
 
 ### Line 1: Service-Oriented & Distributed Middleware
-1. **CONTROL-CORE** (`concore`, `concore-editor`, `concore-Mediator`): Closed-loop peripheral neuromodulation (*IEEE Access'21 / Q1*, *IEEE Access'22 / Q1*, *Springer Cluster'25 / Q1*).
-2. **Évora** (`Evora`): Adaptive edge service chaining (*ETT'18 / Q2*).
-3. **SD-CPS** (`SD-CPS`): Software-defined cyber-physical systems (*IEEE CLUSTER'18 / Q2*).
+1. **CONTROL-CORE** (`concore`, `concore-editor`, `concore-Mediator`): Closed-loop peripheral neuromodulation (*IEEE Access'22*, *Springer Cluster'25*).
+2. **Évora** (`Evora`): Adaptive edge service chaining (*Trans. Emerging Tel. Tech. (ETT)'18*, *IEEE ICWS'16*).
+3. **SD-CPS** (`SD-CPS`): Software-defined cyber-physical systems (*Springer Cluster'19*, *IEEE SDS'17*).
 4. **SOFIA** (`SOFIA`): Service-oriented federated interoperability in Erlang.
 5. **GUARDA** (`GUARDA`): Uniform remote data and analytics gateway in Elixir.
-6. **Viseu** (`Viseu`): Virtual Internet services at the edge (*COMNET'22 / Q1*).
+6. **Viseu** (`Viseu`): Virtual Internet services at the edge (*Computer Networks (COMNET)'22*).
 
 ### Line 2: Network Transport & Edge Infrastructure
-7. **SENDIM** (`SENDIM`): Cloud network simulation, emulation, and deployment (*CoopIS'16 / A*).
-8. **NetUber** (`NetUber`): Software-defined Internet routing (*Networking'18 / A* -> *CCPE'19 / Q2*).
-9. **L4SBOA** (`L4SBOA`): L4S bandwidth orchestration for ultra-low latency (*IEEE CCECE'25 / C*, *GSoC'24*).
+7. **SENDIM** (`SENDIM`): Cloud network simulation, emulation, and deployment (*IEEE IC2E'16*, *Springer OTM'16*).
+8. **NetUber** (`NetUber`): Software-defined Internet routing (*IFIP Networking'18*, *IEEE SDS'20*).
+9. **L4SBOA** (`L4SBOA`): L4S bandwidth orchestration for ultra-low latency (*IEEE CCECE'25*).
 10. **CAN** (`CAN`): Content-aware networking in Rust.
-11. **faultsim** (`faultsim`): Distributed cluster failure detector under extreme network instability.
-12. **Sintra** (`Sintra`, `sintra-plot`): Self-adaptive interdomain transport for polar & rural regions (*Springer Cluster'25 / Q1*, *IEEE SDS'23*, *CCGrid QUICK'24*).
+11. **faultsim** (`faultsim`): Distributed cluster failure detector under extreme network instability in Rust.
+12. **Sintra** (`Sintra`, `sintra-plot`): Self-adaptive interdomain network latency measurements and monitoring with RIPE Atlas.
 
 ### Line 3: Healthcare & Biomedical Informatics
-13. **Óbidos** (`Obidos`, `MEDIator`): Hybrid ETL for reproducible biomedical science (*CoopIS'15 / A* -> *DAPD'19 / Q2*).
-14. **Niffler** (`Niffler`, `Diomede`, `DWiM`, `MRIQC`): High-throughput DICOM machine learning pipelines (*JDI'21 / Q1*, *IEEE Access'21 / Q1*, *IEEE Computer'23 / Q1*).
-15. **Beehive** (`Beehive`): Behavioral health data federation and community health metrics (*IEEE SysCon'25*, *GSoC'25*).
+13. **Óbidos** (`Obidos`, `MEDIator`): Hybrid ETL for reproducible biomedical science (*Springer DAPD'19*, *VLDB DMAH'17*, *ACM BigCHat (KDD)'15*).
+14. **Niffler** (`Niffler`, `Diomede`, `DWiM`, `MRIQC`): High-throughput DICOM machine learning pipelines (*Springer JDI'21*, *IEEE Access'21*, *IEEE Computer'22*).
+15. **Beehive** (`Beehive`): Behavioral health data framework with digitized drawings and photographs (*IEEE SysCon'26*).
 16. **BHV** (`BHV`): Behavioral health vault with privacy-preserving patient partitioning.
 17. **TENeT** (`TENeT`): Telehealth necessity and clinical outcome tracker.
-18. **AWANTA** (`AWANTA`): SD-WAN for remote telehealth in Alaska (*IEEE Computer'23 / Q1*, *Springer Cluster'25 / Q1*, *GSoC'24/25*).
+18. **AWANTA** (`AWANTA`): SD-WAN for remote telehealth measurements (*Springer Cluster'25*, *IEEE SDS'23*).
 
 ### Line 4: Autonomous Systems & Decentralized Trust
-19. **PORTO** (`PORTO`): Private off-chain resource tracking in Erlang.
+19. **PORTO** (`PORTO`): Private off-chain resource tracking and orchestration (*IEEE ISSE'26*).
 20. **Epicue** (`Epicue`): Zero-knowledge computational integrity with Cairo STARKs in untrusted cloud environments.
 21. **LAGOS** (`LAGOS`): Latency-aware accountable overlay governance in Gleam.
-22. **IGUANA** (`IGUANA`): Integrated guardrails for unbiased, adaptive neural network architectures in Erlang.
+22. **IGUANA** (`IGUANA`): Integrated guardrails for unbiased, adaptive neural network architectures (*IEEE ISSE'26*).
 23. **IMPACT** (`IMPACT`): Intent-based multi-agent platform for architectural drift tracking.
 24. **TRACE** (`TRACE`): Continuous repository alignment and contextual evaluation.
 
 ### Line 5: Community Informatics & Indigenous Computing
 25. **Dena'ina Place Names** (`denaina-place-names`): Interactive digital atlas honoring Dena'ina Athabascan toponymy.
-26. **Dnigi** (`Dnigi`): Serious game for Indigenous cultural heritage transmission (*IEEE Computer Magazine'25 / Q1*).
-27. **AK History Webmap** (`ak-history-webmap`): Interactive Alaska Native history web map for epidemic outbreaks (*IEEE Computer Magazine'25 / Q1*).
-28. **DREAMS** (`DREAMS`): Digitization for recovery and arts mining for societal well-being (*GSoC'25*, *Alaskan Season of Code*).
+26. **Dnigi** (`Dnigi`): Serious game for Indigenous cultural heritage transmission (*IEEE Computer'25*).
+27. **AK History Webmap** (`ak-history-webmap`): Interactive Alaska Native history web map for epidemic disease outbreaks (*IEEE Computer'25*).
+28. **DREAMS** (`DREAMS`): Digitization for recovery and arts mining for societal well-being.
 
 ### Runtime Shuttle: High-Performance Workflow Engines
 29. **DHGWorkflow** (`DHGWorkflow`): Directed hypergraph workflow composer.
 30. **Ararat** (`Ararat`): Hardware-accelerated hypergraph executor in Mojo.
 31. **Mojito** (`Mojito`): Asynchronous task orchestrator in Mojo.
-32. **FIRM** (`FIRM`): Find, Invoke, Return, and Manage low-overhead serverless functions in Mojo.
-33. **Faro** (`Faro`): Near-duplicate detection in Go with MinHash/LSH (evolved from `dudu`).
+32. **FIRM** (`FIRM`): Find, Invoke, Return, and Manage low-overhead service composition (*IEEE MIPRO'16*).
+33. **Faro** (`Faro`, `dudu`): Near-duplicate detection for big data (*Springer OTM'15*).
 
 ## Online Deployment (GitHub Pages)
 
