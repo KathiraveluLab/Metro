@@ -18,62 +18,25 @@ function getStationLayout(station) {
   let textAnchor = "middle";
   let labelY, subY, venueY, numY;
 
-  if (station.id === "iguana") {
+  if (station.id === "sintra") {
     labelX = station.x + 28;
-    labelY = station.y - 8;
-    subY = station.y + 6;
-    venueY = station.y + 20;
-    numY = station.y - 18;
     textAnchor = "start";
-  } else if (station.id === "sintra") {
-    labelX = station.x;
-    labelY = station.y - 44;
-    subY = station.y - 31;
-    venueY = station.y + 42;
-    numY = station.y - 28;
-  } else if (station.lines.includes("line-shuttle") && station.id !== "guarda" && station.id !== "can") {
-    // Shuttle stations (DHGWorkflow, Ararat, Mojito, FIRM, Faro)
-    if (station.id === "dhgworkflow") {
-      labelX = station.x - 14;
-      labelY = station.y + 22;
-      subY = station.y + 36;
-      venueY = station.y + 49;
-      numY = station.y - 16;
-      textAnchor = "end";
-    } else {
-      labelY = station.y - 44;
-      subY = station.y - 31;
-      venueY = station.y - 18;
-      numY = station.y + 19;
-    }
-  } else if (
-    station.id === "viseu" || 
-    station.id === "cloud2sim" || 
-    station.id === "sendim" || 
-    station.id === "xsdn" || 
-    station.id === "netuber" || 
-    station.id === "chief" || 
-    station.id === "smart" || 
-    station.id === "l4sboa" || 
-    station.id === "can" || 
-    station.id === "faultsim" ||
-    station.id === "bindaas" ||
-    station.id === "niffler" ||
-    station.id === "diomede" ||
-    station.id === "awanta" ||
-    station.id === "leo"
-  ) {
-    // Labels Below Node
-    labelY = station.y + 25;
-    subY = station.y + 39;
-    venueY = station.y + 52;
-    numY = station.isMajorHub ? station.y - 23 : station.y - 17;
-  } else {
-    // Labels Above Node (Line 1 SOA, Line 4 Trust, Line 5 Community, Line 3 Obidos/Beehive/BHV/TENeT)
+    labelY = station.y - 6;
+    subY = station.y + 10;
+    venueY = station.y + 24;
+    numY = station.y - 23;
+  } else if (station.y === 150) {
+    // Tier 1 (Line 1 SOA & Line 6 Workflows & Runtimes): Labels Above Node, Numbers Below
     labelY = station.isMajorHub ? station.y - 48 : station.y - 44;
     subY = station.isMajorHub ? station.y - 34 : station.y - 31;
     venueY = station.isMajorHub ? station.y - 21 : station.y - 18;
     numY = station.isMajorHub ? station.y + 24 : station.y + 19;
+  } else {
+    // Tiers 2, 3, 4 (Line 2 Network, Line 5 Community, Line 4 Trust, Line 3 Healthcare): Labels Below Node, Numbers Above
+    labelY = station.y + 25;
+    subY = station.y + 39;
+    venueY = station.y + 52;
+    numY = station.isMajorHub ? station.y - 23 : station.y - 17;
   }
 
   return { labelX, labelY, subY, venueY, numY, textAnchor };
@@ -81,7 +44,7 @@ function getStationLayout(station) {
 
 function generateSvg() {
   const width = 1680;
-  const height = 980;
+  const height = 830;
 
   let svg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}">
@@ -97,12 +60,14 @@ function generateSvg() {
       .zone-bg-3 { fill: #f0fdf4; }
       .zone-bg-4 { fill: #faf5ff; }
       .zone-bg-5 { fill: #fff1f2; }
+      .zone-bg-6 { fill: #f8fafc; }
       
       .zone-border-1 { stroke: #bae6fd; stroke-width: 1.5; stroke-dasharray: 6,6; }
       .zone-border-2 { stroke: #fde68a; stroke-width: 1.5; stroke-dasharray: 6,6; }
       .zone-border-3 { stroke: #bbf7d0; stroke-width: 1.5; stroke-dasharray: 6,6; }
       .zone-border-4 { stroke: #e9d5ff; stroke-width: 1.5; stroke-dasharray: 6,6; }
       .zone-border-5 { stroke: #fecdd3; stroke-width: 1.5; stroke-dasharray: 6,6; }
+      .zone-border-6 { stroke: #cbd5e1; stroke-width: 1.5; stroke-dasharray: 6,6; }
       
       .zone-title { font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
       
@@ -151,25 +116,29 @@ function generateSvg() {
   svg += `  </g>
 
   <!-- Research Domain Background Zones (Light Pastel Tints) -->
-  <!-- Zone 1: SOA and Middleware -->
-  <rect x="50" y="60" width="710" height="205" rx="16" class="zone-bg-1 zone-border-1"/>
-  <text x="70" y="88" class="zone-title" fill="#0284c7">Service-Oriented Architecture &amp; Distributed Control</text>
+  <!-- Zone 1: SOA and Middleware (Tier 1 West) -->
+  <rect x="50" y="60" width="640" height="120" rx="16" class="zone-bg-1 zone-border-1"/>
+  <text x="70" y="84" class="zone-title" fill="#0284c7">Service-Oriented Architecture &amp; Distributed Control</text>
 
-  <!-- Zone 4: Autonomous Systems and Trust -->
-  <rect x="880" y="60" width="670" height="225" rx="16" class="zone-bg-4 zone-border-4"/>
-  <text x="900" y="88" class="zone-title" fill="#7c3aed">Autonomous Systems &amp; Decentralized Trust</text>
+  <!-- Zone 6: High-Performance Workflow and Systems Runtimes (Tier 1 East) -->
+  <rect x="710" y="60" width="710" height="120" rx="16" class="zone-bg-6 zone-border-6"/>
+  <text x="735" y="84" class="zone-title" fill="#64748b">High-Performance Workflow &amp; Systems Runtimes</text>
 
-  <!-- Zone 2: Network Optimizations and Edge -->
-  <rect x="50" y="290" width="1580" height="185" rx="16" class="zone-bg-2 zone-border-2"/>
-  <text x="70" y="318" class="zone-title" fill="#b45309">Network Optimizations, Edge Infrastructure &amp; Transport</text>
+  <!-- Zone 2: Network Optimizations and Edge (Tier 2 Full Width) -->
+  <rect x="50" y="205" width="1580" height="145" rx="16" class="zone-bg-2 zone-border-2"/>
+  <text x="70" y="228" class="zone-title" fill="#b45309">Network Optimizations, Edge Infrastructure &amp; Transport</text>
 
-  <!-- Zone 3: Healthcare and Biomedical -->
-  <rect x="50" y="505" width="1580" height="195" rx="16" class="zone-bg-3 zone-border-3"/>
-  <text x="70" y="533" class="zone-title" fill="#047857">Healthcare, Biomedical Imaging &amp; Telehealth Integration</text>
+  <!-- Zone 5: Community and Indigenous (Tier 3 West) -->
+  <rect x="50" y="370" width="680" height="145" rx="16" class="zone-bg-5 zone-border-5"/>
+  <text x="70" y="394" class="zone-title" fill="#be123c">Community Informatics &amp; Indigenous Computing</text>
 
-  <!-- Zone 5: Community and Indigenous -->
-  <rect x="50" y="730" width="710" height="150" rx="16" class="zone-bg-5 zone-border-5"/>
-  <text x="70" y="750" class="zone-title" fill="#be123c">Community Informatics &amp; Indigenous Computing</text>
+  <!-- Zone 4: Autonomous Systems and Trust (Tier 3 East) -->
+  <rect x="830" y="370" width="550" height="145" rx="16" class="zone-bg-4 zone-border-4"/>
+  <text x="850" y="394" class="zone-title" fill="#7c3aed">Autonomous Systems &amp; Decentralized Trust</text>
+
+  <!-- Zone 3: Healthcare and Biomedical (Tier 4 Bottom-Most Full Width) -->
+  <rect x="50" y="540" width="1580" height="155" rx="16" class="zone-bg-3 zone-border-3"/>
+  <text x="70" y="564" class="zone-title" fill="#047857">Healthcare, Biomedical Imaging &amp; Telehealth Integration</text>
 
   <!-- Title Card Header -->
   <g transform="translate(60, 40)">
@@ -210,16 +179,16 @@ function generateSvg() {
   <!-- Transfer Connections / Interchange Markers -->
   <g id="interchange-connectors" pointer-events="none">
     <!-- Viseu interchange (Line 1 to Line 2 & Line 4) -->
-    <line x1="780" y1="365" x2="780" y2="395" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
+    <line x1="780" y1="275" x2="780" y2="305" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
     
     <!-- Beehive interchange (Line 3 to Line 5) -->
-    <line x1="660" y1="605" x2="660" y2="635" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
+    <line x1="660" y1="615" x2="660" y2="645" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
 
     <!-- Sintra terminus interchange (Line 2 to Line 3) -->
-    <circle cx="1460" cy="500" r="24" fill="none" stroke="#d97706" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+    <circle cx="1460" cy="460" r="24" fill="none" stroke="#d97706" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
 
     <!-- Bindaas terminus interchange (Line 1 to Line 3) -->
-    <circle cx="80" cy="620" r="24" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+    <circle cx="80" cy="630" r="24" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
   </g>
 
   <!-- Stations Rendering -->
@@ -246,8 +215,8 @@ function generateSvg() {
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="8" fill="#7c3aed"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="3.5" class="hub-inner"/>\n`;
         svg += `      <text x="${station.x}" y="${numY}" class="station-num" fill="#d97706">${station.number}</text>\n`;
-      } else if (station.id === "beehive" || station.id === "sintra" || station.id === "bindaas") {
-        // Dual Interchange Hub (Beehive connects Line 3 & Line 5, Sintra connects Line 2 & Line 3, Bindaas connects Line 1 & Line 3)
+      } else if (station.id === "beehive" || station.id === "sintra" || station.id === "bindaas" || station.id === "guarda" || station.id === "can") {
+        // Dual Interchange Hub (Beehive, Sintra, Bindaas, GUARDA, CAN)
         const secondaryLine = METRO_DATA.lines.find(l => l.id === station.lines[1]);
         const innerColor = secondaryLine ? secondaryLine.color : color;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="17" class="hub-outer" stroke="${color}" filter="url(#hub-shadow)"/>\n`;
@@ -282,7 +251,7 @@ function generateSvg() {
   svg += `  </g>
 
   <!-- Map Legend (Bottom Panel on White Card) -->
-  <g transform="translate(60, 895)">
+  <g transform="translate(60, 720)">
     <!-- Legend Card Background -->
     <rect x="-10" y="-15" width="1560" height="85" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#card-shadow)"/>
     
@@ -313,9 +282,10 @@ function generateSvg() {
     <circle cx="580" cy="42" r="4" fill="#ffffff" stroke="#e11d48" stroke-width="1.5"/>
     <text x="615" y="46" class="legend-text">Line 5: Community &amp; Indigenous Computing</text>
 
-    <!-- Shuttle -->
-    <line x1="940" y1="42" x2="980" y2="42" stroke="#475569" stroke-width="5" stroke-dasharray="6,4" stroke-linecap="round"/>
-    <text x="995" y="46" class="legend-text">Runtime Shuttle: High-Performance Workflow Engines</text>
+    <!-- Line 6 -->
+    <line x1="940" y1="42" x2="980" y2="42" stroke="#64748b" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="960" cy="42" r="4" fill="#ffffff" stroke="#64748b" stroke-width="1.5"/>
+    <text x="995" y="46" class="legend-text">Line 6: High-Performance Workflow &amp; Systems Runtimes</text>
 
     <!-- Symbols -->
     <g transform="translate(1330, 24)">

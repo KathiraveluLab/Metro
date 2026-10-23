@@ -8,7 +8,7 @@ An interactive evolutionary transit map tracking how the public research reposit
 
 ## Transit Lines Overview
 
-The metropolitan map organizes **41 flagship research stations** across **5 interconnected transit lines** and **1 high-performance workflow shuttle loop**, reflecting over a decade of research (2014 - 2026):
+The metropolitan map organizes **41 flagship research stations** across **6 interconnected transit lines**, reflecting over a decade of research (2014 - 2026):
 
 | Line | Name | Color | Core Research Focus |
 | :--- | :--- | :---: | :--- |
@@ -17,7 +17,7 @@ The metropolitan map organizes **41 flagship research stations** across **5 inte
 | **Line 3** | **Healthcare & Biomedical Informatics** | Emerald (`#059669`) | High-throughput DICOM ML pipelines, dynamic telemedicine routing mesh, behavioral health data federation, and rural telehealth. |
 | **Line 4** | **Autonomous Systems & Decentralized Trust** | Purple (`#7c3aed`) | Blockchain-based edge middleware, verifiable off-chain state channels, Cairo ZK proofs, latency-bounded governance, and neural guardrails. |
 | **Line 5** | **Community Informatics & Circumpolar Computing** | Coral (`#e11d48`) | Alaska Native epidemic history mapping, Indigenous serious games, Arctic sea ice forecasting, and art therapy mining. |
-| **Shuttle** | **High-Performance Workflow & Runtimes** | Slate (`#475569`) | Hypergraph workflow composition, Mojo SIMD execution, lock-free task orchestration, and Go deduplication. |
+| **Line 6** | **High-Performance Workflow & Systems Runtimes** | Slate Gray (`#64748b`) | Hypergraph workflow composition, Mojo SIMD execution, lock-free task orchestration, and Go deduplication. |
 
 ---
 
@@ -27,7 +27,7 @@ The metropolitan map organizes **41 flagship research stations** across **5 inte
 - **`Viseu` (#8)**: Major triple-interchange bridging **Line 1 (SOA Middleware)**, **Line 2 (Network Optimization)**, and **Line 4 (Autonomous Decentralized Trust)**, connecting edge orchestration directly with Ethereum trust and private off-chain state channels to **`PORTO`**.
 - **`Beehive` (#24)**: Interdisciplinary junction connecting **Line 3 (Clinical Healthcare)** with **Line 5 (Community Informatics)**.
 - **`Sintra` (#18)**: Terminus junction uniting **Line 2 (Network Transport)** with **Line 3 (Clinical Healthcare)** across satellite and edge links.
-- **`GUARDA` (#7) & `CAN` (#16)**: Fast connection to the **Runtime Shuttle** for high-throughput pipeline dispatching.
+- **`GUARDA` (#7) & `CAN` (#16)**: Dual-interchange transfer stations bridging **Line 1 (SOA Middleware)** and **Line 2 (Network Transport)** directly into **Line 6 (Workflow & Systems Runtimes)** for high-throughput pipeline dispatching.
 
 ---
 
@@ -78,7 +78,7 @@ The metropolitan map organizes **41 flagship research stations** across **5 inte
 33. **Arctic Sea Ice** (`DIP_Predicting_SIE`): Circumpolar satellite image processing and sea ice extent prediction (*Elsevier Remote Sensing Applications'25*).
 34. **DREAMS** (`DREAMS`): Digitization for recovery and arts mining for societal well-being.
 
-### Runtime Shuttle: High-Performance Workflow Engines
+### Line 6: High-Performance Workflow & Systems Runtimes
 35. **DHGWorkflow** (`DHGWorkflow`): Directed hypergraph workflow composer originating from the NEXUS software-defined workflow orchestration framework for cyclic closed-loop pipelines (*IEEE Access'21*).
 36. **Ararat** (`Ararat`): Hardware-accelerated hypergraph executor in Mojo.
 37. **Mojito** (`Mojito`): Asynchronous task orchestrator in Mojo.
@@ -203,7 +203,7 @@ External project pages or publication lists on `pradeeban.github.io` can deep-li
 - Spotlight **Line 3** (Healthcare Informatics): `https://kathiravelulab.github.io/Metro/#line=line-health`
 - Spotlight **Line 4** (Autonomous Trust & AI): `https://kathiravelulab.github.io/Metro/#line=line-trust`
 - Spotlight **Line 5** (Community & Indigenous): `https://kathiravelulab.github.io/Metro/#line=line-community`
-- Spotlight **Runtime Shuttle** (Workflow Engines): `https://kathiravelulab.github.io/Metro/#line=line-shuttle`
+- Spotlight **Line 6** (Workflow & Systems Runtimes): `https://kathiravelulab.github.io/Metro/#line=line-shuttle`
 
 ---
 

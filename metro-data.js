@@ -1,6 +1,6 @@
 /**
  * KathiraveluLab Research Metro Map Data Specification
- * 40 Flagship Research Stations across 5 Transit Lines and 1 High-Performance Shuttle Loop.
+ * 41 Flagship Research Stations across 6 Interconnected Transit Lines.
  * 
  * Strict publication fidelity: verified peer-reviewed publications from official repository READMEs.
  * Archived foundational milestone Bindaas (Emory Sharma Lab, IEEE BigData 2019) included as Western Transfer Hub bridging Line 1 & Line 3.
@@ -15,8 +15,8 @@ const METRO_DATA = {
     "labName": "KathiraveluLab",
     "institution": "University of Alaska Anchorage",
     "website": "https://github.com/KathiraveluLab",
-    "version": "2026.7",
-    "totalStations": 40,
+    "version": "2026.8",
+    "totalStations": 41,
     "lastUpdated": "2026"
   },
   "lines": [
@@ -67,12 +67,12 @@ const METRO_DATA = {
     },
     {
       "id": "line-shuttle",
-      "name": "Runtime Shuttle: High-Performance Workflow Engines",
-      "shortName": "Workflow & Runtimes",
-      "color": "#475569",
+      "name": "Line 6: High-Performance Workflow & Systems Runtimes",
+      "shortName": "Workflows & Runtimes",
+      "color": "#64748b",
       "accentColor": "#94a3b8",
       "bgClass": "bg-slate",
-      "dashed": true,
+      "dashed": false,
       "description": "Hardware-accelerated workflow execution, lock-free async schedulers, FaaS service composition, and distributed near-duplicate detection in Java, Mojo, and Go."
     }
   ],
@@ -86,8 +86,8 @@ const METRO_DATA = {
       "lines": [
         "line-soa"
       ],
-      "x": 130,
-      "y": 160,
+      "x": 120,
+      "y": 150,
       "isMajorHub": false,
       "repos": [
         "concore",
@@ -127,8 +127,8 @@ const METRO_DATA = {
       "lines": [
         "line-soa"
       ],
-      "x": 210,
-      "y": 160,
+      "x": 215,
+      "y": 150,
       "isMajorHub": false,
       "repos": [
         "Cassowary"
@@ -163,8 +163,8 @@ const METRO_DATA = {
       "lines": [
         "line-soa"
       ],
-      "x": 290,
-      "y": 160,
+      "x": 305,
+      "y": 150,
       "isMajorHub": false,
       "repos": [
         "Evora"
@@ -198,8 +198,8 @@ const METRO_DATA = {
       "lines": [
         "line-soa"
       ],
-      "x": 375,
-      "y": 160,
+      "x": 395,
+      "y": 150,
       "isMajorHub": false,
       "repos": [
         "SDDS",
@@ -225,12 +225,12 @@ const METRO_DATA = {
       "mapBadge": "Cluster'19",
       "number": 5,
       "name": "SD-CPS",
-      "subtitle": "Software-Defined CPS",
+      "subtitle": "CPS Workflows",
       "lines": [
         "line-soa"
       ],
-      "x": 460,
-      "y": 160,
+      "x": 480,
+      "y": 150,
       "isMajorHub": false,
       "repos": [
         "SD-CPS"
@@ -262,8 +262,8 @@ const METRO_DATA = {
       "lines": [
         "line-soa"
       ],
-      "x": 550,
-      "y": 160,
+      "x": 565,
+      "y": 150,
       "isMajorHub": false,
       "repos": [
         "SOFIA"
@@ -286,8 +286,9 @@ const METRO_DATA = {
         "line-shuttle"
       ],
       "x": 650,
-      "y": 160,
-      "isMajorHub": false,
+      "y": 150,
+      "isMajorHub": true,
+      "isInterchange": true,
       "repos": [
         "GUARDA"
       ],
@@ -297,7 +298,7 @@ const METRO_DATA = {
         "REST / GraphQL"
       ],
       "venues": [],
-      "description": "Gateway for Uniform Access to Remote Data and Analytics built with Elixir/OTP, serving high-throughput concurrent telemetry streams into the Runtime Shuttle."
+      "description": "Gateway for Uniform Access to Remote Data and Analytics built with Elixir/OTP, serving high-throughput concurrent telemetry streams into Line 6 (High-Performance Workflow & Systems Runtimes)."
     },
     {
       "id": "viseu",
@@ -311,7 +312,7 @@ const METRO_DATA = {
         "line-trust"
       ],
       "x": 780,
-      "y": 380,
+      "y": 290,
       "isMajorHub": true,
       "isInterchange": true,
       "repos": [
@@ -343,7 +344,7 @@ const METRO_DATA = {
         "line-net"
       ],
       "x": 145,
-      "y": 380,
+      "y": 290,
       "isMajorHub": false,
       "repos": [
         "Cloud2Sim"
@@ -379,7 +380,7 @@ const METRO_DATA = {
         "line-net"
       ],
       "x": 240,
-      "y": 380,
+      "y": 290,
       "isMajorHub": false,
       "repos": [
         "xSDN"
@@ -408,7 +409,7 @@ const METRO_DATA = {
         "line-net"
       ],
       "x": 335,
-      "y": 380,
+      "y": 290,
       "isMajorHub": false,
       "repos": [
         "SENDIM"
@@ -442,7 +443,7 @@ const METRO_DATA = {
         "line-net"
       ],
       "x": 430,
-      "y": 380,
+      "y": 290,
       "isMajorHub": false,
       "repos": [
         "NetUber"
@@ -482,7 +483,7 @@ const METRO_DATA = {
         "line-net"
       ],
       "x": 525,
-      "y": 380,
+      "y": 290,
       "isMajorHub": false,
       "repos": [
         "CHIEF",
@@ -513,7 +514,7 @@ const METRO_DATA = {
         "line-net"
       ],
       "x": 635,
-      "y": 380,
+      "y": 290,
       "isMajorHub": false,
       "repos": [
         "SMART",
@@ -548,8 +549,8 @@ const METRO_DATA = {
       "lines": [
         "line-net"
       ],
-      "x": 930,
-      "y": 380,
+      "x": 920,
+      "y": 290,
       "isMajorHub": false,
       "repos": [
         "L4SBOA"
@@ -579,9 +580,10 @@ const METRO_DATA = {
         "line-net",
         "line-shuttle"
       ],
-      "x": 1070,
-      "y": 380,
-      "isMajorHub": false,
+      "x": 1330,
+      "y": 290,
+      "isMajorHub": true,
+      "isInterchange": true,
       "repos": [
         "CAN"
       ],
@@ -597,7 +599,7 @@ const METRO_DATA = {
           "note": "Networking Research Innovations for Telesurgery: A Systematic Review"
         }
       ],
-      "description": "Content-Aware Networking engine written in Rust, inspecting payload streams at line-rate to dynamically steer ultra-low-latency traffic for telesurgery and tactile internet pipelines to the Runtime Shuttle."
+      "description": "Content-Aware Networking engine written in Rust, inspecting payload streams at line-rate to dynamically steer ultra-low-latency traffic for telesurgery and tactile internet pipelines to Line 6 (High-Performance Workflow & Systems Runtimes)."
     },
     {
       "id": "faultsim",
@@ -607,8 +609,8 @@ const METRO_DATA = {
       "lines": [
         "line-net"
       ],
-      "x": 1210,
-      "y": 380,
+      "x": 1060,
+      "y": 290,
       "isMajorHub": false,
       "repos": [
         "faultsim"
@@ -631,7 +633,7 @@ const METRO_DATA = {
         "line-health"
       ],
       "x": 1460,
-      "y": 500,
+      "y": 460,
       "isMajorHub": true,
       "isInterchange": true,
       "repos": [
@@ -658,7 +660,7 @@ const METRO_DATA = {
         "line-soa"
       ],
       "x": 80,
-      "y": 620,
+      "y": 630,
       "isMajorHub": true,
       "isInterchange": true,
       "isArchived": true,
@@ -700,12 +702,12 @@ const METRO_DATA = {
       "mapBadge": "DAPD'19",
       "number": 20,
       "name": "Óbidos",
-      "subtitle": "Big Data Integration and Federation",
+      "subtitle": "Biomedical Data Lakes",
       "lines": [
         "line-health"
       ],
-      "x": 170,
-      "y": 620,
+      "x": 195,
+      "y": 630,
       "isMajorHub": false,
       "repos": [
         "Obidos",
@@ -759,8 +761,8 @@ const METRO_DATA = {
       "lines": [
         "line-health"
       ],
-      "x": 260,
-      "y": 620,
+      "x": 310,
+      "y": 630,
       "isMajorHub": false,
       "repos": [
         "Niffler",
@@ -804,8 +806,8 @@ const METRO_DATA = {
       "lines": [
         "line-health"
       ],
-      "x": 380,
-      "y": 620,
+      "x": 430,
+      "y": 630,
       "isMajorHub": false,
       "repos": [
         "DWiM"
@@ -829,8 +831,8 @@ const METRO_DATA = {
       "lines": [
         "line-health"
       ],
-      "x": 520,
-      "y": 620,
+      "x": 530,
+      "y": 630,
       "isMajorHub": false,
       "repos": [
         "Diomede"
@@ -851,13 +853,13 @@ const METRO_DATA = {
       "mapBadge": "IEEE SysCon'26",
       "number": 24,
       "name": "Beehive",
-      "subtitle": "Behavioral Health Federation",
+      "subtitle": "Behavioral Health",
       "lines": [
         "line-health",
         "line-community"
       ],
       "x": 660,
-      "y": 620,
+      "y": 630,
       "isMajorHub": true,
       "isInterchange": true,
       "repos": [
@@ -888,7 +890,7 @@ const METRO_DATA = {
         "line-health"
       ],
       "x": 920,
-      "y": 620,
+      "y": 630,
       "isMajorHub": false,
       "repos": [
         "TENeT"
@@ -923,7 +925,7 @@ const METRO_DATA = {
         "line-health"
       ],
       "x": 1200,
-      "y": 620,
+      "y": 630,
       "isMajorHub": true,
       "isInterchange": false,
       "repos": [
@@ -958,8 +960,8 @@ const METRO_DATA = {
       "lines": [
         "line-trust"
       ],
-      "x": 960,
-      "y": 160,
+      "x": 920,
+      "y": 450,
       "isMajorHub": false,
       "repos": [
         "PORTO"
@@ -992,8 +994,8 @@ const METRO_DATA = {
       "lines": [
         "line-trust"
       ],
-      "x": 1110,
-      "y": 160,
+      "x": 1050,
+      "y": 450,
       "isMajorHub": false,
       "repos": [
         "Epicue"
@@ -1015,8 +1017,8 @@ const METRO_DATA = {
       "lines": [
         "line-trust"
       ],
-      "x": 1260,
-      "y": 160,
+      "x": 1180,
+      "y": 450,
       "isMajorHub": false,
       "repos": [
         "LAGOS"
@@ -1038,8 +1040,8 @@ const METRO_DATA = {
       "lines": [
         "line-trust"
       ],
-      "x": 1410,
-      "y": 220,
+      "x": 1300,
+      "y": 450,
       "isMajorHub": true,
       "repos": [
         "IGUANA"
@@ -1069,7 +1071,7 @@ const METRO_DATA = {
         "line-community"
       ],
       "x": 150,
-      "y": 820,
+      "y": 450,
       "isMajorHub": true,
       "repos": [
         "ak-history-webmap"
@@ -1097,8 +1099,8 @@ const METRO_DATA = {
       "lines": [
         "line-community"
       ],
-      "x": 320,
-      "y": 820,
+      "x": 280,
+      "y": 450,
       "isMajorHub": true,
       "repos": [
         "Dnigi"
@@ -1126,8 +1128,8 @@ const METRO_DATA = {
       "lines": [
         "line-community"
       ],
-      "x": 490,
-      "y": 820,
+      "x": 420,
+      "y": 450,
       "isMajorHub": true,
       "repos": [
         "DIP_Predicting_SIE"
@@ -1155,8 +1157,8 @@ const METRO_DATA = {
       "lines": [
         "line-community"
       ],
-      "x": 660,
-      "y": 820,
+      "x": 550,
+      "y": 450,
       "isMajorHub": false,
       "repos": [
         "DREAMS"
@@ -1178,8 +1180,8 @@ const METRO_DATA = {
       "lines": [
         "line-shuttle"
       ],
-      "x": 700,
-      "y": 260,
+      "x": 750,
+      "y": 150,
       "isMajorHub": false,
       "repos": [
         "DHGWorkflow"
@@ -1212,8 +1214,8 @@ const METRO_DATA = {
       "lines": [
         "line-shuttle"
       ],
-      "x": 840,
-      "y": 260,
+      "x": 860,
+      "y": 150,
       "isMajorHub": false,
       "repos": [
         "Ararat"
@@ -1234,8 +1236,8 @@ const METRO_DATA = {
       "lines": [
         "line-shuttle"
       ],
-      "x": 940,
-      "y": 260,
+      "x": 970,
+      "y": 150,
       "isMajorHub": false,
       "repos": [
         "Mojito"
@@ -1257,8 +1259,8 @@ const METRO_DATA = {
       "lines": [
         "line-shuttle"
       ],
-      "x": 1040,
-      "y": 260,
+      "x": 1080,
+      "y": 150,
       "isMajorHub": false,
       "repos": [
         "FIRM"
@@ -1286,8 +1288,8 @@ const METRO_DATA = {
       "lines": [
         "line-shuttle"
       ],
-      "x": 1140,
-      "y": 260,
+      "x": 1190,
+      "y": 150,
       "isMajorHub": false,
       "repos": [
         "dudu"
@@ -1315,8 +1317,8 @@ const METRO_DATA = {
       "lines": [
         "line-shuttle"
       ],
-      "x": 1240,
-      "y": 260,
+      "x": 1300,
+      "y": 150,
       "isMajorHub": false,
       "repos": [
         "Faro"
@@ -1339,8 +1341,8 @@ const METRO_DATA = {
       "lines": [
         "line-net"
       ],
-      "x": 1330,
-      "y": 380,
+      "x": 1200,
+      "y": 290,
       "isMajorHub": false,
       "repos": [
         "LEO"
@@ -1369,32 +1371,32 @@ const METRO_DATA = {
     {
       "id": "track-soa-main",
       "lineId": "line-soa",
-      "path": "M 80,620 L 80,200 Q 80,160 120,160 L 670,160 Q 730,160 755,220 L 775,340 Q 780,365 780,380"
+      "path": "M 80,630 L 80,180 Q 80,150 120,150 L 650,150 Q 690,150 715,190 L 760,250 Q 780,275 780,290"
     },
     {
       "id": "track-net-main",
       "lineId": "line-net",
-      "path": "M 115,380 L 1350,380 Q 1420,380 1440,430 L 1460,500"
+      "path": "M 115,290 L 1360,290 Q 1420,290 1440,360 L 1460,460"
     },
     {
       "id": "track-health-main",
       "lineId": "line-health",
-      "path": "M 80,620 L 1220,620 Q 1340,620 1410,560 L 1460,500"
+      "path": "M 80,630 L 1220,630 Q 1340,630 1410,540 L 1460,460"
     },
     {
       "id": "track-trust-main",
       "lineId": "line-trust",
-      "path": "M 780,380 Q 785,350 805,310 L 845,220 Q 880,160 960,160 L 1270,160 Q 1340,160 1375,185 L 1410,220"
+      "path": "M 780,290 L 780,340 Q 780,450 840,450 L 1320,450"
     },
     {
       "id": "track-community-main",
       "lineId": "line-community",
-      "path": "M 100,820 L 660,820 L 660,620"
+      "path": "M 100,450 L 630,450 Q 660,450 660,480 L 660,630"
     },
     {
       "id": "track-shuttle",
       "lineId": "line-shuttle",
-      "path": "M 650,160 Q 675,160 685,200 L 700,260 L 1260,260 Q 1290,260 1290,300 L 1290,340 Q 1290,380 1070,380"
+      "path": "M 650,150 L 1360,150 Q 1390,150 1390,180 L 1390,260 Q 1390,290 1360,290 L 1330,290"
     }
   ]
 };
