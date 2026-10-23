@@ -240,7 +240,7 @@ function generateSvg() {
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="14" fill="#ffffff" stroke="#0284c7" stroke-width="3.5"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="8" fill="#7c3aed"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="3.5" class="hub-inner"/>\n`;
-        svg += `      <text x="${station.x}" y="${numY}" class="station-num" fill="#7c3aed">${station.number}</text>\n`;
+        svg += `      <text x="${station.x}" y="${numY}" class="station-num" fill="#d97706">${station.number}</text>\n`;
       } else if (station.id === "beehive" || station.id === "sintra") {
         // Dual Interchange Hub (Beehive connects Line 3 & Line 5, Sintra connects Line 2 & Line 3)
         const secondaryLine = METRO_DATA.lines.find(l => l.id === station.lines[1]);
@@ -267,7 +267,8 @@ function generateSvg() {
     svg += `      <text x="${labelX}" y="${labelY}" text-anchor="${textAnchor}" class="station-label">${escapeXml(station.name)}</text>\n`;
     svg += `      <text x="${labelX}" y="${subY}" text-anchor="${textAnchor}" class="station-sub">${escapeXml(station.subtitle)}</text>\n`;
     if (badgeText) {
-      svg += `      <text x="${labelX}" y="${venueY}" text-anchor="${textAnchor}" class="station-venue" fill="${color}">${escapeXml(badgeText)}</text>\n`;
+      const badgeColor = station.id === 'viseu' ? '#d97706' : color;
+      svg += `      <text x="${labelX}" y="${venueY}" text-anchor="${textAnchor}" class="station-venue" fill="${badgeColor}">${escapeXml(badgeText)}</text>\n`;
     }
 
     svg += `    </g>\n\n`;

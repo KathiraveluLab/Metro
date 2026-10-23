@@ -280,7 +280,7 @@
             <circle cx="${station.x}" cy="${station.y}" r="14" fill="#ffffff" stroke="#0284c7" stroke-width="3.5" pointer-events="none"/>
             <circle cx="${station.x}" cy="${station.y}" r="8" fill="#7c3aed" pointer-events="none"/>
             <circle cx="${station.x}" cy="${station.y}" r="3.5" fill="#ffffff" pointer-events="none"/>
-            <text x="${station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="#7c3aed" pointer-events="none">${station.number}</text>
+            <text x="${station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="#d97706" pointer-events="none">${station.number}</text>
           `;
         } else if (station.id === "beehive" || station.id === "sintra") {
           const secondaryLine = METRO_DATA.lines.find(l => l.id === station.lines[1]);
@@ -315,8 +315,9 @@
       `;
 
       if (badgeText) {
+        const badgeColor = station.id === 'viseu' ? '#fbbf24' : accent;
         markup += `
-          <text x="${labelX}" y="${venueY}" text-anchor="${textAnchor}" class="station-venue" fill="${accent}">${escapeXml(badgeText)}</text>
+          <text x="${labelX}" y="${venueY}" text-anchor="${textAnchor}" class="station-venue" fill="${badgeColor}">${escapeXml(badgeText)}</text>
         `;
       }
 

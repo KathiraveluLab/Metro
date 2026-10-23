@@ -238,10 +238,10 @@
       <circle cx="780" cy="380" r="14" fill="#ffffff" stroke="#0284c7" stroke-width="3.5"/>
       <circle cx="780" cy="380" r="8" fill="#7c3aed"/>
       <circle cx="780" cy="380" r="3.5" class="hub-inner"/>
-      <text x="780" y="357" class="station-num" fill="#7c3aed">8</text>
+      <text x="780" y="357" class="station-num" fill="#d97706">8</text>
       <text x="780" y="405" text-anchor="middle" class="station-label">Viseu</text>
       <text x="780" y="419" text-anchor="middle" class="station-sub">Edge Services Hub</text>
-      <text x="780" y="432" text-anchor="middle" class="station-venue" fill="#0284c7">COMNET&apos;22</text>
+      <text x="780" y="432" text-anchor="middle" class="station-venue" fill="#d97706">COMNET&apos;22</text>
     </g>
 
     <!-- Station: Cloud2Sim (9) -->
