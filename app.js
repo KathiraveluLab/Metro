@@ -702,10 +702,16 @@
     // Connected Stations
     const connectedContainer = document.getElementById('drawer-connected');
     connectedContainer.innerHTML = '';
-    const connectedStations = METRO_DATA.stations.filter(s => {
+    let connectedStations = [];
+    if (station.relatedStations && Array.isArray(station.relatedStations)) {
+      connectedStations = METRO_DATA.stations.filter(s => station.relatedStations.includes(s.id));
+    }
+    const lineStations = METRO_DATA.stations.filter(s => {
       if (s.id === station.id) return false;
+      if (connectedStations.some(cs => cs.id === s.id)) return false;
       return s.lines.some(l => station.lines.includes(l));
-    }).slice(0, 5);
+    });
+    connectedStations = [...connectedStations, ...lineStations].slice(0, 5);
 
     connectedStations.forEach(cs => {
       const btn = document.createElement('button');

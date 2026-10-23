@@ -34,7 +34,7 @@ The metropolitan map organizes **40 flagship research stations** across **5 inte
 ## Flagship Publications & Station Directory
 
 ### Line 1: Service-Oriented & Distributed Middleware
-1. **CONTROL-CORE** (`concore`, `concore-editor`, `concore-Mediator`): Closed-loop peripheral neuromodulation (*IEEE Access'22*, *Springer Cluster'25*).
+1. **CONTROL-CORE** (`concore`, `concore-editor`, `concore-Mediator`): Closed-loop peripheral neuromodulation (*IEEE Access'22*, *Springer Cluster'25*), orchestrating feedback loops via the NEXUS software-defined workflow framework.
 2. **Cassowary** (`Cassowary`): Context-aware smart buildings with software-defined sensor networks (*ACM M4IOT'15*).
 3. **Évora** (`Evora`): Adaptive edge service chaining (*Trans. Emerging Tel. Tech. (ETT)'18*, *IEEE ICWS'16*).
 4. **SDDS** (`SDDS`, `messaging4transport`): Software-defined data services (*IEEE SDS'18*).
@@ -78,7 +78,7 @@ The metropolitan map organizes **40 flagship research stations** across **5 inte
 34. **DREAMS** (`DREAMS`): Digitization for recovery and arts mining for societal well-being.
 
 ### Runtime Shuttle: High-Performance Workflow Engines
-35. **DHGWorkflow** (`DHGWorkflow`): Directed hypergraph workflow composer.
+35. **DHGWorkflow** (`DHGWorkflow`): Directed hypergraph workflow composer originating from the NEXUS software-defined workflow orchestration framework for cyclic closed-loop pipelines (*IEEE Access'21*).
 36. **Ararat** (`Ararat`): Hardware-accelerated hypergraph executor in Mojo.
 37. **Mojito** (`Mojito`): Asynchronous task orchestrator in Mojo.
 38. **FIRM** (`FIRM`): Find, Invoke, Return, and Manage low-overhead service composition (*IEEE MIPRO'16*).

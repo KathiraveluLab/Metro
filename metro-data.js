@@ -113,7 +113,10 @@ const METRO_DATA = {
           "note": "Simulation and Design of Closed-Loop Peripheral Neuromodulation"
         }
       ],
-      "description": "Framework for closed-loop peripheral neuromodulation control systems. Integrates simulated neuro-stimulators with real-time feedback loops and modular editors."
+      "relatedStations": [
+        "dhgworkflow"
+      ],
+      "description": "Framework for closed-loop peripheral neuromodulation control systems. Integrates simulated neuro-stimulators with real-time feedback loops and modular editors, orchestrating cyclic workflows via NEXUS and the DHGWorkflow graph composer."
     },
     {
       "id": "cassowary",
@@ -1116,6 +1119,7 @@ const METRO_DATA = {
     },
     {
       "id": "dhgworkflow",
+      "mapBadge": "IEEE Access'21",
       "number": 35,
       "name": "DHGWorkflow",
       "subtitle": "Task Graph Composer",
@@ -1131,10 +1135,22 @@ const METRO_DATA = {
       "primaryRepo": "DHGWorkflow",
       "tech": [
         "JavaScript",
-        "DAGs"
+        "React",
+        "Directed Hypergraphs (DHGs)",
+        "SDN Workflows"
       ],
-      "venues": [],
-      "description": "Interactive visual composer for Directed Hypergraph Workflows, structuring scientific computing stages and dependency graphs."
+      "venues": [
+        {
+          "name": "IEEE Access 2021",
+          "tier": "IEEE",
+          "note": "Software-Defined Workflows for Distributed Interoperable Closed-Loop Neuromodulation Control Systems (NEXUS)"
+        }
+      ],
+      "relatedStations": [
+        "control-core",
+        "ararat"
+      ],
+      "description": "Interactive visual composer for Directed Hypergraph (DHG) Workflows. Originating from the NEXUS software-defined workflow orchestration framework, it breaks the DAG limitation to model cyclic execution stages with feedback loops for closed-loop neuromodulation (powering CONTROL-CORE)."
     },
     {
       "id": "ararat",

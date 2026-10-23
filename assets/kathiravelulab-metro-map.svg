@@ -514,6 +514,7 @@
       <text x="700" y="244" class="station-num" fill="#64748b">35</text>
       <text x="686" y="282" text-anchor="end" class="station-label">DHGWorkflow</text>
       <text x="686" y="296" text-anchor="end" class="station-sub">Task Graph Composer</text>
+      <text x="686" y="309" text-anchor="end" class="station-venue" fill="#475569">IEEE Access&apos;21</text>
     </g>
 
     <!-- Station: Ararat (36) -->
