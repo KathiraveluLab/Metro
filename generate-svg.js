@@ -57,6 +57,7 @@ function getStationLayout(station) {
     station.id === "l4sboa" || 
     station.id === "can" || 
     station.id === "faultsim" ||
+    station.id === "bindaas" ||
     station.id === "niffler" ||
     station.id === "diomede" ||
     station.id === "awanta"
@@ -215,6 +216,9 @@ function generateSvg() {
 
     <!-- Sintra terminus interchange (Line 2 to Line 3) -->
     <circle cx="1460" cy="500" r="24" fill="none" stroke="#d97706" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+
+    <!-- Bindaas terminus interchange (Line 1 to Line 3) -->
+    <circle cx="80" cy="620" r="24" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
   </g>
 
   <!-- Stations Rendering -->
@@ -241,8 +245,8 @@ function generateSvg() {
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="8" fill="#7c3aed"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="3.5" class="hub-inner"/>\n`;
         svg += `      <text x="${station.x}" y="${numY}" class="station-num" fill="#d97706">${station.number}</text>\n`;
-      } else if (station.id === "beehive" || station.id === "sintra") {
-        // Dual Interchange Hub (Beehive connects Line 3 & Line 5, Sintra connects Line 2 & Line 3)
+      } else if (station.id === "beehive" || station.id === "sintra" || station.id === "bindaas") {
+        // Dual Interchange Hub (Beehive connects Line 3 & Line 5, Sintra connects Line 2 & Line 3, Bindaas connects Line 1 & Line 3)
         const secondaryLine = METRO_DATA.lines.find(l => l.id === station.lines[1]);
         const innerColor = secondaryLine ? secondaryLine.color : color;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="17" class="hub-outer" stroke="${color}" filter="url(#hub-shadow)"/>\n`;

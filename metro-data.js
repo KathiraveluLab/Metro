@@ -1,11 +1,12 @@
 /**
  * KathiraveluLab Research Metro Map Data Specification
- * 39 Flagship Research Stations across 5 Transit Lines and 1 High-Performance Shuttle Loop.
+ * 40 Flagship Research Stations across 5 Transit Lines and 1 High-Performance Shuttle Loop.
  * 
  * Strict publication fidelity: verified peer-reviewed publications from official repository READMEs.
- * All archived projects (IMPACT, BHV, TRACE, Dena'ina Place Names) omitted.
+ * Archived foundational milestone Bindaas (Emory Sharma Lab, IEEE BigData 2019) included as Western Transfer Hub bridging Line 1 & Line 3.
  * Standalone stations added for DWiM (3D DICOM in MATLAB) and dudu (Distributed Near-Duplicate in Java, Springer OTM 2015).
  * Viseu connects Line 1, Line 2, and Line 4 (PORTO) as a Major Triple Interchange Hub.
+ * Bindaas connects Line 1 and Line 3 as a Major Western Transfer Hub.
  */
 
 const METRO_DATA = {
@@ -14,8 +15,8 @@ const METRO_DATA = {
     "labName": "KathiraveluLab",
     "institution": "University of Alaska Anchorage",
     "website": "https://github.com/KathiraveluLab",
-    "version": "2026.6",
-    "totalStations": 39,
+    "version": "2026.7",
+    "totalStations": 40,
     "lastUpdated": "2026"
   },
   "lines": [
@@ -85,7 +86,7 @@ const METRO_DATA = {
       "lines": [
         "line-soa"
       ],
-      "x": 100,
+      "x": 130,
       "y": 160,
       "isMajorHub": false,
       "repos": [
@@ -123,7 +124,7 @@ const METRO_DATA = {
       "lines": [
         "line-soa"
       ],
-      "x": 190,
+      "x": 210,
       "y": 160,
       "isMajorHub": false,
       "repos": [
@@ -154,7 +155,7 @@ const METRO_DATA = {
       "lines": [
         "line-soa"
       ],
-      "x": 280,
+      "x": 290,
       "y": 160,
       "isMajorHub": false,
       "repos": [
@@ -189,7 +190,7 @@ const METRO_DATA = {
       "lines": [
         "line-soa"
       ],
-      "x": 370,
+      "x": 375,
       "y": 160,
       "isMajorHub": false,
       "repos": [
@@ -333,7 +334,7 @@ const METRO_DATA = {
       "lines": [
         "line-net"
       ],
-      "x": 90,
+      "x": 145,
       "y": 380,
       "isMajorHub": false,
       "repos": [
@@ -369,7 +370,7 @@ const METRO_DATA = {
       "lines": [
         "line-net"
       ],
-      "x": 195,
+      "x": 240,
       "y": 380,
       "isMajorHub": false,
       "repos": [
@@ -398,7 +399,7 @@ const METRO_DATA = {
       "lines": [
         "line-net"
       ],
-      "x": 300,
+      "x": 335,
       "y": 380,
       "isMajorHub": false,
       "repos": [
@@ -432,7 +433,7 @@ const METRO_DATA = {
       "lines": [
         "line-net"
       ],
-      "x": 405,
+      "x": 430,
       "y": 380,
       "isMajorHub": false,
       "repos": [
@@ -467,7 +468,7 @@ const METRO_DATA = {
       "lines": [
         "line-net"
       ],
-      "x": 515,
+      "x": 525,
       "y": 380,
       "isMajorHub": false,
       "repos": [
@@ -627,15 +628,51 @@ const METRO_DATA = {
       "description": "Major Terminus Junction connecting Network Optimization with Clinical Healthcare. Leverages RIPE Atlas to steer telehealth traffic along low-jitter routes."
     },
     {
+      "id": "bindaas",
+      "mapBadge": "IEEE BigData'19",
+      "number": 19,
+      "name": "Bindaas",
+      "subtitle": "Data Federation Hub",
+      "lines": [
+        "line-health",
+        "line-soa"
+      ],
+      "x": 80,
+      "y": 620,
+      "isMajorHub": true,
+      "isInterchange": true,
+      "isArchived": true,
+      "repos": [
+        "sharmalab/bindaas"
+      ],
+      "primaryRepo": "sharmalab/bindaas",
+      "tech": [
+        "Java",
+        "OSGi",
+        "RESTful APIs",
+        "MySQL",
+        "MongoDB",
+        "Docker"
+      ],
+      "venues": [
+        {
+          "name": "IEEE BigData 2019",
+          "tier": "IEEE",
+          "note": "Data Services with Bindaas: RESTful Interfaces for Diverse Data Sources"
+        }
+      ],
+      "description": "Major Western Transfer Hub uniting Service-Oriented Middleware (Line 1) with Healthcare Informatics (Line 3). An archived foundational data access federation middleware framework developed within the Sharma Lab at Emory University. Provides uniform RESTful APIs for diverse data stores with pluggable RBAC and query auditing, directly underpinning Óbidos and MEDIator while establishing the data services model that inspired SDDS and GUARDA."
+    },
+    {
       "id": "obidos",
       "mapBadge": "DAPD'19",
-      "number": 19,
+      "number": 20,
       "name": "Óbidos",
       "subtitle": "Big Data Integration",
       "lines": [
         "line-health"
       ],
-      "x": 120,
+      "x": 170,
       "y": 620,
       "isMajorHub": false,
       "repos": [
@@ -670,13 +707,13 @@ const METRO_DATA = {
     {
       "id": "niffler",
       "mapBadge": "JDI'21",
-      "number": 20,
+      "number": 21,
       "name": "Niffler",
       "subtitle": "DICOM ML Pipelines",
       "lines": [
         "line-health"
       ],
-      "x": 250,
+      "x": 260,
       "y": 620,
       "isMajorHub": false,
       "repos": [
@@ -710,7 +747,7 @@ const METRO_DATA = {
     },
     {
       "id": "dwim",
-      "number": 21,
+      "number": 22,
       "name": "DWiM",
       "subtitle": "DICOM MATLAB 3D",
       "lines": [
@@ -735,7 +772,7 @@ const METRO_DATA = {
     {
       "id": "diomede",
       "mapBadge": "GSoC'26",
-      "number": 22,
+      "number": 23,
       "name": "Diomede",
       "subtitle": "Dynamic DICOM Mesh",
       "lines": [
@@ -761,7 +798,7 @@ const METRO_DATA = {
     {
       "id": "beehive",
       "mapBadge": "IEEE SysCon'26",
-      "number": 23,
+      "number": 24,
       "name": "Beehive",
       "subtitle": "Behavioral Health Federation",
       "lines": [
@@ -792,7 +829,7 @@ const METRO_DATA = {
     },
     {
       "id": "tenet",
-      "number": 24,
+      "number": 25,
       "name": "TENeT",
       "subtitle": "Telehealth Effectiveness",
       "lines": [
@@ -815,7 +852,7 @@ const METRO_DATA = {
     {
       "id": "awanta",
       "mapBadge": "Cluster'25",
-      "number": 25,
+      "number": 26,
       "name": "AWANTA",
       "subtitle": "SD-WAN Telehealth Hub",
       "lines": [
@@ -851,7 +888,7 @@ const METRO_DATA = {
     {
       "id": "porto",
       "mapBadge": "IEEE ISSE'26",
-      "number": 26,
+      "number": 27,
       "name": "PORTO",
       "subtitle": "Off-Chain Resource Tracking",
       "lines": [
@@ -880,7 +917,7 @@ const METRO_DATA = {
     },
     {
       "id": "epicue",
-      "number": 27,
+      "number": 28,
       "name": "Epicue",
       "subtitle": "Cairo ZK Verification",
       "lines": [
@@ -903,7 +940,7 @@ const METRO_DATA = {
     },
     {
       "id": "lagos",
-      "number": 28,
+      "number": 29,
       "name": "LAGOS",
       "subtitle": "Latency-Aware Governance",
       "lines": [
@@ -926,7 +963,7 @@ const METRO_DATA = {
     {
       "id": "iguana",
       "mapBadge": "IEEE ISSE'26",
-      "number": 29,
+      "number": 30,
       "name": "IGUANA",
       "subtitle": "Neural Guardrails",
       "lines": [
@@ -956,7 +993,7 @@ const METRO_DATA = {
     {
       "id": "ak-history-webmap",
       "mapBadge": "IEEE Computer'25",
-      "number": 30,
+      "number": 31,
       "name": "AK History Webmap",
       "subtitle": "Epidemic Diseases Web Map",
       "lines": [
@@ -985,7 +1022,7 @@ const METRO_DATA = {
     {
       "id": "dnigi",
       "mapBadge": "IEEE Computer'25",
-      "number": 31,
+      "number": 32,
       "name": "Dnigi",
       "subtitle": "Indigenous Heritage Game",
       "lines": [
@@ -1014,7 +1051,7 @@ const METRO_DATA = {
     {
       "id": "dip-predicting-sie",
       "mapBadge": "Elsevier RSA'25",
-      "number": 32,
+      "number": 33,
       "name": "Arctic Sea Ice",
       "subtitle": "Arctic Sea Ice AI",
       "lines": [
@@ -1043,7 +1080,7 @@ const METRO_DATA = {
     },
     {
       "id": "dreams",
-      "number": 33,
+      "number": 34,
       "name": "DREAMS",
       "subtitle": "Recovery & Arts Mining",
       "lines": [
@@ -1065,7 +1102,7 @@ const METRO_DATA = {
     },
     {
       "id": "dhgworkflow",
-      "number": 34,
+      "number": 35,
       "name": "DHGWorkflow",
       "subtitle": "Task Graph Composer",
       "lines": [
@@ -1087,7 +1124,7 @@ const METRO_DATA = {
     },
     {
       "id": "ararat",
-      "number": 35,
+      "number": 36,
       "name": "Ararat",
       "subtitle": "Workflow Engine",
       "lines": [
@@ -1109,7 +1146,7 @@ const METRO_DATA = {
     },
     {
       "id": "mojito",
-      "number": 36,
+      "number": 37,
       "name": "Mojito",
       "subtitle": "Async Scheduler",
       "lines": [
@@ -1132,7 +1169,7 @@ const METRO_DATA = {
     {
       "id": "firm",
       "mapBadge": "IEEE MIPRO'16",
-      "number": 37,
+      "number": 38,
       "name": "FIRM",
       "subtitle": "Serverless FaaS",
       "lines": [
@@ -1161,7 +1198,7 @@ const METRO_DATA = {
     {
       "id": "dudu",
       "mapBadge": "Springer OTM'15",
-      "number": 38,
+      "number": 39,
       "name": "∂u∂u",
       "subtitle": "Java Near-Duplicate",
       "lines": [
@@ -1190,7 +1227,7 @@ const METRO_DATA = {
     },
     {
       "id": "faro",
-      "number": 39,
+      "number": 40,
       "name": "Faro",
       "subtitle": "Go MinHash LSH",
       "lines": [
@@ -1216,17 +1253,17 @@ const METRO_DATA = {
     {
       "id": "track-soa-main",
       "lineId": "line-soa",
-      "path": "M 80,160 L 670,160 Q 730,160 755,220 L 775,340 Q 780,365 780,380"
+      "path": "M 80,620 L 80,200 Q 80,160 120,160 L 670,160 Q 730,160 755,220 L 775,340 Q 780,365 780,380"
     },
     {
       "id": "track-net-main",
       "lineId": "line-net",
-      "path": "M 70,380 L 1230,380 Q 1350,380 1410,430 L 1460,500"
+      "path": "M 115,380 L 1230,380 Q 1350,380 1410,430 L 1460,500"
     },
     {
       "id": "track-health-main",
       "lineId": "line-health",
-      "path": "M 100,620 L 1220,620 Q 1340,620 1410,560 L 1460,500"
+      "path": "M 80,620 L 1220,620 Q 1340,620 1410,560 L 1460,500"
     },
     {
       "id": "track-trust-main",

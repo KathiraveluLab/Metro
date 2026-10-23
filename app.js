@@ -130,6 +130,7 @@
       station.id === "l4sboa" || 
       station.id === "can" || 
       station.id === "faultsim" ||
+      station.id === "bindaas" ||
       station.id === "niffler" ||
       station.id === "diomede" ||
       station.id === "awanta"
@@ -250,6 +251,7 @@
         <line x1="780" y1="365" x2="780" y2="395" stroke="var(--text-primary)" stroke-width="6" stroke-linecap="round"/>
         <line x1="660" y1="605" x2="660" y2="635" stroke="var(--text-primary)" stroke-width="6" stroke-linecap="round"/>
         <circle cx="1460" cy="500" r="24" fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+        <circle cx="80" cy="620" r="24" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
       </g>
 
       <!-- Stations Layer -->
@@ -282,7 +284,7 @@
             <circle cx="${station.x}" cy="${station.y}" r="3.5" fill="#ffffff" pointer-events="none"/>
             <text x="${station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="#d97706" pointer-events="none">${station.number}</text>
           `;
-        } else if (station.id === "beehive" || station.id === "sintra") {
+        } else if (station.id === "beehive" || station.id === "sintra" || station.id === "bindaas") {
           const secondaryLine = METRO_DATA.lines.find(l => l.id === station.lines[1]);
           const innerColor = secondaryLine ? secondaryLine.color : color;
           markup += `
@@ -640,7 +642,11 @@
     }).join(' • ');
     document.getElementById('drawer-station-line').textContent = lineNames;
     document.getElementById('drawer-title').textContent = station.name;
-    document.getElementById('drawer-subtitle').textContent = station.subtitle;
+    if (station.isArchived) {
+      document.getElementById('drawer-subtitle').innerHTML = `${escapeXml(station.subtitle)} <span class="archive-badge">Archived Milestone</span>`;
+    } else {
+      document.getElementById('drawer-subtitle').textContent = station.subtitle;
+    }
     document.getElementById('drawer-desc').textContent = station.description;
 
     // Publications
@@ -679,11 +685,15 @@
     station.repos.forEach(repo => {
       const link = document.createElement('a');
       link.className = 'repo-link';
-      link.href = `https://github.com/KathiraveluLab/${repo}`;
+      const repoFullName = repo.includes('/') ? repo : `KathiraveluLab/${repo}`;
+      link.href = `https://github.com/${repoFullName}`;
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
       link.innerHTML = `
-        <span>KathiraveluLab/${repo}</span>
+        <span style="display: inline-flex; align-items: center; gap: 6px;">
+          <span>${repoFullName}</span>
+          ${station.isArchived ? '<span class="archive-badge" style="font-size: 9.5px; padding: 1px 6px;">Archived</span>' : ''}
+        </span>
         <span>↗</span>
       `;
       repoList.appendChild(link);
