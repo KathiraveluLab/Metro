@@ -60,7 +60,8 @@ function getStationLayout(station) {
     station.id === "bindaas" ||
     station.id === "niffler" ||
     station.id === "diomede" ||
-    station.id === "awanta"
+    station.id === "awanta" ||
+    station.id === "leo"
   ) {
     // Labels Below Node
     labelY = station.y + 25;

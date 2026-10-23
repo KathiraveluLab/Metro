@@ -8,7 +8,7 @@ An interactive evolutionary transit map tracking how the public research reposit
 
 ## Transit Lines Overview
 
-The metropolitan map organizes **40 flagship research stations** across **5 interconnected transit lines** and **1 high-performance workflow shuttle loop**, reflecting over a decade of research (2014 - 2026):
+The metropolitan map organizes **41 flagship research stations** across **5 interconnected transit lines** and **1 high-performance workflow shuttle loop**, reflecting over a decade of research (2014 - 2026):
 
 | Line | Name | Color | Core Research Focus |
 | :--- | :--- | :---: | :--- |
@@ -35,7 +35,7 @@ The metropolitan map organizes **40 flagship research stations** across **5 inte
 
 ### Line 1: Service-Oriented & Distributed Middleware
 1. **CONTROL-CORE** (`concore`, `concore-editor`, `concore-Mediator`): Closed-loop peripheral neuromodulation (*IEEE Access'22*, *Springer Cluster'25*), orchestrating feedback loops via the NEXUS software-defined workflow framework.
-2. **Cassowary** (`Cassowary`): Context-aware smart buildings with software-defined sensor networks (*ACM M4IOT'15*).
+2. **Cassowary** (`Cassowary`): Context-aware smart buildings and decentralized SD-MANETs for IoT & smart homes (*ACM M4IOT'15*, *IJCAC'26*).
 3. **Évora** (`Evora`): Adaptive edge service chaining (*Trans. Emerging Tel. Tech. (ETT)'18*, *IEEE ICWS'16*).
 4. **SDDS** (`SDDS`, `messaging4transport`): Software-defined data services (*IEEE SDS'18*).
 5. **SD-CPS** (`SD-CPS`): Software-defined cyber-physical systems (*Springer Cluster'19*, *IEEE SDS'17*).
@@ -47,26 +47,27 @@ The metropolitan map organizes **40 flagship research stations** across **5 inte
 9. **Cloud2Sim** (`Cloud2Sim`): Adaptive distributed simulator for Cloud and MapReduce algorithms (*IEEE/ACM UCC'14*, *IEEE MASCOTS'14*).
 10. **xSDN** (`xSDN`): Expressive simulator for dynamic network flows (*IEEE IC2E'15*).
 11. **SENDIM** (`SENDIM`): Cloud network simulation, emulation, and deployment (*IEEE IC2E'16*, *Springer OTM'16*).
-12. **NetUber** (`NetUber`): Software-defined Internet routing (*IFIP Networking'18*, *IEEE SDS'20*).
+12. **NetUber** (`NetUber`): Software-defined Internet routing and dynamic IXP peering via Dynam-IX (*ACM SIGCOMM / CoNEXT'18*, *IFIP Networking'18*, *IEEE SDS'20*).
 13. **CHIEF** (`CHIEF`, `messaging4transport`): Controller farm for clouds of software-defined community networks (*IEEE IC2EW'16*).
 14. **SMART** (`SMART`, `messaging4transport`): SDN middlebox architecture for resilient transfers (*IEEE IM'17*, *Springer OTM'16*).
 15. **L4SBOA** (`L4SBOA`): L4S bandwidth orchestration for ultra-low latency (*IEEE CCECE'25*).
-16. **CAN** (`CAN`): Content-aware networking in Rust.
+16. **CAN** (`CAN`): Content-aware networking in Rust and telesurgery innovations review (*IEEE SDS'22*).
 17. **faultsim** (`faultsim`): Distributed cluster failure detector under extreme network instability in Rust.
+41. **LEO** (`LEO`): Low Earth Orbit satellite network simulation with inter-satellite links (*IEEE SysCon'25*).
 18. **Sintra** (`Sintra`, `sintra-plot`): Self-adaptive interdomain network latency measurements and monitoring with RIPE Atlas.
 
 ### Line 3: Healthcare & Biomedical Informatics
-19. **Bindaas** (`bindaas`): Foundational RESTful data access federation middleware (*IEEE BigData'19*).
+19. **Bindaas** (`bindaas`, `TCIA-API`, `TCIA-REST-API-Client`): Foundational RESTful data access federation middleware, PRISM, and open access image repositories (*IEEE BigData'19*, *JCO CCI'20*, *MoNeTec'22*).
 20. **Óbidos** (`Obidos`, `MEDIator`, `datacafe`): Big data integration and federation, dynamic data warehousing, and biomedical data lakes (*Springer DAPD'19*, *VLDB DMAH'17*, *VLDB DMAH'16*, *AMIA'16*, *ACM BigCHat (KDD)'15*).
-21. **Niffler** (`Niffler`, `MRIQC`): High-throughput DICOM machine learning pipelines (*Springer JDI'21*, *IEEE Access'21*, *IEEE Computer'22*).
+21. **Niffler** (`Niffler`, `MRIQC`): High-throughput DICOM machine learning pipelines and edge MRI image quality assessment (*Springer JDI'21*, *IEEE Access'21*, *IEEE Computer'22*, *IEEE CCECE'24*).
 22. **DWiM** (`DWiM`): Automated DICOM 3D volume assembly, slice sorting, and isotropic resampling in MATLAB.
 23. **Diomede** (`Diomede`): Dynamic DICOM endpoint routing mesh and telemedicine toolkit across regional cloud PACS nodes.
 24. **Beehive** (`Beehive`): Behavioral health data framework with digitized drawings and photographs (*IEEE SysCon'26*).
-25. **TENeT** (`TENeT`): Telehealth necessity and clinical outcome tracker.
+25. **TENeT** (`TENeT`): Telehealth necessity, clinical outcome tracking, and telehealth dilemma analysis (*IEEE Computer'23*, *IEEE CCECE'24*).
 26. **AWANTA** (`AWANTA`): SD-WAN for remote telehealth measurements (*Springer Cluster'25*, *IEEE SDS'23*).
 
 ### Line 4: Autonomous Systems & Decentralized Trust
-27. **PORTO** (`PORTO`): Private off-chain resource tracking and orchestration (*IEEE ISSE'26*).
+27. **PORTO** (`PORTO`): Private off-chain resource tracking and orchestration, and enterprise blockchain in healthcare (*IEEE ISSE'26*, *IEEE SDS'25*).
 28. **Epicue** (`Epicue`): Zero-knowledge computational integrity with Cairo STARKs in untrusted cloud environments.
 29. **LAGOS** (`LAGOS`): Latency-aware accountable overlay governance in Gleam.
 30. **IGUANA** (`IGUANA`): Integrated guardrails for unbiased, adaptive neural network architectures (*IEEE ISSE'26*).

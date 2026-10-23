@@ -133,7 +133,7 @@
   <!-- Metro Line Tracks (Layer 1: Under-tracks for anti-aliasing depth) -->
   <g id="tracks-glow">
     <path d="M 80,620 L 80,200 Q 80,160 120,160 L 670,160 Q 730,160 755,220 L 775,340 Q 780,365 780,380" stroke="#0284c7" stroke-width="16" class="track-underglow" />
-    <path d="M 115,380 L 1230,380 Q 1350,380 1410,430 L 1460,500" stroke="#d97706" stroke-width="16" class="track-underglow" />
+    <path d="M 115,380 L 1350,380 Q 1420,380 1440,430 L 1460,500" stroke="#d97706" stroke-width="16" class="track-underglow" />
     <path d="M 80,620 L 1220,620 Q 1340,620 1410,560 L 1460,500" stroke="#059669" stroke-width="16" class="track-underglow" />
     <path d="M 780,380 Q 785,350 805,310 L 845,220 Q 880,160 960,160 L 1270,160 Q 1340,160 1375,185 L 1410,220" stroke="#7c3aed" stroke-width="16" class="track-underglow" />
     <path d="M 100,820 L 660,820 L 660,620" stroke="#e11d48" stroke-width="16" class="track-underglow" />
@@ -143,7 +143,7 @@
   <!-- Metro Line Tracks (Layer 2: Core Solid Tracks) -->
   <g id="tracks-core">
     <path id="track-soa-main" d="M 80,620 L 80,200 Q 80,160 120,160 L 670,160 Q 730,160 755,220 L 775,340 Q 780,365 780,380" stroke="#0284c7" stroke-width="8" class="track-main" />
-    <path id="track-net-main" d="M 115,380 L 1230,380 Q 1350,380 1410,430 L 1460,500" stroke="#d97706" stroke-width="8" class="track-main" />
+    <path id="track-net-main" d="M 115,380 L 1350,380 Q 1420,380 1440,430 L 1460,500" stroke="#d97706" stroke-width="8" class="track-main" />
     <path id="track-health-main" d="M 80,620 L 1220,620 Q 1340,620 1410,560 L 1460,500" stroke="#059669" stroke-width="8" class="track-main" />
     <path id="track-trust-main" d="M 780,380 Q 785,350 805,310 L 845,220 Q 880,160 960,160 L 1270,160 Q 1340,160 1375,185 L 1410,220" stroke="#7c3aed" stroke-width="8" class="track-main" />
     <path id="track-community-main" d="M 100,820 L 660,820 L 660,620" stroke="#e11d48" stroke-width="8" class="track-main" />
@@ -324,6 +324,7 @@
       <text x="1070" y="363" class="station-num" fill="#64748b">16</text>
       <text x="1070" y="405" text-anchor="middle" class="station-label">CAN</text>
       <text x="1070" y="419" text-anchor="middle" class="station-sub">Content-Aware Net</text>
+      <text x="1070" y="432" text-anchor="middle" class="station-venue" fill="#d97706">IEEE SDS&apos;22</text>
     </g>
 
     <!-- Station: faultsim (17) -->
@@ -413,6 +414,7 @@
       <text x="920" y="639" class="station-num" fill="#64748b">25</text>
       <text x="920" y="576" text-anchor="middle" class="station-label">TENeT</text>
       <text x="920" y="589" text-anchor="middle" class="station-sub">Telehealth Effectiveness</text>
+      <text x="920" y="602" text-anchor="middle" class="station-venue" fill="#059669">IEEE Computer&apos;23</text>
     </g>
 
     <!-- Station: AWANTA (26) -->
@@ -562,6 +564,16 @@
       <text x="1240" y="279" class="station-num" fill="#64748b">40</text>
       <text x="1240" y="216" text-anchor="middle" class="station-label">Faro</text>
       <text x="1240" y="229" text-anchor="middle" class="station-sub">Go MinHash LSH</text>
+    </g>
+
+    <!-- Station: LEO (41) -->
+    <g id="station-leo" class="station-node" transform="translate(0, 0)">
+      <circle cx="1330" cy="380" r="10" fill="#ffffff" stroke="#d97706" stroke-width="4.5" filter="url(#hub-shadow)"/>
+      <circle cx="1330" cy="380" r="4" fill="#0f172a"/>
+      <text x="1330" y="363" class="station-num" fill="#64748b">41</text>
+      <text x="1330" y="405" text-anchor="middle" class="station-label">LEO</text>
+      <text x="1330" y="419" text-anchor="middle" class="station-sub">Satellite Constellations</text>
+      <text x="1330" y="432" text-anchor="middle" class="station-venue" fill="#d97706">SysCon&apos;25</text>
     </g>
 
   </g>

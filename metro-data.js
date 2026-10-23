@@ -145,9 +145,14 @@ const METRO_DATA = {
           "name": "ACM M4IOT 2015",
           "tier": "ACM",
           "note": "Middleware Platform for Context-Aware Smart Buildings with Software-Defined Sensor Networks"
+        },
+        {
+          "name": "Int. Journal of Cloud Applications and Computing (IJCAC) 2026",
+          "tier": "IGI Global",
+          "note": "From Mission-Critical to Smart Homes: Decentralized Software-Defined MANETs and Fault-Tolerant Architecture for IoT"
         }
       ],
-      "description": "Context-aware smart buildings middleware with software-defined sensor networks (SDSN), integrating Infinispan in-memory data grids, ActiveMQ, and OpenDaylight control loops."
+      "description": "Context-aware smart environments middleware with software-defined sensor networks (SDSN) and decentralized fault-tolerant MANETs for mission-critical and IoT deployments, integrating Infinispan in-memory data grids, ActiveMQ, and OpenDaylight control loops."
     },
     {
       "id": "evora",
@@ -450,6 +455,11 @@ const METRO_DATA = {
       ],
       "venues": [
         {
+          "name": "ACM SIGCOMM / CoNEXT 2018",
+          "tier": "ACM",
+          "note": "Dynam-IX: A Dynamic Interconnection eXchange"
+        },
+        {
           "name": "IFIP Networking 2018",
           "tier": "IFIP",
           "note": "Software-Defined Internet Routing with Cooperative Transit"
@@ -460,7 +470,7 @@ const METRO_DATA = {
           "note": "Multipath SD-WAN Routing Framework"
         }
       ],
-      "description": "Software-Defined Internet architecture coordinating multi-provider transit routing through cooperative peering exchanges."
+      "description": "Software-Defined Internet architecture coordinating multi-provider transit routing through cooperative peering exchanges and dynamic interconnection exchanges (Dynam-IX)."
     },
     {
       "id": "chief",
@@ -561,6 +571,7 @@ const METRO_DATA = {
     },
     {
       "id": "can",
+      "mapBadge": "IEEE SDS'22",
       "number": 16,
       "name": "CAN",
       "subtitle": "Content-Aware Net",
@@ -579,8 +590,14 @@ const METRO_DATA = {
         "Rust",
         "Async / Tokio"
       ],
-      "venues": [],
-      "description": "Content-Aware Networking engine written in Rust, inspecting payload streams at line-rate to dynamically steer traffic to the Runtime Shuttle."
+      "venues": [
+        {
+          "name": "IEEE SDS 2022",
+          "tier": "IEEE",
+          "note": "Networking Research Innovations for Telesurgery: A Systematic Review"
+        }
+      ],
+      "description": "Content-Aware Networking engine written in Rust, inspecting payload streams at line-rate to dynamically steer ultra-low-latency traffic for telesurgery and tactile internet pipelines to the Runtime Shuttle."
     },
     {
       "id": "faultsim",
@@ -646,7 +663,9 @@ const METRO_DATA = {
       "isInterchange": true,
       "isArchived": true,
       "repos": [
-        "sharmalab/bindaas"
+        "sharmalab/bindaas",
+        "TCIA-API",
+        "TCIA-REST-API-Client"
       ],
       "primaryRepo": "sharmalab/bindaas",
       "tech": [
@@ -662,9 +681,19 @@ const METRO_DATA = {
           "name": "IEEE BigData 2019",
           "tier": "IEEE",
           "note": "Data Services with Bindaas: RESTful Interfaces for Diverse Data Sources"
+        },
+        {
+          "name": "JCO Clinical Cancer Informatics 2020",
+          "tier": "ASCO",
+          "note": "PRISM: A Platform for Imaging in Precision Medicine"
+        },
+        {
+          "name": "MoNeTec 2022",
+          "tier": "IEEE",
+          "note": "Uniform Interfaces for Healthcare Data Access Federation"
         }
       ],
-      "description": "Major Western Transfer Hub uniting Service-Oriented Middleware (Line 1) with Healthcare Informatics (Line 3). An archived foundational data access federation middleware framework developed within the Sharma Lab at Emory University. Provides uniform RESTful APIs for diverse data stores with pluggable RBAC and query auditing, directly underpinning Óbidos and MEDIator while establishing the data services model that inspired SDDS and GUARDA."
+      "description": "Major Western Transfer Hub uniting Service-Oriented Middleware (Line 1) with Healthcare Informatics (Line 3). An archived foundational data access federation middleware framework developed within the Sharma Lab at Emory University. Provides uniform RESTful APIs for diverse clinical and cancer imaging stores (TCIA, PRISM) with pluggable RBAC and query auditing, directly underpinning Óbidos and MEDIator while establishing the data services model that inspired SDDS and GUARDA."
     },
     {
       "id": "obidos",
@@ -758,9 +787,14 @@ const METRO_DATA = {
           "name": "IEEE Computer 2022",
           "tier": "IEEE",
           "note": "Visualizing Scanner Utilization from MRI Metadata and Clinical Data"
+        },
+        {
+          "name": "IEEE CCECE 2024",
+          "tier": "IEEE",
+          "note": "Classifying and Quantifying MRI Image Quality from DICOM Data at the Edge"
         }
       ],
-      "description": "Comprehensive medical imaging pipeline engine. Ingests PACS/DICOM streams at line speed, extracts clinical metadata, and feeds neural network inference pipelines."
+      "description": "Comprehensive medical imaging pipeline engine and edge automated quality control (MRIQC). Ingests PACS/DICOM streams at line speed, extracts clinical metadata, and feeds neural network inference pipelines."
     },
     {
       "id": "dwim",
@@ -846,6 +880,7 @@ const METRO_DATA = {
     },
     {
       "id": "tenet",
+      "mapBadge": "IEEE Computer'23",
       "number": 25,
       "name": "TENeT",
       "subtitle": "Telehealth Effectiveness",
@@ -861,10 +896,22 @@ const METRO_DATA = {
       "primaryRepo": "TENeT",
       "tech": [
         "Python",
-        "Telemetry Analytics"
+        "Telemetry Analytics",
+        "Clinical Outcomes"
       ],
-      "venues": [],
-      "description": "Telehealth Effectiveness and Necessity Tracker measuring clinical outcome retention, connectivity drop rates, and cost-benefit trade-offs in remote rural consultations."
+      "venues": [
+        {
+          "name": "IEEE Computer 2023",
+          "tier": "IEEE",
+          "note": "The Telehealth Dilemma: Health-Care Deserts Meet the Internet's Remote Regions"
+        },
+        {
+          "name": "IEEE CCECE 2024",
+          "tier": "IEEE",
+          "note": "Telehealth in the Circumpolar North: A Perspective of Access and Connectivity"
+        }
+      ],
+      "description": "Telehealth Effectiveness and Necessity Tracker measuring clinical outcome retention, connectivity drop rates, and cost-benefit trade-offs in remote rural consultations, addressing health-care deserts and circumpolar connectivity barriers."
     },
     {
       "id": "awanta",
@@ -928,9 +975,14 @@ const METRO_DATA = {
           "name": "IEEE ISSE 2026",
           "tier": "IEEE",
           "note": "Private Off-chain Resource Tracking and Orchestration"
+        },
+        {
+          "name": "IEEE SDS 2025",
+          "tier": "IEEE",
+          "note": "Scaling and Securing Enterprise Healthcare Networks with Blockchain"
         }
       ],
-      "description": "Private Off-Chain Resource Tracking and Orchestration built in Erlang, enabling high-frequency verifiable resource accounting via state channels connected to Viseu's Ethereum gateway."
+      "description": "Private Off-Chain Resource Tracking and Orchestration built in Erlang, enabling high-frequency verifiable resource accounting via state channels and securing enterprise healthcare networks with blockchain architectures."
     },
     {
       "id": "epicue",
@@ -1277,6 +1329,40 @@ const METRO_DATA = {
       ],
       "venues": [],
       "description": "High-throughput near-duplicate detection in Go using MinHash and Locality-Sensitive Hashing (LSH), modernizing the lab's earlier Java ∂u∂u engine."
+    },
+    {
+      "id": "leo",
+      "mapBadge": "SysCon'25",
+      "number": 41,
+      "name": "LEO",
+      "subtitle": "Satellite Constellations",
+      "lines": [
+        "line-net"
+      ],
+      "x": 1330,
+      "y": 380,
+      "isMajorHub": false,
+      "repos": [
+        "LEO"
+      ],
+      "primaryRepo": "LEO",
+      "tech": [
+        "Python",
+        "Inter-Satellite Links",
+        "Satellite Simulation"
+      ],
+      "venues": [
+        {
+          "name": "IEEE Systems Conference (SysCon) 2025",
+          "tier": "IEEE",
+          "note": "A Performance Study on Low Earth Orbit Satellite Networks with Inter Satellite Links"
+        }
+      ],
+      "relatedStations": [
+        "sintra",
+        "awanta"
+      ],
+      "description": "Simulation and performance modeling of Low Earth Orbit (LEO) satellite constellations with inter-satellite laser links (ISLs), characterizing latency profiles, constellation dynamics, and routing for remote and polar broadband connectivity."
     }
   ],
   "tracks": [
@@ -1288,7 +1374,7 @@ const METRO_DATA = {
     {
       "id": "track-net-main",
       "lineId": "line-net",
-      "path": "M 115,380 L 1230,380 Q 1350,380 1410,430 L 1460,500"
+      "path": "M 115,380 L 1350,380 Q 1420,380 1440,430 L 1460,500"
     },
     {
       "id": "track-health-main",
