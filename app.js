@@ -630,8 +630,9 @@
 
     // Populate Drawer
     const primaryLine = METRO_DATA.lines.find(l => l.id === station.lines[0]);
+    const badgeBg = station.id === 'viseu' ? '#d97706' : (primaryLine ? primaryLine.color : '#0284c7');
     document.getElementById('drawer-station-id').textContent = `#${station.number}`;
-    document.getElementById('drawer-station-id').style.background = primaryLine ? primaryLine.color : '#0284c7';
+    document.getElementById('drawer-station-id').style.background = badgeBg;
     
     const lineNames = station.lines.map(lineId => {
       const line = METRO_DATA.lines.find(l => l.id === lineId);

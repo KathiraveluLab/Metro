@@ -297,8 +297,8 @@ const METRO_DATA = {
       "name": "Viseu",
       "subtitle": "Edge Services Hub",
       "lines": [
-        "line-soa",
         "line-net",
+        "line-soa",
         "line-trust"
       ],
       "x": 780,
