@@ -668,7 +668,7 @@ const METRO_DATA = {
       "mapBadge": "DAPD'19",
       "number": 20,
       "name": "Óbidos",
-      "subtitle": "Data Integration & Lakes",
+      "subtitle": "Big Data Integration and Federation",
       "lines": [
         "line-health"
       ],
@@ -716,7 +716,7 @@ const METRO_DATA = {
           "note": "Scalable ETL Pipelines for Multimodal Healthcare Records"
         }
       ],
-      "description": "Comprehensive biomedical data integration, dynamic data warehousing, and data lake framework (uniting Óbidos, MEDIator, and Data Café). Harmonizes electronic health records, imaging registries, and genomic datasets for reproducible cohort studies using Apache Spark, Drill, and Hive."
+      "description": "Comprehensive biomedical big data integration and federation, dynamic data warehousing, and data lake framework (uniting Óbidos, MEDIator, and Data Café). Harmonizes electronic health records, imaging registries, and genomic datasets for reproducible cohort studies using Apache Spark, Drill, and Hive."
     },
     {
       "id": "niffler",

@@ -362,7 +362,7 @@
       <circle cx="170" cy="620" r="4" fill="#0f172a"/>
       <text x="170" y="639" class="station-num" fill="#64748b">20</text>
       <text x="170" y="576" text-anchor="middle" class="station-label">Óbidos</text>
-      <text x="170" y="589" text-anchor="middle" class="station-sub">Data Integration &amp; Lakes</text>
+      <text x="170" y="589" text-anchor="middle" class="station-sub">Big Data Integration and Federation</text>
       <text x="170" y="602" text-anchor="middle" class="station-venue" fill="#059669">DAPD&apos;19</text>
     </g>
 

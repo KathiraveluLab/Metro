@@ -57,7 +57,7 @@ The metropolitan map organizes **40 flagship research stations** across **5 inte
 
 ### Line 3: Healthcare & Biomedical Informatics
 19. **Bindaas** (`bindaas`): Foundational RESTful data access federation middleware (*IEEE BigData'19*).
-20. **Óbidos** (`Obidos`, `MEDIator`, `datacafe`): Hybrid ETL, dynamic data warehousing, and biomedical data lakes (*Springer DAPD'19*, *VLDB DMAH'17*, *VLDB DMAH'16*, *AMIA'16*, *ACM BigCHat (KDD)'15*).
+20. **Óbidos** (`Obidos`, `MEDIator`, `datacafe`): Big data integration and federation, dynamic data warehousing, and biomedical data lakes (*Springer DAPD'19*, *VLDB DMAH'17*, *VLDB DMAH'16*, *AMIA'16*, *ACM BigCHat (KDD)'15*).
 21. **Niffler** (`Niffler`, `MRIQC`): High-throughput DICOM machine learning pipelines (*Springer JDI'21*, *IEEE Access'21*, *IEEE Computer'22*).
 22. **DWiM** (`DWiM`): Automated DICOM 3D volume assembly, slice sorting, and isotropic resampling in MATLAB.
 23. **Diomede** (`Diomede`): Dynamic DICOM endpoint routing mesh and telemedicine toolkit across regional cloud PACS nodes.
