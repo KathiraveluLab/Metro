@@ -668,7 +668,7 @@ const METRO_DATA = {
       "mapBadge": "DAPD'19",
       "number": 20,
       "name": "Óbidos",
-      "subtitle": "Big Data Integration",
+      "subtitle": "Data Integration & Lakes",
       "lines": [
         "line-health"
       ],
@@ -677,19 +677,23 @@ const METRO_DATA = {
       "isMajorHub": false,
       "repos": [
         "Obidos",
-        "MEDIator"
+        "MEDIator",
+        "sharmalab/datacafe"
       ],
       "primaryRepo": "Obidos",
       "tech": [
         "Java",
         "Spark",
-        "ETL"
+        "Apache Drill",
+        "Apache Hive",
+        "ETL",
+        "Data Lakes"
       ],
       "venues": [
         {
           "name": "Distributed and Parallel Databases (DAPD) 2019",
           "tier": "Springer",
-          "note": "Distributed Data Integration for Biomedical Cohort Discovery"
+          "note": "Distributed Data Integration for Biomedical Cohort Discovery (Óbidos)"
         },
         {
           "name": "VLDB DMAH 2017",
@@ -697,12 +701,22 @@ const METRO_DATA = {
           "note": "MEDIator: A Pipeline for Heterogeneous Biomedical Data Integration"
         },
         {
+          "name": "VLDB DMAH 2016",
+          "tier": "VLDB / Springer",
+          "note": "A Dynamic Data Warehousing Platform for Creating and Accessing Biomedical Data Lakes (Data Café)"
+        },
+        {
+          "name": "AMIA Summits 2016",
+          "tier": "AMIA",
+          "note": "Data Café — A Platform For Creating Biomedical Data Lakes"
+        },
+        {
           "name": "ACM BigCHat (KDD) 2015",
           "tier": "ACM",
           "note": "Scalable ETL Pipelines for Multimodal Healthcare Records"
         }
       ],
-      "description": "Scalable ETL and data integration framework harmonizing electronic health records, imaging registries, and genomic datasets for reproducible cohort studies."
+      "description": "Comprehensive biomedical data integration, dynamic data warehousing, and data lake framework (uniting Óbidos, MEDIator, and Data Café). Harmonizes electronic health records, imaging registries, and genomic datasets for reproducible cohort studies using Apache Spark, Drill, and Hive."
     },
     {
       "id": "niffler",

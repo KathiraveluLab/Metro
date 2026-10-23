@@ -692,7 +692,7 @@
       link.innerHTML = `
         <span style="display: inline-flex; align-items: center; gap: 6px;">
           <span>${repoFullName}</span>
-          ${station.isArchived ? '<span class="archive-badge" style="font-size: 9.5px; padding: 1px 6px;">Archived</span>' : ''}
+          ${(station.isArchived || repo.includes('sharmalab/')) ? '<span class="archive-badge" style="font-size: 9.5px; padding: 1px 6px;">Archived</span>' : ''}
         </span>
         <span>↗</span>
       `;
