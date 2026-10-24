@@ -58,8 +58,9 @@ function getStationLayout(station) {
     numY = station.y + 19;
   } else if (station.id === "control-core") {
     // CONTROL-CORE is at (160, 630): Western transfer hub bridging Line 3 and Line 1
-    labelX = station.x - 24;
-    textAnchor = "end";
+    // Labels Below Node, aligned directly under the interchange station
+    labelX = station.x;
+    textAnchor = "middle";
     labelY = station.y + 25;
     subY = station.y + 39;
     venueY = station.y + 52;

@@ -719,7 +719,7 @@ const METRO_DATA = {
       "lines": [
         "line-health"
       ],
-      "x": 235,
+      "x": 270,
       "y": 630,
       "isMajorHub": false,
       "repos": [
@@ -774,7 +774,7 @@ const METRO_DATA = {
       "lines": [
         "line-health"
       ],
-      "x": 345,
+      "x": 385,
       "y": 630,
       "isMajorHub": false,
       "repos": [
@@ -819,7 +819,7 @@ const METRO_DATA = {
       "lines": [
         "line-health"
       ],
-      "x": 455,
+      "x": 495,
       "y": 630,
       "isMajorHub": false,
       "repos": [
@@ -844,7 +844,7 @@ const METRO_DATA = {
       "lines": [
         "line-health"
       ],
-      "x": 565,
+      "x": 605,
       "y": 630,
       "isMajorHub": false,
       "repos": [
