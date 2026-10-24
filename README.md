@@ -24,10 +24,11 @@ The metropolitan map organizes **41 flagship research stations** across **6 inte
 ## Key Transfer Hubs & Interchanges
 
 - **`Bindaas` (#19)**: Major Western transfer hub bridging **Line 1 (SOA Middleware)** and **Line 3 (Clinical Healthcare & Biomedical Informatics)**, federating heterogeneous clinical repositories and providing the foundational RESTful data architecture for **`Óbidos`**.
+- **`CHIEF` (#9)**: Transfer hub bridging **Line 1 (SOA Middleware)** and **Line 2 (Network Transport)**, coordinating software-defined community network controller farms.
 - **`Viseu` (#8)**: Major triple-interchange bridging **Line 1 (SOA Middleware)**, **Line 2 (Network Optimization)**, and **Line 4 (Autonomous Decentralized Trust)**, connecting edge orchestration directly with Ethereum trust and private off-chain state channels to **`PORTO`**.
 - **`Beehive` (#24)**: Interdisciplinary junction connecting **Line 3 (Clinical Healthcare)** with **Line 5 (Community Informatics)**.
-- **`Sintra` (#18)**: Terminus junction uniting **Line 2 (Network Transport)** with **Line 3 (Clinical Healthcare)** across satellite and edge links.
-- **`GUARDA` (#7) & `CAN` (#16)**: Dual-interchange transfer stations bridging **Line 1 (SOA Middleware)** and **Line 2 (Network Transport)** directly into **Line 6 (Workflow & Systems Runtimes)** for high-throughput pipeline dispatching.
+- **`Sintra` (#30)**: Major triple-interchange bridging **Line 2 (Network Transport)**, **Line 3 (Clinical Healthcare)**, and **Line 4 (Autonomous Systems & Decentralized Trust)** across satellite, edge, and zero-knowledge trust channels.
+- **`GUARDA` (#7) & `CAN` (#18)**: Dual-interchange transfer stations bridging **Line 1 (SOA Middleware)** and **Line 2 (Network Transport)** directly into **Line 6 (Workflow & Systems Runtimes)** for high-throughput pipeline dispatching.
 
 ---
 
@@ -44,17 +45,16 @@ The metropolitan map organizes **41 flagship research stations** across **6 inte
 8. **Viseu** (`Viseu`): Virtual Internet services at the edge and decentralized blockchain framework (*Computer Networks (COMNET)'22*).
 
 ### Line 2: Network Transport & Edge Infrastructure
-9. **Cloud2Sim** (`Cloud2Sim`): Adaptive distributed simulator for Cloud and MapReduce algorithms (*IEEE/ACM UCC'14*, *IEEE MASCOTS'14*).
-10. **xSDN** (`xSDN`): Expressive simulator for dynamic network flows (*IEEE IC2E'15*).
-11. **SENDIM** (`SENDIM`): Cloud network simulation, emulation, and deployment (*IEEE IC2E'16*, *Springer OTM'16*).
-12. **NetUber** (`NetUber`): Software-defined Internet routing and dynamic IXP peering via Dynam-IX (*ACM SIGCOMM / CoNEXT'18*, *IFIP Networking'18*, *IEEE SDS'20*).
-13. **CHIEF** (`CHIEF`, `messaging4transport`): Controller farm for clouds of software-defined community networks (*IEEE IC2EW'16*).
+9. **CHIEF** (`CHIEF`, `messaging4transport`): Controller farm for clouds of software-defined community networks (*IEEE IC2EW'16*).
+10. **Cloud2Sim** (`Cloud2Sim`): Adaptive distributed simulator for Cloud and MapReduce algorithms (*IEEE/ACM UCC'14*, *IEEE MASCOTS'14*).
+11. **xSDN** (`xSDN`): Expressive simulator for dynamic network flows (*IEEE IC2E'15*).
+12. **SENDIM** (`SENDIM`): Cloud network simulation, emulation, and deployment (*IEEE IC2E'16*, *Springer OTM'16*).
+13. **NetUber** (`NetUber`): Software-defined Internet routing and dynamic IXP peering via Dynam-IX (*ACM SIGCOMM / CoNEXT'18*, *IFIP Networking'18*, *IEEE SDS'20*).
 14. **SMART** (`SMART`, `messaging4transport`): SDN middlebox architecture for resilient transfers (*IEEE IM'17*, *Springer OTM'16*).
 15. **L4SBOA** (`L4SBOA`): L4S bandwidth orchestration for ultra-low latency (*IEEE CCECE'25*).
-16. **CAN** (`CAN`): Content-aware networking in Rust and telesurgery innovations review (*IEEE SDS'22*).
-17. **faultsim** (`faultsim`): Distributed cluster failure detector under extreme network instability in Rust.
-41. **LEO** (`LEO`): Low Earth Orbit satellite network simulation with inter-satellite links (*IEEE SysCon'25*).
-18. **Sintra** (`Sintra`, `sintra-plot`): Self-adaptive interdomain network latency measurements and monitoring with RIPE Atlas.
+16. **faultsim** (`faultsim`): Distributed cluster failure detector under extreme network instability in Rust.
+17. **LEO** (`LEO`): Low Earth Orbit satellite network simulation with inter-satellite links (*IEEE SysCon'25*).
+18. **CAN** (`CAN`): Content-aware networking in Rust and telesurgery innovations review (*IEEE SDS'22*).
 
 ### Line 3: Healthcare & Biomedical Informatics
 19. **Bindaas** (`bindaas`, `TCIA-API`, `TCIA-REST-API-Client`): Foundational RESTful data access federation middleware, PRISM, and open access image repositories (*IEEE BigData'19*, *JCO CCI'20*, *MoNeTec'22*).
@@ -68,23 +68,24 @@ The metropolitan map organizes **41 flagship research stations** across **6 inte
 
 ### Line 4: Autonomous Systems & Decentralized Trust
 27. **PORTO** (`PORTO`): Private off-chain resource tracking and orchestration, and enterprise blockchain in healthcare (*IEEE ISSE'26*, *IEEE SDS'25*).
-28. **Epicue** (`Epicue`): Zero-knowledge computational integrity with Cairo STARKs in untrusted cloud environments.
-29. **LAGOS** (`LAGOS`): Latency-aware accountable overlay governance in Gleam.
-30. **IGUANA** (`IGUANA`): Integrated guardrails for unbiased, adaptive neural network architectures (*IEEE ISSE'26*).
+28. **IGUANA** (`IGUANA`): Integrated guardrails for unbiased, adaptive neural network architectures (*IEEE ISSE'26*).
+29. **Epicue** (`Epicue`): Zero-knowledge computational integrity with Cairo STARKs in untrusted cloud environments.
+30. **Sintra** (`Sintra`, `sintra-plot`): Self-adaptive interdomain network latency measurements and monitoring with RIPE Atlas.
+31. **LAGOS** (`LAGOS`): Latency-aware accountable overlay governance in Gleam.
 
 ### Line 5: Community Informatics & Circumpolar Computing
-31. **AK History Webmap** (`ak-history-webmap`): Interactive Alaska Native history web map for epidemic disease outbreaks (*IEEE Computer'25*).
-32. **Dnigi** (`Dnigi`): Serious game for Indigenous cultural heritage transmission (*IEEE Computer'25*).
-33. **Arctic Sea Ice** (`DIP_Predicting_SIE`): Circumpolar satellite image processing and sea ice extent prediction (*Elsevier Remote Sensing Applications'25*).
-34. **DREAMS** (`DREAMS`): Digitization for recovery and arts mining for societal well-being.
+32. **AK History Webmap** (`ak-history-webmap`): Interactive Alaska Native history web map for epidemic disease outbreaks (*IEEE Computer'25*).
+33. **Dnigi** (`Dnigi`): Serious game for Indigenous cultural heritage transmission (*IEEE Computer'25*).
+34. **Arctic Sea Ice** (`DIP_Predicting_SIE`): Circumpolar satellite image processing and sea ice extent prediction (*Elsevier Remote Sensing Applications'25*).
+35. **DREAMS** (`DREAMS`): Digitization for recovery and arts mining for societal well-being.
 
 ### Line 6: High-Performance Workflow & Systems Runtimes
-35. **DHGWorkflow** (`DHGWorkflow`): Directed hypergraph workflow composer originating from the NEXUS software-defined workflow orchestration framework for cyclic closed-loop pipelines (*IEEE Access'21*).
-36. **Ararat** (`Ararat`): Hardware-accelerated hypergraph executor in Mojo.
-37. **Mojito** (`Mojito`): Asynchronous task orchestrator in Mojo.
-38. **FIRM** (`FIRM`): Find, Invoke, Return, and Manage low-overhead service composition (*IEEE MIPRO'16*).
-39. **∂u∂u** (`dudu`): Multi-tenanted distributed near-duplicate detection framework in Java (*Springer OTM'15*).
-40. **Faro** (`Faro`): High-throughput near-duplicate detection in Go using MinHash and Locality-Sensitive Hashing (LSH).
+36. **DHGWorkflow** (`DHGWorkflow`): Directed hypergraph workflow composer originating from the NEXUS software-defined workflow orchestration framework for cyclic closed-loop pipelines (*IEEE Access'21*).
+37. **Ararat** (`Ararat`): Hardware-accelerated hypergraph executor in Mojo.
+38. **Mojito** (`Mojito`): Asynchronous task orchestrator in Mojo.
+39. **FIRM** (`FIRM`): Find, Invoke, Return, and Manage low-overhead service composition (*IEEE MIPRO'16*).
+40. **∂u∂u** (`dudu`): Multi-tenanted distributed near-duplicate detection framework in Java (*Springer OTM'15*).
+41. **Faro** (`Faro`): High-throughput near-duplicate detection in Go using MinHash and Locality-Sensitive Hashing (LSH).
 
 ## Online Deployment (GitHub Pages)
 

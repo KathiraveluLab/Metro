@@ -98,6 +98,12 @@
       subY = station.y + 10;
       venueY = station.y + 24;
       numY = station.y - 23;
+    } else if (station.id === "chief") {
+      // CHIEF is at (80, 290): Labels Above Node, Number Below Node
+      labelY = station.y - 48;
+      subY = station.y - 34;
+      venueY = station.y - 21;
+      numY = station.y + 24;
     } else if (station.y === 150) {
       // Tier 1 (Line 1 SOA & Line 6 Workflows & Runtimes): Labels Above Node, Numbers Below
       labelY = station.isMajorHub ? station.y - 48 : station.y - 44;
@@ -177,11 +183,11 @@
         <text x="70" y="228" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#fbbf24" letter-spacing="1.5">NETWORK OPTIMIZATIONS, EDGE INFRASTRUCTURE &amp; TRANSPORT</text>
 
         <!-- Zone 5: Community & Circumpolar (Tier 3 West) -->
-        <rect x="50" y="370" width="680" height="145" rx="16" fill="#e11d48" fill-opacity="0.05" stroke="#e11d48" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
-        <text x="70" y="394" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#fb7185" letter-spacing="1.5">COMMUNITY INFORMATICS &amp; INDIGENOUS COMPUTING</text>
+        <rect x="100" y="370" width="630" height="145" rx="16" fill="#e11d48" fill-opacity="0.05" stroke="#e11d48" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
+        <text x="120" y="394" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#fb7185" letter-spacing="1.5">COMMUNITY INFORMATICS &amp; INDIGENOUS COMPUTING</text>
 
         <!-- Zone 4: Autonomous Systems & Trust (Tier 3 East) -->
-        <rect x="830" y="370" width="550" height="145" rx="16" fill="#7c3aed" fill-opacity="0.05" stroke="#7c3aed" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
+        <rect x="830" y="370" width="800" height="145" rx="16" fill="#7c3aed" fill-opacity="0.05" stroke="#7c3aed" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
         <text x="850" y="394" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#a78bfa" letter-spacing="1.5">AUTONOMOUS SYSTEMS &amp; DECENTRALIZED TRUST</text>
 
         <!-- Zone 3: Healthcare (Tier 4 Bottom-Most Full Width) -->
@@ -221,8 +227,9 @@
       <g id="interchange-connectors" pointer-events="none">
         <line x1="780" y1="275" x2="780" y2="305" stroke="var(--text-primary)" stroke-width="6" stroke-linecap="round"/>
         <line x1="660" y1="615" x2="660" y2="645" stroke="var(--text-primary)" stroke-width="6" stroke-linecap="round"/>
-        <circle cx="1460" cy="460" r="24" fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+        <circle cx="1460" cy="460" r="24" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
         <circle cx="80" cy="630" r="24" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+        <circle cx="80" cy="290" r="24" fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
       </g>
 
       <!-- Stations Layer -->
@@ -255,7 +262,16 @@
             <circle cx="${station.x}" cy="${station.y}" r="3.5" fill="#ffffff" pointer-events="none"/>
             <text x="${station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="#d97706" pointer-events="none">${station.number}</text>
           `;
-        } else if (station.id === "beehive" || station.id === "sintra" || station.id === "bindaas" || station.id === "guarda" || station.id === "can") {
+        } else if (station.id === "sintra") {
+          markup += `
+            <circle cx="${station.x}" cy="${station.y}" r="26" class="hub-outer-pulse" fill="#7c3aed" fill-opacity="0.25" pointer-events="none"/>
+            <circle cx="${station.x}" cy="${station.y}" r="20" class="station-core hub-outer" fill="var(--bg-primary)" stroke="#7c3aed" stroke-width="4.5" filter="url(#hub-shadow)"/>
+            <circle cx="${station.x}" cy="${station.y}" r="14" fill="#ffffff" stroke="#d97706" stroke-width="3.5" pointer-events="none"/>
+            <circle cx="${station.x}" cy="${station.y}" r="8" fill="#059669" pointer-events="none"/>
+            <circle cx="${station.x}" cy="${station.y}" r="3.5" fill="#ffffff" pointer-events="none"/>
+            <text x="${station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="#a78bfa" pointer-events="none">${station.number}</text>
+          `;
+        } else if (station.id === "beehive" || station.id === "bindaas" || station.id === "guarda" || station.id === "can" || station.id === "chief") {
           const secondaryLine = METRO_DATA.lines.find(l => l.id === station.lines[1]);
           const innerColor = secondaryLine ? secondaryLine.color : color;
           markup += `
@@ -288,7 +304,7 @@
       `;
 
       if (badgeText) {
-        const badgeColor = station.id === 'viseu' ? '#fbbf24' : accent;
+        const badgeColor = station.id === 'viseu' ? '#fbbf24' : (station.id === 'sintra' ? '#a78bfa' : accent);
         markup += `
           <text x="${labelX}" y="${venueY}" text-anchor="${textAnchor}" class="station-venue" fill="${badgeColor}">${escapeXml(badgeText)}</text>
         `;
@@ -603,7 +619,7 @@
 
     // Populate Drawer
     const primaryLine = METRO_DATA.lines.find(l => l.id === station.lines[0]);
-    const badgeBg = station.id === 'viseu' ? '#d97706' : (primaryLine ? primaryLine.color : '#0284c7');
+    const badgeBg = station.id === 'viseu' ? '#d97706' : (station.id === 'sintra' ? '#7c3aed' : (primaryLine ? primaryLine.color : '#0284c7'));
     document.getElementById('drawer-station-id').textContent = `#${station.number}`;
     document.getElementById('drawer-station-id').style.background = badgeBg;
     

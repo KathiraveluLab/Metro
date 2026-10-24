@@ -6,6 +6,8 @@
  * Archived foundational milestone Bindaas (Emory Sharma Lab, IEEE BigData 2019) included as Western Transfer Hub bridging Line 1 & Line 3.
  * Standalone stations added for DWiM (3D DICOM in MATLAB) and dudu (Distributed Near-Duplicate in Java, Springer OTM 2015).
  * Viseu connects Line 1, Line 2, and Line 4 (PORTO) as a Major Triple Interchange Hub.
+ * Sintra connects Line 4, Line 2, and Line 3 as a Major Eastern Triple Interchange Hub.
+ * CHIEF connects Line 2 and Line 1 as a Major Western Transfer Hub.
  * Bindaas connects Line 1 and Line 3 as a Major Western Transfer Hub.
  */
 
@@ -15,7 +17,7 @@ const METRO_DATA = {
     "labName": "KathiraveluLab",
     "institution": "University of Alaska Anchorage",
     "website": "https://github.com/KathiraveluLab",
-    "version": "2026.8",
+    "version": "2026.9",
     "totalStations": 41,
     "lastUpdated": "2026"
   },
@@ -333,9 +335,42 @@ const METRO_DATA = {
       "description": "Major triple-interchange hub bridging Service-Oriented Architecture (Line 1), Network Transport (Line 2), and Blockchain-Based Decentralized Trust (Line 4). Orchestrates virtual services at Internet-scale using P2P overlays, Ethereum trust modules, and private off-chain channels to PORTO."
     },
     {
+      "id": "chief",
+      "mapBadge": "IEEE IC2EW'16",
+      "number": 9,
+      "name": "CHIEF",
+      "subtitle": "Controller Farm",
+      "lines": [
+        "line-net",
+        "line-soa"
+      ],
+      "x": 80,
+      "y": 290,
+      "isMajorHub": true,
+      "repos": [
+        "CHIEF",
+        "messaging4transport"
+      ],
+      "primaryRepo": "CHIEF",
+      "tech": [
+        "Java",
+        "SDN Controller",
+        "Community Networks"
+      ],
+      "venues": [
+        {
+          "name": "IEEE IC2EW 2016",
+          "tier": "IEEE",
+          "note": "CHIEF: Controller farm for clouds of software-defined community networks"
+        }
+      ],
+      "description": "Controller farm architecture coordinating decentralized software-defined community network topologies across cloud boundaries.",
+      "isInterchange": true
+    },
+    {
       "id": "cloud2sim",
       "mapBadge": "UCC'14 / MASCOTS'14",
-      "number": 9,
+      "number": 10,
       "name": "Cloud2Sim",
       "subtitle": "Distributed Cloud Sim",
       "lines": [
@@ -371,7 +406,7 @@ const METRO_DATA = {
     {
       "id": "xsdn",
       "mapBadge": "IEEE IC2E'15",
-      "number": 10,
+      "number": 11,
       "name": "xSDN",
       "subtitle": "Flow Simulator",
       "lines": [
@@ -400,7 +435,7 @@ const METRO_DATA = {
     {
       "id": "sendim",
       "mapBadge": "IEEE IC2E'16",
-      "number": 11,
+      "number": 12,
       "name": "SENDIM",
       "subtitle": "Cloud Simulation",
       "lines": [
@@ -434,7 +469,7 @@ const METRO_DATA = {
     {
       "id": "netuber",
       "mapBadge": "IFIP Networking'18",
-      "number": 12,
+      "number": 13,
       "name": "NetUber",
       "subtitle": "SD-Internet",
       "lines": [
@@ -472,37 +507,6 @@ const METRO_DATA = {
       "description": "Software-Defined Internet architecture coordinating multi-provider transit routing through cooperative peering exchanges and dynamic interconnection exchanges (Dynam-IX)."
     },
     {
-      "id": "chief",
-      "mapBadge": "IEEE IC2EW'16",
-      "number": 13,
-      "name": "CHIEF",
-      "subtitle": "Controller Farm",
-      "lines": [
-        "line-net"
-      ],
-      "x": 525,
-      "y": 290,
-      "isMajorHub": false,
-      "repos": [
-        "CHIEF",
-        "messaging4transport"
-      ],
-      "primaryRepo": "CHIEF",
-      "tech": [
-        "Java",
-        "SDN Controller",
-        "Community Networks"
-      ],
-      "venues": [
-        {
-          "name": "IEEE IC2EW 2016",
-          "tier": "IEEE",
-          "note": "CHIEF: Controller farm for clouds of software-defined community networks"
-        }
-      ],
-      "description": "Controller farm architecture coordinating decentralized software-defined community network topologies across cloud boundaries."
-    },
-    {
       "id": "smart",
       "mapBadge": "IEEE IM'17",
       "number": 14,
@@ -511,7 +515,7 @@ const METRO_DATA = {
       "lines": [
         "line-net"
       ],
-      "x": 635,
+      "x": 580,
       "y": 290,
       "isMajorHub": false,
       "repos": [
@@ -569,9 +573,65 @@ const METRO_DATA = {
       "description": "L4S (Low Latency, Low Loss, and Scalable Throughput) bandwidth orchestration architecture minimizing queueing delays in heterogeneous edge networks."
     },
     {
+      "id": "faultsim",
+      "number": 16,
+      "name": "faultsim",
+      "subtitle": "Failure Detector",
+      "lines": [
+        "line-net"
+      ],
+      "x": 1060,
+      "y": 290,
+      "isMajorHub": false,
+      "repos": [
+        "faultsim"
+      ],
+      "primaryRepo": "faultsim",
+      "tech": [
+        "Rust",
+        "Fault Injection"
+      ],
+      "venues": [],
+      "description": "Distributed cluster failure detector written in Rust, maintaining high-precision heartbeat matrices under extreme network packet loss."
+    },
+    {
+      "id": "leo",
+      "mapBadge": "SysCon'25",
+      "number": 17,
+      "name": "LEO",
+      "subtitle": "Satellite Constellations",
+      "lines": [
+        "line-net"
+      ],
+      "x": 1200,
+      "y": 290,
+      "isMajorHub": false,
+      "repos": [
+        "LEO"
+      ],
+      "primaryRepo": "LEO",
+      "tech": [
+        "Python",
+        "Inter-Satellite Links",
+        "Satellite Simulation"
+      ],
+      "venues": [
+        {
+          "name": "IEEE Systems Conference (SysCon) 2025",
+          "tier": "IEEE",
+          "note": "A Performance Study on Low Earth Orbit Satellite Networks with Inter Satellite Links"
+        }
+      ],
+      "relatedStations": [
+        "sintra",
+        "awanta"
+      ],
+      "description": "Simulation and performance modeling of Low Earth Orbit (LEO) satellite constellations with inter-satellite laser links (ISLs), characterizing latency profiles, constellation dynamics, and routing for remote and polar broadband connectivity."
+    },
+    {
       "id": "can",
       "mapBadge": "IEEE SDS'22",
-      "number": 16,
+      "number": 18,
       "name": "CAN",
       "subtitle": "Content-Aware Net",
       "lines": [
@@ -598,54 +658,6 @@ const METRO_DATA = {
         }
       ],
       "description": "Content-Aware Networking engine written in Rust, inspecting payload streams at line-rate to dynamically steer ultra-low-latency traffic for telesurgery and tactile internet pipelines to Line 6 (High-Performance Workflow & Systems Runtimes)."
-    },
-    {
-      "id": "faultsim",
-      "number": 17,
-      "name": "faultsim",
-      "subtitle": "Failure Detector",
-      "lines": [
-        "line-net"
-      ],
-      "x": 1060,
-      "y": 290,
-      "isMajorHub": false,
-      "repos": [
-        "faultsim"
-      ],
-      "primaryRepo": "faultsim",
-      "tech": [
-        "Rust",
-        "Fault Injection"
-      ],
-      "venues": [],
-      "description": "Distributed cluster failure detector written in Rust, maintaining high-precision heartbeat matrices under extreme network packet loss."
-    },
-    {
-      "id": "sintra",
-      "number": 18,
-      "name": "Sintra",
-      "subtitle": "Self-Adaptive Transport",
-      "lines": [
-        "line-net",
-        "line-health"
-      ],
-      "x": 1460,
-      "y": 460,
-      "isMajorHub": true,
-      "isInterchange": true,
-      "repos": [
-        "Sintra",
-        "sintra-plot"
-      ],
-      "primaryRepo": "Sintra",
-      "tech": [
-        "Python",
-        "RIPE Atlas",
-        "Time-Series"
-      ],
-      "venues": [],
-      "description": "Major Terminus Junction connecting Network Optimization with Clinical Healthcare. Leverages RIPE Atlas to steer telehealth traffic along low-jitter routes."
     },
     {
       "id": "bindaas",
@@ -985,62 +997,17 @@ const METRO_DATA = {
       "description": "Private Off-Chain Resource Tracking and Orchestration built in Erlang, enabling high-frequency verifiable resource accounting via state channels and securing enterprise healthcare networks with blockchain architectures."
     },
     {
-      "id": "epicue",
-      "number": 28,
-      "name": "Epicue",
-      "subtitle": "Cairo ZK Verification",
-      "lines": [
-        "line-trust"
-      ],
-      "x": 1050,
-      "y": 450,
-      "isMajorHub": false,
-      "repos": [
-        "Epicue"
-      ],
-      "primaryRepo": "Epicue",
-      "tech": [
-        "Cairo",
-        "STARKs",
-        "Provable Computing"
-      ],
-      "venues": [],
-      "description": "Equity, Privacy, and Integrity with Cairo in Untrusted Environments. Generates cryptographic STARK proofs of computational integrity for remote edge executions."
-    },
-    {
-      "id": "lagos",
-      "number": 29,
-      "name": "LAGOS",
-      "subtitle": "Latency-Aware Governance",
-      "lines": [
-        "line-trust"
-      ],
-      "x": 1180,
-      "y": 450,
-      "isMajorHub": false,
-      "repos": [
-        "LAGOS"
-      ],
-      "primaryRepo": "LAGOS",
-      "tech": [
-        "Gleam",
-        "Type-Safe Overlays"
-      ],
-      "venues": [],
-      "description": "Latency-Aware Accountable Governance for Overlay Scaling implemented in Gleam. Guarantees quorum consensus bounds across variable-delay overlay links."
-    },
-    {
       "id": "iguana",
       "mapBadge": "IEEE ISSE'26",
-      "number": 30,
+      "number": 28,
       "name": "IGUANA",
       "subtitle": "Neural Guardrails",
       "lines": [
         "line-trust"
       ],
-      "x": 1300,
+      "x": 1060,
       "y": 450,
-      "isMajorHub": true,
+      "isMajorHub": false,
       "repos": [
         "IGUANA"
       ],
@@ -1057,12 +1024,84 @@ const METRO_DATA = {
           "note": "Integrated Guardrails for Unbiased and Adaptive Neural Network Architectures"
         }
       ],
-      "description": "Terminus of Line 4. Employs actor-based concurrent monitors in Erlang to enforce formal safety invariants and eliminate bias in adaptive neural policies."
+      "description": "Employs actor-based concurrent monitors in Erlang to enforce formal safety invariants and eliminate bias in adaptive neural policies."
+    },
+    {
+      "id": "epicue",
+      "number": 29,
+      "name": "Epicue",
+      "subtitle": "Cairo ZK Verification",
+      "lines": [
+        "line-trust"
+      ],
+      "x": 1240,
+      "y": 450,
+      "isMajorHub": false,
+      "repos": [
+        "Epicue"
+      ],
+      "primaryRepo": "Epicue",
+      "tech": [
+        "Cairo",
+        "STARKs",
+        "Provable Computing"
+      ],
+      "venues": [],
+      "description": "Equity, Privacy, and Integrity with Cairo in Untrusted Environments. Generates cryptographic STARK proofs of computational integrity for remote edge executions."
+    },
+    {
+      "id": "sintra",
+      "number": 30,
+      "name": "Sintra",
+      "subtitle": "Self-Adaptive Transport",
+      "lines": [
+        "line-trust",
+        "line-net",
+        "line-health"
+      ],
+      "x": 1460,
+      "y": 460,
+      "isMajorHub": true,
+      "isInterchange": true,
+      "repos": [
+        "Sintra",
+        "sintra-plot"
+      ],
+      "primaryRepo": "Sintra",
+      "tech": [
+        "Python",
+        "RIPE Atlas",
+        "Time-Series"
+      ],
+      "venues": [],
+      "description": "Major Triple-Interchange uniting Autonomous Trust, Network Optimization, and Clinical Healthcare. Leverages RIPE Atlas to steer telehealth traffic along low-jitter routes and connects verifiable state channels directly with remote edge infrastructure."
+    },
+    {
+      "id": "lagos",
+      "number": 31,
+      "name": "LAGOS",
+      "subtitle": "Latency-Aware Governance",
+      "lines": [
+        "line-trust"
+      ],
+      "x": 1590,
+      "y": 460,
+      "isMajorHub": false,
+      "repos": [
+        "LAGOS"
+      ],
+      "primaryRepo": "LAGOS",
+      "tech": [
+        "Gleam",
+        "Type-Safe Overlays"
+      ],
+      "venues": [],
+      "description": "Terminus of Line 4. Latency-Aware Accountable Governance for Overlay Scaling implemented in Gleam. Guarantees quorum consensus bounds across variable-delay overlay links."
     },
     {
       "id": "ak-history-webmap",
       "mapBadge": "IEEE Computer'25",
-      "number": 31,
+      "number": 32,
       "name": "AK History Webmap",
       "subtitle": "Epidemic Diseases Web Map",
       "lines": [
@@ -1091,7 +1130,7 @@ const METRO_DATA = {
     {
       "id": "dnigi",
       "mapBadge": "IEEE Computer'25",
-      "number": 32,
+      "number": 33,
       "name": "Dnigi",
       "subtitle": "Indigenous Heritage Game",
       "lines": [
@@ -1120,7 +1159,7 @@ const METRO_DATA = {
     {
       "id": "dip-predicting-sie",
       "mapBadge": "Elsevier RSA'25",
-      "number": 33,
+      "number": 34,
       "name": "Arctic Sea Ice",
       "subtitle": "Arctic Sea Ice AI",
       "lines": [
@@ -1149,7 +1188,7 @@ const METRO_DATA = {
     },
     {
       "id": "dreams",
-      "number": 34,
+      "number": 35,
       "name": "DREAMS",
       "subtitle": "Recovery & Arts Mining",
       "lines": [
@@ -1172,7 +1211,7 @@ const METRO_DATA = {
     {
       "id": "dhgworkflow",
       "mapBadge": "IEEE Access'21",
-      "number": 35,
+      "number": 36,
       "name": "DHGWorkflow",
       "subtitle": "Task Graph Composer",
       "lines": [
@@ -1206,7 +1245,7 @@ const METRO_DATA = {
     },
     {
       "id": "ararat",
-      "number": 36,
+      "number": 37,
       "name": "Ararat",
       "subtitle": "Workflow Engine",
       "lines": [
@@ -1228,7 +1267,7 @@ const METRO_DATA = {
     },
     {
       "id": "mojito",
-      "number": 37,
+      "number": 38,
       "name": "Mojito",
       "subtitle": "Async Scheduler",
       "lines": [
@@ -1251,7 +1290,7 @@ const METRO_DATA = {
     {
       "id": "firm",
       "mapBadge": "IEEE MIPRO'16",
-      "number": 38,
+      "number": 39,
       "name": "FIRM",
       "subtitle": "Serverless FaaS",
       "lines": [
@@ -1280,7 +1319,7 @@ const METRO_DATA = {
     {
       "id": "dudu",
       "mapBadge": "Springer OTM'15",
-      "number": 39,
+      "number": 40,
       "name": "∂u∂u",
       "subtitle": "Java Near-Duplicate",
       "lines": [
@@ -1309,7 +1348,7 @@ const METRO_DATA = {
     },
     {
       "id": "faro",
-      "number": 40,
+      "number": 41,
       "name": "Faro",
       "subtitle": "Go MinHash LSH",
       "lines": [
@@ -1329,40 +1368,6 @@ const METRO_DATA = {
       ],
       "venues": [],
       "description": "High-throughput near-duplicate detection in Go using MinHash and Locality-Sensitive Hashing (LSH), modernizing the lab's earlier Java ∂u∂u engine."
-    },
-    {
-      "id": "leo",
-      "mapBadge": "SysCon'25",
-      "number": 41,
-      "name": "LEO",
-      "subtitle": "Satellite Constellations",
-      "lines": [
-        "line-net"
-      ],
-      "x": 1200,
-      "y": 290,
-      "isMajorHub": false,
-      "repos": [
-        "LEO"
-      ],
-      "primaryRepo": "LEO",
-      "tech": [
-        "Python",
-        "Inter-Satellite Links",
-        "Satellite Simulation"
-      ],
-      "venues": [
-        {
-          "name": "IEEE Systems Conference (SysCon) 2025",
-          "tier": "IEEE",
-          "note": "A Performance Study on Low Earth Orbit Satellite Networks with Inter Satellite Links"
-        }
-      ],
-      "relatedStations": [
-        "sintra",
-        "awanta"
-      ],
-      "description": "Simulation and performance modeling of Low Earth Orbit (LEO) satellite constellations with inter-satellite laser links (ISLs), characterizing latency profiles, constellation dynamics, and routing for remote and polar broadband connectivity."
     }
   ],
   "tracks": [
@@ -1374,7 +1379,7 @@ const METRO_DATA = {
     {
       "id": "track-net-main",
       "lineId": "line-net",
-      "path": "M 115,290 L 1360,290 Q 1420,290 1440,360 L 1460,460"
+      "path": "M 80,290 L 1360,290 Q 1420,290 1440,360 L 1460,460"
     },
     {
       "id": "track-health-main",
@@ -1384,7 +1389,7 @@ const METRO_DATA = {
     {
       "id": "track-trust-main",
       "lineId": "line-trust",
-      "path": "M 780,290 L 780,340 Q 780,450 840,450 L 1320,450"
+      "path": "M 780,290 L 780,340 Q 780,450 840,450 L 1410,450 Q 1445,450 1460,460 L 1610,460"
     },
     {
       "id": "track-community-main",

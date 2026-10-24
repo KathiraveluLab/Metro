@@ -25,6 +25,12 @@ function getStationLayout(station) {
     subY = station.y + 10;
     venueY = station.y + 24;
     numY = station.y - 23;
+  } else if (station.id === "chief") {
+    // CHIEF is at (80, 290): Labels Above Node, Number Below Node
+    labelY = station.y - 48;
+    subY = station.y - 34;
+    venueY = station.y - 21;
+    numY = station.y + 24;
   } else if (station.y === 150) {
     // Tier 1 (Line 1 SOA & Line 6 Workflows & Runtimes): Labels Above Node, Numbers Below
     labelY = station.isMajorHub ? station.y - 48 : station.y - 44;
@@ -129,11 +135,11 @@ function generateSvg() {
   <text x="70" y="228" class="zone-title" fill="#b45309">Network Optimizations, Edge Infrastructure &amp; Transport</text>
 
   <!-- Zone 5: Community and Indigenous (Tier 3 West) -->
-  <rect x="50" y="370" width="680" height="145" rx="16" class="zone-bg-5 zone-border-5"/>
-  <text x="70" y="394" class="zone-title" fill="#be123c">Community Informatics &amp; Indigenous Computing</text>
+  <rect x="100" y="370" width="630" height="145" rx="16" class="zone-bg-5 zone-border-5"/>
+  <text x="120" y="394" class="zone-title" fill="#be123c">Community Informatics &amp; Indigenous Computing</text>
 
   <!-- Zone 4: Autonomous Systems and Trust (Tier 3 East) -->
-  <rect x="830" y="370" width="550" height="145" rx="16" class="zone-bg-4 zone-border-4"/>
+  <rect x="830" y="370" width="800" height="145" rx="16" class="zone-bg-4 zone-border-4"/>
   <text x="850" y="394" class="zone-title" fill="#7c3aed">Autonomous Systems &amp; Decentralized Trust</text>
 
   <!-- Zone 3: Healthcare and Biomedical (Tier 4 Bottom-Most Full Width) -->
@@ -184,11 +190,14 @@ function generateSvg() {
     <!-- Beehive interchange (Line 3 to Line 5) -->
     <line x1="660" y1="615" x2="660" y2="645" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
 
-    <!-- Sintra terminus interchange (Line 2 to Line 3) -->
-    <circle cx="1460" cy="460" r="24" fill="none" stroke="#d97706" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+    <!-- Sintra terminus interchange (Line 4 to Line 2 & Line 3) -->
+    <circle cx="1460" cy="460" r="24" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
 
     <!-- Bindaas terminus interchange (Line 1 to Line 3) -->
     <circle cx="80" cy="630" r="24" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+
+    <!-- CHIEF interchange (Line 2 to Line 1) -->
+    <circle cx="80" cy="290" r="24" fill="none" stroke="#d97706" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
   </g>
 
   <!-- Stations Rendering -->
@@ -215,8 +224,15 @@ function generateSvg() {
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="8" fill="#7c3aed"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="3.5" class="hub-inner"/>\n`;
         svg += `      <text x="${station.x}" y="${numY}" class="station-num" fill="#d97706">${station.number}</text>\n`;
-      } else if (station.id === "beehive" || station.id === "sintra" || station.id === "bindaas" || station.id === "guarda" || station.id === "can") {
-        // Dual Interchange Hub (Beehive, Sintra, Bindaas, GUARDA, CAN)
+      } else if (station.id === "sintra") {
+        // Triple Interchange Hub: Line 4 (Purple) outer ring, Line 2 (Amber) middle ring, Line 3 (Emerald) core
+        svg += `      <circle cx="${station.x}" cy="${station.y}" r="21" class="hub-outer" stroke="#7c3aed" stroke-width="4.5" filter="url(#hub-shadow)"/>\n`;
+        svg += `      <circle cx="${station.x}" cy="${station.y}" r="14" fill="#ffffff" stroke="#d97706" stroke-width="3.5"/>\n`;
+        svg += `      <circle cx="${station.x}" cy="${station.y}" r="8" fill="#059669"/>\n`;
+        svg += `      <circle cx="${station.x}" cy="${station.y}" r="3.5" class="hub-inner"/>\n`;
+        svg += `      <text x="${station.x}" y="${numY}" class="station-num" fill="#7c3aed">${station.number}</text>\n`;
+      } else if (station.id === "beehive" || station.id === "bindaas" || station.id === "guarda" || station.id === "can" || station.id === "chief") {
+        // Dual Interchange Hub (Beehive, Bindaas, GUARDA, CAN, CHIEF)
         const secondaryLine = METRO_DATA.lines.find(l => l.id === station.lines[1]);
         const innerColor = secondaryLine ? secondaryLine.color : color;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="17" class="hub-outer" stroke="${color}" filter="url(#hub-shadow)"/>\n`;
@@ -241,7 +257,7 @@ function generateSvg() {
     svg += `      <text x="${labelX}" y="${labelY}" text-anchor="${textAnchor}" class="station-label">${escapeXml(station.name)}</text>\n`;
     svg += `      <text x="${labelX}" y="${subY}" text-anchor="${textAnchor}" class="station-sub">${escapeXml(station.subtitle)}</text>\n`;
     if (badgeText) {
-      const badgeColor = station.id === 'viseu' ? '#d97706' : color;
+      const badgeColor = station.id === 'viseu' ? '#d97706' : (station.id === 'sintra' ? '#7c3aed' : color);
       svg += `      <text x="${labelX}" y="${venueY}" text-anchor="${textAnchor}" class="station-venue" fill="${badgeColor}">${escapeXml(badgeText)}</text>\n`;
     }
 
