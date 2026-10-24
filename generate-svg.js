@@ -38,11 +38,11 @@ function getStationLayout(station) {
     numY = station.y + 4;
   } else if (station.id === "control-core") {
     // CONTROL-CORE is at (120, 450): Western transfer hub bridging Line 5 and Line 1
-    labelX = station.x + 24;
+    labelX = station.x + 28;
     textAnchor = "start";
-    labelY = station.y - 38;
-    subY = station.y - 25;
-    venueY = station.y - 12;
+    labelY = station.y - 40;
+    subY = station.y - 27;
+    venueY = station.y - 14;
     numX = station.x - 22; // Station number shifted left of node so vertical line doesn't cut it
     numY = station.y + 4;
   } else if (station.id === "viseu") {

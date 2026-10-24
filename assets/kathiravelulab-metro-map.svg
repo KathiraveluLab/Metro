@@ -182,9 +182,9 @@
       <circle cx="120" cy="450" r="11" fill="#0284c7"/>
       <circle cx="120" cy="450" r="6" class="hub-inner"/>
       <text x="98" y="454" class="station-num" fill="#e11d48">1</text>
-      <text x="144" y="412" text-anchor="start" class="station-label">CONTROL-CORE</text>
-      <text x="144" y="425" text-anchor="start" class="station-sub">Neuromodulation</text>
-      <text x="144" y="438" text-anchor="start" class="station-venue" fill="#e11d48">IEEE Access&apos;22</text>
+      <text x="148" y="410" text-anchor="start" class="station-label">CONTROL-CORE</text>
+      <text x="148" y="423" text-anchor="start" class="station-sub">Neuromodulation</text>
+      <text x="148" y="436" text-anchor="start" class="station-venue" fill="#e11d48">IEEE Access&apos;22</text>
     </g>
 
     <!-- Station: Cassowary (2) -->
@@ -492,13 +492,13 @@
 
     <!-- Station: AK History Webmap (32) -->
     <g id="station-ak-history-webmap" class="station-node" transform="translate(0, 0)">
-      <circle cx="220" cy="450" r="17" class="hub-outer" stroke="#e11d48" filter="url(#hub-shadow)"/>
-      <circle cx="220" cy="450" r="11" fill="#e11d48"/>
-      <circle cx="220" cy="450" r="6" class="hub-inner"/>
-      <text x="220" y="427" class="station-num" fill="#e11d48">32</text>
-      <text x="220" y="475" text-anchor="middle" class="station-label">AK History Webmap</text>
-      <text x="220" y="489" text-anchor="middle" class="station-sub">Epidemic Diseases Web Map</text>
-      <text x="220" y="502" text-anchor="middle" class="station-venue" fill="#e11d48">IEEE Computer&apos;25</text>
+      <circle cx="250" cy="450" r="17" class="hub-outer" stroke="#e11d48" filter="url(#hub-shadow)"/>
+      <circle cx="250" cy="450" r="11" fill="#e11d48"/>
+      <circle cx="250" cy="450" r="6" class="hub-inner"/>
+      <text x="250" y="427" class="station-num" fill="#e11d48">32</text>
+      <text x="250" y="475" text-anchor="middle" class="station-label">AK History Webmap</text>
+      <text x="250" y="489" text-anchor="middle" class="station-sub">Epidemic Diseases Web Map</text>
+      <text x="250" y="502" text-anchor="middle" class="station-venue" fill="#e11d48">IEEE Computer&apos;25</text>
     </g>
 
     <!-- Station: Dnigi (33) -->
