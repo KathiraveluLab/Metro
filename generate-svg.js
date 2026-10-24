@@ -15,22 +15,43 @@ function escapeXml(unsafe) {
 
 function getStationLayout(station) {
   let labelX = station.x;
+  let numX = station.x;
   let textAnchor = "middle";
   let labelY, subY, venueY, numY;
 
   if (station.id === "sintra") {
-    labelX = station.x + 28;
-    textAnchor = "start";
+    // Sintra labels to the left of node, into the open space between Epicue (1240) and Sintra (1460)
+    labelX = station.x - 28;
+    textAnchor = "end";
     labelY = station.y - 6;
     subY = station.y + 10;
     venueY = station.y + 24;
     numY = station.y - 23;
   } else if (station.id === "chief") {
-    // CHIEF is at (80, 290): Labels Above Node, Number Below Node
-    labelY = station.y - 48;
-    subY = station.y - 34;
-    venueY = station.y - 21;
-    numY = station.y + 24;
+    // CHIEF is at (80, 290): Labels Above Node, shifted right to clear vertical Line 1 (blue)
+    labelX = station.x + 24;
+    textAnchor = "start";
+    labelY = station.y - 58;
+    subY = station.y - 44;
+    venueY = station.y - 31;
+    numX = station.x - 22; // Station number shifted left of node so vertical blue line doesn't cut it
+    numY = station.y + 4;
+  } else if (station.id === "viseu") {
+    // Viseu is at (780, 290): Labels Below Node, perfectly centered under node
+    labelX = station.x;
+    textAnchor = "middle";
+    labelY = station.y + 25;
+    subY = station.y + 39;
+    venueY = station.y + 52;
+    numY = station.y - 23;
+  } else if (station.id === "lagos") {
+    // LAGOS is at (1560, 460): Labels Below Node, centered under node within Zone 4 box
+    labelX = station.x;
+    textAnchor = "middle";
+    labelY = station.y + 25;
+    subY = station.y + 39;
+    venueY = station.y + 52;
+    numY = station.y - 17;
   } else if (station.y === 150) {
     // Tier 1 (Line 1 SOA & Line 6 Workflows & Runtimes): Labels Above Node, Numbers Below
     labelY = station.isMajorHub ? station.y - 48 : station.y - 44;
@@ -45,7 +66,7 @@ function getStationLayout(station) {
     numY = station.isMajorHub ? station.y - 23 : station.y - 17;
   }
 
-  return { labelX, labelY, subY, venueY, numY, textAnchor };
+  return { labelX, labelY, subY, venueY, numX, numY, textAnchor };
 }
 
 function generateSvg() {
@@ -135,8 +156,8 @@ function generateSvg() {
   <text x="70" y="228" class="zone-title" fill="#b45309">Network Optimizations, Edge Infrastructure &amp; Transport</text>
 
   <!-- Zone 5: Community and Indigenous (Tier 3 West) -->
-  <rect x="100" y="370" width="630" height="145" rx="16" class="zone-bg-5 zone-border-5"/>
-  <text x="120" y="394" class="zone-title" fill="#be123c">Community Informatics &amp; Indigenous Computing</text>
+  <rect x="120" y="370" width="650" height="145" rx="16" class="zone-bg-5 zone-border-5"/>
+  <text x="145" y="394" class="zone-title" fill="#be123c">Community Informatics &amp; Indigenous Computing</text>
 
   <!-- Zone 4: Autonomous Systems and Trust (Tier 3 East) -->
   <rect x="830" y="370" width="800" height="145" rx="16" class="zone-bg-4 zone-border-4"/>
@@ -209,7 +230,7 @@ function generateSvg() {
     const color = primaryLine ? primaryLine.color : '#0284c7';
     
     // Station layout and label positioning logic
-    const { labelX, labelY, subY, venueY, numY, textAnchor } = getStationLayout(station);
+    const { labelX, labelY, subY, venueY, numX, numY, textAnchor } = getStationLayout(station);
 
     const badgeText = station.mapBadge || (station.venues && station.venues.length > 0 ? station.venues[0].name : "");
 
@@ -223,14 +244,14 @@ function generateSvg() {
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="14" fill="#ffffff" stroke="#0284c7" stroke-width="3.5"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="8" fill="#7c3aed"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="3.5" class="hub-inner"/>\n`;
-        svg += `      <text x="${station.x}" y="${numY}" class="station-num" fill="#d97706">${station.number}</text>\n`;
+        svg += `      <text x="${numX || station.x}" y="${numY}" class="station-num" fill="#d97706">${station.number}</text>\n`;
       } else if (station.id === "sintra") {
         // Triple Interchange Hub: Line 4 (Purple) outer ring, Line 2 (Amber) middle ring, Line 3 (Emerald) core
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="21" class="hub-outer" stroke="#7c3aed" stroke-width="4.5" filter="url(#hub-shadow)"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="14" fill="#ffffff" stroke="#d97706" stroke-width="3.5"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="8" fill="#059669"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="3.5" class="hub-inner"/>\n`;
-        svg += `      <text x="${station.x}" y="${numY}" class="station-num" fill="#7c3aed">${station.number}</text>\n`;
+        svg += `      <text x="${numX || station.x}" y="${numY}" class="station-num" fill="#7c3aed">${station.number}</text>\n`;
       } else if (station.id === "beehive" || station.id === "bindaas" || station.id === "guarda" || station.id === "can" || station.id === "chief") {
         // Dual Interchange Hub (Beehive, Bindaas, GUARDA, CAN, CHIEF)
         const secondaryLine = METRO_DATA.lines.find(l => l.id === station.lines[1]);
@@ -238,19 +259,19 @@ function generateSvg() {
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="17" class="hub-outer" stroke="${color}" filter="url(#hub-shadow)"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="11" fill="${innerColor}"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="6" class="hub-inner"/>\n`;
-        svg += `      <text x="${station.x}" y="${numY}" class="station-num" fill="${color}">${station.number}</text>\n`;
+        svg += `      <text x="${numX || station.x}" y="${numY}" class="station-num" fill="${color}">${station.number}</text>\n`;
       } else {
         // Major Interchange / Hub Node: double concentric rings with white fill
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="17" class="hub-outer" stroke="${color}" filter="url(#hub-shadow)"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="11" fill="${color}"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="6" class="hub-inner"/>\n`;
-        svg += `      <text x="${station.x}" y="${numY}" class="station-num" fill="${color}">${station.number}</text>\n`;
+        svg += `      <text x="${numX || station.x}" y="${numY}" class="station-num" fill="${color}">${station.number}</text>\n`;
       }
     } else {
       // Standard Station: white disc with colored stroke
       svg += `      <circle cx="${station.x}" cy="${station.y}" r="10" fill="#ffffff" stroke="${color}" stroke-width="4.5" filter="url(#hub-shadow)"/>\n`;
       svg += `      <circle cx="${station.x}" cy="${station.y}" r="4" fill="#0f172a"/>\n`;
-      svg += `      <text x="${station.x}" y="${numY}" class="station-num" fill="#64748b">${station.number}</text>\n`;
+      svg += `      <text x="${numX || station.x}" y="${numY}" class="station-num" fill="#64748b">${station.number}</text>\n`;
     }
 
     // Text labels

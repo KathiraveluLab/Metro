@@ -88,22 +88,43 @@
   // Consistent station label and badge coordinates preventing overlaps
   function getStationLayout(station) {
     let labelX = station.x;
+    let numX = station.x;
     let textAnchor = "middle";
     let labelY, subY, venueY, numY;
 
     if (station.id === "sintra") {
-      labelX = station.x + 28;
-      textAnchor = "start";
+      // Sintra labels to the left of node, into the open space between Epicue (1240) and Sintra (1460)
+      labelX = station.x - 28;
+      textAnchor = "end";
       labelY = station.y - 6;
       subY = station.y + 10;
       venueY = station.y + 24;
       numY = station.y - 23;
     } else if (station.id === "chief") {
-      // CHIEF is at (80, 290): Labels Above Node, Number Below Node
-      labelY = station.y - 48;
-      subY = station.y - 34;
-      venueY = station.y - 21;
-      numY = station.y + 24;
+      // CHIEF is at (80, 290): Labels Above Node, shifted right to clear vertical Line 1 (blue)
+      labelX = station.x + 24;
+      textAnchor = "start";
+      labelY = station.y - 58;
+      subY = station.y - 44;
+      venueY = station.y - 31;
+      numX = station.x - 22; // Station number shifted left of node so vertical blue line doesn't cut it
+      numY = station.y + 4;
+    } else if (station.id === "viseu") {
+      // Viseu is at (780, 290): Labels Below Node, perfectly centered under node
+      labelX = station.x;
+      textAnchor = "middle";
+      labelY = station.y + 25;
+      subY = station.y + 39;
+      venueY = station.y + 52;
+      numY = station.y - 23;
+    } else if (station.id === "lagos") {
+      // LAGOS is at (1560, 460): Labels Below Node, centered under node within Zone 4 box
+      labelX = station.x;
+      textAnchor = "middle";
+      labelY = station.y + 25;
+      subY = station.y + 39;
+      venueY = station.y + 52;
+      numY = station.y - 17;
     } else if (station.y === 150) {
       // Tier 1 (Line 1 SOA & Line 6 Workflows & Runtimes): Labels Above Node, Numbers Below
       labelY = station.isMajorHub ? station.y - 48 : station.y - 44;
@@ -118,7 +139,7 @@
       numY = station.isMajorHub ? station.y - 23 : station.y - 17;
     }
 
-    return { labelX, labelY, subY, venueY, numY, textAnchor };
+    return { labelX, labelY, subY, venueY, numX, numY, textAnchor };
   }
 
   // Render SVG Map Elements
@@ -183,8 +204,8 @@
         <text x="70" y="228" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#fbbf24" letter-spacing="1.5">NETWORK OPTIMIZATIONS, EDGE INFRASTRUCTURE &amp; TRANSPORT</text>
 
         <!-- Zone 5: Community & Circumpolar (Tier 3 West) -->
-        <rect x="100" y="370" width="630" height="145" rx="16" fill="#e11d48" fill-opacity="0.05" stroke="#e11d48" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
-        <text x="120" y="394" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#fb7185" letter-spacing="1.5">COMMUNITY INFORMATICS &amp; INDIGENOUS COMPUTING</text>
+        <rect x="120" y="370" width="650" height="145" rx="16" fill="#e11d48" fill-opacity="0.05" stroke="#e11d48" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
+        <text x="145" y="394" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#fb7185" letter-spacing="1.5">COMMUNITY INFORMATICS &amp; INDIGENOUS COMPUTING</text>
 
         <!-- Zone 4: Autonomous Systems & Trust (Tier 3 East) -->
         <rect x="830" y="370" width="800" height="145" rx="16" fill="#7c3aed" fill-opacity="0.05" stroke="#7c3aed" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
@@ -242,7 +263,7 @@
       const accent = primaryLine ? primaryLine.accentColor : '#38bdf8';
       const lineIds = station.lines.join(' ');
 
-      const { labelX, labelY, subY, venueY, numY, textAnchor } = getStationLayout(station);
+      const { labelX, labelY, subY, venueY, numX, numY, textAnchor } = getStationLayout(station);
 
       const badgeText = station.mapBadge || (station.venues && station.venues.length > 0 ? station.venues[0].name : "");
 
@@ -260,7 +281,7 @@
             <circle cx="${station.x}" cy="${station.y}" r="14" fill="#ffffff" stroke="#0284c7" stroke-width="3.5" pointer-events="none"/>
             <circle cx="${station.x}" cy="${station.y}" r="8" fill="#7c3aed" pointer-events="none"/>
             <circle cx="${station.x}" cy="${station.y}" r="3.5" fill="#ffffff" pointer-events="none"/>
-            <text x="${station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="#d97706" pointer-events="none">${station.number}</text>
+            <text x="${numX || station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="#d97706" pointer-events="none">${station.number}</text>
           `;
         } else if (station.id === "sintra") {
           markup += `
@@ -269,7 +290,7 @@
             <circle cx="${station.x}" cy="${station.y}" r="14" fill="#ffffff" stroke="#d97706" stroke-width="3.5" pointer-events="none"/>
             <circle cx="${station.x}" cy="${station.y}" r="8" fill="#059669" pointer-events="none"/>
             <circle cx="${station.x}" cy="${station.y}" r="3.5" fill="#ffffff" pointer-events="none"/>
-            <text x="${station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="#a78bfa" pointer-events="none">${station.number}</text>
+            <text x="${numX || station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="#a78bfa" pointer-events="none">${station.number}</text>
           `;
         } else if (station.id === "beehive" || station.id === "bindaas" || station.id === "guarda" || station.id === "can" || station.id === "chief") {
           const secondaryLine = METRO_DATA.lines.find(l => l.id === station.lines[1]);
@@ -279,7 +300,7 @@
             <circle cx="${station.x}" cy="${station.y}" r="16" class="station-core hub-outer" fill="var(--bg-primary)" stroke="${color}" stroke-width="4" filter="url(#hub-shadow)"/>
             <circle cx="${station.x}" cy="${station.y}" r="10" fill="${innerColor}" pointer-events="none"/>
             <circle cx="${station.x}" cy="${station.y}" r="5" fill="#ffffff" pointer-events="none"/>
-            <text x="${station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="${accent}" pointer-events="none">${station.number}</text>
+            <text x="${numX || station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="${accent}" pointer-events="none">${station.number}</text>
           `;
         } else {
           markup += `
@@ -287,14 +308,14 @@
             <circle cx="${station.x}" cy="${station.y}" r="16" class="station-core hub-outer" fill="var(--bg-primary)" stroke="${color}" stroke-width="4" filter="url(#hub-shadow)"/>
             <circle cx="${station.x}" cy="${station.y}" r="10" fill="${color}" pointer-events="none"/>
             <circle cx="${station.x}" cy="${station.y}" r="5" fill="#ffffff" pointer-events="none"/>
-            <text x="${station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="${accent}" pointer-events="none">${station.number}</text>
+            <text x="${numX || station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="${accent}" pointer-events="none">${station.number}</text>
           `;
         }
       } else {
         markup += `
           <circle cx="${station.x}" cy="${station.y}" r="11" class="station-core" fill="var(--bg-primary)" stroke="${color}" stroke-width="4.5"/>
           <circle cx="${station.x}" cy="${station.y}" r="5" fill="#ffffff" pointer-events="none"/>
-          <text x="${station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="var(--text-muted)" pointer-events="none">${station.number}</text>
+          <text x="${numX || station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="var(--text-muted)" pointer-events="none">${station.number}</text>
         `;
       }
 

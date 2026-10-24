@@ -376,7 +376,7 @@ const METRO_DATA = {
       "lines": [
         "line-net"
       ],
-      "x": 145,
+      "x": 160,
       "y": 290,
       "isMajorHub": false,
       "repos": [
@@ -412,7 +412,7 @@ const METRO_DATA = {
       "lines": [
         "line-net"
       ],
-      "x": 240,
+      "x": 255,
       "y": 290,
       "isMajorHub": false,
       "repos": [
@@ -441,7 +441,7 @@ const METRO_DATA = {
       "lines": [
         "line-net"
       ],
-      "x": 335,
+      "x": 350,
       "y": 290,
       "isMajorHub": false,
       "repos": [
@@ -475,7 +475,7 @@ const METRO_DATA = {
       "lines": [
         "line-net"
       ],
-      "x": 430,
+      "x": 445,
       "y": 290,
       "isMajorHub": false,
       "repos": [
@@ -1084,7 +1084,7 @@ const METRO_DATA = {
       "lines": [
         "line-trust"
       ],
-      "x": 1590,
+      "x": 1560,
       "y": 460,
       "isMajorHub": false,
       "repos": [
@@ -1107,7 +1107,7 @@ const METRO_DATA = {
       "lines": [
         "line-community"
       ],
-      "x": 150,
+      "x": 200,
       "y": 450,
       "isMajorHub": true,
       "repos": [
@@ -1136,7 +1136,7 @@ const METRO_DATA = {
       "lines": [
         "line-community"
       ],
-      "x": 280,
+      "x": 360,
       "y": 450,
       "isMajorHub": true,
       "repos": [
@@ -1165,7 +1165,7 @@ const METRO_DATA = {
       "lines": [
         "line-community"
       ],
-      "x": 420,
+      "x": 490,
       "y": 450,
       "isMajorHub": true,
       "repos": [
@@ -1194,7 +1194,7 @@ const METRO_DATA = {
       "lines": [
         "line-community"
       ],
-      "x": 550,
+      "x": 610,
       "y": 450,
       "isMajorHub": false,
       "repos": [
@@ -1389,12 +1389,12 @@ const METRO_DATA = {
     {
       "id": "track-trust-main",
       "lineId": "line-trust",
-      "path": "M 780,290 L 780,340 Q 780,450 840,450 L 1410,450 Q 1445,450 1460,460 L 1610,460"
+      "path": "M 780,290 L 810,290 Q 840,290 840,320 L 840,450 L 1410,450 Q 1445,450 1460,460 L 1580,460"
     },
     {
       "id": "track-community-main",
       "lineId": "line-community",
-      "path": "M 100,450 L 630,450 Q 660,450 660,480 L 660,630"
+      "path": "M 150,450 L 640,450 Q 660,450 660,470 L 660,630"
     },
     {
       "id": "track-shuttle",
