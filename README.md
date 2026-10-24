@@ -23,8 +23,8 @@ The metropolitan map organizes **41 flagship research stations** across **6 inte
 
 ## Key Transfer Hubs & Interchanges
 
-- **`Bindaas` (#19)**: Major Western transfer hub bridging **Line 1 (SOA Middleware)** and **Line 3 (Clinical Healthcare & Biomedical Informatics)**, federating heterogeneous clinical repositories and providing the foundational RESTful data architecture for **`Óbidos`**.
-- **`CONTROL-CORE` (#1)**: Western transfer hub bridging **Line 5 (Community Informatics)** and **Line 1 (SOA Middleware)**, linking closed-loop neuromodulation workflows with community computing.
+- **`CONTROL-CORE` (#1)**: Major Western transfer hub bridging **Line 3 (Healthcare Informatics)** and **Line 1 (SOA Middleware)**, linking closed-loop peripheral neuromodulation with distributed service-oriented systems.
+- **`Bindaas` (#19)**: Foundational milestone station preceding CONTROL-CORE on **Line 3 (Clinical Healthcare & Biomedical Informatics)**, federating heterogeneous clinical repositories and providing the foundational RESTful data architecture for **`Óbidos`**.
 - **`CHIEF` (#9)**: Transfer hub bridging **Line 1 (SOA Middleware)** and **Line 2 (Network Transport)**, coordinating software-defined community network controller farms.
 - **`Viseu` (#8)**: Major triple-interchange bridging **Line 1 (SOA Middleware)**, **Line 2 (Network Optimization)**, and **Line 4 (Autonomous Decentralized Trust)**, connecting edge orchestration directly with Ethereum trust and private off-chain state channels to **`PORTO`**.
 - **`Beehive` (#24)**: Interdisciplinary junction connecting **Line 3 (Clinical Healthcare)** with **Line 5 (Community Informatics)**.

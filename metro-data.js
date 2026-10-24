@@ -3,13 +3,14 @@
  * 41 Flagship Research Stations across 6 Interconnected Transit Lines.
  * 
  * Strict publication fidelity: verified peer-reviewed publications from official repository READMEs.
- * Archived foundational milestone Bindaas (Emory Sharma Lab, IEEE BigData 2019) included as Western Transfer Hub bridging Line 1 & Line 3.
+ * Archived foundational milestone Bindaas (Emory Sharma Lab, IEEE BigData 2019) precedes CONTROL-CORE on Line 3.
  * Standalone stations added for DWiM (3D DICOM in MATLAB) and dudu (Distributed Near-Duplicate in Java, Springer OTM 2015).
  * Viseu connects Line 1, Line 2, and Line 4 (PORTO) as a Major Triple Interchange Hub.
  * Sintra connects Line 4, Line 2, and Line 3 as a Major Eastern Triple Interchange Hub.
  * CHIEF connects Line 2 and Line 1 as a Major Western Transfer Hub.
- * CONTROL-CORE connects Line 5 and Line 1 as a Major Western Transfer Hub.
- * Bindaas connects Line 1 and Line 3 as a Major Western Transfer Hub.
+ * Cloud2Sim precedes CHIEF on Line 2 as an adaptive distributed cloud simulation milestone.
+ * CONTROL-CORE connects Line 3 and Line 1 as a Major Western Transfer Hub.
+ * Bindaas precedes CONTROL-CORE on Line 3 as a foundational data federation milestone.
  */
 
 const METRO_DATA = {
@@ -87,11 +88,11 @@ const METRO_DATA = {
       "name": "CONTROL-CORE",
       "subtitle": "Neuromodulation",
       "lines": [
-        "line-community",
+        "line-health",
         "line-soa"
       ],
       "x": 120,
-      "y": 450,
+      "y": 630,
       "isMajorHub": true,
       "isInterchange": true,
       "repos": [
@@ -119,7 +120,7 @@ const METRO_DATA = {
       "relatedStations": [
         "dhgworkflow"
       ],
-      "description": "Major Western Transfer Hub uniting Community Informatics (Line 5) with Service-Oriented Architecture (Line 1). Framework for closed-loop peripheral neuromodulation control systems. Integrates simulated neuro-stimulators with real-time feedback loops and modular editors, orchestrating cyclic workflows via NEXUS and the DHGWorkflow graph composer."
+      "description": "Major Western Transfer Hub uniting Healthcare & Biomedical Informatics (Line 3) with Service-Oriented Architecture (Line 1). Framework for closed-loop peripheral neuromodulation control systems. Integrates simulated neuro-stimulators with real-time feedback loops and modular editors, orchestrating cyclic workflows via NEXUS and the DHGWorkflow graph composer."
     },
     {
       "id": "cassowary",
@@ -379,7 +380,7 @@ const METRO_DATA = {
       "lines": [
         "line-net"
       ],
-      "x": 230,
+      "x": 65,
       "y": 290,
       "isMajorHub": false,
       "repos": [
@@ -404,7 +405,7 @@ const METRO_DATA = {
           "note": "Concurrent and Distributed CloudSim Simulations"
         }
       ],
-      "description": "Adaptive and distributed architecture for Cloud and MapReduce simulations, introducing concurrent multi-node simulation using Hazelcast and Infinispan."
+      "description": "Adaptive and distributed architecture for Cloud and MapReduce simulations, introducing concurrent multi-node simulation using Hazelcast and Infinispan. Precedes CHIEF on Line 2 (Network Transport & Edge Infrastructure)."
     },
     {
       "id": "xsdn",
@@ -669,13 +670,12 @@ const METRO_DATA = {
       "name": "Bindaas",
       "subtitle": "Data Federation Hub",
       "lines": [
-        "line-health",
-        "line-soa"
+        "line-health"
       ],
-      "x": 120,
+      "x": 65,
       "y": 630,
-      "isMajorHub": true,
-      "isInterchange": true,
+      "isMajorHub": false,
+      "isInterchange": false,
       "isArchived": true,
       "repos": [
         "sharmalab/bindaas",
@@ -708,7 +708,7 @@ const METRO_DATA = {
           "note": "Uniform Interfaces for Healthcare Data Access Federation"
         }
       ],
-      "description": "Major Western Transfer Hub uniting Service-Oriented Middleware (Line 1) with Healthcare Informatics (Line 3). An archived foundational data access federation middleware framework developed within the Sharma Lab at Emory University. Provides uniform RESTful APIs for diverse clinical and cancer imaging stores (TCIA, PRISM) with pluggable RBAC and query auditing, directly underpinning Óbidos and MEDIator while establishing the data services model that inspired SDDS and GUARDA."
+      "description": "Foundational data access federation milestone on Line 3 (Healthcare Informatics) preceding CONTROL-CORE. An archived middleware framework developed within the Sharma Lab at Emory University. Provides uniform RESTful APIs for diverse clinical and cancer imaging stores (TCIA, PRISM) with pluggable RBAC and query auditing, directly underpinning Óbidos and MEDIator while establishing the data services model that inspired SDDS and GUARDA."
     },
     {
       "id": "obidos",
@@ -1382,12 +1382,12 @@ const METRO_DATA = {
     {
       "id": "track-net-main",
       "lineId": "line-net",
-      "path": "M 120,290 L 1360,290 Q 1420,290 1440,360 L 1460,460"
+      "path": "M 65,290 L 1360,290 Q 1420,290 1440,360 L 1460,460"
     },
     {
       "id": "track-health-main",
       "lineId": "line-health",
-      "path": "M 120,630 L 1220,630 Q 1340,630 1410,540 L 1460,460"
+      "path": "M 65,630 L 1220,630 Q 1340,630 1410,540 L 1460,460"
     },
     {
       "id": "track-trust-main",
@@ -1397,7 +1397,7 @@ const METRO_DATA = {
     {
       "id": "track-community-main",
       "lineId": "line-community",
-      "path": "M 120,450 L 725,450 Q 750,450 750,475 L 750,630"
+      "path": "M 180,450 L 725,450 Q 750,450 750,475 L 750,630"
     },
     {
       "id": "track-shuttle",

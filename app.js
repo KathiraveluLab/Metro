@@ -109,14 +109,24 @@
       venueY = station.y - 12;
       numX = station.x - 22; // Station number shifted left of node so vertical blue line doesn't cut it
       numY = station.y + 4;
-    } else if (station.id === "control-core") {
-      // CONTROL-CORE is at (120, 450): Western transfer hub bridging Line 5 and Line 1
-      labelX = station.x + 28;
-      textAnchor = "start";
+    } else if (station.id === "bindaas") {
+      // Bindaas is at (65, 630): Standard station before CONTROL-CORE on Line 3.
+      // Labels Above Node (y = 590, 603, 616) to avoid collision with CONTROL-CORE
+      labelX = station.x;
+      textAnchor = "middle";
       labelY = station.y - 40;
       subY = station.y - 27;
       venueY = station.y - 14;
-      numX = station.x - 22; // Station number shifted left of node so vertical line doesn't cut it
+      numX = station.x;
+      numY = station.y + 19;
+    } else if (station.id === "control-core") {
+      // CONTROL-CORE is at (120, 630): Western transfer hub bridging Line 3 and Line 1
+      labelX = station.x;
+      textAnchor = "middle";
+      labelY = station.y + 25;
+      subY = station.y + 39;
+      venueY = station.y + 52;
+      numX = station.x - 22; // Station number shifted left of node so vertical blue line doesn't cut it
       numY = station.y + 4;
     } else if (station.id === "viseu") {
       // Viseu is at (780, 290): Labels Below Node, perfectly centered under node
@@ -213,16 +223,16 @@
         <text x="70" y="228" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#fbbf24" letter-spacing="1.5">NETWORK OPTIMIZATIONS, EDGE INFRASTRUCTURE &amp; TRANSPORT</text>
 
         <!-- Zone 5: Community & Circumpolar (Tier 3 West) -->
-        <rect x="50" y="370" width="760" height="145" rx="16" fill="#e11d48" fill-opacity="0.05" stroke="#e11d48" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
-        <text x="70" y="394" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#fb7185" letter-spacing="1.5">COMMUNITY INFORMATICS &amp; INDIGENOUS COMPUTING</text>
+        <rect x="150" y="370" width="660" height="145" rx="16" fill="#e11d48" fill-opacity="0.05" stroke="#e11d48" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
+        <text x="175" y="394" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#fb7185" letter-spacing="1.5">COMMUNITY INFORMATICS &amp; INDIGENOUS COMPUTING</text>
 
         <!-- Zone 4: Autonomous Systems & Trust (Tier 3 East) -->
         <rect x="830" y="370" width="800" height="145" rx="16" fill="#7c3aed" fill-opacity="0.05" stroke="#7c3aed" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
         <text x="850" y="394" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#a78bfa" letter-spacing="1.5">AUTONOMOUS SYSTEMS &amp; DECENTRALIZED TRUST</text>
 
         <!-- Zone 3: Healthcare (Tier 4 Bottom-Most Full Width) -->
-        <rect x="50" y="540" width="1580" height="155" rx="16" fill="#059669" fill-opacity="0.05" stroke="#059669" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
-        <text x="70" y="564" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#34d399" letter-spacing="1.5">HEALTHCARE, BIOMEDICAL IMAGING &amp; TELEHEALTH INTEGRATION</text>
+        <rect x="25" y="540" width="1605" height="155" rx="16" fill="#059669" fill-opacity="0.05" stroke="#059669" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
+        <text x="45" y="564" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#34d399" letter-spacing="1.5">HEALTHCARE, BIOMEDICAL IMAGING &amp; TELEHEALTH INTEGRATION</text>
       </g>
 
       <!-- Metro Line Tracks (Layer 1: Glow / Under-tracks) -->
@@ -258,9 +268,8 @@
         <line x1="780" y1="275" x2="780" y2="305" stroke="var(--text-primary)" stroke-width="6" stroke-linecap="round"/>
         <line x1="750" y1="615" x2="750" y2="645" stroke="var(--text-primary)" stroke-width="6" stroke-linecap="round"/>
         <circle cx="1460" cy="460" r="24" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
-        <circle cx="120" cy="630" r="24" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+        <circle cx="120" cy="630" r="24" fill="none" stroke="#34d399" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
         <circle cx="120" cy="290" r="24" fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
-        <circle cx="120" cy="450" r="24" fill="none" stroke="#fb7185" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
       </g>
 
       <!-- Stations Layer -->
@@ -302,7 +311,7 @@
             <circle cx="${station.x}" cy="${station.y}" r="3.5" fill="#ffffff" pointer-events="none"/>
             <text x="${numX || station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="#a78bfa" pointer-events="none">${station.number}</text>
           `;
-        } else if (station.id === "control-core" || station.id === "beehive" || station.id === "bindaas" || station.id === "guarda" || station.id === "can" || station.id === "chief") {
+        } else if (station.id === "control-core" || station.id === "beehive" || station.id === "guarda" || station.id === "can" || station.id === "chief") {
           const secondaryLine = METRO_DATA.lines.find(l => l.id === station.lines[1]);
           const innerColor = secondaryLine ? secondaryLine.color : color;
           markup += `

@@ -112,16 +112,16 @@
   <text x="70" y="228" class="zone-title" fill="#b45309">Network Optimizations, Edge Infrastructure &amp; Transport</text>
 
   <!-- Zone 5: Community and Indigenous (Tier 3 West) -->
-  <rect x="50" y="370" width="760" height="145" rx="16" class="zone-bg-5 zone-border-5"/>
-  <text x="70" y="394" class="zone-title" fill="#be123c">Community Informatics &amp; Indigenous Computing</text>
+  <rect x="150" y="370" width="660" height="145" rx="16" class="zone-bg-5 zone-border-5"/>
+  <text x="175" y="394" class="zone-title" fill="#be123c">Community Informatics &amp; Indigenous Computing</text>
 
   <!-- Zone 4: Autonomous Systems and Trust (Tier 3 East) -->
   <rect x="830" y="370" width="800" height="145" rx="16" class="zone-bg-4 zone-border-4"/>
   <text x="850" y="394" class="zone-title" fill="#7c3aed">Autonomous Systems &amp; Decentralized Trust</text>
 
   <!-- Zone 3: Healthcare and Biomedical (Tier 4 Bottom-Most Full Width) -->
-  <rect x="50" y="540" width="1580" height="155" rx="16" class="zone-bg-3 zone-border-3"/>
-  <text x="70" y="564" class="zone-title" fill="#047857">Healthcare, Biomedical Imaging &amp; Telehealth Integration</text>
+  <rect x="25" y="540" width="1605" height="155" rx="16" class="zone-bg-3 zone-border-3"/>
+  <text x="45" y="564" class="zone-title" fill="#047857">Healthcare, Biomedical Imaging &amp; Telehealth Integration</text>
 
   <!-- Title Card Header -->
   <g transform="translate(60, 40)">
@@ -137,9 +137,9 @@
   <g id="tracks-glow">
     <path d="M 120,630 L 120,290 Q 120,267 142,238 L 177,192 Q 208,150 215,150 L 650,150 Q 690,150 715,190 L 760,250 Q 780,275 780,290" stroke="#0284c7" stroke-width="16" class="track-underglow" />
     <path d="M 120,290 L 1360,290 Q 1420,290 1440,360 L 1460,460" stroke="#d97706" stroke-width="16" class="track-underglow" />
-    <path d="M 120,630 L 1220,630 Q 1340,630 1410,540 L 1460,460" stroke="#059669" stroke-width="16" class="track-underglow" />
+    <path d="M 65,630 L 1220,630 Q 1340,630 1410,540 L 1460,460" stroke="#059669" stroke-width="16" class="track-underglow" />
     <path d="M 780,290 L 810,290 Q 840,290 840,320 L 840,450 L 1410,450 Q 1445,450 1460,460 L 1580,460" stroke="#7c3aed" stroke-width="16" class="track-underglow" />
-    <path d="M 120,450 L 725,450 Q 750,450 750,475 L 750,630" stroke="#e11d48" stroke-width="16" class="track-underglow" />
+    <path d="M 180,450 L 725,450 Q 750,450 750,475 L 750,630" stroke="#e11d48" stroke-width="16" class="track-underglow" />
     <path d="M 650,150 L 1360,150 Q 1390,150 1390,180 L 1390,260 Q 1390,290 1360,290 L 1330,290" stroke="#64748b" stroke-width="16" class="track-underglow" />
   </g>
 
@@ -147,9 +147,9 @@
   <g id="tracks-core">
     <path id="track-soa-main" d="M 120,630 L 120,290 Q 120,267 142,238 L 177,192 Q 208,150 215,150 L 650,150 Q 690,150 715,190 L 760,250 Q 780,275 780,290" stroke="#0284c7" stroke-width="8" class="track-main" />
     <path id="track-net-main" d="M 120,290 L 1360,290 Q 1420,290 1440,360 L 1460,460" stroke="#d97706" stroke-width="8" class="track-main" />
-    <path id="track-health-main" d="M 120,630 L 1220,630 Q 1340,630 1410,540 L 1460,460" stroke="#059669" stroke-width="8" class="track-main" />
+    <path id="track-health-main" d="M 65,630 L 1220,630 Q 1340,630 1410,540 L 1460,460" stroke="#059669" stroke-width="8" class="track-main" />
     <path id="track-trust-main" d="M 780,290 L 810,290 Q 840,290 840,320 L 840,450 L 1410,450 Q 1445,450 1460,460 L 1580,460" stroke="#7c3aed" stroke-width="8" class="track-main" />
-    <path id="track-community-main" d="M 120,450 L 725,450 Q 750,450 750,475 L 750,630" stroke="#e11d48" stroke-width="8" class="track-main" />
+    <path id="track-community-main" d="M 180,450 L 725,450 Q 750,450 750,475 L 750,630" stroke="#e11d48" stroke-width="8" class="track-main" />
     <path id="track-shuttle" d="M 650,150 L 1360,150 Q 1390,150 1390,180 L 1390,260 Q 1390,290 1360,290 L 1330,290" stroke="#64748b" stroke-width="8" class="track-main" />
   </g>
 
@@ -164,27 +164,24 @@
     <!-- Sintra terminus interchange (Line 4 to Line 2 & Line 3) -->
     <circle cx="1460" cy="460" r="24" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
 
-    <!-- Bindaas terminus interchange (Line 1 to Line 3) -->
-    <circle cx="120" cy="630" r="24" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+    <!-- CONTROL-CORE terminus interchange (Line 1 to Line 3) -->
+    <circle cx="120" cy="630" r="24" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
 
     <!-- CHIEF interchange (Line 2 to Line 1) -->
     <circle cx="120" cy="290" r="24" fill="none" stroke="#d97706" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
-
-    <!-- CONTROL-CORE interchange (Line 5 to Line 1) -->
-    <circle cx="120" cy="450" r="24" fill="none" stroke="#e11d48" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
   </g>
 
   <!-- Stations Rendering -->
   <g id="stations">
     <!-- Station: CONTROL-CORE (1) -->
     <g id="station-control-core" class="station-node" transform="translate(0, 0)">
-      <circle cx="120" cy="450" r="17" class="hub-outer" stroke="#e11d48" filter="url(#hub-shadow)"/>
-      <circle cx="120" cy="450" r="11" fill="#0284c7"/>
-      <circle cx="120" cy="450" r="6" class="hub-inner"/>
-      <text x="98" y="454" class="station-num" fill="#e11d48">1</text>
-      <text x="148" y="410" text-anchor="start" class="station-label">CONTROL-CORE</text>
-      <text x="148" y="423" text-anchor="start" class="station-sub">Neuromodulation</text>
-      <text x="148" y="436" text-anchor="start" class="station-venue" fill="#e11d48">IEEE Access&apos;22</text>
+      <circle cx="120" cy="630" r="17" class="hub-outer" stroke="#059669" filter="url(#hub-shadow)"/>
+      <circle cx="120" cy="630" r="11" fill="#0284c7"/>
+      <circle cx="120" cy="630" r="6" class="hub-inner"/>
+      <text x="98" y="634" class="station-num" fill="#059669">1</text>
+      <text x="120" y="655" text-anchor="middle" class="station-label">CONTROL-CORE</text>
+      <text x="120" y="669" text-anchor="middle" class="station-sub">Neuromodulation</text>
+      <text x="120" y="682" text-anchor="middle" class="station-venue" fill="#059669">IEEE Access&apos;22</text>
     </g>
 
     <!-- Station: Cassowary (2) -->
@@ -361,13 +358,12 @@
 
     <!-- Station: Bindaas (19) -->
     <g id="station-bindaas" class="station-node" transform="translate(0, 0)">
-      <circle cx="120" cy="630" r="17" class="hub-outer" stroke="#059669" filter="url(#hub-shadow)"/>
-      <circle cx="120" cy="630" r="11" fill="#0284c7"/>
-      <circle cx="120" cy="630" r="6" class="hub-inner"/>
-      <text x="120" y="607" class="station-num" fill="#059669">19</text>
-      <text x="120" y="655" text-anchor="middle" class="station-label">Bindaas</text>
-      <text x="120" y="669" text-anchor="middle" class="station-sub">Data Federation Hub</text>
-      <text x="120" y="682" text-anchor="middle" class="station-venue" fill="#059669">IEEE BigData&apos;19</text>
+      <circle cx="65" cy="630" r="10" fill="#ffffff" stroke="#059669" stroke-width="4.5" filter="url(#hub-shadow)"/>
+      <circle cx="65" cy="630" r="4" fill="#0f172a"/>
+      <text x="65" y="649" class="station-num" fill="#64748b">19</text>
+      <text x="65" y="590" text-anchor="middle" class="station-label">Bindaas</text>
+      <text x="65" y="603" text-anchor="middle" class="station-sub">Data Federation Hub</text>
+      <text x="65" y="616" text-anchor="middle" class="station-venue" fill="#059669">IEEE BigData&apos;19</text>
     </g>
 
     <!-- Station: Óbidos (20) -->

@@ -34,16 +34,36 @@ function getStationLayout(station) {
     labelY = station.y - 38;
     subY = station.y - 25;
     venueY = station.y - 12;
-    numX = station.x - 22; // Station number shifted left of node so vertical blue line doesn't cut it
-    numY = station.y + 4;
-  } else if (station.id === "control-core") {
-    // CONTROL-CORE is at (120, 450): Western transfer hub bridging Line 5 and Line 1
-    labelX = station.x + 28;
-    textAnchor = "start";
+    numX = station.x - 22; // 98
+    numY = station.y - 20; // Shifted above horizontal track line so track doesn't cut it
+  } else if (station.id === "cloud2sim") {
+    // Cloud2Sim is at (65, 290): Standard station before CHIEF on Line 2
+    // Labels Below Node (y = 315, 329, 342) opposite to CHIEF's labels (y = 252, 265, 278)
+    labelX = station.x;
+    textAnchor = "middle";
+    labelY = station.y + 25;
+    subY = station.y + 39;
+    venueY = station.y + 52;
+    numX = station.x;
+    numY = station.y - 17; // Station number above node (standard Tier 2)
+  } else if (station.id === "bindaas") {
+    // Bindaas is at (65, 630): Standard station before CONTROL-CORE on Line 3.
+    // Labels Above Node (y = 590, 603, 616) to avoid collision with CONTROL-CORE
+    labelX = station.x;
+    textAnchor = "middle";
     labelY = station.y - 40;
     subY = station.y - 27;
     venueY = station.y - 14;
-    numX = station.x - 22; // Station number shifted left of node so vertical line doesn't cut it
+    numX = station.x;
+    numY = station.y + 19;
+  } else if (station.id === "control-core") {
+    // CONTROL-CORE is at (120, 630): Western transfer hub bridging Line 3 and Line 1
+    labelX = station.x;
+    textAnchor = "middle";
+    labelY = station.y + 25;
+    subY = station.y + 39;
+    venueY = station.y + 52;
+    numX = station.x - 22; // Station number shifted left of node so vertical blue line doesn't cut it
     numY = station.y + 4;
   } else if (station.id === "viseu") {
     // Viseu is at (780, 290): Labels Below Node, perfectly centered under node
@@ -161,20 +181,20 @@ function generateSvg() {
   <text x="735" y="84" class="zone-title" fill="#64748b">High-Performance Workflow &amp; Systems Runtimes</text>
 
   <!-- Zone 2: Network Optimizations and Edge (Tier 2 Full Width) -->
-  <rect x="50" y="205" width="1580" height="145" rx="16" class="zone-bg-2 zone-border-2"/>
-  <text x="70" y="228" class="zone-title" fill="#b45309">Network Optimizations, Edge Infrastructure &amp; Transport</text>
+  <rect x="15" y="205" width="1625" height="145" rx="16" class="zone-bg-2 zone-border-2"/>
+  <text x="35" y="228" class="zone-title" fill="#b45309">Network Optimizations, Edge Infrastructure &amp; Transport</text>
 
   <!-- Zone 5: Community and Indigenous (Tier 3 West) -->
-  <rect x="50" y="370" width="760" height="145" rx="16" class="zone-bg-5 zone-border-5"/>
-  <text x="70" y="394" class="zone-title" fill="#be123c">Community Informatics &amp; Indigenous Computing</text>
+  <rect x="150" y="370" width="660" height="145" rx="16" class="zone-bg-5 zone-border-5"/>
+  <text x="175" y="394" class="zone-title" fill="#be123c">Community Informatics &amp; Indigenous Computing</text>
 
   <!-- Zone 4: Autonomous Systems and Trust (Tier 3 East) -->
   <rect x="830" y="370" width="800" height="145" rx="16" class="zone-bg-4 zone-border-4"/>
   <text x="850" y="394" class="zone-title" fill="#7c3aed">Autonomous Systems &amp; Decentralized Trust</text>
 
   <!-- Zone 3: Healthcare and Biomedical (Tier 4 Bottom-Most Full Width) -->
-  <rect x="50" y="540" width="1580" height="155" rx="16" class="zone-bg-3 zone-border-3"/>
-  <text x="70" y="564" class="zone-title" fill="#047857">Healthcare, Biomedical Imaging &amp; Telehealth Integration</text>
+  <rect x="15" y="540" width="1625" height="155" rx="16" class="zone-bg-3 zone-border-3"/>
+  <text x="35" y="564" class="zone-title" fill="#047857">Healthcare, Biomedical Imaging &amp; Telehealth Integration</text>
 
   <!-- Title Card Header -->
   <g transform="translate(60, 40)">
@@ -223,14 +243,11 @@ function generateSvg() {
     <!-- Sintra terminus interchange (Line 4 to Line 2 & Line 3) -->
     <circle cx="1460" cy="460" r="24" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
 
-    <!-- Bindaas terminus interchange (Line 1 to Line 3) -->
-    <circle cx="120" cy="630" r="24" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+    <!-- CONTROL-CORE terminus interchange (Line 1 to Line 3) -->
+    <circle cx="120" cy="630" r="24" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
 
     <!-- CHIEF interchange (Line 2 to Line 1) -->
     <circle cx="120" cy="290" r="24" fill="none" stroke="#d97706" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
-
-    <!-- CONTROL-CORE interchange (Line 5 to Line 1) -->
-    <circle cx="120" cy="450" r="24" fill="none" stroke="#e11d48" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
   </g>
 
   <!-- Stations Rendering -->
@@ -264,8 +281,8 @@ function generateSvg() {
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="8" fill="#059669"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="3.5" class="hub-inner"/>\n`;
         svg += `      <text x="${numX || station.x}" y="${numY}" class="station-num" fill="#7c3aed">${station.number}</text>\n`;
-      } else if (station.id === "control-core" || station.id === "beehive" || station.id === "bindaas" || station.id === "guarda" || station.id === "can" || station.id === "chief") {
-        // Dual Interchange Hub (CONTROL-CORE, Beehive, Bindaas, GUARDA, CAN, CHIEF)
+      } else if (station.id === "control-core" || station.id === "beehive" || station.id === "guarda" || station.id === "can" || station.id === "chief") {
+        // Dual Interchange Hub (CONTROL-CORE, Beehive, GUARDA, CAN, CHIEF)
         const secondaryLine = METRO_DATA.lines.find(l => l.id === station.lines[1]);
         const innerColor = secondaryLine ? secondaryLine.color : color;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="17" class="hub-outer" stroke="${color}" filter="url(#hub-shadow)"/>\n`;
