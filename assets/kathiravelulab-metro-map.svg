@@ -112,7 +112,7 @@
   <text x="70" y="228" class="zone-title" fill="#b45309">Network Optimizations, Edge Infrastructure &amp; Transport</text>
 
   <!-- Zone 5: Community and Indigenous (Tier 3 West) -->
-  <rect x="50" y="370" width="730" height="145" rx="16" class="zone-bg-5 zone-border-5"/>
+  <rect x="50" y="370" width="760" height="145" rx="16" class="zone-bg-5 zone-border-5"/>
   <text x="70" y="394" class="zone-title" fill="#be123c">Community Informatics &amp; Indigenous Computing</text>
 
   <!-- Zone 4: Autonomous Systems and Trust (Tier 3 East) -->
@@ -139,7 +139,7 @@
     <path d="M 120,290 L 1360,290 Q 1420,290 1440,360 L 1460,460" stroke="#d97706" stroke-width="16" class="track-underglow" />
     <path d="M 120,630 L 1220,630 Q 1340,630 1410,540 L 1460,460" stroke="#059669" stroke-width="16" class="track-underglow" />
     <path d="M 780,290 L 810,290 Q 840,290 840,320 L 840,450 L 1410,450 Q 1445,450 1460,460 L 1580,460" stroke="#7c3aed" stroke-width="16" class="track-underglow" />
-    <path d="M 120,450 L 675,450 Q 700,450 700,475 L 700,630" stroke="#e11d48" stroke-width="16" class="track-underglow" />
+    <path d="M 120,450 L 725,450 Q 750,450 750,475 L 750,630" stroke="#e11d48" stroke-width="16" class="track-underglow" />
     <path d="M 650,150 L 1360,150 Q 1390,150 1390,180 L 1390,260 Q 1390,290 1360,290 L 1330,290" stroke="#64748b" stroke-width="16" class="track-underglow" />
   </g>
 
@@ -149,7 +149,7 @@
     <path id="track-net-main" d="M 120,290 L 1360,290 Q 1420,290 1440,360 L 1460,460" stroke="#d97706" stroke-width="8" class="track-main" />
     <path id="track-health-main" d="M 120,630 L 1220,630 Q 1340,630 1410,540 L 1460,460" stroke="#059669" stroke-width="8" class="track-main" />
     <path id="track-trust-main" d="M 780,290 L 810,290 Q 840,290 840,320 L 840,450 L 1410,450 Q 1445,450 1460,460 L 1580,460" stroke="#7c3aed" stroke-width="8" class="track-main" />
-    <path id="track-community-main" d="M 120,450 L 675,450 Q 700,450 700,475 L 700,630" stroke="#e11d48" stroke-width="8" class="track-main" />
+    <path id="track-community-main" d="M 120,450 L 725,450 Q 750,450 750,475 L 750,630" stroke="#e11d48" stroke-width="8" class="track-main" />
     <path id="track-shuttle" d="M 650,150 L 1360,150 Q 1390,150 1390,180 L 1390,260 Q 1390,290 1360,290 L 1330,290" stroke="#64748b" stroke-width="8" class="track-main" />
   </g>
 
@@ -159,7 +159,7 @@
     <line x1="780" y1="275" x2="780" y2="305" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
     
     <!-- Beehive interchange (Line 3 to Line 5) -->
-    <line x1="700" y1="615" x2="700" y2="645" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
+    <line x1="750" y1="615" x2="750" y2="645" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
 
     <!-- Sintra terminus interchange (Line 4 to Line 2 & Line 3) -->
     <circle cx="1460" cy="460" r="24" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
@@ -411,13 +411,13 @@
 
     <!-- Station: Beehive (24) -->
     <g id="station-beehive" class="station-node" transform="translate(0, 0)">
-      <circle cx="700" cy="630" r="17" class="hub-outer" stroke="#059669" filter="url(#hub-shadow)"/>
-      <circle cx="700" cy="630" r="11" fill="#e11d48"/>
-      <circle cx="700" cy="630" r="6" class="hub-inner"/>
-      <text x="700" y="607" class="station-num" fill="#059669">24</text>
-      <text x="700" y="655" text-anchor="middle" class="station-label">Beehive</text>
-      <text x="700" y="669" text-anchor="middle" class="station-sub">Behavioral Health</text>
-      <text x="700" y="682" text-anchor="middle" class="station-venue" fill="#059669">IEEE SysCon&apos;26</text>
+      <circle cx="750" cy="630" r="17" class="hub-outer" stroke="#059669" filter="url(#hub-shadow)"/>
+      <circle cx="750" cy="630" r="11" fill="#e11d48"/>
+      <circle cx="750" cy="630" r="6" class="hub-inner"/>
+      <text x="750" y="607" class="station-num" fill="#059669">24</text>
+      <text x="750" y="655" text-anchor="middle" class="station-label">Beehive</text>
+      <text x="750" y="669" text-anchor="middle" class="station-sub">Behavioral Health</text>
+      <text x="750" y="682" text-anchor="middle" class="station-venue" fill="#059669">IEEE SysCon&apos;26</text>
     </g>
 
     <!-- Station: TENeT (25) -->
@@ -492,44 +492,44 @@
 
     <!-- Station: AK History Webmap (32) -->
     <g id="station-ak-history-webmap" class="station-node" transform="translate(0, 0)">
-      <circle cx="250" cy="450" r="17" class="hub-outer" stroke="#e11d48" filter="url(#hub-shadow)"/>
-      <circle cx="250" cy="450" r="11" fill="#e11d48"/>
-      <circle cx="250" cy="450" r="6" class="hub-inner"/>
-      <text x="250" y="427" class="station-num" fill="#e11d48">32</text>
-      <text x="250" y="475" text-anchor="middle" class="station-label">AK History Webmap</text>
-      <text x="250" y="489" text-anchor="middle" class="station-sub">Epidemic Diseases Web Map</text>
-      <text x="250" y="502" text-anchor="middle" class="station-venue" fill="#e11d48">IEEE Computer&apos;25</text>
+      <circle cx="290" cy="450" r="17" class="hub-outer" stroke="#e11d48" filter="url(#hub-shadow)"/>
+      <circle cx="290" cy="450" r="11" fill="#e11d48"/>
+      <circle cx="290" cy="450" r="6" class="hub-inner"/>
+      <text x="290" y="427" class="station-num" fill="#e11d48">32</text>
+      <text x="290" y="475" text-anchor="middle" class="station-label">AK History Webmap</text>
+      <text x="290" y="489" text-anchor="middle" class="station-sub">Epidemic Diseases Web Map</text>
+      <text x="290" y="502" text-anchor="middle" class="station-venue" fill="#e11d48">IEEE Computer&apos;25</text>
     </g>
 
     <!-- Station: Dnigi (33) -->
     <g id="station-dnigi" class="station-node" transform="translate(0, 0)">
-      <circle cx="380" cy="450" r="17" class="hub-outer" stroke="#e11d48" filter="url(#hub-shadow)"/>
-      <circle cx="380" cy="450" r="11" fill="#e11d48"/>
-      <circle cx="380" cy="450" r="6" class="hub-inner"/>
-      <text x="380" y="427" class="station-num" fill="#e11d48">33</text>
-      <text x="380" y="475" text-anchor="middle" class="station-label">Dnigi</text>
-      <text x="380" y="489" text-anchor="middle" class="station-sub">Indigenous Heritage Game</text>
-      <text x="380" y="502" text-anchor="middle" class="station-venue" fill="#e11d48">IEEE Computer&apos;25</text>
+      <circle cx="405" cy="450" r="17" class="hub-outer" stroke="#e11d48" filter="url(#hub-shadow)"/>
+      <circle cx="405" cy="450" r="11" fill="#e11d48"/>
+      <circle cx="405" cy="450" r="6" class="hub-inner"/>
+      <text x="405" y="427" class="station-num" fill="#e11d48">33</text>
+      <text x="405" y="475" text-anchor="middle" class="station-label">Dnigi</text>
+      <text x="405" y="489" text-anchor="middle" class="station-sub">Indigenous Heritage Game</text>
+      <text x="405" y="502" text-anchor="middle" class="station-venue" fill="#e11d48">IEEE Computer&apos;25</text>
     </g>
 
     <!-- Station: Arctic Sea Ice (34) -->
     <g id="station-dip-predicting-sie" class="station-node" transform="translate(0, 0)">
-      <circle cx="510" cy="450" r="17" class="hub-outer" stroke="#e11d48" filter="url(#hub-shadow)"/>
-      <circle cx="510" cy="450" r="11" fill="#e11d48"/>
-      <circle cx="510" cy="450" r="6" class="hub-inner"/>
-      <text x="510" y="427" class="station-num" fill="#e11d48">34</text>
-      <text x="510" y="475" text-anchor="middle" class="station-label">Arctic Sea Ice</text>
-      <text x="510" y="489" text-anchor="middle" class="station-sub">Arctic Sea Ice AI</text>
-      <text x="510" y="502" text-anchor="middle" class="station-venue" fill="#e11d48">Elsevier RSA&apos;25</text>
+      <circle cx="520" cy="450" r="17" class="hub-outer" stroke="#e11d48" filter="url(#hub-shadow)"/>
+      <circle cx="520" cy="450" r="11" fill="#e11d48"/>
+      <circle cx="520" cy="450" r="6" class="hub-inner"/>
+      <text x="520" y="427" class="station-num" fill="#e11d48">34</text>
+      <text x="520" y="475" text-anchor="middle" class="station-label">Arctic Sea Ice</text>
+      <text x="520" y="489" text-anchor="middle" class="station-sub">Arctic Sea Ice AI</text>
+      <text x="520" y="502" text-anchor="middle" class="station-venue" fill="#e11d48">Elsevier RSA&apos;25</text>
     </g>
 
     <!-- Station: DREAMS (35) -->
     <g id="station-dreams" class="station-node" transform="translate(0, 0)">
-      <circle cx="630" cy="450" r="10" fill="#ffffff" stroke="#e11d48" stroke-width="4.5" filter="url(#hub-shadow)"/>
-      <circle cx="630" cy="450" r="4" fill="#0f172a"/>
-      <text x="630" y="433" class="station-num" fill="#64748b">35</text>
-      <text x="630" y="475" text-anchor="middle" class="station-label">DREAMS</text>
-      <text x="630" y="489" text-anchor="middle" class="station-sub">Recovery &amp; Arts Mining</text>
+      <circle cx="635" cy="450" r="10" fill="#ffffff" stroke="#e11d48" stroke-width="4.5" filter="url(#hub-shadow)"/>
+      <circle cx="635" cy="450" r="4" fill="#0f172a"/>
+      <text x="635" y="433" class="station-num" fill="#64748b">35</text>
+      <text x="635" y="475" text-anchor="middle" class="station-label">DREAMS</text>
+      <text x="635" y="489" text-anchor="middle" class="station-sub">Recovery &amp; Arts Mining</text>
     </g>
 
     <!-- Station: DHGWorkflow (36) -->

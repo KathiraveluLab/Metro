@@ -871,7 +871,7 @@ const METRO_DATA = {
         "line-health",
         "line-community"
       ],
-      "x": 700,
+      "x": 750,
       "y": 630,
       "isMajorHub": true,
       "isInterchange": true,
@@ -1110,7 +1110,7 @@ const METRO_DATA = {
       "lines": [
         "line-community"
       ],
-      "x": 250,
+      "x": 290,
       "y": 450,
       "isMajorHub": true,
       "repos": [
@@ -1139,7 +1139,7 @@ const METRO_DATA = {
       "lines": [
         "line-community"
       ],
-      "x": 380,
+      "x": 405,
       "y": 450,
       "isMajorHub": true,
       "repos": [
@@ -1168,7 +1168,7 @@ const METRO_DATA = {
       "lines": [
         "line-community"
       ],
-      "x": 510,
+      "x": 520,
       "y": 450,
       "isMajorHub": true,
       "repos": [
@@ -1197,7 +1197,7 @@ const METRO_DATA = {
       "lines": [
         "line-community"
       ],
-      "x": 630,
+      "x": 635,
       "y": 450,
       "isMajorHub": false,
       "repos": [
@@ -1397,7 +1397,7 @@ const METRO_DATA = {
     {
       "id": "track-community-main",
       "lineId": "line-community",
-      "path": "M 120,450 L 675,450 Q 700,450 700,475 L 700,630"
+      "path": "M 120,450 L 725,450 Q 750,450 750,475 L 750,630"
     },
     {
       "id": "track-shuttle",
