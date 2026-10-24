@@ -20,20 +20,20 @@ function getStationLayout(station) {
   let labelY, subY, venueY, numY;
 
   if (station.id === "sintra") {
-    // Sintra labels to the left of node, into the open space between Epicue (1240) and Sintra (1460)
+    // Sintra labels above the purple line, to the left of node
     labelX = station.x - 28;
     textAnchor = "end";
-    labelY = station.y - 6;
-    subY = station.y + 10;
-    venueY = station.y + 24;
+    labelY = station.y - 32;
+    subY = station.y - 18;
+    venueY = station.y - 5;
     numY = station.y - 23;
   } else if (station.id === "chief") {
-    // CHIEF is at (80, 290): Labels Above Node, shifted right to clear vertical Line 1 (blue)
+    // CHIEF is at (120, 290): Labels Above Node, lower so it doesn't overlap yellow title
     labelX = station.x + 24;
     textAnchor = "start";
-    labelY = station.y - 58;
-    subY = station.y - 44;
-    venueY = station.y - 31;
+    labelY = station.y - 38;
+    subY = station.y - 25;
+    venueY = station.y - 12;
     numX = station.x - 22; // Station number shifted left of node so vertical blue line doesn't cut it
     numY = station.y + 4;
   } else if (station.id === "viseu") {
@@ -156,8 +156,8 @@ function generateSvg() {
   <text x="70" y="228" class="zone-title" fill="#b45309">Network Optimizations, Edge Infrastructure &amp; Transport</text>
 
   <!-- Zone 5: Community and Indigenous (Tier 3 West) -->
-  <rect x="120" y="370" width="650" height="145" rx="16" class="zone-bg-5 zone-border-5"/>
-  <text x="145" y="394" class="zone-title" fill="#be123c">Community Informatics &amp; Indigenous Computing</text>
+  <rect x="140" y="370" width="640" height="145" rx="16" class="zone-bg-5 zone-border-5"/>
+  <text x="165" y="394" class="zone-title" fill="#be123c">Community Informatics &amp; Indigenous Computing</text>
 
   <!-- Zone 4: Autonomous Systems and Trust (Tier 3 East) -->
   <rect x="830" y="370" width="800" height="145" rx="16" class="zone-bg-4 zone-border-4"/>
@@ -209,16 +209,16 @@ function generateSvg() {
     <line x1="780" y1="275" x2="780" y2="305" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
     
     <!-- Beehive interchange (Line 3 to Line 5) -->
-    <line x1="660" y1="615" x2="660" y2="645" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
+    <line x1="700" y1="615" x2="700" y2="645" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
 
     <!-- Sintra terminus interchange (Line 4 to Line 2 & Line 3) -->
     <circle cx="1460" cy="460" r="24" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
 
     <!-- Bindaas terminus interchange (Line 1 to Line 3) -->
-    <circle cx="80" cy="630" r="24" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+    <circle cx="120" cy="630" r="24" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
 
     <!-- CHIEF interchange (Line 2 to Line 1) -->
-    <circle cx="80" cy="290" r="24" fill="none" stroke="#d97706" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+    <circle cx="120" cy="290" r="24" fill="none" stroke="#d97706" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
   </g>
 
   <!-- Stations Rendering -->

@@ -344,7 +344,7 @@ const METRO_DATA = {
         "line-net",
         "line-soa"
       ],
-      "x": 80,
+      "x": 120,
       "y": 290,
       "isMajorHub": true,
       "repos": [
@@ -376,7 +376,7 @@ const METRO_DATA = {
       "lines": [
         "line-net"
       ],
-      "x": 160,
+      "x": 230,
       "y": 290,
       "isMajorHub": false,
       "repos": [
@@ -412,7 +412,7 @@ const METRO_DATA = {
       "lines": [
         "line-net"
       ],
-      "x": 255,
+      "x": 340,
       "y": 290,
       "isMajorHub": false,
       "repos": [
@@ -441,7 +441,7 @@ const METRO_DATA = {
       "lines": [
         "line-net"
       ],
-      "x": 350,
+      "x": 450,
       "y": 290,
       "isMajorHub": false,
       "repos": [
@@ -475,7 +475,7 @@ const METRO_DATA = {
       "lines": [
         "line-net"
       ],
-      "x": 445,
+      "x": 560,
       "y": 290,
       "isMajorHub": false,
       "repos": [
@@ -515,7 +515,7 @@ const METRO_DATA = {
       "lines": [
         "line-net"
       ],
-      "x": 580,
+      "x": 670,
       "y": 290,
       "isMajorHub": false,
       "repos": [
@@ -669,7 +669,7 @@ const METRO_DATA = {
         "line-health",
         "line-soa"
       ],
-      "x": 80,
+      "x": 120,
       "y": 630,
       "isMajorHub": true,
       "isInterchange": true,
@@ -716,7 +716,7 @@ const METRO_DATA = {
       "lines": [
         "line-health"
       ],
-      "x": 195,
+      "x": 235,
       "y": 630,
       "isMajorHub": false,
       "repos": [
@@ -771,7 +771,7 @@ const METRO_DATA = {
       "lines": [
         "line-health"
       ],
-      "x": 310,
+      "x": 345,
       "y": 630,
       "isMajorHub": false,
       "repos": [
@@ -816,7 +816,7 @@ const METRO_DATA = {
       "lines": [
         "line-health"
       ],
-      "x": 430,
+      "x": 455,
       "y": 630,
       "isMajorHub": false,
       "repos": [
@@ -841,7 +841,7 @@ const METRO_DATA = {
       "lines": [
         "line-health"
       ],
-      "x": 530,
+      "x": 565,
       "y": 630,
       "isMajorHub": false,
       "repos": [
@@ -868,7 +868,7 @@ const METRO_DATA = {
         "line-health",
         "line-community"
       ],
-      "x": 660,
+      "x": 700,
       "y": 630,
       "isMajorHub": true,
       "isInterchange": true,
@@ -1107,7 +1107,7 @@ const METRO_DATA = {
       "lines": [
         "line-community"
       ],
-      "x": 200,
+      "x": 220,
       "y": 450,
       "isMajorHub": true,
       "repos": [
@@ -1136,7 +1136,7 @@ const METRO_DATA = {
       "lines": [
         "line-community"
       ],
-      "x": 360,
+      "x": 380,
       "y": 450,
       "isMajorHub": true,
       "repos": [
@@ -1165,7 +1165,7 @@ const METRO_DATA = {
       "lines": [
         "line-community"
       ],
-      "x": 490,
+      "x": 510,
       "y": 450,
       "isMajorHub": true,
       "repos": [
@@ -1194,7 +1194,7 @@ const METRO_DATA = {
       "lines": [
         "line-community"
       ],
-      "x": 610,
+      "x": 630,
       "y": 450,
       "isMajorHub": false,
       "repos": [
@@ -1374,17 +1374,17 @@ const METRO_DATA = {
     {
       "id": "track-soa-main",
       "lineId": "line-soa",
-      "path": "M 80,630 L 80,180 Q 80,150 120,150 L 650,150 Q 690,150 715,190 L 760,250 Q 780,275 780,290"
+      "path": "M 120,630 L 120,150 L 650,150 Q 690,150 715,190 L 760,250 Q 780,275 780,290"
     },
     {
       "id": "track-net-main",
       "lineId": "line-net",
-      "path": "M 80,290 L 1360,290 Q 1420,290 1440,360 L 1460,460"
+      "path": "M 120,290 L 1360,290 Q 1420,290 1440,360 L 1460,460"
     },
     {
       "id": "track-health-main",
       "lineId": "line-health",
-      "path": "M 80,630 L 1220,630 Q 1340,630 1410,540 L 1460,460"
+      "path": "M 120,630 L 1220,630 Q 1340,630 1410,540 L 1460,460"
     },
     {
       "id": "track-trust-main",
@@ -1394,7 +1394,7 @@ const METRO_DATA = {
     {
       "id": "track-community-main",
       "lineId": "line-community",
-      "path": "M 150,450 L 640,450 Q 660,450 660,470 L 660,630"
+      "path": "M 160,450 L 675,450 Q 700,450 700,475 L 700,630"
     },
     {
       "id": "track-shuttle",

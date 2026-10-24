@@ -93,20 +93,20 @@
     let labelY, subY, venueY, numY;
 
     if (station.id === "sintra") {
-      // Sintra labels to the left of node, into the open space between Epicue (1240) and Sintra (1460)
+      // Sintra labels above the purple line, to the left of node
       labelX = station.x - 28;
       textAnchor = "end";
-      labelY = station.y - 6;
-      subY = station.y + 10;
-      venueY = station.y + 24;
+      labelY = station.y - 32;
+      subY = station.y - 18;
+      venueY = station.y - 5;
       numY = station.y - 23;
     } else if (station.id === "chief") {
-      // CHIEF is at (80, 290): Labels Above Node, shifted right to clear vertical Line 1 (blue)
+      // CHIEF is at (120, 290): Labels Above Node, lower so it doesn't overlap yellow title
       labelX = station.x + 24;
       textAnchor = "start";
-      labelY = station.y - 58;
-      subY = station.y - 44;
-      venueY = station.y - 31;
+      labelY = station.y - 38;
+      subY = station.y - 25;
+      venueY = station.y - 12;
       numX = station.x - 22; // Station number shifted left of node so vertical blue line doesn't cut it
       numY = station.y + 4;
     } else if (station.id === "viseu") {
@@ -204,8 +204,8 @@
         <text x="70" y="228" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#fbbf24" letter-spacing="1.5">NETWORK OPTIMIZATIONS, EDGE INFRASTRUCTURE &amp; TRANSPORT</text>
 
         <!-- Zone 5: Community & Circumpolar (Tier 3 West) -->
-        <rect x="120" y="370" width="650" height="145" rx="16" fill="#e11d48" fill-opacity="0.05" stroke="#e11d48" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
-        <text x="145" y="394" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#fb7185" letter-spacing="1.5">COMMUNITY INFORMATICS &amp; INDIGENOUS COMPUTING</text>
+        <rect x="140" y="370" width="640" height="145" rx="16" fill="#e11d48" fill-opacity="0.05" stroke="#e11d48" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
+        <text x="165" y="394" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#fb7185" letter-spacing="1.5">COMMUNITY INFORMATICS &amp; INDIGENOUS COMPUTING</text>
 
         <!-- Zone 4: Autonomous Systems & Trust (Tier 3 East) -->
         <rect x="830" y="370" width="800" height="145" rx="16" fill="#7c3aed" fill-opacity="0.05" stroke="#7c3aed" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
@@ -247,10 +247,10 @@
       <!-- Transfer Connectors (purely decorative, no pointer interference) -->
       <g id="interchange-connectors" pointer-events="none">
         <line x1="780" y1="275" x2="780" y2="305" stroke="var(--text-primary)" stroke-width="6" stroke-linecap="round"/>
-        <line x1="660" y1="615" x2="660" y2="645" stroke="var(--text-primary)" stroke-width="6" stroke-linecap="round"/>
+        <line x1="700" y1="615" x2="700" y2="645" stroke="var(--text-primary)" stroke-width="6" stroke-linecap="round"/>
         <circle cx="1460" cy="460" r="24" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
-        <circle cx="80" cy="630" r="24" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
-        <circle cx="80" cy="290" r="24" fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+        <circle cx="120" cy="630" r="24" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+        <circle cx="120" cy="290" r="24" fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
       </g>
 
       <!-- Stations Layer -->

@@ -112,8 +112,8 @@
   <text x="70" y="228" class="zone-title" fill="#b45309">Network Optimizations, Edge Infrastructure &amp; Transport</text>
 
   <!-- Zone 5: Community and Indigenous (Tier 3 West) -->
-  <rect x="120" y="370" width="650" height="145" rx="16" class="zone-bg-5 zone-border-5"/>
-  <text x="145" y="394" class="zone-title" fill="#be123c">Community Informatics &amp; Indigenous Computing</text>
+  <rect x="140" y="370" width="640" height="145" rx="16" class="zone-bg-5 zone-border-5"/>
+  <text x="165" y="394" class="zone-title" fill="#be123c">Community Informatics &amp; Indigenous Computing</text>
 
   <!-- Zone 4: Autonomous Systems and Trust (Tier 3 East) -->
   <rect x="830" y="370" width="800" height="145" rx="16" class="zone-bg-4 zone-border-4"/>
@@ -135,21 +135,21 @@
 
   <!-- Metro Line Tracks (Layer 1: Under-tracks for anti-aliasing depth) -->
   <g id="tracks-glow">
-    <path d="M 80,630 L 80,180 Q 80,150 120,150 L 650,150 Q 690,150 715,190 L 760,250 Q 780,275 780,290" stroke="#0284c7" stroke-width="16" class="track-underglow" />
-    <path d="M 80,290 L 1360,290 Q 1420,290 1440,360 L 1460,460" stroke="#d97706" stroke-width="16" class="track-underglow" />
-    <path d="M 80,630 L 1220,630 Q 1340,630 1410,540 L 1460,460" stroke="#059669" stroke-width="16" class="track-underglow" />
+    <path d="M 120,630 L 120,150 L 650,150 Q 690,150 715,190 L 760,250 Q 780,275 780,290" stroke="#0284c7" stroke-width="16" class="track-underglow" />
+    <path d="M 120,290 L 1360,290 Q 1420,290 1440,360 L 1460,460" stroke="#d97706" stroke-width="16" class="track-underglow" />
+    <path d="M 120,630 L 1220,630 Q 1340,630 1410,540 L 1460,460" stroke="#059669" stroke-width="16" class="track-underglow" />
     <path d="M 780,290 L 810,290 Q 840,290 840,320 L 840,450 L 1410,450 Q 1445,450 1460,460 L 1580,460" stroke="#7c3aed" stroke-width="16" class="track-underglow" />
-    <path d="M 150,450 L 640,450 Q 660,450 660,470 L 660,630" stroke="#e11d48" stroke-width="16" class="track-underglow" />
+    <path d="M 160,450 L 675,450 Q 700,450 700,475 L 700,630" stroke="#e11d48" stroke-width="16" class="track-underglow" />
     <path d="M 650,150 L 1360,150 Q 1390,150 1390,180 L 1390,260 Q 1390,290 1360,290 L 1330,290" stroke="#64748b" stroke-width="16" class="track-underglow" />
   </g>
 
   <!-- Metro Line Tracks (Layer 2: Core Solid Tracks) -->
   <g id="tracks-core">
-    <path id="track-soa-main" d="M 80,630 L 80,180 Q 80,150 120,150 L 650,150 Q 690,150 715,190 L 760,250 Q 780,275 780,290" stroke="#0284c7" stroke-width="8" class="track-main" />
-    <path id="track-net-main" d="M 80,290 L 1360,290 Q 1420,290 1440,360 L 1460,460" stroke="#d97706" stroke-width="8" class="track-main" />
-    <path id="track-health-main" d="M 80,630 L 1220,630 Q 1340,630 1410,540 L 1460,460" stroke="#059669" stroke-width="8" class="track-main" />
+    <path id="track-soa-main" d="M 120,630 L 120,150 L 650,150 Q 690,150 715,190 L 760,250 Q 780,275 780,290" stroke="#0284c7" stroke-width="8" class="track-main" />
+    <path id="track-net-main" d="M 120,290 L 1360,290 Q 1420,290 1440,360 L 1460,460" stroke="#d97706" stroke-width="8" class="track-main" />
+    <path id="track-health-main" d="M 120,630 L 1220,630 Q 1340,630 1410,540 L 1460,460" stroke="#059669" stroke-width="8" class="track-main" />
     <path id="track-trust-main" d="M 780,290 L 810,290 Q 840,290 840,320 L 840,450 L 1410,450 Q 1445,450 1460,460 L 1580,460" stroke="#7c3aed" stroke-width="8" class="track-main" />
-    <path id="track-community-main" d="M 150,450 L 640,450 Q 660,450 660,470 L 660,630" stroke="#e11d48" stroke-width="8" class="track-main" />
+    <path id="track-community-main" d="M 160,450 L 675,450 Q 700,450 700,475 L 700,630" stroke="#e11d48" stroke-width="8" class="track-main" />
     <path id="track-shuttle" d="M 650,150 L 1360,150 Q 1390,150 1390,180 L 1390,260 Q 1390,290 1360,290 L 1330,290" stroke="#64748b" stroke-width="8" class="track-main" />
   </g>
 
@@ -159,16 +159,16 @@
     <line x1="780" y1="275" x2="780" y2="305" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
     
     <!-- Beehive interchange (Line 3 to Line 5) -->
-    <line x1="660" y1="615" x2="660" y2="645" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
+    <line x1="700" y1="615" x2="700" y2="645" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
 
     <!-- Sintra terminus interchange (Line 4 to Line 2 & Line 3) -->
     <circle cx="1460" cy="460" r="24" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
 
     <!-- Bindaas terminus interchange (Line 1 to Line 3) -->
-    <circle cx="80" cy="630" r="24" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+    <circle cx="120" cy="630" r="24" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
 
     <!-- CHIEF interchange (Line 2 to Line 1) -->
-    <circle cx="80" cy="290" r="24" fill="none" stroke="#d97706" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+    <circle cx="120" cy="290" r="24" fill="none" stroke="#d97706" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
   </g>
 
   <!-- Stations Rendering -->
@@ -256,63 +256,63 @@
 
     <!-- Station: CHIEF (9) -->
     <g id="station-chief" class="station-node" transform="translate(0, 0)">
-      <circle cx="80" cy="290" r="17" class="hub-outer" stroke="#d97706" filter="url(#hub-shadow)"/>
-      <circle cx="80" cy="290" r="11" fill="#0284c7"/>
-      <circle cx="80" cy="290" r="6" class="hub-inner"/>
-      <text x="58" y="294" class="station-num" fill="#d97706">9</text>
-      <text x="104" y="232" text-anchor="start" class="station-label">CHIEF</text>
-      <text x="104" y="246" text-anchor="start" class="station-sub">Controller Farm</text>
-      <text x="104" y="259" text-anchor="start" class="station-venue" fill="#d97706">IEEE IC2EW&apos;16</text>
+      <circle cx="120" cy="290" r="17" class="hub-outer" stroke="#d97706" filter="url(#hub-shadow)"/>
+      <circle cx="120" cy="290" r="11" fill="#0284c7"/>
+      <circle cx="120" cy="290" r="6" class="hub-inner"/>
+      <text x="98" y="294" class="station-num" fill="#d97706">9</text>
+      <text x="144" y="252" text-anchor="start" class="station-label">CHIEF</text>
+      <text x="144" y="265" text-anchor="start" class="station-sub">Controller Farm</text>
+      <text x="144" y="278" text-anchor="start" class="station-venue" fill="#d97706">IEEE IC2EW&apos;16</text>
     </g>
 
     <!-- Station: Cloud2Sim (10) -->
     <g id="station-cloud2sim" class="station-node" transform="translate(0, 0)">
-      <circle cx="160" cy="290" r="10" fill="#ffffff" stroke="#d97706" stroke-width="4.5" filter="url(#hub-shadow)"/>
-      <circle cx="160" cy="290" r="4" fill="#0f172a"/>
-      <text x="160" y="273" class="station-num" fill="#64748b">10</text>
-      <text x="160" y="315" text-anchor="middle" class="station-label">Cloud2Sim</text>
-      <text x="160" y="329" text-anchor="middle" class="station-sub">Distributed Cloud Sim</text>
-      <text x="160" y="342" text-anchor="middle" class="station-venue" fill="#d97706">UCC&apos;14 / MASCOTS&apos;14</text>
+      <circle cx="230" cy="290" r="10" fill="#ffffff" stroke="#d97706" stroke-width="4.5" filter="url(#hub-shadow)"/>
+      <circle cx="230" cy="290" r="4" fill="#0f172a"/>
+      <text x="230" y="273" class="station-num" fill="#64748b">10</text>
+      <text x="230" y="315" text-anchor="middle" class="station-label">Cloud2Sim</text>
+      <text x="230" y="329" text-anchor="middle" class="station-sub">Distributed Cloud Sim</text>
+      <text x="230" y="342" text-anchor="middle" class="station-venue" fill="#d97706">UCC&apos;14 / MASCOTS&apos;14</text>
     </g>
 
     <!-- Station: xSDN (11) -->
     <g id="station-xsdn" class="station-node" transform="translate(0, 0)">
-      <circle cx="255" cy="290" r="10" fill="#ffffff" stroke="#d97706" stroke-width="4.5" filter="url(#hub-shadow)"/>
-      <circle cx="255" cy="290" r="4" fill="#0f172a"/>
-      <text x="255" y="273" class="station-num" fill="#64748b">11</text>
-      <text x="255" y="315" text-anchor="middle" class="station-label">xSDN</text>
-      <text x="255" y="329" text-anchor="middle" class="station-sub">Flow Simulator</text>
-      <text x="255" y="342" text-anchor="middle" class="station-venue" fill="#d97706">IEEE IC2E&apos;15</text>
+      <circle cx="340" cy="290" r="10" fill="#ffffff" stroke="#d97706" stroke-width="4.5" filter="url(#hub-shadow)"/>
+      <circle cx="340" cy="290" r="4" fill="#0f172a"/>
+      <text x="340" y="273" class="station-num" fill="#64748b">11</text>
+      <text x="340" y="315" text-anchor="middle" class="station-label">xSDN</text>
+      <text x="340" y="329" text-anchor="middle" class="station-sub">Flow Simulator</text>
+      <text x="340" y="342" text-anchor="middle" class="station-venue" fill="#d97706">IEEE IC2E&apos;15</text>
     </g>
 
     <!-- Station: SENDIM (12) -->
     <g id="station-sendim" class="station-node" transform="translate(0, 0)">
-      <circle cx="350" cy="290" r="10" fill="#ffffff" stroke="#d97706" stroke-width="4.5" filter="url(#hub-shadow)"/>
-      <circle cx="350" cy="290" r="4" fill="#0f172a"/>
-      <text x="350" y="273" class="station-num" fill="#64748b">12</text>
-      <text x="350" y="315" text-anchor="middle" class="station-label">SENDIM</text>
-      <text x="350" y="329" text-anchor="middle" class="station-sub">Cloud Simulation</text>
-      <text x="350" y="342" text-anchor="middle" class="station-venue" fill="#d97706">IEEE IC2E&apos;16</text>
+      <circle cx="450" cy="290" r="10" fill="#ffffff" stroke="#d97706" stroke-width="4.5" filter="url(#hub-shadow)"/>
+      <circle cx="450" cy="290" r="4" fill="#0f172a"/>
+      <text x="450" y="273" class="station-num" fill="#64748b">12</text>
+      <text x="450" y="315" text-anchor="middle" class="station-label">SENDIM</text>
+      <text x="450" y="329" text-anchor="middle" class="station-sub">Cloud Simulation</text>
+      <text x="450" y="342" text-anchor="middle" class="station-venue" fill="#d97706">IEEE IC2E&apos;16</text>
     </g>
 
     <!-- Station: NetUber (13) -->
     <g id="station-netuber" class="station-node" transform="translate(0, 0)">
-      <circle cx="445" cy="290" r="10" fill="#ffffff" stroke="#d97706" stroke-width="4.5" filter="url(#hub-shadow)"/>
-      <circle cx="445" cy="290" r="4" fill="#0f172a"/>
-      <text x="445" y="273" class="station-num" fill="#64748b">13</text>
-      <text x="445" y="315" text-anchor="middle" class="station-label">NetUber</text>
-      <text x="445" y="329" text-anchor="middle" class="station-sub">SD-Internet</text>
-      <text x="445" y="342" text-anchor="middle" class="station-venue" fill="#d97706">IFIP Networking&apos;18</text>
+      <circle cx="560" cy="290" r="10" fill="#ffffff" stroke="#d97706" stroke-width="4.5" filter="url(#hub-shadow)"/>
+      <circle cx="560" cy="290" r="4" fill="#0f172a"/>
+      <text x="560" y="273" class="station-num" fill="#64748b">13</text>
+      <text x="560" y="315" text-anchor="middle" class="station-label">NetUber</text>
+      <text x="560" y="329" text-anchor="middle" class="station-sub">SD-Internet</text>
+      <text x="560" y="342" text-anchor="middle" class="station-venue" fill="#d97706">IFIP Networking&apos;18</text>
     </g>
 
     <!-- Station: SMART (14) -->
     <g id="station-smart" class="station-node" transform="translate(0, 0)">
-      <circle cx="580" cy="290" r="10" fill="#ffffff" stroke="#d97706" stroke-width="4.5" filter="url(#hub-shadow)"/>
-      <circle cx="580" cy="290" r="4" fill="#0f172a"/>
-      <text x="580" y="273" class="station-num" fill="#64748b">14</text>
-      <text x="580" y="315" text-anchor="middle" class="station-label">SMART</text>
-      <text x="580" y="329" text-anchor="middle" class="station-sub">Middlebox QoS</text>
-      <text x="580" y="342" text-anchor="middle" class="station-venue" fill="#d97706">IEEE IM&apos;17</text>
+      <circle cx="670" cy="290" r="10" fill="#ffffff" stroke="#d97706" stroke-width="4.5" filter="url(#hub-shadow)"/>
+      <circle cx="670" cy="290" r="4" fill="#0f172a"/>
+      <text x="670" y="273" class="station-num" fill="#64748b">14</text>
+      <text x="670" y="315" text-anchor="middle" class="station-label">SMART</text>
+      <text x="670" y="329" text-anchor="middle" class="station-sub">Middlebox QoS</text>
+      <text x="670" y="342" text-anchor="middle" class="station-venue" fill="#d97706">IEEE IM&apos;17</text>
     </g>
 
     <!-- Station: L4SBOA (15) -->
@@ -357,63 +357,63 @@
 
     <!-- Station: Bindaas (19) -->
     <g id="station-bindaas" class="station-node" transform="translate(0, 0)">
-      <circle cx="80" cy="630" r="17" class="hub-outer" stroke="#059669" filter="url(#hub-shadow)"/>
-      <circle cx="80" cy="630" r="11" fill="#0284c7"/>
-      <circle cx="80" cy="630" r="6" class="hub-inner"/>
-      <text x="80" y="607" class="station-num" fill="#059669">19</text>
-      <text x="80" y="655" text-anchor="middle" class="station-label">Bindaas</text>
-      <text x="80" y="669" text-anchor="middle" class="station-sub">Data Federation Hub</text>
-      <text x="80" y="682" text-anchor="middle" class="station-venue" fill="#059669">IEEE BigData&apos;19</text>
+      <circle cx="120" cy="630" r="17" class="hub-outer" stroke="#059669" filter="url(#hub-shadow)"/>
+      <circle cx="120" cy="630" r="11" fill="#0284c7"/>
+      <circle cx="120" cy="630" r="6" class="hub-inner"/>
+      <text x="120" y="607" class="station-num" fill="#059669">19</text>
+      <text x="120" y="655" text-anchor="middle" class="station-label">Bindaas</text>
+      <text x="120" y="669" text-anchor="middle" class="station-sub">Data Federation Hub</text>
+      <text x="120" y="682" text-anchor="middle" class="station-venue" fill="#059669">IEEE BigData&apos;19</text>
     </g>
 
     <!-- Station: Óbidos (20) -->
     <g id="station-obidos" class="station-node" transform="translate(0, 0)">
-      <circle cx="195" cy="630" r="10" fill="#ffffff" stroke="#059669" stroke-width="4.5" filter="url(#hub-shadow)"/>
-      <circle cx="195" cy="630" r="4" fill="#0f172a"/>
-      <text x="195" y="613" class="station-num" fill="#64748b">20</text>
-      <text x="195" y="655" text-anchor="middle" class="station-label">Óbidos</text>
-      <text x="195" y="669" text-anchor="middle" class="station-sub">Biomedical Data Lakes</text>
-      <text x="195" y="682" text-anchor="middle" class="station-venue" fill="#059669">DAPD&apos;19</text>
+      <circle cx="235" cy="630" r="10" fill="#ffffff" stroke="#059669" stroke-width="4.5" filter="url(#hub-shadow)"/>
+      <circle cx="235" cy="630" r="4" fill="#0f172a"/>
+      <text x="235" y="613" class="station-num" fill="#64748b">20</text>
+      <text x="235" y="655" text-anchor="middle" class="station-label">Óbidos</text>
+      <text x="235" y="669" text-anchor="middle" class="station-sub">Biomedical Data Lakes</text>
+      <text x="235" y="682" text-anchor="middle" class="station-venue" fill="#059669">DAPD&apos;19</text>
     </g>
 
     <!-- Station: Niffler (21) -->
     <g id="station-niffler" class="station-node" transform="translate(0, 0)">
-      <circle cx="310" cy="630" r="10" fill="#ffffff" stroke="#059669" stroke-width="4.5" filter="url(#hub-shadow)"/>
-      <circle cx="310" cy="630" r="4" fill="#0f172a"/>
-      <text x="310" y="613" class="station-num" fill="#64748b">21</text>
-      <text x="310" y="655" text-anchor="middle" class="station-label">Niffler</text>
-      <text x="310" y="669" text-anchor="middle" class="station-sub">DICOM ML Pipelines</text>
-      <text x="310" y="682" text-anchor="middle" class="station-venue" fill="#059669">JDI&apos;21</text>
+      <circle cx="345" cy="630" r="10" fill="#ffffff" stroke="#059669" stroke-width="4.5" filter="url(#hub-shadow)"/>
+      <circle cx="345" cy="630" r="4" fill="#0f172a"/>
+      <text x="345" y="613" class="station-num" fill="#64748b">21</text>
+      <text x="345" y="655" text-anchor="middle" class="station-label">Niffler</text>
+      <text x="345" y="669" text-anchor="middle" class="station-sub">DICOM ML Pipelines</text>
+      <text x="345" y="682" text-anchor="middle" class="station-venue" fill="#059669">JDI&apos;21</text>
     </g>
 
     <!-- Station: DWiM (22) -->
     <g id="station-dwim" class="station-node" transform="translate(0, 0)">
-      <circle cx="430" cy="630" r="10" fill="#ffffff" stroke="#059669" stroke-width="4.5" filter="url(#hub-shadow)"/>
-      <circle cx="430" cy="630" r="4" fill="#0f172a"/>
-      <text x="430" y="613" class="station-num" fill="#64748b">22</text>
-      <text x="430" y="655" text-anchor="middle" class="station-label">DWiM</text>
-      <text x="430" y="669" text-anchor="middle" class="station-sub">DICOM MATLAB 3D</text>
+      <circle cx="455" cy="630" r="10" fill="#ffffff" stroke="#059669" stroke-width="4.5" filter="url(#hub-shadow)"/>
+      <circle cx="455" cy="630" r="4" fill="#0f172a"/>
+      <text x="455" y="613" class="station-num" fill="#64748b">22</text>
+      <text x="455" y="655" text-anchor="middle" class="station-label">DWiM</text>
+      <text x="455" y="669" text-anchor="middle" class="station-sub">DICOM MATLAB 3D</text>
     </g>
 
     <!-- Station: Diomede (23) -->
     <g id="station-diomede" class="station-node" transform="translate(0, 0)">
-      <circle cx="530" cy="630" r="10" fill="#ffffff" stroke="#059669" stroke-width="4.5" filter="url(#hub-shadow)"/>
-      <circle cx="530" cy="630" r="4" fill="#0f172a"/>
-      <text x="530" y="613" class="station-num" fill="#64748b">23</text>
-      <text x="530" y="655" text-anchor="middle" class="station-label">Diomede</text>
-      <text x="530" y="669" text-anchor="middle" class="station-sub">Dynamic DICOM Mesh</text>
-      <text x="530" y="682" text-anchor="middle" class="station-venue" fill="#059669">GSoC&apos;26</text>
+      <circle cx="565" cy="630" r="10" fill="#ffffff" stroke="#059669" stroke-width="4.5" filter="url(#hub-shadow)"/>
+      <circle cx="565" cy="630" r="4" fill="#0f172a"/>
+      <text x="565" y="613" class="station-num" fill="#64748b">23</text>
+      <text x="565" y="655" text-anchor="middle" class="station-label">Diomede</text>
+      <text x="565" y="669" text-anchor="middle" class="station-sub">Dynamic DICOM Mesh</text>
+      <text x="565" y="682" text-anchor="middle" class="station-venue" fill="#059669">GSoC&apos;26</text>
     </g>
 
     <!-- Station: Beehive (24) -->
     <g id="station-beehive" class="station-node" transform="translate(0, 0)">
-      <circle cx="660" cy="630" r="17" class="hub-outer" stroke="#059669" filter="url(#hub-shadow)"/>
-      <circle cx="660" cy="630" r="11" fill="#e11d48"/>
-      <circle cx="660" cy="630" r="6" class="hub-inner"/>
-      <text x="660" y="607" class="station-num" fill="#059669">24</text>
-      <text x="660" y="655" text-anchor="middle" class="station-label">Beehive</text>
-      <text x="660" y="669" text-anchor="middle" class="station-sub">Behavioral Health</text>
-      <text x="660" y="682" text-anchor="middle" class="station-venue" fill="#059669">IEEE SysCon&apos;26</text>
+      <circle cx="700" cy="630" r="17" class="hub-outer" stroke="#059669" filter="url(#hub-shadow)"/>
+      <circle cx="700" cy="630" r="11" fill="#e11d48"/>
+      <circle cx="700" cy="630" r="6" class="hub-inner"/>
+      <text x="700" y="607" class="station-num" fill="#059669">24</text>
+      <text x="700" y="655" text-anchor="middle" class="station-label">Beehive</text>
+      <text x="700" y="669" text-anchor="middle" class="station-sub">Behavioral Health</text>
+      <text x="700" y="682" text-anchor="middle" class="station-venue" fill="#059669">IEEE SysCon&apos;26</text>
     </g>
 
     <!-- Station: TENeT (25) -->
@@ -473,8 +473,8 @@
       <circle cx="1460" cy="460" r="8" fill="#059669"/>
       <circle cx="1460" cy="460" r="3.5" class="hub-inner"/>
       <text x="1460" y="437" class="station-num" fill="#7c3aed">30</text>
-      <text x="1432" y="454" text-anchor="end" class="station-label">Sintra</text>
-      <text x="1432" y="470" text-anchor="end" class="station-sub">Self-Adaptive Transport</text>
+      <text x="1432" y="428" text-anchor="end" class="station-label">Sintra</text>
+      <text x="1432" y="442" text-anchor="end" class="station-sub">Self-Adaptive Transport</text>
     </g>
 
     <!-- Station: LAGOS (31) -->
@@ -488,44 +488,44 @@
 
     <!-- Station: AK History Webmap (32) -->
     <g id="station-ak-history-webmap" class="station-node" transform="translate(0, 0)">
-      <circle cx="200" cy="450" r="17" class="hub-outer" stroke="#e11d48" filter="url(#hub-shadow)"/>
-      <circle cx="200" cy="450" r="11" fill="#e11d48"/>
-      <circle cx="200" cy="450" r="6" class="hub-inner"/>
-      <text x="200" y="427" class="station-num" fill="#e11d48">32</text>
-      <text x="200" y="475" text-anchor="middle" class="station-label">AK History Webmap</text>
-      <text x="200" y="489" text-anchor="middle" class="station-sub">Epidemic Diseases Web Map</text>
-      <text x="200" y="502" text-anchor="middle" class="station-venue" fill="#e11d48">IEEE Computer&apos;25</text>
+      <circle cx="220" cy="450" r="17" class="hub-outer" stroke="#e11d48" filter="url(#hub-shadow)"/>
+      <circle cx="220" cy="450" r="11" fill="#e11d48"/>
+      <circle cx="220" cy="450" r="6" class="hub-inner"/>
+      <text x="220" y="427" class="station-num" fill="#e11d48">32</text>
+      <text x="220" y="475" text-anchor="middle" class="station-label">AK History Webmap</text>
+      <text x="220" y="489" text-anchor="middle" class="station-sub">Epidemic Diseases Web Map</text>
+      <text x="220" y="502" text-anchor="middle" class="station-venue" fill="#e11d48">IEEE Computer&apos;25</text>
     </g>
 
     <!-- Station: Dnigi (33) -->
     <g id="station-dnigi" class="station-node" transform="translate(0, 0)">
-      <circle cx="360" cy="450" r="17" class="hub-outer" stroke="#e11d48" filter="url(#hub-shadow)"/>
-      <circle cx="360" cy="450" r="11" fill="#e11d48"/>
-      <circle cx="360" cy="450" r="6" class="hub-inner"/>
-      <text x="360" y="427" class="station-num" fill="#e11d48">33</text>
-      <text x="360" y="475" text-anchor="middle" class="station-label">Dnigi</text>
-      <text x="360" y="489" text-anchor="middle" class="station-sub">Indigenous Heritage Game</text>
-      <text x="360" y="502" text-anchor="middle" class="station-venue" fill="#e11d48">IEEE Computer&apos;25</text>
+      <circle cx="380" cy="450" r="17" class="hub-outer" stroke="#e11d48" filter="url(#hub-shadow)"/>
+      <circle cx="380" cy="450" r="11" fill="#e11d48"/>
+      <circle cx="380" cy="450" r="6" class="hub-inner"/>
+      <text x="380" y="427" class="station-num" fill="#e11d48">33</text>
+      <text x="380" y="475" text-anchor="middle" class="station-label">Dnigi</text>
+      <text x="380" y="489" text-anchor="middle" class="station-sub">Indigenous Heritage Game</text>
+      <text x="380" y="502" text-anchor="middle" class="station-venue" fill="#e11d48">IEEE Computer&apos;25</text>
     </g>
 
     <!-- Station: Arctic Sea Ice (34) -->
     <g id="station-dip-predicting-sie" class="station-node" transform="translate(0, 0)">
-      <circle cx="490" cy="450" r="17" class="hub-outer" stroke="#e11d48" filter="url(#hub-shadow)"/>
-      <circle cx="490" cy="450" r="11" fill="#e11d48"/>
-      <circle cx="490" cy="450" r="6" class="hub-inner"/>
-      <text x="490" y="427" class="station-num" fill="#e11d48">34</text>
-      <text x="490" y="475" text-anchor="middle" class="station-label">Arctic Sea Ice</text>
-      <text x="490" y="489" text-anchor="middle" class="station-sub">Arctic Sea Ice AI</text>
-      <text x="490" y="502" text-anchor="middle" class="station-venue" fill="#e11d48">Elsevier RSA&apos;25</text>
+      <circle cx="510" cy="450" r="17" class="hub-outer" stroke="#e11d48" filter="url(#hub-shadow)"/>
+      <circle cx="510" cy="450" r="11" fill="#e11d48"/>
+      <circle cx="510" cy="450" r="6" class="hub-inner"/>
+      <text x="510" y="427" class="station-num" fill="#e11d48">34</text>
+      <text x="510" y="475" text-anchor="middle" class="station-label">Arctic Sea Ice</text>
+      <text x="510" y="489" text-anchor="middle" class="station-sub">Arctic Sea Ice AI</text>
+      <text x="510" y="502" text-anchor="middle" class="station-venue" fill="#e11d48">Elsevier RSA&apos;25</text>
     </g>
 
     <!-- Station: DREAMS (35) -->
     <g id="station-dreams" class="station-node" transform="translate(0, 0)">
-      <circle cx="610" cy="450" r="10" fill="#ffffff" stroke="#e11d48" stroke-width="4.5" filter="url(#hub-shadow)"/>
-      <circle cx="610" cy="450" r="4" fill="#0f172a"/>
-      <text x="610" y="433" class="station-num" fill="#64748b">35</text>
-      <text x="610" y="475" text-anchor="middle" class="station-label">DREAMS</text>
-      <text x="610" y="489" text-anchor="middle" class="station-sub">Recovery &amp; Arts Mining</text>
+      <circle cx="630" cy="450" r="10" fill="#ffffff" stroke="#e11d48" stroke-width="4.5" filter="url(#hub-shadow)"/>
+      <circle cx="630" cy="450" r="4" fill="#0f172a"/>
+      <text x="630" y="433" class="station-num" fill="#64748b">35</text>
+      <text x="630" y="475" text-anchor="middle" class="station-label">DREAMS</text>
+      <text x="630" y="489" text-anchor="middle" class="station-sub">Recovery &amp; Arts Mining</text>
     </g>
 
     <!-- Station: DHGWorkflow (36) -->
