@@ -8,6 +8,7 @@
  * Viseu connects Line 1, Line 2, and Line 4 (PORTO) as a Major Triple Interchange Hub.
  * Sintra connects Line 4, Line 2, and Line 3 as a Major Eastern Triple Interchange Hub.
  * CHIEF connects Line 2 and Line 1 as a Major Western Transfer Hub.
+ * CONTROL-CORE connects Line 5 and Line 1 as a Major Western Transfer Hub.
  * Bindaas connects Line 1 and Line 3 as a Major Western Transfer Hub.
  */
 
@@ -86,11 +87,13 @@ const METRO_DATA = {
       "name": "CONTROL-CORE",
       "subtitle": "Neuromodulation",
       "lines": [
+        "line-community",
         "line-soa"
       ],
       "x": 120,
-      "y": 150,
-      "isMajorHub": false,
+      "y": 450,
+      "isMajorHub": true,
+      "isInterchange": true,
       "repos": [
         "controlcore-project"
       ],
@@ -116,7 +119,7 @@ const METRO_DATA = {
       "relatedStations": [
         "dhgworkflow"
       ],
-      "description": "Framework for closed-loop peripheral neuromodulation control systems. Integrates simulated neuro-stimulators with real-time feedback loops and modular editors, orchestrating cyclic workflows via NEXUS and the DHGWorkflow graph composer."
+      "description": "Major Western Transfer Hub uniting Community Informatics (Line 5) with Service-Oriented Architecture (Line 1). Framework for closed-loop peripheral neuromodulation control systems. Integrates simulated neuro-stimulators with real-time feedback loops and modular editors, orchestrating cyclic workflows via NEXUS and the DHGWorkflow graph composer."
     },
     {
       "id": "cassowary",
@@ -1107,7 +1110,7 @@ const METRO_DATA = {
       "lines": [
         "line-community"
       ],
-      "x": 220,
+      "x": 250,
       "y": 450,
       "isMajorHub": true,
       "repos": [
@@ -1374,7 +1377,7 @@ const METRO_DATA = {
     {
       "id": "track-soa-main",
       "lineId": "line-soa",
-      "path": "M 120,630 L 120,150 L 650,150 Q 690,150 715,190 L 760,250 Q 780,275 780,290"
+      "path": "M 120,630 L 120,290 Q 120,267 142,238 L 177,192 Q 208,150 215,150 L 650,150 Q 690,150 715,190 L 760,250 Q 780,275 780,290"
     },
     {
       "id": "track-net-main",
@@ -1394,7 +1397,7 @@ const METRO_DATA = {
     {
       "id": "track-community-main",
       "lineId": "line-community",
-      "path": "M 160,450 L 675,450 Q 700,450 700,475 L 700,630"
+      "path": "M 120,450 L 675,450 Q 700,450 700,475 L 700,630"
     },
     {
       "id": "track-shuttle",

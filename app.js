@@ -101,13 +101,22 @@
       venueY = station.y - 5;
       numY = station.y - 23;
     } else if (station.id === "chief") {
-      // CHIEF is at (120, 290): Labels Above Node, lower so it doesn't overlap yellow title
-      labelX = station.x + 24;
+      // CHIEF is at (120, 290): Labels Above Node, shifted right to clear slanted track
+      labelX = station.x + 28;
       textAnchor = "start";
       labelY = station.y - 38;
       subY = station.y - 25;
       venueY = station.y - 12;
       numX = station.x - 22; // Station number shifted left of node so vertical blue line doesn't cut it
+      numY = station.y + 4;
+    } else if (station.id === "control-core") {
+      // CONTROL-CORE is at (120, 450): Western transfer hub bridging Line 5 and Line 1
+      labelX = station.x + 24;
+      textAnchor = "start";
+      labelY = station.y - 38;
+      subY = station.y - 25;
+      venueY = station.y - 12;
+      numX = station.x - 22; // Station number shifted left of node so vertical line doesn't cut it
       numY = station.y + 4;
     } else if (station.id === "viseu") {
       // Viseu is at (780, 290): Labels Below Node, perfectly centered under node
@@ -204,8 +213,8 @@
         <text x="70" y="228" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#fbbf24" letter-spacing="1.5">NETWORK OPTIMIZATIONS, EDGE INFRASTRUCTURE &amp; TRANSPORT</text>
 
         <!-- Zone 5: Community & Circumpolar (Tier 3 West) -->
-        <rect x="140" y="370" width="640" height="145" rx="16" fill="#e11d48" fill-opacity="0.05" stroke="#e11d48" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
-        <text x="165" y="394" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#fb7185" letter-spacing="1.5">COMMUNITY INFORMATICS &amp; INDIGENOUS COMPUTING</text>
+        <rect x="50" y="370" width="730" height="145" rx="16" fill="#e11d48" fill-opacity="0.05" stroke="#e11d48" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
+        <text x="70" y="394" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#fb7185" letter-spacing="1.5">COMMUNITY INFORMATICS &amp; INDIGENOUS COMPUTING</text>
 
         <!-- Zone 4: Autonomous Systems & Trust (Tier 3 East) -->
         <rect x="830" y="370" width="800" height="145" rx="16" fill="#7c3aed" fill-opacity="0.05" stroke="#7c3aed" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
@@ -251,6 +260,7 @@
         <circle cx="1460" cy="460" r="24" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
         <circle cx="120" cy="630" r="24" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
         <circle cx="120" cy="290" r="24" fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+        <circle cx="120" cy="450" r="24" fill="none" stroke="#fb7185" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
       </g>
 
       <!-- Stations Layer -->
@@ -292,7 +302,7 @@
             <circle cx="${station.x}" cy="${station.y}" r="3.5" fill="#ffffff" pointer-events="none"/>
             <text x="${numX || station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="#a78bfa" pointer-events="none">${station.number}</text>
           `;
-        } else if (station.id === "beehive" || station.id === "bindaas" || station.id === "guarda" || station.id === "can" || station.id === "chief") {
+        } else if (station.id === "control-core" || station.id === "beehive" || station.id === "bindaas" || station.id === "guarda" || station.id === "can" || station.id === "chief") {
           const secondaryLine = METRO_DATA.lines.find(l => l.id === station.lines[1]);
           const innerColor = secondaryLine ? secondaryLine.color : color;
           markup += `
