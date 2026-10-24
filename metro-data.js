@@ -7,10 +7,10 @@
  * Standalone stations added for DWiM (3D DICOM in MATLAB) and dudu (Distributed Near-Duplicate in Java, Springer OTM 2015).
  * Viseu connects Line 1, Line 2, and Line 4 (PORTO) as a Major Triple Interchange Hub.
  * Sintra connects Line 4, Line 2, and Line 3 as a Major Eastern Triple Interchange Hub.
+ * Cloud2Sim serves as the western starting point of Line 2 as an adaptive distributed cloud simulation milestone.
  * CHIEF connects Line 2 and Line 1 as a Major Western Transfer Hub.
- * Cloud2Sim precedes CHIEF on Line 2 as an adaptive distributed cloud simulation milestone.
- * CONTROL-CORE connects Line 3 and Line 1 as a Major Western Transfer Hub.
  * Bindaas precedes CONTROL-CORE on Line 3 as a foundational data federation milestone.
+ * CONTROL-CORE connects Line 3 and Line 1 as a Major Western Transfer Hub.
  */
 
 const METRO_DATA = {
@@ -91,7 +91,7 @@ const METRO_DATA = {
         "line-health",
         "line-soa"
       ],
-      "x": 120,
+      "x": 160,
       "y": 630,
       "isMajorHub": true,
       "isInterchange": true,
@@ -131,7 +131,7 @@ const METRO_DATA = {
       "lines": [
         "line-soa"
       ],
-      "x": 215,
+      "x": 225,
       "y": 150,
       "isMajorHub": false,
       "repos": [
@@ -339,48 +339,15 @@ const METRO_DATA = {
       "description": "Major triple-interchange hub bridging Service-Oriented Architecture (Line 1), Network Transport (Line 2), and Blockchain-Based Decentralized Trust (Line 4). Orchestrates virtual services at Internet-scale using P2P overlays, Ethereum trust modules, and private off-chain channels to PORTO."
     },
     {
-      "id": "chief",
-      "mapBadge": "IEEE IC2EW'16",
-      "number": 9,
-      "name": "CHIEF",
-      "subtitle": "Controller Farm",
-      "lines": [
-        "line-net",
-        "line-soa"
-      ],
-      "x": 120,
-      "y": 290,
-      "isMajorHub": true,
-      "repos": [
-        "CHIEF",
-        "messaging4transport"
-      ],
-      "primaryRepo": "CHIEF",
-      "tech": [
-        "Java",
-        "SDN Controller",
-        "Community Networks"
-      ],
-      "venues": [
-        {
-          "name": "IEEE IC2EW 2016",
-          "tier": "IEEE",
-          "note": "CHIEF: Controller farm for clouds of software-defined community networks"
-        }
-      ],
-      "description": "Controller farm architecture coordinating decentralized software-defined community network topologies across cloud boundaries.",
-      "isInterchange": true
-    },
-    {
       "id": "cloud2sim",
       "mapBadge": "UCC'14 / MASCOTS'14",
-      "number": 10,
+      "number": 9,
       "name": "Cloud2Sim",
       "subtitle": "Distributed Cloud Sim",
       "lines": [
         "line-net"
       ],
-      "x": 65,
+      "x": 80,
       "y": 290,
       "isMajorHub": false,
       "repos": [
@@ -405,7 +372,40 @@ const METRO_DATA = {
           "note": "Concurrent and Distributed CloudSim Simulations"
         }
       ],
-      "description": "Adaptive and distributed architecture for Cloud and MapReduce simulations, introducing concurrent multi-node simulation using Hazelcast and Infinispan. Precedes CHIEF on Line 2 (Network Transport & Edge Infrastructure)."
+      "description": "Adaptive and distributed architecture for Cloud and MapReduce simulations, introducing concurrent multi-node simulation using Hazelcast and Infinispan. Starting point of Line 2 (Network Transport & Edge Infrastructure) preceding CHIEF."
+    },
+    {
+      "id": "chief",
+      "mapBadge": "IEEE IC2EW'16",
+      "number": 10,
+      "name": "CHIEF",
+      "subtitle": "Controller Farm",
+      "lines": [
+        "line-net",
+        "line-soa"
+      ],
+      "x": 160,
+      "y": 290,
+      "isMajorHub": true,
+      "repos": [
+        "CHIEF",
+        "messaging4transport"
+      ],
+      "primaryRepo": "CHIEF",
+      "tech": [
+        "Java",
+        "SDN Controller",
+        "Community Networks"
+      ],
+      "venues": [
+        {
+          "name": "IEEE IC2EW 2016",
+          "tier": "IEEE",
+          "note": "CHIEF: Controller farm for clouds of software-defined community networks"
+        }
+      ],
+      "description": "Controller farm architecture coordinating decentralized software-defined community network topologies across cloud boundaries. Western transfer hub bridging Line 2 and Line 1.",
+      "isInterchange": true
     },
     {
       "id": "xsdn",
@@ -672,7 +672,7 @@ const METRO_DATA = {
       "lines": [
         "line-health"
       ],
-      "x": 65,
+      "x": 80,
       "y": 630,
       "isMajorHub": false,
       "isInterchange": false,
@@ -1105,7 +1105,7 @@ const METRO_DATA = {
       "id": "ak-history-webmap",
       "mapBadge": "IEEE Computer'25",
       "number": 32,
-      "name": "AK History Webmap",
+      "name": "AK Native Webmap",
       "subtitle": "Epidemic Diseases Web Map",
       "lines": [
         "line-community"
@@ -1377,17 +1377,17 @@ const METRO_DATA = {
     {
       "id": "track-soa-main",
       "lineId": "line-soa",
-      "path": "M 120,630 L 120,290 Q 120,267 142,238 L 177,192 Q 208,150 215,150 L 650,150 Q 690,150 715,190 L 760,250 Q 780,275 780,290"
+      "path": "M 160,630 L 160,290 Q 160,250 180,225 L 205,185 Q 215,150 225,150 L 650,150 Q 690,150 715,190 L 760,250 Q 780,275 780,290"
     },
     {
       "id": "track-net-main",
       "lineId": "line-net",
-      "path": "M 65,290 L 1360,290 Q 1420,290 1440,360 L 1460,460"
+      "path": "M 80,290 L 1360,290 Q 1420,290 1440,360 L 1460,460"
     },
     {
       "id": "track-health-main",
       "lineId": "line-health",
-      "path": "M 65,630 L 1220,630 Q 1340,630 1410,540 L 1460,460"
+      "path": "M 80,630 L 1220,630 Q 1340,630 1410,540 L 1460,460"
     },
     {
       "id": "track-trust-main",
@@ -1397,7 +1397,7 @@ const METRO_DATA = {
     {
       "id": "track-community-main",
       "lineId": "line-community",
-      "path": "M 180,450 L 725,450 Q 750,450 750,475 L 750,630"
+      "path": "M 290,450 L 725,450 Q 750,450 750,475 L 750,630"
     },
     {
       "id": "track-shuttle",

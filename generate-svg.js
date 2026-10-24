@@ -28,16 +28,16 @@ function getStationLayout(station) {
     venueY = station.y - 5;
     numY = station.y - 23;
   } else if (station.id === "chief") {
-    // CHIEF is at (120, 290): Labels Above Node, shifted right to clear slanted track
+    // CHIEF is at (160, 290): Labels Above Node, shifted right to clear slanted track
     labelX = station.x + 28;
     textAnchor = "start";
     labelY = station.y - 38;
     subY = station.y - 25;
     venueY = station.y - 12;
-    numX = station.x - 22; // 98
+    numX = station.x - 22; // 138
     numY = station.y - 20; // Shifted above horizontal track line so track doesn't cut it
   } else if (station.id === "cloud2sim") {
-    // Cloud2Sim is at (65, 290): Standard station before CHIEF on Line 2
+    // Cloud2Sim is at (80, 290): Standard starting station on Line 2
     // Labels Below Node (y = 315, 329, 342) opposite to CHIEF's labels (y = 252, 265, 278)
     labelX = station.x;
     textAnchor = "middle";
@@ -47,7 +47,7 @@ function getStationLayout(station) {
     numX = station.x;
     numY = station.y - 17; // Station number above node (standard Tier 2)
   } else if (station.id === "bindaas") {
-    // Bindaas is at (65, 630): Standard station before CONTROL-CORE on Line 3.
+    // Bindaas is at (80, 630): Standard station before CONTROL-CORE on Line 3.
     // Labels Above Node (y = 590, 603, 616) to avoid collision with CONTROL-CORE
     labelX = station.x;
     textAnchor = "middle";
@@ -57,14 +57,14 @@ function getStationLayout(station) {
     numX = station.x;
     numY = station.y + 19;
   } else if (station.id === "control-core") {
-    // CONTROL-CORE is at (120, 630): Western transfer hub bridging Line 3 and Line 1
-    labelX = station.x;
-    textAnchor = "middle";
+    // CONTROL-CORE is at (160, 630): Western transfer hub bridging Line 3 and Line 1
+    labelX = station.x - 24;
+    textAnchor = "end";
     labelY = station.y + 25;
     subY = station.y + 39;
     venueY = station.y + 52;
     numX = station.x - 22; // Station number shifted left of node so vertical blue line doesn't cut it
-    numY = station.y + 4;
+    numY = station.y - 20;
   } else if (station.id === "viseu") {
     // Viseu is at (780, 290): Labels Below Node, perfectly centered under node
     labelX = station.x;
@@ -185,8 +185,8 @@ function generateSvg() {
   <text x="35" y="228" class="zone-title" fill="#b45309">Network Optimizations, Edge Infrastructure &amp; Transport</text>
 
   <!-- Zone 5: Community and Indigenous (Tier 3 West) -->
-  <rect x="150" y="370" width="660" height="145" rx="16" class="zone-bg-5 zone-border-5"/>
-  <text x="175" y="394" class="zone-title" fill="#be123c">Community Informatics &amp; Indigenous Computing</text>
+  <rect x="205" y="370" width="605" height="145" rx="16" class="zone-bg-5 zone-border-5"/>
+  <text x="225" y="394" class="zone-title" fill="#be123c">Community Informatics &amp; Indigenous Computing</text>
 
   <!-- Zone 4: Autonomous Systems and Trust (Tier 3 East) -->
   <rect x="830" y="370" width="800" height="145" rx="16" class="zone-bg-4 zone-border-4"/>
@@ -244,10 +244,10 @@ function generateSvg() {
     <circle cx="1460" cy="460" r="24" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
 
     <!-- CONTROL-CORE terminus interchange (Line 1 to Line 3) -->
-    <circle cx="120" cy="630" r="24" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+    <circle cx="160" cy="630" r="24" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
 
     <!-- CHIEF interchange (Line 2 to Line 1) -->
-    <circle cx="120" cy="290" r="24" fill="none" stroke="#d97706" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+    <circle cx="160" cy="290" r="24" fill="none" stroke="#d97706" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
   </g>
 
   <!-- Stations Rendering -->

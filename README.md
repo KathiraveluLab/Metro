@@ -25,7 +25,7 @@ The metropolitan map organizes **41 flagship research stations** across **6 inte
 
 - **`CONTROL-CORE` (#1)**: Major Western transfer hub bridging **Line 3 (Healthcare Informatics)** and **Line 1 (SOA Middleware)**, linking closed-loop peripheral neuromodulation with distributed service-oriented systems.
 - **`Bindaas` (#19)**: Foundational milestone station preceding CONTROL-CORE on **Line 3 (Clinical Healthcare & Biomedical Informatics)**, federating heterogeneous clinical repositories and providing the foundational RESTful data architecture for **`Óbidos`**.
-- **`CHIEF` (#9)**: Transfer hub bridging **Line 1 (SOA Middleware)** and **Line 2 (Network Transport)**, coordinating software-defined community network controller farms.
+- **`CHIEF` (#10)**: Transfer hub bridging **Line 1 (SOA Middleware)** and **Line 2 (Network Transport)**, coordinating software-defined community network controller farms.
 - **`Viseu` (#8)**: Major triple-interchange bridging **Line 1 (SOA Middleware)**, **Line 2 (Network Optimization)**, and **Line 4 (Autonomous Decentralized Trust)**, connecting edge orchestration directly with Ethereum trust and private off-chain state channels to **`PORTO`**.
 - **`Beehive` (#24)**: Interdisciplinary junction connecting **Line 3 (Clinical Healthcare)** with **Line 5 (Community Informatics)**.
 - **`Sintra` (#30)**: Major triple-interchange bridging **Line 2 (Network Transport)**, **Line 3 (Clinical Healthcare)**, and **Line 4 (Autonomous Systems & Decentralized Trust)** across satellite, edge, and zero-knowledge trust channels.
@@ -46,8 +46,8 @@ The metropolitan map organizes **41 flagship research stations** across **6 inte
 8. **Viseu** (`Viseu`): Virtual Internet services at the edge and decentralized blockchain framework (*Computer Networks (COMNET)'22*).
 
 ### Line 2: Network Transport & Edge Infrastructure
-9. **CHIEF** (`CHIEF`, `messaging4transport`): Controller farm for clouds of software-defined community networks (*IEEE IC2EW'16*).
-10. **Cloud2Sim** (`Cloud2Sim`): Adaptive distributed simulator for Cloud and MapReduce algorithms (*IEEE/ACM UCC'14*, *IEEE MASCOTS'14*).
+9. **Cloud2Sim** (`Cloud2Sim`): Adaptive distributed simulator for Cloud and MapReduce algorithms (*IEEE/ACM UCC'14*, *IEEE MASCOTS'14*).
+10. **CHIEF** (`CHIEF`, `messaging4transport`): Controller farm for clouds of software-defined community networks (*IEEE IC2EW'16*).
 11. **xSDN** (`xSDN`): Expressive simulator for dynamic network flows (*IEEE IC2E'15*).
 12. **SENDIM** (`SENDIM`): Cloud network simulation, emulation, and deployment (*IEEE IC2E'16*, *Springer OTM'16*).
 13. **NetUber** (`NetUber`): Software-defined Internet routing and dynamic IXP peering via Dynam-IX (*ACM SIGCOMM / CoNEXT'18*, *IFIP Networking'18*, *IEEE SDS'20*).
@@ -75,7 +75,7 @@ The metropolitan map organizes **41 flagship research stations** across **6 inte
 31. **LAGOS** (`LAGOS`): Latency-aware accountable overlay governance in Gleam.
 
 ### Line 5: Community Informatics & Circumpolar Computing
-32. **AK History Webmap** (`ak-history-webmap`): Interactive Alaska Native history web map for epidemic disease outbreaks (*IEEE Computer'25*).
+32. **AK Native Webmap** (`ak-history-webmap`): Interactive Alaska Native history web map for epidemic disease outbreaks (*IEEE Computer'25*).
 33. **Dnigi** (`Dnigi`): Serious game for Indigenous cultural heritage transmission (*IEEE Computer'25*).
 34. **Arctic Sea Ice** (`DIP_Predicting_SIE`): Circumpolar satellite image processing and sea ice extent prediction (*Elsevier Remote Sensing Applications'25*).
 35. **DREAMS** (`DREAMS`): Digitization for recovery and arts mining for societal well-being.
