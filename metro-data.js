@@ -90,11 +90,9 @@ const METRO_DATA = {
       "y": 150,
       "isMajorHub": false,
       "repos": [
-        "concore",
-        "concore-editor",
-        "concore-Mediator"
+        "controlcore-project"
       ],
-      "primaryRepo": "concore",
+      "primaryRepo": "controlcore-project",
       "tech": [
         "SWIG",
         "Python",

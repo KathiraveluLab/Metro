@@ -34,7 +34,7 @@ The metropolitan map organizes **41 flagship research stations** across **6 inte
 ## Flagship Publications & Station Directory
 
 ### Line 1: Service-Oriented & Distributed Middleware
-1. **CONTROL-CORE** (`concore`, `concore-editor`, `concore-Mediator`): Closed-loop peripheral neuromodulation (*IEEE Access'22*, *Springer Cluster'25*), orchestrating feedback loops via the NEXUS software-defined workflow framework.
+1. **CONTROL-CORE** ([`controlcore-project`](https://github.com/controlcore-project)): Closed-loop peripheral neuromodulation (*IEEE Access'22*, *Springer Cluster'25*), orchestrating feedback loops via the NEXUS software-defined workflow framework.
 2. **Cassowary** (`Cassowary`): Context-aware smart buildings and decentralized SD-MANETs for IoT & smart homes (*ACM M4IOT'15*, *IJCAC'26*).
 3. **Évora** (`Evora`): Adaptive edge service chaining (*Trans. Emerging Tel. Tech. (ETT)'18*, *IEEE ICWS'16*).
 4. **SDDS** (`SDDS`, `messaging4transport`): Software-defined data services (*IEEE SDS'18*).

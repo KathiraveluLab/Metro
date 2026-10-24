@@ -655,9 +655,22 @@
     repoList.innerHTML = '';
     station.repos.forEach(repo => {
       const link = document.createElement('a');
-      link.className = 'repo-link';
-      const repoFullName = repo.includes('/') ? repo : `KathiraveluLab/${repo}`;
-      link.href = `https://github.com/${repoFullName}`;
+      let repoUrl;
+      let repoFullName;
+      if (repo.startsWith('http://') || repo.startsWith('https://')) {
+        repoUrl = repo;
+        repoFullName = repo.replace(/^https?:\/\/github\.com\//, '');
+      } else if (repo === 'controlcore-project') {
+        repoUrl = 'https://github.com/controlcore-project';
+        repoFullName = 'controlcore-project';
+      } else if (repo.includes('/')) {
+        repoUrl = `https://github.com/${repo}`;
+        repoFullName = repo;
+      } else {
+        repoUrl = `https://github.com/KathiraveluLab/${repo}`;
+        repoFullName = `KathiraveluLab/${repo}`;
+      }
+      link.href = repoUrl;
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
       link.innerHTML = `

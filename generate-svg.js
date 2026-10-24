@@ -283,16 +283,29 @@ function generateSvg() {
     <text x="615" y="46" class="legend-text">Line 5: Community &amp; Indigenous Computing</text>
 
     <!-- Line 6 -->
-    <line x1="940" y1="42" x2="980" y2="42" stroke="#64748b" stroke-width="6" stroke-linecap="round"/>
-    <circle cx="960" cy="42" r="4" fill="#ffffff" stroke="#64748b" stroke-width="1.5"/>
-    <text x="995" y="46" class="legend-text">Line 6: High-Performance Workflow &amp; Systems Runtimes</text>
+    <line x1="930" y1="42" x2="970" y2="42" stroke="#64748b" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="950" cy="42" r="4" fill="#ffffff" stroke="#64748b" stroke-width="1.5"/>
+    <text x="985" y="46" class="legend-text">Line 6: High-Performance Workflow &amp; Systems Runtimes</text>
 
-    <!-- Symbols -->
-    <g transform="translate(1330, 24)">
+    <!-- Legend Divider -->
+    <line x1="1310" y1="-2" x2="1310" y2="58" stroke="#e2e8f0" stroke-width="1.2"/>
+
+    <!-- Hub Symbols -->
+    <!-- Major Station (Blue inside Blue) -->
+    <g transform="translate(1335, 6)">
       <circle cx="0" cy="0" r="10" class="hub-outer" stroke="#0284c7" fill="#ffffff"/>
       <circle cx="0" cy="0" r="6" fill="#0284c7"/>
       <circle cx="0" cy="0" r="3" class="hub-inner"/>
-      <text x="18" y="4" class="legend-text" font-size="10.5">Major Transfer Hub</text>
+      <text x="18" y="4" class="legend-text" font-size="10.5">Major Station</text>
+    </g>
+
+    <!-- Major Interchange (3 Different Layers: Amber, Blue, Purple) -->
+    <g transform="translate(1335, 42)">
+      <circle cx="0" cy="0" r="11" fill="#ffffff" stroke="#d97706" stroke-width="2.8"/>
+      <circle cx="0" cy="0" r="7" fill="#ffffff" stroke="#0284c7" stroke-width="2.2"/>
+      <circle cx="0" cy="0" r="4" fill="#7c3aed"/>
+      <circle cx="0" cy="0" r="1.8" fill="#ffffff" class="hub-inner"/>
+      <text x="18" y="4" class="legend-text" font-size="10.5">Major Interchange</text>
     </g>
   </g>
 </svg>`;
