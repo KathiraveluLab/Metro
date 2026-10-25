@@ -101,17 +101,16 @@
       venueY = station.y - 5;
       numY = station.y - 23;
     } else if (station.id === "chief") {
-      // CHIEF is at (160, 290): Labels Above Node, shifted right to clear slanted track
-      labelX = station.x + 28;
-      textAnchor = "start";
-      labelY = station.y - 38;
-      subY = station.y - 25;
-      venueY = station.y - 12;
-      numX = station.x - 22; // Station number shifted left of node so vertical blue line doesn't cut it
-      numY = station.y - 20;
+      // CHIEF is at (185, 290): Labels Below Node, centered under interchange station
+      labelX = station.x;
+      textAnchor = "middle";
+      labelY = station.y + 25;
+      subY = station.y + 39;
+      venueY = station.y + 52;
+      numX = station.x - 22; // 163
+      numY = station.y - 20; // Shifted above horizontal track line so track doesn't cut it
     } else if (station.id === "cloud2sim") {
-      // Cloud2Sim is at (80, 290): Standard starting station on Line 2
-      // Labels Below Node (y = 315, 329, 342) opposite to CHIEF's labels (y = 252, 265, 278)
+      // Cloud2Sim is at (70, 290): Standard starting station on Line 2
       labelX = station.x;
       textAnchor = "middle";
       labelY = station.y + 25;
@@ -120,24 +119,24 @@
       numX = station.x;
       numY = station.y - 17; // Station number above node (standard Tier 2)
     } else if (station.id === "bindaas") {
-      // Bindaas is at (80, 630): Standard station before CONTROL-CORE on Line 3.
-      // Labels Above Node (y = 590, 603, 616) to avoid collision with CONTROL-CORE
+      // Bindaas is at (70, 630): Standard station before CONTROL-CORE on Line 3.
+      // Labels Below Node, aligned under node
       labelX = station.x;
       textAnchor = "middle";
-      labelY = station.y - 40;
-      subY = station.y - 27;
-      venueY = station.y - 14;
+      labelY = station.y + 25;
+      subY = station.y + 39;
+      venueY = station.y + 52;
       numX = station.x;
-      numY = station.y + 19;
+      numY = station.y - 17; // Station number above node
     } else if (station.id === "control-core") {
-      // CONTROL-CORE is at (160, 630): Western transfer hub bridging Line 3 and Line 1
+      // CONTROL-CORE is at (185, 630): Western transfer hub bridging Line 3 and Line 1
       // Labels Below Node, aligned directly under the interchange station
       labelX = station.x;
       textAnchor = "middle";
       labelY = station.y + 25;
       subY = station.y + 39;
       venueY = station.y + 52;
-      numX = station.x - 22; // Station number shifted left of node so vertical blue line doesn't cut it
+      numX = station.x - 22; // 163, shifted left of node so vertical blue line doesn't cut it
       numY = station.y - 20;
     } else if (station.id === "viseu") {
       // Viseu is at (780, 290): Labels Below Node, perfectly centered under node
@@ -148,7 +147,7 @@
       venueY = station.y + 52;
       numY = station.y - 23;
     } else if (station.id === "lagos") {
-      // LAGOS is at (1560, 460): Labels Below Node, centered under node within Zone 4 box
+      // LAGOS is at (1560, 450): Labels Below Node, centered under node within Zone 4 box
       labelX = station.x;
       textAnchor = "middle";
       labelY = station.y + 25;
@@ -234,8 +233,8 @@
         <text x="70" y="228" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#fbbf24" letter-spacing="1.5">NETWORK OPTIMIZATIONS, EDGE INFRASTRUCTURE &amp; TRANSPORT</text>
 
         <!-- Zone 5: Community & Circumpolar (Tier 3 West) -->
-        <rect x="205" y="370" width="605" height="145" rx="16" fill="#e11d48" fill-opacity="0.05" stroke="#e11d48" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
-        <text x="225" y="394" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#fb7185" letter-spacing="1.5">COMMUNITY INFORMATICS &amp; INDIGENOUS COMPUTING</text>
+        <rect x="215" y="370" width="595" height="145" rx="16" fill="#e11d48" fill-opacity="0.05" stroke="#e11d48" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
+        <text x="235" y="394" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#fb7185" letter-spacing="1.5">COMMUNITY INFORMATICS &amp; INDIGENOUS COMPUTING</text>
 
         <!-- Zone 4: Autonomous Systems & Trust (Tier 3 East) -->
         <rect x="830" y="370" width="800" height="145" rx="16" fill="#7c3aed" fill-opacity="0.05" stroke="#7c3aed" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
@@ -278,9 +277,9 @@
       <g id="interchange-connectors" pointer-events="none">
         <line x1="780" y1="275" x2="780" y2="305" stroke="var(--text-primary)" stroke-width="6" stroke-linecap="round"/>
         <line x1="750" y1="615" x2="750" y2="645" stroke="var(--text-primary)" stroke-width="6" stroke-linecap="round"/>
-        <circle cx="1460" cy="460" r="24" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
-        <circle cx="160" cy="630" r="24" fill="none" stroke="#34d399" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
-        <circle cx="160" cy="290" r="24" fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+        <circle cx="1460" cy="450" r="24" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+        <circle cx="185" cy="630" r="24" fill="none" stroke="#34d399" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+        <circle cx="185" cy="290" r="24" fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
       </g>
 
       <!-- Stations Layer -->
@@ -311,7 +310,6 @@
             <circle cx="${station.x}" cy="${station.y}" r="14" fill="#ffffff" stroke="#0284c7" stroke-width="3.5" pointer-events="none"/>
             <circle cx="${station.x}" cy="${station.y}" r="8" fill="#7c3aed" pointer-events="none"/>
             <circle cx="${station.x}" cy="${station.y}" r="3.5" fill="#ffffff" pointer-events="none"/>
-            <text x="${numX || station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="#d97706" pointer-events="none">${station.number}</text>
           `;
         } else if (station.id === "sintra") {
           markup += `
@@ -320,7 +318,6 @@
             <circle cx="${station.x}" cy="${station.y}" r="14" fill="#ffffff" stroke="#d97706" stroke-width="3.5" pointer-events="none"/>
             <circle cx="${station.x}" cy="${station.y}" r="8" fill="#059669" pointer-events="none"/>
             <circle cx="${station.x}" cy="${station.y}" r="3.5" fill="#ffffff" pointer-events="none"/>
-            <text x="${numX || station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="#a78bfa" pointer-events="none">${station.number}</text>
           `;
         } else if (station.id === "control-core" || station.id === "beehive" || station.id === "guarda" || station.id === "can" || station.id === "chief") {
           const secondaryLine = METRO_DATA.lines.find(l => l.id === station.lines[1]);
@@ -330,7 +327,6 @@
             <circle cx="${station.x}" cy="${station.y}" r="16" class="station-core hub-outer" fill="var(--bg-primary)" stroke="${color}" stroke-width="4" filter="url(#hub-shadow)"/>
             <circle cx="${station.x}" cy="${station.y}" r="10" fill="${innerColor}" pointer-events="none"/>
             <circle cx="${station.x}" cy="${station.y}" r="5" fill="#ffffff" pointer-events="none"/>
-            <text x="${numX || station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="${accent}" pointer-events="none">${station.number}</text>
           `;
         } else {
           markup += `
@@ -338,14 +334,12 @@
             <circle cx="${station.x}" cy="${station.y}" r="16" class="station-core hub-outer" fill="var(--bg-primary)" stroke="${color}" stroke-width="4" filter="url(#hub-shadow)"/>
             <circle cx="${station.x}" cy="${station.y}" r="10" fill="${color}" pointer-events="none"/>
             <circle cx="${station.x}" cy="${station.y}" r="5" fill="#ffffff" pointer-events="none"/>
-            <text x="${numX || station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="${accent}" pointer-events="none">${station.number}</text>
           `;
         }
       } else {
         markup += `
           <circle cx="${station.x}" cy="${station.y}" r="11" class="station-core" fill="var(--bg-primary)" stroke="${color}" stroke-width="4.5"/>
           <circle cx="${station.x}" cy="${station.y}" r="5" fill="#ffffff" pointer-events="none"/>
-          <text x="${numX || station.x}" y="${numY}" font-family="var(--font-mono)" font-size="9" font-weight="700" text-anchor="middle" fill="var(--text-muted)" pointer-events="none">${station.number}</text>
         `;
       }
 
@@ -671,14 +665,17 @@
     // Populate Drawer
     const primaryLine = METRO_DATA.lines.find(l => l.id === station.lines[0]);
     const badgeBg = station.id === 'viseu' ? '#d97706' : (station.id === 'sintra' ? '#7c3aed' : (primaryLine ? primaryLine.color : '#0284c7'));
-    document.getElementById('drawer-station-id').textContent = `#${station.number}`;
-    document.getElementById('drawer-station-id').style.background = badgeBg;
+    const idEl = document.getElementById('drawer-station-id');
+    if (idEl) idEl.style.display = 'none';
     
     const lineNames = station.lines.map(lineId => {
       const line = METRO_DATA.lines.find(l => l.id === lineId);
       return line ? line.shortName : lineId;
     }).join(' • ');
-    document.getElementById('drawer-station-line').textContent = lineNames;
+    const lineEl = document.getElementById('drawer-station-line');
+    lineEl.textContent = lineNames;
+    lineEl.style.background = badgeBg;
+    lineEl.style.color = '#ffffff';
     document.getElementById('drawer-title').textContent = station.name;
     if (station.isArchived) {
       document.getElementById('drawer-subtitle').innerHTML = `${escapeXml(station.subtitle)} <span class="archive-badge">Archived Milestone</span>`;
@@ -767,7 +764,7 @@
     connectedStations.forEach(cs => {
       const btn = document.createElement('button');
       btn.className = 'connected-btn';
-      btn.textContent = `${cs.name} (#${cs.number})`;
+      btn.textContent = cs.name;
       btn.addEventListener('click', () => {
         selectStation(cs.id);
         panToStation(cs);

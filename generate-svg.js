@@ -15,9 +15,8 @@ function escapeXml(unsafe) {
 
 function getStationLayout(station) {
   let labelX = station.x;
-  let numX = station.x;
   let textAnchor = "middle";
-  let labelY, subY, venueY, numY;
+  let labelY, subY, venueY;
 
   if (station.id === "sintra") {
     // Sintra labels above the purple line, to the left of node
@@ -26,46 +25,36 @@ function getStationLayout(station) {
     labelY = station.y - 32;
     subY = station.y - 18;
     venueY = station.y - 5;
-    numY = station.y - 23;
   } else if (station.id === "chief") {
-    // CHIEF is at (160, 290): Labels Above Node, shifted right to clear slanted track
-    labelX = station.x + 28;
-    textAnchor = "start";
-    labelY = station.y - 38;
-    subY = station.y - 25;
-    venueY = station.y - 12;
-    numX = station.x - 22; // 138
-    numY = station.y - 20; // Shifted above horizontal track line so track doesn't cut it
-  } else if (station.id === "cloud2sim") {
-    // Cloud2Sim is at (80, 290): Standard starting station on Line 2
-    // Labels Below Node (y = 315, 329, 342) opposite to CHIEF's labels (y = 252, 265, 278)
+    // CHIEF is at (185, 290): Labels Below Node, centered under interchange station
     labelX = station.x;
     textAnchor = "middle";
     labelY = station.y + 25;
     subY = station.y + 39;
     venueY = station.y + 52;
-    numX = station.x;
-    numY = station.y - 17; // Station number above node (standard Tier 2)
-  } else if (station.id === "bindaas") {
-    // Bindaas is at (80, 630): Standard station before CONTROL-CORE on Line 3.
-    // Labels Above Node (y = 590, 603, 616) to avoid collision with CONTROL-CORE
+  } else if (station.id === "cloud2sim") {
+    // Cloud2Sim is at (70, 290): Standard starting station on Line 2
     labelX = station.x;
     textAnchor = "middle";
-    labelY = station.y - 40;
-    subY = station.y - 27;
-    venueY = station.y - 14;
-    numX = station.x;
-    numY = station.y + 19;
+    labelY = station.y + 25;
+    subY = station.y + 39;
+    venueY = station.y + 52;
+  } else if (station.id === "bindaas") {
+    // Bindaas is at (70, 630): Standard station before CONTROL-CORE on Line 3.
+    // Labels Below Node, aligned under node
+    labelX = station.x;
+    textAnchor = "middle";
+    labelY = station.y + 25;
+    subY = station.y + 39;
+    venueY = station.y + 52;
   } else if (station.id === "control-core") {
-    // CONTROL-CORE is at (160, 630): Western transfer hub bridging Line 3 and Line 1
+    // CONTROL-CORE is at (185, 630): Western transfer hub bridging Line 3 and Line 1
     // Labels Below Node, aligned directly under the interchange station
     labelX = station.x;
     textAnchor = "middle";
     labelY = station.y + 25;
     subY = station.y + 39;
     venueY = station.y + 52;
-    numX = station.x - 22; // Station number shifted left of node so vertical blue line doesn't cut it
-    numY = station.y - 20;
   } else if (station.id === "viseu") {
     // Viseu is at (780, 290): Labels Below Node, perfectly centered under node
     labelX = station.x;
@@ -73,30 +62,26 @@ function getStationLayout(station) {
     labelY = station.y + 25;
     subY = station.y + 39;
     venueY = station.y + 52;
-    numY = station.y - 23;
   } else if (station.id === "lagos") {
-    // LAGOS is at (1560, 460): Labels Below Node, centered under node within Zone 4 box
+    // LAGOS is at (1560, 450): Labels Below Node, centered under node within Zone 4 box
     labelX = station.x;
     textAnchor = "middle";
     labelY = station.y + 25;
     subY = station.y + 39;
     venueY = station.y + 52;
-    numY = station.y - 17;
   } else if (station.y === 150) {
-    // Tier 1 (Line 1 SOA & Line 6 Workflows & Runtimes): Labels Above Node, Numbers Below
+    // Tier 1 (Line 1 SOA & Line 6 Workflows & Runtimes): Labels Above Node
     labelY = station.isMajorHub ? station.y - 48 : station.y - 44;
     subY = station.isMajorHub ? station.y - 34 : station.y - 31;
     venueY = station.isMajorHub ? station.y - 21 : station.y - 18;
-    numY = station.isMajorHub ? station.y + 24 : station.y + 19;
   } else {
-    // Tiers 2, 3, 4 (Line 2 Network, Line 5 Community, Line 4 Trust, Line 3 Healthcare): Labels Below Node, Numbers Above
+    // Tiers 2, 3, 4 (Line 2 Network, Line 5 Community, Line 4 Trust, Line 3 Healthcare): Labels Below Node
     labelY = station.y + 25;
     subY = station.y + 39;
     venueY = station.y + 52;
-    numY = station.isMajorHub ? station.y - 23 : station.y - 17;
   }
 
-  return { labelX, labelY, subY, venueY, numX, numY, textAnchor };
+  return { labelX, labelY, subY, venueY, textAnchor };
 }
 
 function generateSvg() {
@@ -135,7 +120,6 @@ function generateSvg() {
       .station-label { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 13px; fill: #0f172a; }
       .station-sub { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 10.5px; fill: #475569; }
       .station-venue { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; font-weight: 700; }
-      .station-num { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; text-anchor: middle; dominant-baseline: central; fill: #334155; }
       
       .hub-outer { fill: #ffffff; stroke-width: 4; }
       .hub-inner { fill: #ffffff; }
@@ -186,8 +170,8 @@ function generateSvg() {
   <text x="35" y="228" class="zone-title" fill="#b45309">Network Optimizations, Edge Infrastructure &amp; Transport</text>
 
   <!-- Zone 5: Community and Indigenous (Tier 3 West) -->
-  <rect x="205" y="370" width="605" height="145" rx="16" class="zone-bg-5 zone-border-5"/>
-  <text x="225" y="394" class="zone-title" fill="#be123c">Community Informatics &amp; Indigenous Computing</text>
+  <rect x="215" y="370" width="595" height="145" rx="16" class="zone-bg-5 zone-border-5"/>
+  <text x="235" y="394" class="zone-title" fill="#be123c">Community Informatics &amp; Indigenous Computing</text>
 
   <!-- Zone 4: Autonomous Systems and Trust (Tier 3 East) -->
   <rect x="830" y="370" width="800" height="145" rx="16" class="zone-bg-4 zone-border-4"/>
@@ -200,7 +184,6 @@ function generateSvg() {
   <!-- Title Card Header -->
   <g transform="translate(60, 40)">
     <text class="title-main" x="0" y="0">KathiraveluLab Research Metro Map</text>
-    <text class="title-sub" x="460" y="-2">Evolutionary Trajectory of Public Projects &amp; Publications (2015 – 2026)</text>
     <rect x="1100" y="-20" width="180" height="26" rx="6" fill="#e0f2fe" stroke="#38bdf8" stroke-width="1.2"/>
     <text class="title-badge" x="1112" y="-3">UNIVERSITY OF ALASKA</text>
     <rect x="1295" y="-20" width="130" height="26" rx="6" fill="#f3e8ff" stroke="#a855f7" stroke-width="1.2"/>
@@ -242,13 +225,13 @@ function generateSvg() {
     <line x1="750" y1="615" x2="750" y2="645" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
 
     <!-- Sintra terminus interchange (Line 4 to Line 2 & Line 3) -->
-    <circle cx="1460" cy="460" r="24" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+    <circle cx="1460" cy="450" r="24" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
 
     <!-- CONTROL-CORE terminus interchange (Line 1 to Line 3) -->
-    <circle cx="160" cy="630" r="24" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+    <circle cx="185" cy="630" r="24" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
 
     <!-- CHIEF interchange (Line 2 to Line 1) -->
-    <circle cx="160" cy="290" r="24" fill="none" stroke="#d97706" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
+    <circle cx="185" cy="290" r="24" fill="none" stroke="#d97706" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
   </g>
 
   <!-- Stations Rendering -->
@@ -264,7 +247,7 @@ function generateSvg() {
 
     const badgeText = station.mapBadge || (station.venues && station.venues.length > 0 ? station.venues[0].name : "");
 
-    svg += `    <!-- Station: ${escapeXml(station.name)} (${station.number}) -->\n`;
+    svg += `    <!-- Station: ${escapeXml(station.name)} -->\n`;
     svg += `    <g id="station-${escapeXml(station.id)}" class="station-node" transform="translate(0, 0)">\n`;
 
     if (station.isMajorHub) {
@@ -274,14 +257,12 @@ function generateSvg() {
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="14" fill="#ffffff" stroke="#0284c7" stroke-width="3.5"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="8" fill="#7c3aed"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="3.5" class="hub-inner"/>\n`;
-        svg += `      <text x="${numX || station.x}" y="${numY}" class="station-num" fill="#d97706">${station.number}</text>\n`;
       } else if (station.id === "sintra") {
         // Triple Interchange Hub: Line 4 (Purple) outer ring, Line 2 (Amber) middle ring, Line 3 (Emerald) core
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="21" class="hub-outer" stroke="#7c3aed" stroke-width="4.5" filter="url(#hub-shadow)"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="14" fill="#ffffff" stroke="#d97706" stroke-width="3.5"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="8" fill="#059669"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="3.5" class="hub-inner"/>\n`;
-        svg += `      <text x="${numX || station.x}" y="${numY}" class="station-num" fill="#7c3aed">${station.number}</text>\n`;
       } else if (station.id === "control-core" || station.id === "beehive" || station.id === "guarda" || station.id === "can" || station.id === "chief") {
         // Dual Interchange Hub (CONTROL-CORE, Beehive, GUARDA, CAN, CHIEF)
         const secondaryLine = METRO_DATA.lines.find(l => l.id === station.lines[1]);
@@ -289,19 +270,16 @@ function generateSvg() {
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="17" class="hub-outer" stroke="${color}" filter="url(#hub-shadow)"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="11" fill="${innerColor}"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="6" class="hub-inner"/>\n`;
-        svg += `      <text x="${numX || station.x}" y="${numY}" class="station-num" fill="${color}">${station.number}</text>\n`;
       } else {
         // Major Interchange / Hub Node: double concentric rings with white fill
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="17" class="hub-outer" stroke="${color}" filter="url(#hub-shadow)"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="11" fill="${color}"/>\n`;
         svg += `      <circle cx="${station.x}" cy="${station.y}" r="6" class="hub-inner"/>\n`;
-        svg += `      <text x="${numX || station.x}" y="${numY}" class="station-num" fill="${color}">${station.number}</text>\n`;
       }
     } else {
       // Standard Station: white disc with colored stroke
       svg += `      <circle cx="${station.x}" cy="${station.y}" r="10" fill="#ffffff" stroke="${color}" stroke-width="4.5" filter="url(#hub-shadow)"/>\n`;
       svg += `      <circle cx="${station.x}" cy="${station.y}" r="4" fill="#0f172a"/>\n`;
-      svg += `      <text x="${numX || station.x}" y="${numY}" class="station-num" fill="#64748b">${station.number}</text>\n`;
     }
 
     // Text labels

@@ -19,7 +19,7 @@ const METRO_DATA = {
     "labName": "KathiraveluLab",
     "institution": "University of Alaska Anchorage",
     "website": "https://github.com/KathiraveluLab",
-    "version": "2026.9",
+    "version": "2026.10",
     "totalStations": 41,
     "lastUpdated": "2026"
   },
@@ -82,16 +82,63 @@ const METRO_DATA = {
   ],
   "stations": [
     {
+      "id": "bindaas",
+      "mapBadge": "IEEE BigData'19",
+      "number": 1,
+      "name": "Bindaas",
+      "subtitle": "Data Federation Hub",
+      "lines": [
+        "line-health"
+      ],
+      "x": 70,
+      "y": 630,
+      "isMajorHub": false,
+      "isInterchange": false,
+      "isArchived": true,
+      "repos": [
+        "sharmalab/bindaas",
+        "TCIA-API",
+        "TCIA-REST-API-Client"
+      ],
+      "primaryRepo": "sharmalab/bindaas",
+      "tech": [
+        "Java",
+        "OSGi",
+        "RESTful APIs",
+        "MySQL",
+        "MongoDB",
+        "Docker"
+      ],
+      "venues": [
+        {
+          "name": "IEEE BigData 2019",
+          "tier": "IEEE",
+          "note": "Data Services with Bindaas: RESTful Interfaces for Diverse Data Sources"
+        },
+        {
+          "name": "JCO Clinical Cancer Informatics 2020",
+          "tier": "ASCO",
+          "note": "PRISM: A Platform for Imaging in Precision Medicine"
+        },
+        {
+          "name": "MoNeTec 2022",
+          "tier": "IEEE",
+          "note": "Uniform Interfaces for Healthcare Data Access Federation"
+        }
+      ],
+      "description": "Foundational data access federation milestone on Line 3 (Healthcare Informatics) preceding CONTROL-CORE. An archived middleware framework developed within the Sharma Lab at Emory University. Provides uniform RESTful APIs for diverse clinical and cancer imaging stores (TCIA, PRISM) with pluggable RBAC and query auditing, directly underpinning Óbidos and MEDIator while establishing the data services model that inspired SDDS and GUARDA."
+    },
+    {
       "id": "control-core",
       "mapBadge": "IEEE Access'22",
-      "number": 1,
+      "number": 2,
       "name": "CONTROL-CORE",
       "subtitle": "Neuromodulation",
       "lines": [
         "line-health",
         "line-soa"
       ],
-      "x": 160,
+      "x": 185,
       "y": 630,
       "isMajorHub": true,
       "isInterchange": true,
@@ -123,15 +170,84 @@ const METRO_DATA = {
       "description": "Major Western Transfer Hub uniting Healthcare & Biomedical Informatics (Line 3) with Service-Oriented Architecture (Line 1). Framework for closed-loop peripheral neuromodulation control systems. Integrates simulated neuro-stimulators with real-time feedback loops and modular editors, orchestrating cyclic workflows via NEXUS and the DHGWorkflow graph composer."
     },
     {
+      "id": "cloud2sim",
+      "mapBadge": "UCC'14 / MASCOTS'14",
+      "number": 3,
+      "name": "Cloud2Sim",
+      "subtitle": "Distributed Cloud Sim",
+      "lines": [
+        "line-net"
+      ],
+      "x": 70,
+      "y": 290,
+      "isMajorHub": false,
+      "repos": [
+        "Cloud2Sim"
+      ],
+      "primaryRepo": "Cloud2Sim",
+      "tech": [
+        "Java",
+        "Hazelcast",
+        "Infinispan",
+        "MapReduce"
+      ],
+      "venues": [
+        {
+          "name": "IEEE/ACM UCC 2014",
+          "tier": "IEEE",
+          "note": "An Adaptive Distributed Simulator for Cloud and MapReduce Algorithms and Architectures"
+        },
+        {
+          "name": "IEEE MASCOTS 2014",
+          "tier": "IEEE",
+          "note": "Concurrent and Distributed CloudSim Simulations"
+        }
+      ],
+      "description": "Adaptive and distributed architecture for Cloud and MapReduce simulations, introducing concurrent multi-node simulation using Hazelcast and Infinispan. Starting point of Line 2 (Network Transport & Edge Infrastructure) preceding CHIEF."
+    },
+    {
+      "id": "chief",
+      "mapBadge": "IEEE IC2EW'16",
+      "number": 4,
+      "name": "CHIEF",
+      "subtitle": "Controller Farm",
+      "lines": [
+        "line-net",
+        "line-soa"
+      ],
+      "x": 185,
+      "y": 290,
+      "isMajorHub": true,
+      "repos": [
+        "CHIEF",
+        "messaging4transport"
+      ],
+      "primaryRepo": "CHIEF",
+      "tech": [
+        "Java",
+        "SDN Controller",
+        "Community Networks"
+      ],
+      "venues": [
+        {
+          "name": "IEEE IC2EW 2016",
+          "tier": "IEEE",
+          "note": "CHIEF: Controller farm for clouds of software-defined community networks"
+        }
+      ],
+      "description": "Controller farm architecture coordinating decentralized software-defined community network topologies across cloud boundaries. Western transfer hub bridging Line 2 and Line 1.",
+      "isInterchange": true
+    },
+    {
       "id": "cassowary",
       "mapBadge": "ACM M4IOT'15",
-      "number": 2,
+      "number": 5,
       "name": "Cassowary",
       "subtitle": "Smart Buildings",
       "lines": [
         "line-soa"
       ],
-      "x": 225,
+      "x": 245,
       "y": 150,
       "isMajorHub": false,
       "repos": [
@@ -161,13 +277,13 @@ const METRO_DATA = {
     {
       "id": "evora",
       "mapBadge": "ETT'18",
-      "number": 3,
+      "number": 6,
       "name": "Évora",
       "subtitle": "Edge Chains",
       "lines": [
         "line-soa"
       ],
-      "x": 305,
+      "x": 325,
       "y": 150,
       "isMajorHub": false,
       "repos": [
@@ -196,13 +312,13 @@ const METRO_DATA = {
     {
       "id": "sdds",
       "mapBadge": "IEEE SDS'18",
-      "number": 4,
+      "number": 7,
       "name": "SDDS",
       "subtitle": "Data Services",
       "lines": [
         "line-soa"
       ],
-      "x": 395,
+      "x": 405,
       "y": 150,
       "isMajorHub": false,
       "repos": [
@@ -227,13 +343,13 @@ const METRO_DATA = {
     {
       "id": "sd-cps",
       "mapBadge": "Cluster'19",
-      "number": 5,
+      "number": 8,
       "name": "SD-CPS",
       "subtitle": "CPS Workflows",
       "lines": [
         "line-soa"
       ],
-      "x": 480,
+      "x": 485,
       "y": 150,
       "isMajorHub": false,
       "repos": [
@@ -260,7 +376,7 @@ const METRO_DATA = {
     },
     {
       "id": "sofia",
-      "number": 6,
+      "number": 9,
       "name": "SOFIA",
       "subtitle": "Federated Interop",
       "lines": [
@@ -282,7 +398,7 @@ const METRO_DATA = {
     },
     {
       "id": "guarda",
-      "number": 7,
+      "number": 10,
       "name": "GUARDA",
       "subtitle": "Data Gateway",
       "lines": [
@@ -307,7 +423,7 @@ const METRO_DATA = {
     {
       "id": "viseu",
       "mapBadge": "COMNET'22",
-      "number": 8,
+      "number": 11,
       "name": "Viseu",
       "subtitle": "Edge Services Hub",
       "lines": [
@@ -339,78 +455,9 @@ const METRO_DATA = {
       "description": "Major triple-interchange hub bridging Service-Oriented Architecture (Line 1), Network Transport (Line 2), and Blockchain-Based Decentralized Trust (Line 4). Orchestrates virtual services at Internet-scale using P2P overlays, Ethereum trust modules, and private off-chain channels to PORTO."
     },
     {
-      "id": "cloud2sim",
-      "mapBadge": "UCC'14 / MASCOTS'14",
-      "number": 9,
-      "name": "Cloud2Sim",
-      "subtitle": "Distributed Cloud Sim",
-      "lines": [
-        "line-net"
-      ],
-      "x": 80,
-      "y": 290,
-      "isMajorHub": false,
-      "repos": [
-        "Cloud2Sim"
-      ],
-      "primaryRepo": "Cloud2Sim",
-      "tech": [
-        "Java",
-        "Hazelcast",
-        "Infinispan",
-        "MapReduce"
-      ],
-      "venues": [
-        {
-          "name": "IEEE/ACM UCC 2014",
-          "tier": "IEEE",
-          "note": "An Adaptive Distributed Simulator for Cloud and MapReduce Algorithms and Architectures"
-        },
-        {
-          "name": "IEEE MASCOTS 2014",
-          "tier": "IEEE",
-          "note": "Concurrent and Distributed CloudSim Simulations"
-        }
-      ],
-      "description": "Adaptive and distributed architecture for Cloud and MapReduce simulations, introducing concurrent multi-node simulation using Hazelcast and Infinispan. Starting point of Line 2 (Network Transport & Edge Infrastructure) preceding CHIEF."
-    },
-    {
-      "id": "chief",
-      "mapBadge": "IEEE IC2EW'16",
-      "number": 10,
-      "name": "CHIEF",
-      "subtitle": "Controller Farm",
-      "lines": [
-        "line-net",
-        "line-soa"
-      ],
-      "x": 160,
-      "y": 290,
-      "isMajorHub": true,
-      "repos": [
-        "CHIEF",
-        "messaging4transport"
-      ],
-      "primaryRepo": "CHIEF",
-      "tech": [
-        "Java",
-        "SDN Controller",
-        "Community Networks"
-      ],
-      "venues": [
-        {
-          "name": "IEEE IC2EW 2016",
-          "tier": "IEEE",
-          "note": "CHIEF: Controller farm for clouds of software-defined community networks"
-        }
-      ],
-      "description": "Controller farm architecture coordinating decentralized software-defined community network topologies across cloud boundaries. Western transfer hub bridging Line 2 and Line 1.",
-      "isInterchange": true
-    },
-    {
       "id": "xsdn",
       "mapBadge": "IEEE IC2E'15",
-      "number": 11,
+      "number": 12,
       "name": "xSDN",
       "subtitle": "Flow Simulator",
       "lines": [
@@ -439,7 +486,7 @@ const METRO_DATA = {
     {
       "id": "sendim",
       "mapBadge": "IEEE IC2E'16",
-      "number": 12,
+      "number": 13,
       "name": "SENDIM",
       "subtitle": "Cloud Simulation",
       "lines": [
@@ -473,7 +520,7 @@ const METRO_DATA = {
     {
       "id": "netuber",
       "mapBadge": "IFIP Networking'18",
-      "number": 13,
+      "number": 14,
       "name": "NetUber",
       "subtitle": "SD-Internet",
       "lines": [
@@ -513,7 +560,7 @@ const METRO_DATA = {
     {
       "id": "smart",
       "mapBadge": "IEEE IM'17",
-      "number": 14,
+      "number": 15,
       "name": "SMART",
       "subtitle": "Middlebox QoS",
       "lines": [
@@ -549,7 +596,7 @@ const METRO_DATA = {
     {
       "id": "l4sboa",
       "mapBadge": "IEEE CCECE'25",
-      "number": 15,
+      "number": 16,
       "name": "L4SBOA",
       "subtitle": "Bandwidth Orchestration",
       "lines": [
@@ -578,7 +625,7 @@ const METRO_DATA = {
     },
     {
       "id": "faultsim",
-      "number": 16,
+      "number": 17,
       "name": "faultsim",
       "subtitle": "Failure Detector",
       "lines": [
@@ -601,7 +648,7 @@ const METRO_DATA = {
     {
       "id": "leo",
       "mapBadge": "SysCon'25",
-      "number": 17,
+      "number": 18,
       "name": "LEO",
       "subtitle": "Satellite Constellations",
       "lines": [
@@ -635,7 +682,7 @@ const METRO_DATA = {
     {
       "id": "can",
       "mapBadge": "IEEE SDS'22",
-      "number": 18,
+      "number": 19,
       "name": "CAN",
       "subtitle": "Content-Aware Net",
       "lines": [
@@ -664,53 +711,6 @@ const METRO_DATA = {
       "description": "Content-Aware Networking engine written in Rust, inspecting payload streams at line-rate to dynamically steer ultra-low-latency traffic for telesurgery and tactile internet pipelines to Line 6 (High-Performance Workflow & Systems Runtimes)."
     },
     {
-      "id": "bindaas",
-      "mapBadge": "IEEE BigData'19",
-      "number": 19,
-      "name": "Bindaas",
-      "subtitle": "Data Federation Hub",
-      "lines": [
-        "line-health"
-      ],
-      "x": 80,
-      "y": 630,
-      "isMajorHub": false,
-      "isInterchange": false,
-      "isArchived": true,
-      "repos": [
-        "sharmalab/bindaas",
-        "TCIA-API",
-        "TCIA-REST-API-Client"
-      ],
-      "primaryRepo": "sharmalab/bindaas",
-      "tech": [
-        "Java",
-        "OSGi",
-        "RESTful APIs",
-        "MySQL",
-        "MongoDB",
-        "Docker"
-      ],
-      "venues": [
-        {
-          "name": "IEEE BigData 2019",
-          "tier": "IEEE",
-          "note": "Data Services with Bindaas: RESTful Interfaces for Diverse Data Sources"
-        },
-        {
-          "name": "JCO Clinical Cancer Informatics 2020",
-          "tier": "ASCO",
-          "note": "PRISM: A Platform for Imaging in Precision Medicine"
-        },
-        {
-          "name": "MoNeTec 2022",
-          "tier": "IEEE",
-          "note": "Uniform Interfaces for Healthcare Data Access Federation"
-        }
-      ],
-      "description": "Foundational data access federation milestone on Line 3 (Healthcare Informatics) preceding CONTROL-CORE. An archived middleware framework developed within the Sharma Lab at Emory University. Provides uniform RESTful APIs for diverse clinical and cancer imaging stores (TCIA, PRISM) with pluggable RBAC and query auditing, directly underpinning Óbidos and MEDIator while establishing the data services model that inspired SDDS and GUARDA."
-    },
-    {
       "id": "obidos",
       "mapBadge": "DAPD'19",
       "number": 20,
@@ -719,7 +719,7 @@ const METRO_DATA = {
       "lines": [
         "line-health"
       ],
-      "x": 270,
+      "x": 300,
       "y": 630,
       "isMajorHub": false,
       "repos": [
@@ -774,7 +774,7 @@ const METRO_DATA = {
       "lines": [
         "line-health"
       ],
-      "x": 385,
+      "x": 420,
       "y": 630,
       "isMajorHub": false,
       "repos": [
@@ -819,7 +819,7 @@ const METRO_DATA = {
       "lines": [
         "line-health"
       ],
-      "x": 495,
+      "x": 530,
       "y": 630,
       "isMajorHub": false,
       "repos": [
@@ -844,7 +844,7 @@ const METRO_DATA = {
       "lines": [
         "line-health"
       ],
-      "x": 605,
+      "x": 640,
       "y": 630,
       "isMajorHub": false,
       "repos": [
@@ -1063,7 +1063,7 @@ const METRO_DATA = {
         "line-health"
       ],
       "x": 1460,
-      "y": 460,
+      "y": 450,
       "isMajorHub": true,
       "isInterchange": true,
       "repos": [
@@ -1088,7 +1088,7 @@ const METRO_DATA = {
         "line-trust"
       ],
       "x": 1560,
-      "y": 460,
+      "y": 450,
       "isMajorHub": false,
       "repos": [
         "LAGOS"
@@ -1139,7 +1139,7 @@ const METRO_DATA = {
       "lines": [
         "line-community"
       ],
-      "x": 405,
+      "x": 430,
       "y": 450,
       "isMajorHub": true,
       "repos": [
@@ -1168,7 +1168,7 @@ const METRO_DATA = {
       "lines": [
         "line-community"
       ],
-      "x": 520,
+      "x": 560,
       "y": 450,
       "isMajorHub": true,
       "repos": [
@@ -1197,7 +1197,7 @@ const METRO_DATA = {
       "lines": [
         "line-community"
       ],
-      "x": 635,
+      "x": 680,
       "y": 450,
       "isMajorHub": false,
       "repos": [
@@ -1377,22 +1377,22 @@ const METRO_DATA = {
     {
       "id": "track-soa-main",
       "lineId": "line-soa",
-      "path": "M 160,630 L 160,290 Q 160,250 180,225 L 205,185 Q 215,150 225,150 L 650,150 Q 690,150 715,190 L 760,250 Q 780,275 780,290"
+      "path": "M 185,630 L 185,290 Q 185,250 205,225 L 225,185 Q 235,150 245,150 L 650,150 Q 690,150 715,190 L 760,250 Q 780,275 780,290"
     },
     {
       "id": "track-net-main",
       "lineId": "line-net",
-      "path": "M 80,290 L 1360,290 Q 1420,290 1440,360 L 1460,460"
+      "path": "M 70,290 L 1360,290 Q 1420,290 1440,350 L 1460,450"
     },
     {
       "id": "track-health-main",
       "lineId": "line-health",
-      "path": "M 80,630 L 1220,630 Q 1340,630 1410,540 L 1460,460"
+      "path": "M 70,630 L 1220,630 Q 1340,630 1410,540 L 1460,450"
     },
     {
       "id": "track-trust-main",
       "lineId": "line-trust",
-      "path": "M 780,290 L 810,290 Q 840,290 840,320 L 840,450 L 1410,450 Q 1445,450 1460,460 L 1580,460"
+      "path": "M 780,290 L 810,290 Q 840,290 840,320 L 840,450 L 1580,450"
     },
     {
       "id": "track-community-main",
