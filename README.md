@@ -28,7 +28,8 @@ The metropolitan map organizes **41 flagship research stations** across **6 inte
 - **`Cloud2Sim`**: Adaptive distributed cloud simulation milestone serving as the western starting point of **Line 2 (Network Transport & Edge Infrastructure)**.
 - **`CHIEF`**: Major Western transfer hub bridging **Line 1 (SOA Middleware)** and **Line 2 (Network Transport)**, coordinating software-defined community network controller farms.
 - **`Viseu`**: Major triple-interchange bridging **Line 1 (SOA Middleware)**, **Line 2 (Network Optimization)**, and **Line 4 (Autonomous Decentralized Trust)**, connecting edge orchestration directly with Ethereum trust and private off-chain state channels to **`PORTO`**.
-- **`GUARDA` & `CAN`**: Dual-interchange transfer stations bridging **Line 1 (SOA Middleware)** and **Line 2 (Network Transport)** directly into **Line 6 (Workflow & Systems Runtimes)** for high-throughput pipeline dispatching.
+- **`GUARDA`**: Dual-interchange transfer hub bridging **Line 1 (SOA Middleware)** and **Line 6 (Workflow & Systems Runtimes)**.
+- **`CAN`**: Dual-interchange transfer hub bridging **Line 2 (Network Transport)** and **Line 6 (Workflow & Systems Runtimes)**.
 - **`Beehive`**: Interdisciplinary junction connecting **Line 3 (Clinical Healthcare)** with **Line 5 (Community Informatics)**.
 - **`Sintra`**: Major triple-interchange bridging **Line 2 (Network Transport)**, **Line 3 (Clinical Healthcare)**, and **Line 4 (Autonomous Systems & Decentralized Trust)** across satellite, edge, and zero-knowledge trust channels.
 
@@ -84,12 +85,14 @@ The metropolitan map organizes **41 flagship research stations** across **6 inte
 - **DREAMS** (`DREAMS`): Digitization for recovery and arts mining for societal well-being.
 
 ### Line 6: High-Performance Workflow & Systems Runtimes
+- **∂u∂u** (`dudu`): Foundational multi-tenanted framework for distributed near-duplicate detection in big data written in Java (*Springer OTM'15*), serving as the starting terminal station of Line 6.
+- **GUARDA** (`GUARDA`): Uniform remote data and analytics gateway in Elixir, serving as the major transfer hub with Line 1 (SOA Middleware).
 - **DHGWorkflow** (`DHGWorkflow`): Directed hypergraph workflow composer originating from the NEXUS software-defined workflow orchestration framework for cyclic closed-loop pipelines (*IEEE Access'21*).
 - **Ararat** (`Ararat`): Hardware-accelerated hypergraph executor in Mojo.
-- **Mojito** (`Mojito`): Asynchronous task orchestrator in Mojo.
 - **FIRM** (`FIRM`): Find, Invoke, Return, and Manage low-overhead service composition (*IEEE MIPRO'16*).
-- **∂u∂u** (`dudu`): Multi-tenanted distributed near-duplicate detection framework in Java (*Springer OTM'15*).
 - **Faro** (`Faro`): High-throughput near-duplicate detection in Go using MinHash and Locality-Sensitive Hashing (LSH).
+- **CAN** (`CAN`): Content-aware networking in Rust and telesurgery innovations review (*IEEE SDS'22*), serving as the major transfer hub with Line 2 (Network Transport).
+- **Mojito** (`Mojito`): Asynchronous task orchestrator in Mojo, serving as the terminal station of Line 6 following the CAN interchange.
 
 ## Online Deployment (GitHub Pages)
 

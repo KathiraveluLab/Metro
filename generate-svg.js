@@ -69,8 +69,52 @@ function getStationLayout(station) {
     labelY = station.y + 25;
     subY = station.y + 39;
     venueY = station.y + 52;
+  } else if (station.id === "dudu") {
+    // dudu at (650, 75): Starting terminal of Line 6, appears vertically from the top
+    // Labels to the right of vertical track, safely inside Zone 6 and well clear of DHGWorkflow
+    labelX = station.x + 18;
+    textAnchor = "start";
+    labelY = station.y - 4;
+    subY = station.y + 10;
+    venueY = station.y + 24;
+  } else if (station.id === "guarda") {
+    // GUARDA at (650, 150): Interchange between Line 1 and Line 6
+    // Labels to the right of node below track, avoiding overlap with SOFIA
+    labelX = station.x + 18;
+    textAnchor = "start";
+    labelY = station.y + 25;
+    subY = station.y + 39;
+    venueY = station.y + 52;
+  } else if (station.id === "sofia") {
+    // SOFIA at (565, 150): Labels Below Node
+    labelX = station.x;
+    textAnchor = "middle";
+    labelY = station.y + 25;
+    subY = station.y + 39;
+    venueY = station.y + 52;
+  } else if (station.id === "can") {
+    // CAN at (1330, 290): Transfer Hub bridging Line 2 and Line 6
+    // Labels in Top-Left quadrant, comfortably above Yellow track
+    labelX = station.x - 24;
+    textAnchor = "end";
+    labelY = station.y - 42;
+    subY = station.y - 28;
+    venueY = station.y - 14;
+  } else if (station.id === "mojito") {
+    // Mojito at (1330, 360): Terminal station of Line 6 turned 90 degrees down after CAN
+    // Labels Below Node
+    labelX = station.x;
+    textAnchor = "middle";
+    labelY = station.y + 25;
+    subY = station.y + 39;
+    venueY = station.y + 52;
+  } else if (station.lines.includes("line-shuttle")) {
+    // Line 6 stations on the flat horizontal line (dhgworkflow, ararat, firm, faro at y=150): Labels Above Node
+    labelY = station.y - 44;
+    subY = station.y - 31;
+    venueY = station.y - 18;
   } else if (station.y === 150) {
-    // Tier 1 (Line 1 SOA & Line 6 Workflows & Runtimes): Labels Above Node
+    // Tier 1 (Line 1 SOA): Labels Above Node
     labelY = station.isMajorHub ? station.y - 48 : station.y - 44;
     subY = station.isMajorHub ? station.y - 34 : station.y - 31;
     venueY = station.isMajorHub ? station.y - 21 : station.y - 18;
@@ -158,12 +202,12 @@ function generateSvg() {
 
   <!-- Research Domain Background Zones (Light Pastel Tints) -->
   <!-- Zone 1: SOA and Middleware (Tier 1 West) -->
-  <rect x="50" y="60" width="640" height="120" rx="16" class="zone-bg-1 zone-border-1"/>
+  <rect x="50" y="60" width="550" height="120" rx="16" class="zone-bg-1 zone-border-1"/>
   <text x="70" y="84" class="zone-title" fill="#0284c7">Service-Oriented Architecture &amp; Distributed Control</text>
 
   <!-- Zone 6: High-Performance Workflow and Systems Runtimes (Tier 1 East) -->
-  <rect x="710" y="60" width="710" height="120" rx="16" class="zone-bg-6 zone-border-6"/>
-  <text x="735" y="84" class="zone-title" fill="#64748b">High-Performance Workflow &amp; Systems Runtimes</text>
+  <rect x="620" y="60" width="760" height="120" rx="16" class="zone-bg-6 zone-border-6"/>
+  <text x="880" y="84" class="zone-title" fill="#64748b">High-Performance Workflow &amp; Systems Runtimes</text>
 
   <!-- Zone 2: Network Optimizations and Edge (Tier 2 Full Width) -->
   <rect x="15" y="205" width="1625" height="145" rx="16" class="zone-bg-2 zone-border-2"/>
@@ -223,15 +267,6 @@ function generateSvg() {
     
     <!-- Beehive interchange (Line 3 to Line 5) -->
     <line x1="750" y1="615" x2="750" y2="645" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
-
-    <!-- Sintra terminus interchange (Line 4 to Line 2 & Line 3) -->
-    <circle cx="1460" cy="450" r="24" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
-
-    <!-- CONTROL-CORE terminus interchange (Line 1 to Line 3) -->
-    <circle cx="185" cy="630" r="24" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
-
-    <!-- CHIEF interchange (Line 2 to Line 1) -->
-    <circle cx="185" cy="290" r="24" fill="none" stroke="#d97706" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
   </g>
 
   <!-- Stations Rendering -->

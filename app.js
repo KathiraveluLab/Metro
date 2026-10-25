@@ -88,9 +88,8 @@
   // Consistent station label and badge coordinates preventing overlaps
   function getStationLayout(station) {
     let labelX = station.x;
-    let numX = station.x;
     let textAnchor = "middle";
-    let labelY, subY, venueY, numY;
+    let labelY, subY, venueY;
 
     if (station.id === "sintra") {
       // Sintra labels above the purple line, to the left of node
@@ -99,7 +98,6 @@
       labelY = station.y - 32;
       subY = station.y - 18;
       venueY = station.y - 5;
-      numY = station.y - 23;
     } else if (station.id === "chief") {
       // CHIEF is at (185, 290): Labels Below Node, centered under interchange station
       labelX = station.x;
@@ -107,8 +105,6 @@
       labelY = station.y + 25;
       subY = station.y + 39;
       venueY = station.y + 52;
-      numX = station.x - 22; // 163
-      numY = station.y - 20; // Shifted above horizontal track line so track doesn't cut it
     } else if (station.id === "cloud2sim") {
       // Cloud2Sim is at (70, 290): Standard starting station on Line 2
       labelX = station.x;
@@ -116,8 +112,6 @@
       labelY = station.y + 25;
       subY = station.y + 39;
       venueY = station.y + 52;
-      numX = station.x;
-      numY = station.y - 17; // Station number above node (standard Tier 2)
     } else if (station.id === "bindaas") {
       // Bindaas is at (70, 630): Standard station before CONTROL-CORE on Line 3.
       // Labels Below Node, aligned under node
@@ -126,8 +120,6 @@
       labelY = station.y + 25;
       subY = station.y + 39;
       venueY = station.y + 52;
-      numX = station.x;
-      numY = station.y - 17; // Station number above node
     } else if (station.id === "control-core") {
       // CONTROL-CORE is at (185, 630): Western transfer hub bridging Line 3 and Line 1
       // Labels Below Node, aligned directly under the interchange station
@@ -136,8 +128,6 @@
       labelY = station.y + 25;
       subY = station.y + 39;
       venueY = station.y + 52;
-      numX = station.x - 22; // 163, shifted left of node so vertical blue line doesn't cut it
-      numY = station.y - 20;
     } else if (station.id === "viseu") {
       // Viseu is at (780, 290): Labels Below Node, perfectly centered under node
       labelX = station.x;
@@ -145,7 +135,6 @@
       labelY = station.y + 25;
       subY = station.y + 39;
       venueY = station.y + 52;
-      numY = station.y - 23;
     } else if (station.id === "lagos") {
       // LAGOS is at (1560, 450): Labels Below Node, centered under node within Zone 4 box
       labelX = station.x;
@@ -153,22 +142,63 @@
       labelY = station.y + 25;
       subY = station.y + 39;
       venueY = station.y + 52;
-      numY = station.y - 17;
-    } else if (station.y === 150) {
-      // Tier 1 (Line 1 SOA & Line 6 Workflows & Runtimes): Labels Above Node, Numbers Below
-      labelY = station.isMajorHub ? station.y - 48 : station.y - 44;
-      subY = station.isMajorHub ? station.y - 34 : station.y - 31;
-      venueY = station.isMajorHub ? station.y - 21 : station.y - 18;
-      numY = station.isMajorHub ? station.y + 24 : station.y + 19;
-    } else {
-      // Tiers 2, 3, 4 (Line 2 Network, Line 5 Community, Line 4 Trust, Line 3 Healthcare): Labels Below Node, Numbers Above
+    } else if (station.id === "dudu") {
+      // dudu at (650, 75): Starting terminal of Line 6, appears vertically from the top
+      // Labels to the right of vertical track, safely inside Zone 6 and well clear of DHGWorkflow
+      labelX = station.x + 18;
+      textAnchor = "start";
+      labelY = station.y - 4;
+      subY = station.y + 10;
+      venueY = station.y + 24;
+    } else if (station.id === "guarda") {
+      // GUARDA at (650, 150): Interchange between Line 1 and Line 6
+      // Labels to the right of node below track, avoiding overlap with SOFIA
+      labelX = station.x + 18;
+      textAnchor = "start";
       labelY = station.y + 25;
       subY = station.y + 39;
       venueY = station.y + 52;
-      numY = station.isMajorHub ? station.y - 23 : station.y - 17;
+    } else if (station.id === "sofia") {
+      // SOFIA at (565, 150): Labels Below Node
+      labelX = station.x;
+      textAnchor = "middle";
+      labelY = station.y + 25;
+      subY = station.y + 39;
+      venueY = station.y + 52;
+    } else if (station.id === "can") {
+      // CAN at (1330, 290): Transfer Hub bridging Line 2 and Line 6
+      // Labels in Top-Left quadrant, comfortably above Yellow track
+      labelX = station.x - 24;
+      textAnchor = "end";
+      labelY = station.y - 42;
+      subY = station.y - 28;
+      venueY = station.y - 14;
+    } else if (station.id === "mojito") {
+      // Mojito at (1330, 360): Terminal station of Line 6 turned 90 degrees down after CAN
+      // Labels Below Node
+      labelX = station.x;
+      textAnchor = "middle";
+      labelY = station.y + 25;
+      subY = station.y + 39;
+      venueY = station.y + 52;
+    } else if (station.lines.includes("line-shuttle")) {
+      // Line 6 stations on the flat horizontal line (dhgworkflow, ararat, firm, faro at y=150): Labels Above Node
+      labelY = station.y - 44;
+      subY = station.y - 31;
+      venueY = station.y - 18;
+    } else if (station.y === 150) {
+      // Tier 1 (Line 1 SOA): Labels Above Node
+      labelY = station.isMajorHub ? station.y - 48 : station.y - 44;
+      subY = station.isMajorHub ? station.y - 34 : station.y - 31;
+      venueY = station.isMajorHub ? station.y - 21 : station.y - 18;
+    } else {
+      // Tiers 2, 3, 4 (Line 2 Network, Line 5 Community, Line 4 Trust, Line 3 Healthcare): Labels Below Node
+      labelY = station.y + 25;
+      subY = station.y + 39;
+      venueY = station.y + 52;
     }
 
-    return { labelX, labelY, subY, venueY, numX, numY, textAnchor };
+    return { labelX, labelY, subY, venueY, textAnchor };
   }
 
   // Render SVG Map Elements
@@ -221,12 +251,12 @@
       <!-- Research Domain Background Zones -->
       <g class="zones-layer">
         <!-- Zone 1: SOA & Middleware (Tier 1 West) -->
-        <rect x="50" y="60" width="640" height="120" rx="16" fill="#0284c7" fill-opacity="0.05" stroke="#0284c7" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
+        <rect x="50" y="60" width="550" height="120" rx="16" fill="#0284c7" fill-opacity="0.05" stroke="#0284c7" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
         <text x="70" y="84" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#38bdf8" letter-spacing="1.5">SERVICE-ORIENTED ARCHITECTURE &amp; DISTRIBUTED CONTROL</text>
 
         <!-- Zone 6: High-Performance Workflow & Systems Runtimes (Tier 1 East) -->
-        <rect x="710" y="60" width="710" height="120" rx="16" fill="#64748b" fill-opacity="0.05" stroke="#64748b" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
-        <text x="735" y="84" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#94a3b8" letter-spacing="1.5">HIGH-PERFORMANCE WORKFLOW &amp; SYSTEMS RUNTIMES</text>
+        <rect x="620" y="60" width="760" height="120" rx="16" fill="#64748b" fill-opacity="0.05" stroke="#64748b" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
+        <text x="880" y="84" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#94a3b8" letter-spacing="1.5">HIGH-PERFORMANCE WORKFLOW &amp; SYSTEMS RUNTIMES</text>
 
         <!-- Zone 2: Network Optimizations (Tier 2 Full Width) -->
         <rect x="50" y="205" width="1580" height="145" rx="16" fill="#d97706" fill-opacity="0.05" stroke="#d97706" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
@@ -277,9 +307,6 @@
       <g id="interchange-connectors" pointer-events="none">
         <line x1="780" y1="275" x2="780" y2="305" stroke="var(--text-primary)" stroke-width="6" stroke-linecap="round"/>
         <line x1="750" y1="615" x2="750" y2="645" stroke="var(--text-primary)" stroke-width="6" stroke-linecap="round"/>
-        <circle cx="1460" cy="450" r="24" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
-        <circle cx="185" cy="630" r="24" fill="none" stroke="#34d399" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
-        <circle cx="185" cy="290" r="24" fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="5,4" opacity="0.8"/>
       </g>
 
       <!-- Stations Layer -->
@@ -292,7 +319,7 @@
       const accent = primaryLine ? primaryLine.accentColor : '#38bdf8';
       const lineIds = station.lines.join(' ');
 
-      const { labelX, labelY, subY, venueY, numX, numY, textAnchor } = getStationLayout(station);
+      const { labelX, labelY, subY, venueY, textAnchor } = getStationLayout(station);
 
       const badgeText = station.mapBadge || (station.venues && station.venues.length > 0 ? station.venues[0].name : "");
 

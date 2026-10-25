@@ -418,6 +418,12 @@ const METRO_DATA = {
         "REST / GraphQL"
       ],
       "venues": [],
+      "relatedStations": [
+        "dudu",
+        "dhgworkflow",
+        "sofia",
+        "viseu"
+      ],
       "description": "Gateway for Uniform Access to Remote Data and Analytics built with Elixir/OTP, serving high-throughput concurrent telemetry streams into Line 6 (High-Performance Workflow & Systems Runtimes)."
     },
     {
@@ -654,7 +660,7 @@ const METRO_DATA = {
       "lines": [
         "line-net"
       ],
-      "x": 1200,
+      "x": 1195,
       "y": 290,
       "isMajorHub": false,
       "repos": [
@@ -707,6 +713,12 @@ const METRO_DATA = {
           "tier": "IEEE",
           "note": "Networking Research Innovations for Telesurgery: A Systematic Review"
         }
+      ],
+      "relatedStations": [
+        "faro",
+        "mojito",
+        "leo",
+        "sintra"
       ],
       "description": "Content-Aware Networking engine written in Rust, inspecting payload streams at line-rate to dynamically steer ultra-low-latency traffic for telesurgery and tactile internet pipelines to Line 6 (High-Performance Workflow & Systems Runtimes)."
     },
@@ -1212,15 +1224,49 @@ const METRO_DATA = {
       "description": "Digitization for Recovery: Exploring Arts with Mining for Societal Well-Being. Mines expressive art therapy data to provide qualitative indicators for addiction recovery, feeding directly into Beehive."
     },
     {
+      "id": "dudu",
+      "mapBadge": "Springer OTM'15",
+      "number": 36,
+      "name": "∂u∂u",
+      "subtitle": "Java Near-Duplicate",
+      "lines": [
+        "line-shuttle"
+      ],
+      "x": 650,
+      "y": 75,
+      "isMajorHub": false,
+      "repos": [
+        "dudu"
+      ],
+      "primaryRepo": "dudu",
+      "tech": [
+        "Java",
+        "Multi-Tenancy",
+        "Big Data Dedup"
+      ],
+      "venues": [
+        {
+          "name": "Springer OTM 2015",
+          "tier": "Springer",
+          "note": "∂u∂u Multi-Tenanted Framework: Distributed Near Duplicate Detection for Big Data"
+        }
+      ],
+      "relatedStations": [
+        "guarda",
+        "faro"
+      ],
+      "description": "Foundational multi-tenanted framework for distributed near-duplicate detection in big data written in Java, introducing tenant-aware hashing partitions. Western starting terminal station of Line 6 preceding GUARDA."
+    },
+    {
       "id": "dhgworkflow",
       "mapBadge": "IEEE Access'21",
-      "number": 36,
+      "number": 37,
       "name": "DHGWorkflow",
       "subtitle": "Task Graph Composer",
       "lines": [
         "line-shuttle"
       ],
-      "x": 750,
+      "x": 810,
       "y": 150,
       "isMajorHub": false,
       "repos": [
@@ -1241,20 +1287,21 @@ const METRO_DATA = {
         }
       ],
       "relatedStations": [
-        "control-core",
-        "ararat"
+        "guarda",
+        "ararat",
+        "control-core"
       ],
       "description": "Interactive visual composer for Directed Hypergraph (DHG) Workflows. Originating from the NEXUS software-defined workflow orchestration framework, it breaks the DAG limitation to model cyclic execution stages with feedback loops for closed-loop neuromodulation (powering CONTROL-CORE)."
     },
     {
       "id": "ararat",
-      "number": 37,
+      "number": 38,
       "name": "Ararat",
       "subtitle": "Workflow Engine",
       "lines": [
         "line-shuttle"
       ],
-      "x": 860,
+      "x": 940,
       "y": 150,
       "isMajorHub": false,
       "repos": [
@@ -1266,29 +1313,11 @@ const METRO_DATA = {
         "Parallel Execution"
       ],
       "venues": [],
+      "relatedStations": [
+        "dhgworkflow",
+        "firm"
+      ],
       "description": "High-performance workflow execution engine written in Mojo, delivering hardware-accelerated SIMD parallel execution of DHGWorkflow graphs."
-    },
-    {
-      "id": "mojito",
-      "number": 38,
-      "name": "Mojito",
-      "subtitle": "Async Scheduler",
-      "lines": [
-        "line-shuttle"
-      ],
-      "x": 970,
-      "y": 150,
-      "isMajorHub": false,
-      "repos": [
-        "Mojito"
-      ],
-      "primaryRepo": "Mojito",
-      "tech": [
-        "Mojo",
-        "Async Tasks"
-      ],
-      "venues": [],
-      "description": "Mojo-based integrated task orchestrator delivering lightweight async scheduling, lock-free queues, and microsecond latency dispatching."
     },
     {
       "id": "firm",
@@ -1299,7 +1328,7 @@ const METRO_DATA = {
       "lines": [
         "line-shuttle"
       ],
-      "x": 1080,
+      "x": 1070,
       "y": 150,
       "isMajorHub": false,
       "repos": [
@@ -1317,47 +1346,21 @@ const METRO_DATA = {
           "note": "A FIRM Approach for Software-Defined Service Composition"
         }
       ],
+      "relatedStations": [
+        "ararat",
+        "faro"
+      ],
       "description": "Find, Invoke, Return, and Manage: a low-latency serverless function invocation framework written in Mojo for edge intelligence."
     },
     {
-      "id": "dudu",
-      "mapBadge": "Springer OTM'15",
-      "number": 40,
-      "name": "∂u∂u",
-      "subtitle": "Java Near-Duplicate",
-      "lines": [
-        "line-shuttle"
-      ],
-      "x": 1190,
-      "y": 150,
-      "isMajorHub": false,
-      "repos": [
-        "dudu"
-      ],
-      "primaryRepo": "dudu",
-      "tech": [
-        "Java",
-        "Multi-Tenancy",
-        "Big Data Dedup"
-      ],
-      "venues": [
-        {
-          "name": "Springer OTM 2015",
-          "tier": "Springer",
-          "note": "∂u∂u Multi-Tenanted Framework: Distributed Near Duplicate Detection for Big Data"
-        }
-      ],
-      "description": "Foundational multi-tenanted framework for distributed near-duplicate detection in big data written in Java, introducing tenant-aware hashing partitions."
-    },
-    {
       "id": "faro",
-      "number": 41,
+      "number": 40,
       "name": "Faro",
       "subtitle": "Go MinHash LSH",
       "lines": [
         "line-shuttle"
       ],
-      "x": 1300,
+      "x": 1200,
       "y": 150,
       "isMajorHub": false,
       "repos": [
@@ -1370,7 +1373,37 @@ const METRO_DATA = {
         "LSH"
       ],
       "venues": [],
+      "relatedStations": [
+        "firm",
+        "can",
+        "dudu"
+      ],
       "description": "High-throughput near-duplicate detection in Go using MinHash and Locality-Sensitive Hashing (LSH), modernizing the lab's earlier Java ∂u∂u engine."
+    },
+    {
+      "id": "mojito",
+      "number": 41,
+      "name": "Mojito",
+      "subtitle": "Async Scheduler",
+      "lines": [
+        "line-shuttle"
+      ],
+      "x": 1330,
+      "y": 360,
+      "isMajorHub": false,
+      "repos": [
+        "Mojito"
+      ],
+      "primaryRepo": "Mojito",
+      "tech": [
+        "Mojo",
+        "Async Tasks"
+      ],
+      "venues": [],
+      "relatedStations": [
+        "can"
+      ],
+      "description": "Mojo-based integrated task orchestrator delivering lightweight async scheduling, lock-free queues, and microsecond latency dispatching. Terminal station of Line 6 following the CAN interchange."
     }
   ],
   "tracks": [
@@ -1402,7 +1435,7 @@ const METRO_DATA = {
     {
       "id": "track-shuttle",
       "lineId": "line-shuttle",
-      "path": "M 650,150 L 1360,150 Q 1390,150 1390,180 L 1390,260 Q 1390,290 1360,290 L 1330,290"
+      "path": "M 650,75 L 650,135 Q 650,150 665,150 L 1315,150 Q 1330,150 1330,165 L 1330,360"
     }
   ]
 };
