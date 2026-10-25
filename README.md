@@ -16,8 +16,8 @@ The metropolitan map organizes **41 flagship research stations** across **6 inte
 | **Line 2** | **Network Transport & Edge Infrastructure** | Amber (`#d97706`) | Cloud/MapReduce simulation, dynamic flow modeling, community network controller farms, middlebox QoS, bandwidth orchestration, fault detectors, and LEO satellite constellations with inter-satellite links. |
 | **Line 3** | **Healthcare & Biomedical Informatics** | Emerald (`#059669`) | High-throughput DICOM ML pipelines, dynamic telemedicine routing mesh, behavioral health data federation, and rural telehealth. |
 | **Line 4** | **Autonomous Systems & Decentralized Trust** | Purple (`#7c3aed`) | Blockchain-based edge middleware, verifiable off-chain state channels, Cairo ZK proofs, latency-bounded governance, and neural guardrails. |
-| **Line 5** | **Community Informatics & Circumpolar Computing** | Coral (`#e11d48`) | Alaska Native epidemic history mapping, Indigenous serious games, Arctic sea ice forecasting, and art therapy mining. |
-| **Line 6** | **High-Performance Workflow & Systems Runtimes** | Slate Gray (`#64748b`) | Hypergraph workflow composition, Mojo SIMD execution, lock-free task orchestration, and Go deduplication. |
+| **Line 5** | **Community Informatics & Circumpolar Computing** | Slate Gray (`#64748b`) | Alaska Native epidemic history mapping, Indigenous serious games, Arctic sea ice forecasting, and art therapy mining. |
+| **Line 6** | **High-Performance Workflow & Systems Runtimes** | Crimson Red (`#e11d48`) | Hypergraph workflow composition, Mojo SIMD execution, lock-free task orchestration, and Go deduplication. |
 
 ---
 

@@ -255,16 +255,16 @@
         <text x="70" y="84" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#38bdf8" letter-spacing="1.5">SERVICE-ORIENTED ARCHITECTURE &amp; DISTRIBUTED CONTROL</text>
 
         <!-- Zone 6: High-Performance Workflow & Systems Runtimes (Tier 1 East) -->
-        <rect x="620" y="60" width="760" height="120" rx="16" fill="#64748b" fill-opacity="0.05" stroke="#64748b" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
-        <text x="880" y="84" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#94a3b8" letter-spacing="1.5">HIGH-PERFORMANCE WORKFLOW &amp; SYSTEMS RUNTIMES</text>
+        <rect x="620" y="60" width="760" height="120" rx="16" fill="#e11d48" fill-opacity="0.05" stroke="#e11d48" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
+        <text x="880" y="84" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#fb7185" letter-spacing="1.5">HIGH-PERFORMANCE WORKFLOW &amp; SYSTEMS RUNTIMES</text>
 
         <!-- Zone 2: Network Optimizations (Tier 2 Full Width) -->
         <rect x="50" y="205" width="1580" height="145" rx="16" fill="#d97706" fill-opacity="0.05" stroke="#d97706" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
         <text x="70" y="228" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#fbbf24" letter-spacing="1.5">NETWORK OPTIMIZATIONS, EDGE INFRASTRUCTURE &amp; TRANSPORT</text>
 
         <!-- Zone 5: Community & Circumpolar (Tier 3 West) -->
-        <rect x="215" y="370" width="595" height="145" rx="16" fill="#e11d48" fill-opacity="0.05" stroke="#e11d48" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
-        <text x="235" y="394" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#fb7185" letter-spacing="1.5">COMMUNITY INFORMATICS &amp; INDIGENOUS COMPUTING</text>
+        <rect x="215" y="370" width="595" height="145" rx="16" fill="#64748b" fill-opacity="0.05" stroke="#64748b" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>
+        <text x="235" y="394" font-family="var(--font-display)" font-size="12" font-weight="700" fill="#94a3b8" letter-spacing="1.5">COMMUNITY INFORMATICS &amp; INDIGENOUS COMPUTING</text>
 
         <!-- Zone 4: Autonomous Systems & Trust (Tier 3 East) -->
         <rect x="830" y="370" width="800" height="145" rx="16" fill="#7c3aed" fill-opacity="0.05" stroke="#7c3aed" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.35"/>

@@ -145,15 +145,15 @@ function generateSvg() {
       .zone-bg-2 { fill: #fffbeb; }
       .zone-bg-3 { fill: #f0fdf4; }
       .zone-bg-4 { fill: #faf5ff; }
-      .zone-bg-5 { fill: #fff1f2; }
-      .zone-bg-6 { fill: #f8fafc; }
+      .zone-bg-5 { fill: #f8fafc; }
+      .zone-bg-6 { fill: #fff1f2; }
       
       .zone-border-1 { stroke: #bae6fd; stroke-width: 1.5; stroke-dasharray: 6,6; }
       .zone-border-2 { stroke: #fde68a; stroke-width: 1.5; stroke-dasharray: 6,6; }
       .zone-border-3 { stroke: #bbf7d0; stroke-width: 1.5; stroke-dasharray: 6,6; }
       .zone-border-4 { stroke: #e9d5ff; stroke-width: 1.5; stroke-dasharray: 6,6; }
-      .zone-border-5 { stroke: #fecdd3; stroke-width: 1.5; stroke-dasharray: 6,6; }
-      .zone-border-6 { stroke: #cbd5e1; stroke-width: 1.5; stroke-dasharray: 6,6; }
+      .zone-border-5 { stroke: #cbd5e1; stroke-width: 1.5; stroke-dasharray: 6,6; }
+      .zone-border-6 { stroke: #fecdd3; stroke-width: 1.5; stroke-dasharray: 6,6; }
       
       .zone-title { font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
       
@@ -207,7 +207,7 @@ function generateSvg() {
 
   <!-- Zone 6: High-Performance Workflow and Systems Runtimes (Tier 1 East) -->
   <rect x="620" y="60" width="760" height="120" rx="16" class="zone-bg-6 zone-border-6"/>
-  <text x="880" y="84" class="zone-title" fill="#64748b">High-Performance Workflow &amp; Systems Runtimes</text>
+  <text x="880" y="84" class="zone-title" fill="#be123c">High-Performance Workflow &amp; Systems Runtimes</text>
 
   <!-- Zone 2: Network Optimizations and Edge (Tier 2 Full Width) -->
   <rect x="15" y="205" width="1625" height="145" rx="16" class="zone-bg-2 zone-border-2"/>
@@ -215,7 +215,7 @@ function generateSvg() {
 
   <!-- Zone 5: Community and Indigenous (Tier 3 West) -->
   <rect x="215" y="370" width="595" height="145" rx="16" class="zone-bg-5 zone-border-5"/>
-  <text x="235" y="394" class="zone-title" fill="#be123c">Community Informatics &amp; Indigenous Computing</text>
+  <text x="235" y="394" class="zone-title" fill="#64748b">Community Informatics &amp; Indigenous Computing</text>
 
   <!-- Zone 4: Autonomous Systems and Trust (Tier 3 East) -->
   <rect x="830" y="370" width="800" height="145" rx="16" class="zone-bg-4 zone-border-4"/>
@@ -358,13 +358,13 @@ function generateSvg() {
     <text x="195" y="46" class="legend-text">Line 4: Autonomous Systems &amp; Decentralized Trust</text>
 
     <!-- Line 5 -->
-    <line x1="560" y1="42" x2="600" y2="42" stroke="#e11d48" stroke-width="6" stroke-linecap="round"/>
-    <circle cx="580" cy="42" r="4" fill="#ffffff" stroke="#e11d48" stroke-width="1.5"/>
+    <line x1="560" y1="42" x2="600" y2="42" stroke="#64748b" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="580" cy="42" r="4" fill="#ffffff" stroke="#64748b" stroke-width="1.5"/>
     <text x="615" y="46" class="legend-text">Line 5: Community &amp; Indigenous Computing</text>
 
     <!-- Line 6 -->
-    <line x1="930" y1="42" x2="970" y2="42" stroke="#64748b" stroke-width="6" stroke-linecap="round"/>
-    <circle cx="950" cy="42" r="4" fill="#ffffff" stroke="#64748b" stroke-width="1.5"/>
+    <line x1="930" y1="42" x2="970" y2="42" stroke="#e11d48" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="950" cy="42" r="4" fill="#ffffff" stroke="#e11d48" stroke-width="1.5"/>
     <text x="985" y="46" class="legend-text">Line 6: High-Performance Workflow &amp; Systems Runtimes</text>
 
     <!-- Legend Divider -->

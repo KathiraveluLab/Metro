@@ -64,18 +64,18 @@ const METRO_DATA = {
       "id": "line-community",
       "name": "Line 5: Community Informatics & Circumpolar Computing",
       "shortName": "Community & Circumpolar",
-      "color": "#e11d48",
-      "accentColor": "#fb7185",
-      "bgClass": "bg-rose",
+      "color": "#64748b",
+      "accentColor": "#94a3b8",
+      "bgClass": "bg-slate",
       "description": "Alaska Native epidemic history mapping, Indigenous language preservation games, Arctic sea ice extent forecasting, and expressive recovery mining."
     },
     {
       "id": "line-shuttle",
       "name": "Line 6: High-Performance Workflow & Systems Runtimes",
       "shortName": "Workflows & Runtimes",
-      "color": "#64748b",
-      "accentColor": "#94a3b8",
-      "bgClass": "bg-slate",
+      "color": "#e11d48",
+      "accentColor": "#fb7185",
+      "bgClass": "bg-rose",
       "dashed": false,
       "description": "Hardware-accelerated workflow execution, lock-free async schedulers, FaaS service composition, and distributed near-duplicate detection in Java, Mojo, and Go."
     }
