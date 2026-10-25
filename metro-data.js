@@ -1425,7 +1425,7 @@ const METRO_DATA = {
     {
       "id": "track-trust-main",
       "lineId": "line-trust",
-      "path": "M 780,290 L 810,290 Q 840,290 840,320 L 840,450 L 1580,450"
+      "path": "M 780,290 L 810,290 Q 840,290 840,320 L 840,450 L 1560,450"
     },
     {
       "id": "track-community-main",

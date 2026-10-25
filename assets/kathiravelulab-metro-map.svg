@@ -136,7 +136,7 @@
     <path d="M 185,630 L 185,290 Q 185,250 205,225 L 225,185 Q 235,150 245,150 L 650,150 Q 690,150 715,190 L 760,250 Q 780,275 780,290" stroke="#0284c7" stroke-width="16" class="track-underglow" />
     <path d="M 70,290 L 1360,290 Q 1420,290 1440,350 L 1460,450" stroke="#d97706" stroke-width="16" class="track-underglow" />
     <path d="M 70,630 L 1220,630 Q 1340,630 1410,540 L 1460,450" stroke="#059669" stroke-width="16" class="track-underglow" />
-    <path d="M 780,290 L 810,290 Q 840,290 840,320 L 840,450 L 1580,450" stroke="#7c3aed" stroke-width="16" class="track-underglow" />
+    <path d="M 780,290 L 810,290 Q 840,290 840,320 L 840,450 L 1560,450" stroke="#7c3aed" stroke-width="16" class="track-underglow" />
     <path d="M 290,450 L 725,450 Q 750,450 750,475 L 750,630" stroke="#e11d48" stroke-width="16" class="track-underglow" />
     <path d="M 650,75 L 650,135 Q 650,150 665,150 L 1315,150 Q 1330,150 1330,165 L 1330,360" stroke="#64748b" stroke-width="16" class="track-underglow" />
   </g>
@@ -146,7 +146,7 @@
     <path id="track-soa-main" d="M 185,630 L 185,290 Q 185,250 205,225 L 225,185 Q 235,150 245,150 L 650,150 Q 690,150 715,190 L 760,250 Q 780,275 780,290" stroke="#0284c7" stroke-width="8" class="track-main" />
     <path id="track-net-main" d="M 70,290 L 1360,290 Q 1420,290 1440,350 L 1460,450" stroke="#d97706" stroke-width="8" class="track-main" />
     <path id="track-health-main" d="M 70,630 L 1220,630 Q 1340,630 1410,540 L 1460,450" stroke="#059669" stroke-width="8" class="track-main" />
-    <path id="track-trust-main" d="M 780,290 L 810,290 Q 840,290 840,320 L 840,450 L 1580,450" stroke="#7c3aed" stroke-width="8" class="track-main" />
+    <path id="track-trust-main" d="M 780,290 L 810,290 Q 840,290 840,320 L 840,450 L 1560,450" stroke="#7c3aed" stroke-width="8" class="track-main" />
     <path id="track-community-main" d="M 290,450 L 725,450 Q 750,450 750,475 L 750,630" stroke="#e11d48" stroke-width="8" class="track-main" />
     <path id="track-shuttle" d="M 650,75 L 650,135 Q 650,150 665,150 L 1315,150 Q 1330,150 1330,165 L 1330,360" stroke="#64748b" stroke-width="8" class="track-main" />
   </g>
